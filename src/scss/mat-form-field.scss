@@ -1,0 +1,116 @@
+@use '@angular/material' as mat;
+@use 'sass:map';
+@use 'sass:math';
+@use './sizes' as sizes;
+@use './mat-button.scss' as button-overrides;
+
+@mixin configure-form-field($height) {
+  $input-height: calc($height * 2 / 3);
+  // if size is small and not appearance outline, set height to 40px;
+
+  @include mat.form-field-overrides(
+    (
+      container-height: $height,
+      container-text-size: 1em,
+      filled-label-text-size: 0.9rem,
+      container-vertical-padding: math.div(($height - $input-height), 2),
+      filled-with-label-container-padding-top: calc(($height - $input-height) * 3 / 4),
+      filled-with-label-container-padding-bottom: calc(($height - $input-height) / 4),
+    )
+  );
+  &.sh-squircle,
+  &:not(.sh-square):not(.sh-squircle) {
+    @include mat.form-field-overrides(
+      (
+        // BORDER RADIUS OF FORM FIELD
+        outlined-container-shape: math.div($height, 8),
+        filled-container-shape: math.div($height, 8)
+      )
+    );
+  }
+  &.sh-square {
+    @include mat.form-field-overrides(
+      (
+        // BORDER RADIUS OF FORM FIELD
+        outlined-container-shape: 0px,
+        filled-container-shape: 0px
+      )
+    );
+  }
+
+  &.no-hint, &.no-error {
+    .mat-mdc-form-field-subscript-wrapper {
+      display: none;
+    }
+  }
+
+  .mat-mdc-form-field-icon-prefix > .mat-icon, .mat-mdc-form-field-icon-suffix > .mat-icon {
+    padding: 0 calc($height / 8);
+  }
+  input.mat-mdc-input-element.mat-mdc-input-element {
+    height: $input-height;
+  }
+  .mat-mdc-text-field-wrapper {
+    padding-left: calc($height/4);
+  }
+  .mat-mdc-form-field-flex,
+  .mat-mdc-text-field-wrapper,
+  .mat-mdc-form-field-infix {
+    // WE want to target only input elements and not text areas
+    &:has(input[matInput]) {
+      height: $height;
+    }
+  }
+
+  mat-select,
+  mat-select > .mat-mdc-select-trigger {
+    min-height: $input-height;
+  }
+  mat-option {
+    min-height: $height;
+  }
+}
+
+@mixin form-field-overrides($sizes) {
+  align-self: flex-start;
+
+  @each $size, $height in $sizes {
+    &.size-#{$size} {
+      @include configure-form-field($height);
+    }
+  }
+}
+
+@mixin form-field-button-without-size-config($height) {
+  button {
+    &[matButton],
+    &[matIconButton],
+    &[matFab],
+    &[matMiniFab] {
+      // doesn't have size attribute, use the size of the form field to determine the button size
+      &:not([size]) {
+        @include button-overrides.configure-button($height);
+      }
+    }
+  }
+}
+
+mat-form-field {
+  // use function to apply overrides for all sizes
+  @include form-field-overrides(sizes.$form-field-sizes);
+
+  // get attribute of size and apply the button overrides to the buttons inside the form field
+  @each $size, $height in sizes.$form-field-sizes {
+    &.size-#{$size} {
+      @include form-field-button-without-size-config($height);
+    }
+  }
+  // if no size attribute, use the medium size as default
+  &:not([class*='size-']) {
+    $medium-height: map.get(sizes.$form-field-sizes, medium);
+    @include configure-form-field($medium-height);
+    @include form-field-button-without-size-config($medium-height);
+  }
+}
+
+

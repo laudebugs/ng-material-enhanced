@@ -1,0 +1,32 @@
+@use '@angular/material' as mat;
+@use 'sass:math';
+@use 'sass:map';
+@use './sizes.scss' as sizes;
+
+@mixin configure-radio-button($height) {
+  @include mat.radio-overrides(
+    (
+      state-layer-size: $height,
+      touch-target-size: $height + 8px,
+    )
+  );
+}
+
+@mixin radio-button-overrides($sizes) {
+  @each $size, $height in $sizes {
+    &[size='#{$size}'] {
+      @include configure-radio-button($height);
+    }
+  }
+}
+
+mat-radio-button {
+  // use function to apply overrides for all sizes
+  @include radio-button-overrides(sizes.$form-field-sizes);
+
+  // if no size attribute, use the medium size as default
+  &:not([size]) {
+    $medium-height: map.get(sizes.$form-field-sizes, medium);
+    @include configure-radio-button($medium-height);
+  }
+}

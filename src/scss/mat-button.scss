@@ -1,0 +1,243 @@
+@use '@angular/material' as mat;
+@use 'sass:map';
+@use 'sass:math';
+@use './sizes' as sizes;
+@use './theme-colors' as theme-colors;
+
+$error-palette: map.get(theme-colors.$primary-palette, error);
+$neutral-palette: map.get(theme-colors.$primary-palette, neutral);
+
+// a list of filled, outlined, protected, tonal so that we can loop through it
+$button-variants: filled, outlined, protected, tonal, text;
+
+@mixin configure-button($height) {
+  @each $variant in $button-variants {
+    @include mat.button-overrides(
+      (
+        #{$variant}-container-height: $height,
+        #{$variant}-touch-target-size: $height + 8px,
+        #{$variant}-icon-spacing: math.div($height, 5),
+        #{$variant}-icon-offset: - math.div($height, 5)
+      )
+    );
+  }
+
+  @include mat.button-overrides(
+    (
+      filled-horizontal-padding: math.div($height * 3, 5),
+      outlined-horizontal-padding: math.div($height * 3, 5),
+      protected-horizontal-padding: math.div($height * 3, 5),
+      tonal-horizontal-padding: math.div($height * 3, 5),
+      text-with-icon-horizontal-padding: math.div($height * 4, 10),
+    )
+  );
+
+  .material-symbols-outlined {
+    font-size: math.div($height * 3, 5);
+  }
+  mat-icon {
+    font-size: math.div($height * 3, 5);
+    width: math.div($height * 3, 5);
+    height: math.div($height * 3, 5);
+  }
+  &[matIconButton] {
+    @include mat.icon-button-overrides(
+      (
+        state-layer-size: $height,
+        icon-size: math.div($height * 3, 5),
+        touch-target-size: $height + 4px,
+      )
+    );
+  }
+
+  $fab-height: math.div($height * 7, 5);
+
+  &[matFab] {
+    @include mat.fab-overrides(
+      (
+        extended-container-height: $fab-height,
+        touch-target-size: math.div($fab-height + 4px, 1),
+        small-touch-target-size: math.div($fab-height + 4px, 1),
+      )
+    );
+    .material-symbols-outlined {
+      font-size: math.div($height * 4, 5);
+    }
+    mat-icon {
+      font-size: math.div($height * 4, 5);
+      width: math.div($height * 4, 5);
+      height: math.div($height * 4, 5);
+    }
+    &.mat-mdc-fab-base {
+      height: $fab-height;
+      &:not([extended]) {
+        width: $fab-height;
+      }
+    }
+  }
+  &[matMiniFab] {
+    &.mat-mdc-fab-base {
+      height: $height;
+      width: $height;
+    }
+    @include mat.fab-overrides(
+      (
+        extended-container-height: $height,
+        touch-target-size: $height + 4px,
+        small-touch-target-size: $height + 4px,
+      )
+    );
+  }
+
+  &.sh-round {
+    @include mat.button-overrides(
+      (
+        filled-container-shape: 9999px,
+        outlined-container-shape: 9999px,
+        protected-container-shape: 9999px,
+        text-container-shape: 9999px,
+        tonal-container-shape: 9999px,
+      )
+    );
+    @include mat.icon-button-overrides(
+      (
+        container-shape: 9999px,
+      )
+    );
+    @include mat.fab-overrides(
+      (
+        container-shape: 9999px,
+        extended-container-shape: 9999px,
+        small-container-shape: 9999px,
+      )
+    );
+  }
+  &.sh-square {
+    @include mat.button-overrides(
+      (
+        filled-container-shape: 0px,
+        outlined-container-shape: 0px,
+        protected-container-shape: 0px,
+        text-container-shape: 0px,
+        tonal-container-shape: 0px,
+      )
+    );
+    @include mat.icon-button-overrides(
+      (
+        container-shape: 0px,
+      )
+    );
+    @include mat.fab-overrides(
+      (
+        container-shape: 0px,
+        extended-container-shape: 0px,
+        small-container-shape: 0px,
+      )
+    );
+  }
+  // if doesn't have shape attribute, set the default shape to rounded corners
+  &.sh-squircle,
+  &:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+    @include mat.button-overrides(
+      (
+        filled-container-shape: math.div($height, 4),
+        outlined-container-shape: math.div($height, 4),
+        protected-container-shape: math.div($height, 4),
+        text-container-shape: math.div($height, 4),
+        tonal-container-shape: math.div($height, 4),
+      )
+    );
+    @include mat.icon-button-overrides(
+      (
+        container-shape: math.div($height, 4),
+      )
+    );
+    @include mat.fab-overrides(
+      (
+        container-shape: math.div($fab-height, 4),
+        extended-container-shape: math.div($fab-height, 4),
+        small-container-shape: math.div($fab-height, 4),
+      )
+    );
+  }
+  &.destructive {
+    @include mat.button-overrides(
+      (
+        filled-container-color: map.get($error-palette, 40),
+        filled-state-layer-color: color-mix(
+            in srgb,
+            map.get($error-palette, 100) 8%,
+            map.get($error-palette, 40)
+          ),
+        filled-ripple-color: color-mix(
+            in srgb,
+            map.get($error-palette, 100) 12%,
+            map.get($error-palette, 40)
+          ),
+        tonal-container-color: map.get($error-palette, 90),
+        tonal-label-text-color: map.get($error-palette, 40),
+        tonal-state-layer-color: color-mix(
+            in srgb,
+            map.get($error-palette, 30) 8%,
+            map.get($error-palette, 90)
+          ),
+        tonal-ripple-color: color-mix(
+            in srgb,
+            map.get($error-palette, 30) 12%,
+            map.get($error-palette, 90)
+          ),
+        outlined-outline-color: map.get($error-palette, 40),
+        outlined-ripple-color: color-mix(in srgb, map.get($error-palette, 40) 12%, transparent),
+        outlined-state-layer-color: color-mix(in srgb, map.get($error-palette, 40) 8%, transparent),
+        outlined-label-text-color: map.get($error-palette, 40),
+        protected-label-text-color: map.get($error-palette, 40),
+        protected-state-layer-color: color-mix(
+            in srgb,
+            map.get($error-palette, 40) 8%,
+            map.get($neutral-palette, 96)
+          ),
+        protected-ripple-color: color-mix(
+            in srgb,
+            map.get($error-palette, 40) 12%,
+            map.get($neutral-palette, 96)
+          ),
+      )
+    );
+
+    @include mat.icon-button-overrides(
+      (
+        icon-color: map.get($error-palette, 40),
+        ripple-color: color-mix(in srgb, map.get($error-palette, 40) 12%, transparent),
+        state-layer-color: color-mix(in srgb, map.get($error-palette, 40) 8%, transparent),
+      )
+    );
+
+    @include mat.fab-overrides(
+      (
+        container-color: map.get($error-palette, 80),
+        foreground-color: map.get($error-palette, 40),
+        ripple-color: color-mix(in srgb, map.get($error-palette, 40) 12%, transparent),
+        state-layer-color: color-mix(in srgb, map.get($error-palette, 40) 8%, transparent),
+      )
+    );
+  }
+}
+
+// function that loops through all the button sizes and applies the overrides
+@mixin button-overrides($sizes) {
+  @each $size, $height in $sizes {
+    &.sz-#{$size} {
+      @include configure-button($height);
+    }
+  }
+}
+
+button {
+  &[matButton],
+  &[matIconButton],
+  &[matFab],
+  &[matMiniFab] {
+    // use function to apply overrides for all sizes
+    @include button-overrides(sizes.$button-sizes);
+  }
+}

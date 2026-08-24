@@ -1,0 +1,58 @@
+@use '@angular/material' as mat;
+@use 'sass:map';
+@use './sizes.scss' as sizes;
+
+
+@mixin configure-progress-bar($height) {
+  @include mat.progress-bar-overrides(
+    (
+      active-indicator-height: $height,
+      track-height: $height,
+    )
+  );
+  // shape
+  &[shape='round'] {
+    @include mat.progress-bar-overrides(
+      (
+        track-shape: 9999px,
+      )
+    );
+    border-radius: calc($height / 4);
+  }
+  &[shape='squircle'],
+  &:not([shape]) {
+    @include mat.progress-bar-overrides(
+      (
+        track-shape: calc($height / 4),
+      )
+    );
+    border-radius: calc($height / 4);
+  }
+  &[shape='square'] {
+    @include mat.progress-bar-overrides(
+      (
+        track-shape: 0px,
+      )
+    );
+    border-radius: 0px;
+  }
+}
+
+@mixin progress-bar-overrides($sizes) {
+  @each $size, $height in $sizes {
+    &[size='#{$size}'] {
+      @include configure-progress-bar($height);
+    }
+  }
+}
+
+mat-progress-bar {
+  // use function to apply overrides for all sizes
+  @include progress-bar-overrides(sizes.$progress-bar-sizes);
+
+  // if no size attribute, use the medium size as default
+  &:not([size]) {
+    $medium-height: map.get(sizes.$progress-bar-sizes, medium);
+    @include configure-progress-bar($medium-height);
+  }
+}

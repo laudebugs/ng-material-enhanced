@@ -1,0 +1,47 @@
+@use '@angular/material' as mat;
+@use 'sass:math';
+@use 'sass:map';
+@use './sizes.scss' as sizes;
+
+@mixin configure-mat-slide-toggle($height) {
+  @include mat.slide-toggle-overrides(
+    (
+      state-layer-size: calc($height * 5 / 4),
+      track-height: calc($height),
+      pressed-handle-size: calc($height * 7 / 8),
+      unselected-handle-size: calc($height * 1 / 2),
+      selected-handle-size: calc($height * 3 / 4),
+      unselected-icon-size: calc($height * 1 / 2),
+      selected-icon-size: calc($height * 1 / 2),
+      with-icon-handle-size: calc($height * 3 / 4),
+      touch-target-size: calc($height * 3 / 2),
+      track-width: calc($height * 13 / 8),
+      selected-handle-horizontal-margin: '0 #{calc($height * 7/8)}',
+      selected-pressed-handle-horizontal-margin: '0 #{calc($height * 11/16)}',
+      selected-with-icon-handle-horizontal-margin: '0 #{calc($height * 3/4)}',
+      unselected-handle-horizontal-margin: '0 #{calc($height * 1/4)}',
+    )
+  );
+}
+
+@mixin mat-slide-toggle-overrides($sizes) {
+  @each $size, $height in $sizes {
+    &[size='#{$size}'] {
+      @include configure-mat-slide-toggle($height);
+    }
+  }
+}
+
+
+mat-slide-toggle {
+  // use function to apply overrides for all sizes
+  @include mat-slide-toggle-overrides(sizes.$slide-toggle-sizes);
+
+  // if no size attribute, use the medium size as default
+  &:not([size]) {
+    $medium-height: map.get(sizes.$slide-toggle-sizes, medium);
+    @include configure-mat-slide-toggle($medium-height);
+  }
+}
+
+

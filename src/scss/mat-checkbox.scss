@@ -1,0 +1,52 @@
+@use '@angular/material' as mat;
+@use 'sass:math';
+@use 'sass:map';
+@use './theme-colors' as theme-colors;
+@use './sizes.scss' as sizes;
+
+$neutral-palette: map.get(theme-colors.$primary-palette, neutral);
+$error-palette: map.get(theme-colors.$primary-palette, error);
+
+@mixin configure-check-box($height) {
+  @include mat.checkbox-overrides(
+    (
+      state-layer-size: $height,
+      touch-target-size: $height + 8px,
+    )
+  );
+}
+
+@mixin check-box-overrides($sizes) {
+  @each $size, $height in $sizes {
+    &.sz-#{$size} {
+      @include configure-check-box($height);
+    }
+  }
+}
+
+mat-checkbox {
+  // use function to apply overrides for all sizes
+  @include check-box-overrides(sizes.$form-field-sizes);
+
+  // if no size attribute, use the medium size as default
+  &:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
+    $medium-height: map.get(sizes.$form-field-sizes, medium);
+    @include configure-check-box($medium-height);
+  }
+
+   &.destructive {
+    @include mat.checkbox-overrides(
+      (
+        selected-hover-icon-color: map.get($error-palette, 40),
+        selected-icon-color: map.get($error-palette, 40),
+        selected-focus-icon-color: map.get($error-palette, 40),
+        selected-pressed-icon-color: map.get($error-palette, 40),
+        selected-checkmark-color: map.get($error-palette, 90),
+        selected-focus-state-layer-color: color-mix(in srgb, map.get($error-palette, 40) 8%, map.get($neutral-palette, 96)),
+        selected-pressed-state-layer-color: color-mix(in srgb, map.get($error-palette, 40) 12%, map.get($neutral-palette, 96)),
+        unselected-pressed-state-layer-color: map.get($error-palette, 40)
+      )
+    );
+  }
+}
+

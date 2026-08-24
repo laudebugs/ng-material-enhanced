@@ -1,0 +1,207 @@
+<h2>
+  Buttons
+</h2>
+<div class="element">
+  <h3>Button</h3>
+  <div class="element-container">
+    <div class="controls">
+      <mat-form-field class="no-hint">
+        <mat-label>Button Appearance</mat-label>
+        <mat-select [(ngModel)]="buttonAppearance">
+          @for (appearance of buttonAppearances; track appearance) {
+            <mat-option [value]="appearance">{{appearance}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Button Size</mat-label>
+        <mat-select [(ngModel)]="buttonSize">
+          @for (size of buttonSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- button shape -->
+      <mat-form-field class="no-hint">
+        <mat-label>Button Shape</mat-label>
+        <mat-select [(ngModel)]="buttonShape">
+          @for (shape of buttonShapes; track shape) {
+            <mat-option [value]="shape">{{shape}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- icon -->
+      <mat-form-field class="no-hint">
+        <mat-label>Button Icon</mat-label>
+        <input matInput type="text" [(ngModel)]="buttonIcon">
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="destructive">Destructive</mat-checkbox>
+    </div>
+    <div class="demo">
+      <button matButton [matButton]="buttonAppearance()" [class]="`sz-${buttonSize()} sh-${buttonShape()} destructive`" [class.destructive]="destructive()">
+        @if(buttonIcon()) {
+          <mat-icon class="material-symbols-outlined">{{buttonIcon()}}</mat-icon>
+        }
+        Check out
+      </button>
+    </div>
+  </div>
+  <div [innerHTML]="buttonCode()"></div>
+</div>
+
+<!-- mat icon button -->
+<div class="element">
+  <h3>Icon Button</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Button Size</mat-label>
+        <mat-select [(ngModel)]="iconButtonSize">
+          @for (size of buttonSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- button shape -->
+      <mat-form-field class="no-hint">
+        <mat-label>Button Shape</mat-label>
+        <mat-select [(ngModel)]="iconButtonShape">
+          @for (shape of buttonShapes; track shape) {
+            <mat-option [value]="shape">{{shape}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- icon -->
+      <mat-form-field class="no-hint">
+        <mat-label>Button Icon</mat-label>
+        <input matInput type="text" [(ngModel)]="iconButtonIcon">
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="iconDestructive">Destructive</mat-checkbox>
+    </div>
+    <div class="demo">
+      <button matIconButton [class]="`sz-${iconButtonSize()} sh-${iconButtonShape()} destructive`" [class.destructive]="iconDestructive()">
+        <span class="material-symbols-outlined">{{iconButtonIcon()}}</span>
+      </button>
+    </div>
+  </div>
+  <div [innerHTML]="iconButtonCode()"></div>
+</div>
+<!-- mat mini fab -->
+<div class="element">
+  <h3>Mini Fab</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Button Size</mat-label>
+        <mat-select [(ngModel)]="miniFabSize">
+          @for (size of buttonSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- button shape -->
+      <mat-form-field class="no-hint">
+        <mat-label>Button Shape</mat-label>
+        <mat-select [(ngModel)]="miniFabShape">
+          @for (shape of buttonShapes; track shape) {
+            <mat-option [value]="shape">{{shape}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- icon -->
+      <mat-form-field class="no-hint">
+        <mat-label>Button Icon</mat-label>
+        <input matInput type="text" [(ngModel)]="miniFabIcon">
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="miniFabDestructive">Destructive</mat-checkbox>
+    </div>
+    <div class="demo">
+      <button matMiniFab [class]="`sz-${miniFabSize()} sh-${miniFabShape()} destructive`" [class.destructive]="miniFabDestructive()">
+        <mat-icon class="material-symbols-outlined">{{miniFabIcon()}}</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div [innerHTML]="miniFabCode()"></div>
+</div>
+
+<!-- mat fab -->
+<div class="element">
+  <h3>Fab</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Button Size</mat-label>
+        <mat-select [(ngModel)]="fabSize">
+          @for (size of buttonSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- button shape -->
+      <mat-form-field class="no-hint">
+        <mat-label>Button Shape</mat-label>
+        <mat-select [(ngModel)]="fabShape">
+          @for (shape of buttonShapes; track shape) {
+            <mat-option [value]="shape">{{shape}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- icon -->
+      <mat-form-field class="no-hint">
+        <mat-label>Button Icon</mat-label>
+        <input matInput type="text" [(ngModel)]="fabIcon">
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="fabDestructive">Destructive</mat-checkbox>
+    </div>
+    <div class="demo">
+      <button matFab [class]="`sz-${fabSize()} sh-${fabShape()} destructive`" [class.destructive]="fabDestructive()">
+        <mat-icon class="material-symbols-outlined">{{fabIcon()}}</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div [innerHTML]="fabCode()"></div>
+</div>
+
+<!-- mat fab extended -->
+<div class="element">
+  <h3>Fab Extended</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Button Size</mat-label>
+        <mat-select [(ngModel)]="fabExtendedSize">
+          @for (size of buttonSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- button shape -->
+      <mat-form-field class="no-hint">
+        <mat-label>Button Shape</mat-label>
+        <mat-select [(ngModel)]="fabExtendedShape">
+          @for (shape of buttonShapes; track shape) {
+            <mat-option [value]="shape">{{shape}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- icon -->
+      <mat-form-field class="no-hint">
+        <mat-label>Button Icon</mat-label>
+        <input matInput type="text" [(ngModel)]="fabExtendedIcon">
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="fabExtendedDestructive">Destructive</mat-checkbox>
+    </div>
+    <div class="demo">
+      <button matFab extended [class]="`sz-${fabExtendedSize()} sh-${fabExtendedShape()} destructive`" [class.destructive]="fabExtendedDestructive()">
+        <mat-icon class="material-symbols-outlined">{{fabExtendedIcon()}}</mat-icon>
+        Add item
+      </button>
+    </div>
+  </div>
+  <div [innerHTML]="fabExtendedCode()"></div>
+</div>

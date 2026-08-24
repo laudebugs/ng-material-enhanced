@@ -1,0 +1,96 @@
+<mat-form-field appearance="outline" class="sz-small sh-square">
+  <!-- <mat-label>First Name (small)</mat-label> -->
+  <mat-icon matPrefix>sentiment_very_satisfied</mat-icon>
+
+  <input matInput type="text" [(ngModel)]="firstName">
+  @if (firstName()) {
+    <button matSuffix matIconButton aria-label="Clear" (click)="firstName.set('')">
+      <mat-icon>close</mat-icon>
+    </button>
+  }
+</mat-form-field>
+<mat-form-field appearance="outline" class="sz-medium">
+  <mat-label>Last Name (medium)</mat-label>
+  <mat-icon matPrefix>sentiment_very_satisfied</mat-icon>
+
+  <input matInput type="text" [(ngModel)]="lastName">
+  <button matSuffix matIconButton class="sz-medium" (click)="lastName.set('')">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+<mat-form-field appearance="outline" class="sz-large">
+  <mat-label>Password (Large)</mat-label>
+  <input matInput [type]="passwordType()" [(ngModel)]="password">
+  <button matSuffix matIconButton (click)="togglePasswordType()" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordType() === 'text'">
+    <mat-icon>{{ passwordType() === 'password' ? 'visibility_off' : 'visibility' }}</mat-icon>
+  </button>
+</mat-form-field>
+<mat-form-field class="sz-small">
+  <mat-label>School (small)</mat-label>
+  <input matInput type="text" [(ngModel)]="school">
+  @if (school()) {
+    <button matSuffix matIconButton aria-label="Clear" (click)="school.set('')">
+      <mat-icon>close</mat-icon>
+    </button>
+  }
+</mat-form-field>
+<mat-form-field class="sz-medium">
+  <mat-label>School (medium)</mat-label>
+  <input matInput type="text" [(ngModel)]="school">
+  @if (school()) {
+    <button matSuffix matIconButton aria-label="Clear" (click)="school.set('')">
+      <mat-icon>close</mat-icon>
+    </button>
+  }
+</mat-form-field>
+<mat-form-field class="sz-large">
+  <mat-label>School (large)</mat-label>
+  <input matInput type="text" [(ngModel)]="school">
+  @if (school()) {
+    <button matSuffix matIconButton aria-label="Clear" (click)="school.set('')">
+      <mat-icon>close</mat-icon>
+    </button>
+  }
+</mat-form-field>
+<mat-form-field>
+  <mat-label>Country</mat-label>
+  <input matInput type="text" [(ngModel)]="country">
+  @if (country()) {
+    <button matSuffix matIconButton aria-label="Clear" (click)="country.set('')">
+      <mat-icon>close</mat-icon>
+    </button>
+  }
+</mat-form-field>
+
+<mat-form-field class="example-full-width" appearance="outline">
+  <mat-label>Leave a comment</mat-label>
+  <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+</mat-form-field>
+
+
+<mat-form-field size="small" appearance="outline">
+  <mat-label>Favorite food</mat-label>
+  <mat-select>
+    @for (food of foods; track food) {
+      <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+    }
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Pick a time</mat-label>
+  <input matInput [matTimepicker]="picker">
+  <mat-timepicker-toggle matIconSuffix [for]="picker"/>
+  <mat-timepicker #picker/>
+</mat-form-field>
+
+<mat-radio-group
+  aria-labelledby="example-radio-group-label"
+  class="example-radio-group"
+  [(ngModel)]="favoriteSeason">
+  @for (season of seasons; track season) {
+    <mat-radio-button size="small" class="example-radio-button" [value]="season">{{season}}</mat-radio-button>
+  }
+</mat-radio-group>
+
+      <mat-checkbox class="example-margin" [(ngModel)]="checked">Checked</mat-checkbox>

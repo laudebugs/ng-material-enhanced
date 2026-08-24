@@ -1,0 +1,43 @@
+@use '@angular/material' as mat;
+@use 'sass:math';
+@use './sizes.scss' as sizes;
+
+
+@mixin button-toggle-overrides($sizes) {
+  @each $size, $height in $sizes {
+    &[size='#{$size}'] {
+      @include mat.button-toggle-overrides(
+        (
+          height: $height,
+        )
+      );
+    }
+    &[shape='round'] {
+      @include mat.button-toggle-overrides(
+        (
+          shape: 9999px,
+        )
+      );
+    }
+    &[shape='square'] {
+      @include mat.button-toggle-overrides(
+        (
+          shape: 0px,
+        )
+      );
+    }
+    &[shape='squircle'],
+    &:not([shape]) {
+      @include mat.button-toggle-overrides(
+        (
+          shape: math.div($height, 4),
+        )
+      );
+    }
+  }
+}
+
+mat-button-toggle-group {
+  // use function to apply overrides for all sizes
+  @include button-toggle-overrides(sizes.$button-sizes);
+}

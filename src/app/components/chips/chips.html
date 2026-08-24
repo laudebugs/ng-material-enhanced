@@ -1,0 +1,42 @@
+<mat-chip-set aria-label="Fish selection">
+  <mat-chip size="large">
+    <img
+      matChipAvatar
+      src="https://material.angular.dev/assets/img/examples/shiba1.jpg"
+      alt="Photo of a Shiba Inu"
+    />
+    One fish</mat-chip>
+  <mat-chip>Two fish</mat-chip>
+  <mat-chip>Three fish</mat-chip>
+  <mat-chip class="round xsmall">Four fish</mat-chip>
+</mat-chip-set>
+
+<mat-form-field class="example-chip-list" size="small" appearance="outline" floatLabel="always">
+  <mat-label>Favorite Fruits</mat-label>
+  <mat-chip-grid #chipGrid aria-label="Enter fruits">
+    @for (fruit of fruits(); track fruit) {
+      <mat-chip-row
+        (removed)="remove(fruit)"
+        [editable]="true"
+        (edited)="edit(fruit, $event)"
+        [aria-description]="'press enter to edit ' + fruit.name"
+        size="xsmall"
+      >
+        <button matChipEdit [attr.aria-label]="'edit ' + fruit.name">
+          <mat-icon>edit</mat-icon>
+        </button>
+        {{fruit.name}}
+        <button matChipRemove [attr.aria-label]="'remove ' + fruit.name">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip-row>
+    }
+  </mat-chip-grid>
+  <input
+    placeholder="New fruit..."
+    [matChipInputFor]="chipGrid"
+    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+    [matChipInputAddOnBlur]="addOnBlur"
+    (matChipInputTokenEnd)="add($event)"
+  />
+</mat-form-field>

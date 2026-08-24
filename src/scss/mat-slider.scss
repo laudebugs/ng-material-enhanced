@@ -1,0 +1,55 @@
+@use '@angular/material' as mat;
+@use 'sass:map';
+@use './sizes.scss' as sizes;
+
+@mixin configure-slider($height) {
+  @include mat.slider-overrides(
+    (
+      handle-height: $height,
+      handle-width: $height,
+      inactive-track-height: calc($height / 4),
+      active-track-height: calc($height / 4),
+      value-indicator-height: calc($height * 3 / 2),
+      value-indicator-width: calc($height * 3 / 2),
+      value-indicator-transform-origin: '0, #{calc($height * 3/4)}',
+      value-indicator-container-transform:'translateX(-50%) translateY(#{-$height * 2}) rotate(-45deg)',
+      label-label-text-size: calc(0.75rem * $height/20px),
+    )
+  );
+  height: calc($height * 12 / 5);
+  mat-slider-visual-thumb {
+    height: calc($height * 12 / 5);
+    width: calc($height * 12 / 5);
+    .mat-ripple {
+      border-radius: calc($height * 3 / 4);
+    }
+  }
+  input {
+    height: calc($height * 11 / 5);
+  }
+  .mdc-slider__track {
+    left: - calc((20px - $height));
+  }
+  .mdc-slider__value-indicator-container {
+    bottom: 0;
+  }
+}
+
+@mixin slider-overrides($sizes) {
+  @each $size, $height in $sizes {
+    &[size='#{$size}'] {
+      @include configure-slider($height);
+    }
+  }
+}
+
+mat-slider {
+  // use function to apply overrides for all sizes
+  @include slider-overrides(sizes.$slider-sizes);
+
+  // if no size attribute, use the medium size as default
+  &:not([size]) {
+    $medium-height: map.get(sizes.$slider-sizes, medium);
+    @include configure-slider($medium-height);
+  }
+}

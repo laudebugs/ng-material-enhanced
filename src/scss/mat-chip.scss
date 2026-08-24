@@ -1,0 +1,71 @@
+@use '@angular/material' as mat;
+@use 'sass:math';
+@use 'sass:map';
+@use './sizes.scss' as sizes;
+@use './mat-button.scss' as button-overrides;
+
+@mixin configure-chip($height) {
+  @include mat.chips-overrides(
+    (
+      container-height: $height,
+      // chip-touch-target-size: $height + 8px,
+      container-shape-radius: math.div($height, 4),
+      with-avatar-avatar-shape-radius: math.div($height * 3, 4),
+      with-avatar-avatar-size: math.div($height * 3, 4),
+      with-icon-icon-size: calc($height * 9 / 16),
+    )
+  );
+
+  button {
+    &[matChipEdit],
+    &[matChipRemove] {
+      @include button-overrides.configure-button($height);
+      height: calc($height * 9 / 16);
+      width: calc($height * 9 / 16);
+    }
+  }
+  &[shape='round'] {
+    @include mat.chips-overrides(
+      (
+        container-shape-radius: 9999px,
+      )
+    );
+  }
+  &[shape='square'] {
+    @include mat.chips-overrides(
+      (
+        container-shape-radius: 0px,
+      )
+    );
+  }
+  &[shape='squircle'],
+  &:not([shape]) {
+    @include mat.chips-overrides(
+      (
+        container-shape-radius: math.div($height, 4),
+      )
+    );
+  }
+}
+
+@mixin chip-overrides($sizes) {
+  @each $size, $height in $sizes {
+    &[size='#{$size}'] {
+      @include configure-chip($height);
+    }
+  }
+}
+
+mat-chip,
+mat-chip-row {
+  // use function to apply overrides for all sizes
+  @include chip-overrides(sizes.$chip-sizes);
+
+  // if no size attribute, use the medium size as default
+  &:not([size]) {
+    $medium-height: map.get(sizes.$chip-sizes, small);
+    @include configure-chip($medium-height);
+  }
+}
+
+

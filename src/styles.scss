@@ -1,1 +1,96 @@
+// Include theming for Angular Material with `mat.theme()`.
+// This Sass mixin will define CSS variables that are used for styling Angular Material
+// components according to the Material 3 design spec.
+// Learn more about theming and how to use it for your application's
+// custom components at https://material.angular.dev/guide/theming
+@use '@angular/material' as mat;
+@use 'sass:math';
+@use 'sass:map';
+@use './scss/theme-colors' as theme-colors;
+@use './scss/mat-overrides.scss';
+
+html {
+  color-scheme: light dark;
+  height: 100%;
+
+  @include mat.theme(
+    (
+      color: (
+        primary: theme-colors.$primary-palette,
+        // secondary: theme-colors.$secondary-palette,
+        tertiary: theme-colors.$tertiary-palette,
+      ),
+      typography: 'Google Sans',
+      // density: -2,
+    )
+  );
+}
+
+@media (prefers-contrast: more) {
+  @include theme-colors.high-contrast-overrides(light);
+}
+
+body {
+  // Default the application to a light color theme. This can be changed to
+  // `dark` to enable the dark color theme, or to `light dark` to defer to the
+  // user's system settings.
+  color-scheme: light;
+
+  // Set a default background, font and text colors for the application using
+  // Angular Material's system-level CSS variables. Learn more about these
+  // variables at https://material.angular.dev/guide/system-variables
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+
+  // Reset the user agent margin.
+  margin: 0;
+  height: 100%;
+}
 /* You can add global styles to this file, and also import other style files */
+
+.component-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: calc(100%);
+  height: calc(100%);
+  h2 {
+    margin: 0;
+  }
+  .element {
+    border: 1px solid;
+    border-radius: 0.5em;
+    h3 {
+      margin: 0;
+      padding: 1em;
+      border-bottom: 1px solid;
+    }
+    .element-container {
+      border-bottom: 1px solid;
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      .controls {
+        padding: 1em;
+        border-right: 1px solid;
+        gap: 0.75em;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .demo {
+        margin: 1em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    pre {
+      margin: 0;
+      border-radius: 0.5em;
+    }
+    pre,
+    code {
+      font-family: 'Google Sans Code', monospace;
+    }
+  }
+}
