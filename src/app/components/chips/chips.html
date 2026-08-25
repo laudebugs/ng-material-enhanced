@@ -30,11 +30,6 @@
         <mat-label>Chip Label</mat-label>
         <input matInput type="text" [(ngModel)]="chipLabel">
       </mat-form-field>
-      <!-- icon -->
-      <mat-form-field class="no-hint">
-        <mat-label>Chip Icon</mat-label>
-        <input matInput type="text" [(ngModel)]="chipIcon">
-      </mat-form-field>
       <mat-checkbox [(ngModel)]="chipDisabled">Disabled</mat-checkbox>
     </div>
     <div class="demo">
@@ -42,9 +37,6 @@
         <mat-chip
           [class]="'sz-' + chipSize() + ' sh-' + chipShape()"
           [disabled]="chipDisabled()">
-          @if (chipIcon()) {
-            <mat-icon class="material-symbols-outlined">{{chipIcon()}}</mat-icon>
-          }
           {{chipLabel()}}
         </mat-chip>
       </mat-chip-set>

@@ -54,7 +54,6 @@ export class Chips {
     highlighter.highlight(
       `<mat-chip-set>
   <mat-chip class="sz-${this.chipSize()} sh-${this.chipShape()}"${this.chipDisabled() ? ' disabled' : ''}>
-    ${this.chipIcon() ? `<mat-icon class="material-symbols-outlined">${this.chipIcon()}</mat-icon>` : ''}
     ${this.chipLabel()}
   </mat-chip>
 </mat-chip-set>`,
