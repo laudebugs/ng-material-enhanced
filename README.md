@@ -2,8 +2,6 @@
 
 A modern demonstration application and SCSS design extension illustrating how to utilize **Angular Material component overrides** (`@angular/material`) to customize the look, feel, sizing, corner geometry, and density of Material 3 components.
 
-![Angular Material Enhanced](https://ng-material-enhanced.laudebugs.me/favicon.ico)
-
 - **Live Demo**: [ng-material-enhanced.laudebugs.me](https://ng-material-enhanced.laudebugs.me)
 - **Compiled CSS Overrides**: [`/material-overrides.css`](https://ng-material-enhanced.laudebugs.me/material-overrides.css)
 - **SCSS Source Overrides**: [`/material-overrides.scss`](https://ng-material-enhanced.laudebugs.me/material-overrides.scss)
