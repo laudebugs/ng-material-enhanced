@@ -1,5 +1,5 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { Component, computed, DestroyRef, inject, OnInit, signal } from '@angular/core';
+import { Component, computed, DestroyRef, DOCUMENT, inject, OnInit, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -219,7 +219,7 @@ export class App implements OnInit {
   private breakpointObserver = inject(BreakpointObserver);
   private destroyRef = inject(DestroyRef);
   private router = inject(Router);
-
+  private document = inject(DOCUMENT);
   isMobile = signal(false);
   sidenavOpened = signal(true);
   currentUrl = signal(this.router.url);
@@ -278,12 +278,12 @@ export class App implements OnInit {
   }
 
   ngOnInit(): void {
-    const styleEl = document.createElement('style');
+    const styleEl = this.document.createElement('style');
     styleEl.innerHTML = createThemeCss({
       light: githubLightTheme,
       dark: githubDarkTheme,
       darkSelector: '.dark',
     });
-    document.head.appendChild(styleEl);
+    this.document.head.appendChild(styleEl);
   }
 }
