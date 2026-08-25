@@ -2,6 +2,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "ng-material-enhanced",
   "compatibility_date": "2026-08-20",
+  "pages_build_output_dir": "./dist/cloudflare",
   "observability": {
     "enabled": false,
     "head_sampling_rate": 1,
@@ -15,9 +16,6 @@
       "enabled": false,
       "persist": true,
       "head_sampling_rate": 1
-    },
-  },
-  "assets": {
-    "directory": "dist/ng-material-enhanced/browser"
+    }
   }
 }
