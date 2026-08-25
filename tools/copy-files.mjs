@@ -9,7 +9,11 @@ const ssr = resolve(root, "dist/ng-material-enhanced/server");
 const cloudflare = resolve(root, "dist/cloudflare");
 const worker = resolve(cloudflare, "_worker.js");
 
+fs.rmSync(cloudflare, { recursive: true, force: true });
+fs.mkdirSync(worker, { recursive: true });
+
 fs.cpSync(client, cloudflare, { recursive: true });
 fs.cpSync(ssr, worker, { recursive: true });
 
 fs.renameSync(join(worker, "server.mjs"), join(worker, "index.js"));
+

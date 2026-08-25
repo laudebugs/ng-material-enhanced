@@ -2,9 +2,9 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "ng-material-enhanced",
   "compatibility_date": "2026-08-20",
+  "compatibility_flags": ["nodejs_compat"],
   "pages_build_output_dir": "./dist/cloudflare",
 	"observability": {
 		"enabled": true
 	},
-  "main": "dist/ng-material-enhanced/server/server.mjs",
 }
