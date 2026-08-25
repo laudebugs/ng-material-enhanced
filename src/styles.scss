@@ -109,4 +109,17 @@ body {
       font-family: 'Google Sans Code', monospace;
     }
   }
+
+  @media (max-width: 849.98px) {
+    .element {
+      .element-container {
+        grid-template-columns: 1fr;
+
+        .controls {
+          border-right: none;
+          border-bottom: 1px solid;
+        }
+      }
+    }
+  }
 }
