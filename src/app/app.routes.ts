@@ -1,13 +1,13 @@
 import { Routes } from '@angular/router';
-import { Buttons } from './components/button/button';
 import { AllComponents } from './components/all-components';
 import { ButtonToggle } from './components/button-toggle/button-toggle';
-import { FormField } from './components/form-field/form-field';
+import { Buttons } from './components/button/button';
+import { Checkbox } from './components/checkbox/checkbox';
 import { Chips } from './components/chips/chips';
+import { FormField } from './components/form-field/form-field';
+import { ProgressBar } from './components/progress-bar/progress-bar';
 import { Slider } from './components/slider/slider';
 import { Toggle } from './components/toggle/toggle';
-import { ProgressBar } from './components/progress-bar/progress-bar';
-import { Checkbox } from './components/checkbox/checkbox';
 
 export const routes: Routes = [
   {
