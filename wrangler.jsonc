@@ -4,10 +4,13 @@
   "compatibility_date": "2026-08-20",
   "compatibility_flags": ["nodejs_compat"],
   "pages_build_output_dir": "./dist/cloudflare",
+  "alias": {
+    "xhr2": "./tools/shims/xhr2.mjs"
+  },
   "vars": {
     "NODE_VERSION": "22.22.3"
   },
   "observability": {
     "enabled": true
-  },
+  }
 }

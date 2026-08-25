@@ -33,7 +33,11 @@
             "server": "src/main.server.ts",
             "outputMode": "server",
             "security": {
-              "allowedHosts": []
+              "allowedHosts": [
+                "localhost",
+                "*.ng-material-enhanced.pages.dev",
+                "ng-material-enhanced.laudebugs.me"
+              ]
             },
             "ssr": {
               "entry": "src/server.ts",
