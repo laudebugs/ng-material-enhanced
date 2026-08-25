@@ -18,17 +18,8 @@
       filled-with-label-container-padding-bottom: calc(($height - $input-height) / 4),
     )
   );
-  &.sh-round {
-    @include mat.form-field-overrides(
-      (
-        // BORDER RADIUS OF FORM FIELD
-        outlined-container-shape: 9999px,
-        filled-container-shape: 9999px
-      )
-    );
-  }
   &.sh-squircle,
-  &:not(.sh-square):not(.sh-squircle):not(.sh-round) {
+  &:not(.sh-square):not(.sh-squircle) {
     @include mat.form-field-overrides(
       (
         // BORDER RADIUS OF FORM FIELD

@@ -32,7 +32,7 @@ import { highlighter } from '../../highlighter';
 export class FormField {
   appearances: MatFormFieldAppearance[] = ['outline', 'fill'];
   formFieldSizes: string[] = ['small', 'medium', 'large', 'xlarge'];
-  formFieldShapes: string[] = ['round', 'squircle', 'square'];
+  formFieldShapes: string[] = ['squircle', 'square'];
 
   // Text Input
   inputAppearance = signal<MatFormFieldAppearance>('outline');
