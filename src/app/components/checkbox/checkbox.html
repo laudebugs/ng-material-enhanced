@@ -1,6 +1,130 @@
-<mat-checkbox >Unchecked</mat-checkbox>
-<mat-checkbox checked indeterminate>Intermediate Checked</mat-checkbox>
-<mat-checkbox checked>Checked</mat-checkbox>
-<mat-checkbox destructive>Unchecked Destructive</mat-checkbox>
-<mat-checkbox indeterminate destructive checked>Intermediate Checked Destructive</mat-checkbox>
-<mat-checkbox destructive checked>Checked Destructive</mat-checkbox>
+<h2>
+  Checkbox
+</h2>
+
+<!-- Standard Checkbox -->
+<div class="element">
+  <h3>Checkbox</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Checkbox Size</mat-label>
+        <mat-select [(ngModel)]="checkboxSize">
+          @for (size of checkboxSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- label -->
+      <mat-form-field class="no-hint">
+        <mat-label>Label</mat-label>
+        <input matInput type="text" [(ngModel)]="checkboxLabel">
+      </mat-form-field>
+      <!-- label position -->
+      <mat-form-field class="no-hint">
+        <mat-label>Label Position</mat-label>
+        <mat-select [(ngModel)]="labelPosition">
+          @for (pos of labelPositions; track pos) {
+            <mat-option [value]="pos">{{pos}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="checked">Checked</mat-checkbox>
+      <mat-checkbox [(ngModel)]="indeterminate">Indeterminate</mat-checkbox>
+      <mat-checkbox [(ngModel)]="disabled">Disabled</mat-checkbox>
+      <mat-checkbox [(ngModel)]="destructive">Destructive</mat-checkbox>
+      <mat-checkbox [(ngModel)]="required">Required</mat-checkbox>
+    </div>
+    <div class="demo">
+      <mat-checkbox
+        [class]="'sz-' + checkboxSize()"
+        [class.destructive]="destructive()"
+        [(ngModel)]="checked"
+        [indeterminate]="indeterminate()"
+        [disabled]="disabled()"
+        [required]="required()"
+        [labelPosition]="labelPosition()">
+        {{checkboxLabel()}}
+      </mat-checkbox>
+    </div>
+  </div>
+  <div [innerHTML]="checkboxCode()"></div>
+</div>
+
+<!-- Destructive Checkbox -->
+<div class="element">
+  <h3>Destructive Checkbox</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Checkbox Size</mat-label>
+        <mat-select [(ngModel)]="destructiveSize">
+          @for (size of checkboxSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- label -->
+      <mat-form-field class="no-hint">
+        <mat-label>Label</mat-label>
+        <input matInput type="text" [(ngModel)]="destructiveLabel">
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="destructiveChecked">Checked</mat-checkbox>
+      <mat-checkbox [(ngModel)]="destructiveIndeterminate">Indeterminate</mat-checkbox>
+      <mat-checkbox [(ngModel)]="destructiveDisabled">Disabled</mat-checkbox>
+    </div>
+    <div class="demo">
+      <mat-checkbox
+        class="destructive"
+        [class]="'sz-' + destructiveSize()"
+        [(ngModel)]="destructiveChecked"
+        [indeterminate]="destructiveIndeterminate()"
+        [disabled]="destructiveDisabled()">
+        {{destructiveLabel()}}
+      </mat-checkbox>
+    </div>
+  </div>
+  <div [innerHTML]="destructiveCode()"></div>
+</div>
+
+<!-- Checkbox Group -->
+<div class="element">
+  <h3>Checkbox Group</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Checkbox Size</mat-label>
+        <mat-select [(ngModel)]="groupSize">
+          @for (size of checkboxSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="demo">
+      <div class="checkbox-group">
+        <mat-checkbox
+          [class]="'sz-' + groupSize()"
+          [checked]="allComplete()"
+          [indeterminate]="someComplete()"
+          (change)="setAll($event.checked)">
+          Select All Notifications
+        </mat-checkbox>
+        <div style="display: flex; flex-direction: column; margin-left: 1.5rem; gap: 0.5rem;">
+          @for (task of tasks(); track task.name; let i = $index) {
+            <mat-checkbox
+              [class]="'sz-' + groupSize()"
+              [checked]="task.completed"
+              (change)="updateTask(i, $event.checked)">
+              {{task.name}}
+            </mat-checkbox>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+  <div [innerHTML]="groupCode()"></div>
+</div>

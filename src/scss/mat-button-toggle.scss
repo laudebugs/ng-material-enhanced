@@ -5,35 +5,43 @@
 
 @mixin button-toggle-overrides($sizes) {
   @each $size, $height in $sizes {
-    &[size='#{$size}'] {
+    &.sz-#{$size} {
       @include mat.button-toggle-overrides(
         (
           height: $height,
         )
       );
+      .material-symbols-outlined {
+        font-size: math.div($height * 3, 5);
+      }
+      mat-icon {
+        font-size: math.div($height * 3, 5);
+        width: math.div($height * 3, 5);
+        height: math.div($height * 3, 5);
+      }
     }
-    &[shape='round'] {
-      @include mat.button-toggle-overrides(
-        (
-          shape: 9999px,
-        )
-      );
-    }
-    &[shape='square'] {
-      @include mat.button-toggle-overrides(
-        (
-          shape: 0px,
-        )
-      );
-    }
-    &[shape='squircle'],
-    &:not([shape]) {
-      @include mat.button-toggle-overrides(
-        (
-          shape: math.div($height, 4),
-        )
-      );
-    }
+  }
+  &.sh-round {
+    @include mat.button-toggle-overrides(
+      (
+        shape: 9999px,
+      )
+    );
+  }
+  &.sh-square {
+    @include mat.button-toggle-overrides(
+      (
+        shape: 0px,
+      )
+    );
+  }
+  &.sh-squircle,
+  &:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+    @include mat.button-toggle-overrides(
+      (
+        shape: 8px,
+      )
+    );
   }
 }
 

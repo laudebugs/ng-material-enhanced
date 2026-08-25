@@ -38,15 +38,15 @@ export class Buttons {
   }).html)
 
   // icon button
-  iconButtonCode = computed(() => highlighter.highlight(`<button matIconButton class="${["sz-" + this.buttonSize(),"sh-" + this.buttonShape(), this.destructive() ? 'destructive' : ''].filter(c => c.length).join(" ")}">
-  <mat-icon class="material-symbols-outlined">${this.buttonIcon()}</mat-icon>
-</button>`, {
-    lang: 'html'
-  }).html)
   iconButtonSize = signal('medium')
   iconButtonShape = signal('round')
   iconDestructive = signal(false)
   iconButtonIcon = signal('download')
+  iconButtonCode = computed(() => highlighter.highlight(`<button matIconButton class="${["sz-" + this.iconButtonSize(),"sh-" + this.iconButtonShape(), this.iconDestructive() ? 'destructive' : ''].filter(c => c.length).join(" ")}">
+  <mat-icon class="material-symbols-outlined">${this.iconButtonIcon()}</mat-icon>
+</button>`, {
+    lang: 'html'
+  }).html)
 
   // mat mini fab
   miniFabSize = signal('medium')

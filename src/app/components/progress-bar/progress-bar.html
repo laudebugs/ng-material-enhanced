@@ -1,17 +1,157 @@
-<div>
+<h2>
+  Progress Bar
+</h2>
 
-  <mat-progress-bar size="xsmall" mode="determinate" value="20"></mat-progress-bar>
+<!-- Determinate Progress Bar -->
+<div class="element">
+  <h3>Determinate Progress Bar</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Size</mat-label>
+        <mat-select [(ngModel)]="determinateSize">
+          @for (size of progressSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- shape -->
+      <mat-form-field class="no-hint">
+        <mat-label>Shape</mat-label>
+        <mat-select [(ngModel)]="determinateShape">
+          @for (shape of progressShapes; track shape) {
+            <mat-option [value]="shape">{{shape}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- value -->
+      <mat-form-field class="no-hint">
+        <mat-label>Value (0-100)</mat-label>
+        <input matInput type="number" min="0" max="100" [(ngModel)]="determinateValue">
+      </mat-form-field>
+    </div>
+    <div class="demo">
+      <mat-progress-bar
+        mode="determinate"
+        [value]="determinateValue()"
+        [class]="'sz-' + determinateSize() + ' sh-' + determinateShape()">
+      </mat-progress-bar>
+    </div>
+  </div>
+  <div [innerHTML]="determinateCode()"></div>
 </div>
-<div>
 
-  <mat-progress-bar mode="determinate" value="40" size="small"></mat-progress-bar>
+<!-- Indeterminate Progress Bar -->
+<div class="element">
+  <h3>Indeterminate Progress Bar</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Size</mat-label>
+        <mat-select [(ngModel)]="indeterminateSize">
+          @for (size of progressSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- shape -->
+      <mat-form-field class="no-hint">
+        <mat-label>Shape</mat-label>
+        <mat-select [(ngModel)]="indeterminateShape">
+          @for (shape of progressShapes; track shape) {
+            <mat-option [value]="shape">{{shape}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="demo">
+      <mat-progress-bar
+        mode="indeterminate"
+        [class]="'sz-' + indeterminateSize() + ' sh-' + indeterminateShape()">
+      </mat-progress-bar>
+    </div>
+  </div>
+  <div [innerHTML]="indeterminateCode()"></div>
 </div>
-<div>
-  <mat-progress-bar mode="determinate" value="60" size="medium" ></mat-progress-bar>
+
+<!-- Buffer Progress Bar -->
+<div class="element">
+  <h3>Buffer Progress Bar</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Size</mat-label>
+        <mat-select [(ngModel)]="bufferSize">
+          @for (size of progressSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- shape -->
+      <mat-form-field class="no-hint">
+        <mat-label>Shape</mat-label>
+        <mat-select [(ngModel)]="bufferShape">
+          @for (shape of progressShapes; track shape) {
+            <mat-option [value]="shape">{{shape}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- value -->
+      <mat-form-field class="no-hint">
+        <mat-label>Value</mat-label>
+        <input matInput type="number" min="0" max="100" [(ngModel)]="bufferValue">
+      </mat-form-field>
+      <!-- buffer value -->
+      <mat-form-field class="no-hint">
+        <mat-label>Buffer Value</mat-label>
+        <input matInput type="number" min="0" max="100" [(ngModel)]="bufferBufferValue">
+      </mat-form-field>
+    </div>
+    <div class="demo">
+      <mat-progress-bar
+        mode="buffer"
+        [value]="bufferValue()"
+        [bufferValue]="bufferBufferValue()"
+        [class]="'sz-' + bufferSize() + ' sh-' + bufferShape()">
+      </mat-progress-bar>
+    </div>
+  </div>
+  <div [innerHTML]="bufferCode()"></div>
 </div>
-<div>
-  <mat-progress-bar size="large" mode="determinate" value="80"></mat-progress-bar>
-</div>
-<div>
-  <mat-progress-bar size="xlarge" mode="determinate" value="10"></mat-progress-bar>
+
+<!-- Query Progress Bar -->
+<div class="element">
+  <h3>Query Progress Bar</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Size</mat-label>
+        <mat-select [(ngModel)]="querySize">
+          @for (size of progressSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- shape -->
+      <mat-form-field class="no-hint">
+        <mat-label>Shape</mat-label>
+        <mat-select [(ngModel)]="queryShape">
+          @for (shape of progressShapes; track shape) {
+            <mat-option [value]="shape">{{shape}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="demo">
+      <mat-progress-bar
+        mode="query"
+        [class]="'sz-' + querySize() + ' sh-' + queryShape()">
+      </mat-progress-bar>
+    </div>
+  </div>
+  <div [innerHTML]="queryCode()"></div>
 </div>

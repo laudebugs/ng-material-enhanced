@@ -26,7 +26,7 @@
 
 @mixin mat-slide-toggle-overrides($sizes) {
   @each $size, $height in $sizes {
-    &[size='#{$size}'] {
+    &.sz-#{$size} {
       @include configure-mat-slide-toggle($height);
     }
   }
@@ -37,8 +37,8 @@ mat-slide-toggle {
   // use function to apply overrides for all sizes
   @include mat-slide-toggle-overrides(sizes.$slide-toggle-sizes);
 
-  // if no size attribute, use the medium size as default
-  &:not([size]) {
+  // if no size class, use the medium size as default
+  &:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
     $medium-height: map.get(sizes.$slide-toggle-sizes, medium);
     @include configure-mat-slide-toggle($medium-height);
   }

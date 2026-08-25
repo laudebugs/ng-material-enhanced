@@ -1,42 +1,199 @@
-<mat-chip-set aria-label="Fish selection">
-  <mat-chip size="large">
-    <img
-      matChipAvatar
-      src="https://material.angular.dev/assets/img/examples/shiba1.jpg"
-      alt="Photo of a Shiba Inu"
-    />
-    One fish</mat-chip>
-  <mat-chip>Two fish</mat-chip>
-  <mat-chip>Three fish</mat-chip>
-  <mat-chip class="round xsmall">Four fish</mat-chip>
-</mat-chip-set>
+<h2>
+  Chips
+</h2>
 
-<mat-form-field class="example-chip-list" size="small" appearance="outline" floatLabel="always">
-  <mat-label>Favorite Fruits</mat-label>
-  <mat-chip-grid #chipGrid aria-label="Enter fruits">
-    @for (fruit of fruits(); track fruit) {
-      <mat-chip-row
-        (removed)="remove(fruit)"
-        [editable]="true"
-        (edited)="edit(fruit, $event)"
-        [aria-description]="'press enter to edit ' + fruit.name"
-        size="xsmall"
-      >
-        <button matChipEdit [attr.aria-label]="'edit ' + fruit.name">
-          <mat-icon>edit</mat-icon>
-        </button>
-        {{fruit.name}}
-        <button matChipRemove [attr.aria-label]="'remove ' + fruit.name">
-          <mat-icon>cancel</mat-icon>
-        </button>
-      </mat-chip-row>
-    }
-  </mat-chip-grid>
-  <input
-    placeholder="New fruit..."
-    [matChipInputFor]="chipGrid"
-    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-    [matChipInputAddOnBlur]="addOnBlur"
-    (matChipInputTokenEnd)="add($event)"
-  />
-</mat-form-field>
+<!-- Basic Action Chip -->
+<div class="element">
+  <h3>Chip</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Chip Size</mat-label>
+        <mat-select [(ngModel)]="chipSize">
+          @for (size of chipSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- shape -->
+      <mat-form-field class="no-hint">
+        <mat-label>Chip Shape</mat-label>
+        <mat-select [(ngModel)]="chipShape">
+          @for (shape of chipShapes; track shape) {
+            <mat-option [value]="shape">{{shape}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- label -->
+      <mat-form-field class="no-hint">
+        <mat-label>Chip Label</mat-label>
+        <input matInput type="text" [(ngModel)]="chipLabel">
+      </mat-form-field>
+      <!-- icon -->
+      <mat-form-field class="no-hint">
+        <mat-label>Chip Icon</mat-label>
+        <input matInput type="text" [(ngModel)]="chipIcon">
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="chipDisabled">Disabled</mat-checkbox>
+    </div>
+    <div class="demo">
+      <mat-chip-set>
+        <mat-chip
+          [class]="'sz-' + chipSize() + ' sh-' + chipShape()"
+          [disabled]="chipDisabled()">
+          @if (chipIcon()) {
+            <mat-icon class="material-symbols-outlined">{{chipIcon()}}</mat-icon>
+          }
+          {{chipLabel()}}
+        </mat-chip>
+      </mat-chip-set>
+    </div>
+  </div>
+  <div [innerHTML]="chipCode()"></div>
+</div>
+
+<!-- Avatar Chip -->
+<div class="element">
+  <h3>Avatar Chip</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Chip Size</mat-label>
+        <mat-select [(ngModel)]="avatarChipSize">
+          @for (size of chipSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- shape -->
+      <mat-form-field class="no-hint">
+        <mat-label>Chip Shape</mat-label>
+        <mat-select [(ngModel)]="avatarChipShape">
+          @for (shape of chipShapes; track shape) {
+            <mat-option [value]="shape">{{shape}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- label -->
+      <mat-form-field class="no-hint">
+        <mat-label>Chip Label</mat-label>
+        <input matInput type="text" [(ngModel)]="avatarChipLabel">
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="avatarChipDisabled">Disabled</mat-checkbox>
+    </div>
+    <div class="demo">
+      <mat-chip-set>
+        <mat-chip
+          [class]="'sz-' + avatarChipSize() + ' sh-' + avatarChipShape()"
+          [disabled]="avatarChipDisabled()">
+          <img matChipAvatar [src]="avatarUrl()" alt="Avatar" />
+          {{avatarChipLabel()}}
+        </mat-chip>
+      </mat-chip-set>
+    </div>
+  </div>
+  <div [innerHTML]="avatarChipCode()"></div>
+</div>
+
+<!-- Removable Chip -->
+<div class="element">
+  <h3>Removable Chip</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Chip Size</mat-label>
+        <mat-select [(ngModel)]="removableChipSize">
+          @for (size of chipSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- shape -->
+      <mat-form-field class="no-hint">
+        <mat-label>Chip Shape</mat-label>
+        <mat-select [(ngModel)]="removableChipShape">
+          @for (shape of chipShapes; track shape) {
+            <mat-option [value]="shape">{{shape}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- label -->
+      <mat-form-field class="no-hint">
+        <mat-label>Chip Label</mat-label>
+        <input matInput type="text" [(ngModel)]="removableChipLabel">
+      </mat-form-field>
+    </div>
+    <div class="demo">
+      <mat-chip-set>
+        <mat-chip
+          [class]="'sz-' + removableChipSize() + ' sh-' + removableChipShape()">
+          {{removableChipLabel()}}
+          <button matChipRemove aria-label="Remove chip">
+            <mat-icon class="material-symbols-outlined">cancel</mat-icon>
+          </button>
+        </mat-chip>
+      </mat-chip-set>
+    </div>
+  </div>
+  <div [innerHTML]="removableChipCode()"></div>
+</div>
+
+<!-- Chip Grid with Input -->
+<div class="element">
+  <h3>Chip Grid Input</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Chip Size</mat-label>
+        <mat-select [(ngModel)]="gridChipSize">
+          @for (size of chipSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- shape -->
+      <mat-form-field class="no-hint">
+        <mat-label>Chip Shape</mat-label>
+        <mat-select [(ngModel)]="gridChipShape">
+          @for (shape of chipShapes; track shape) {
+            <mat-option [value]="shape">{{shape}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="demo">
+      <mat-form-field class="example-chip-list sz-medium" appearance="outline">
+        <mat-label>Favorite Fruits</mat-label>
+        <mat-chip-grid #chipGrid aria-label="Enter fruits">
+          @for (fruit of fruits(); track fruit.name) {
+            <mat-chip-row
+              [class]="'sz-' + gridChipSize() + ' sh-' + gridChipShape()"
+              [editable]="true"
+              (edited)="editFruit(fruit, $event)"
+              (removed)="removeFruit(fruit)">
+              <button matChipEdit [attr.aria-label]="'edit ' + fruit.name">
+                <mat-icon class="material-symbols-outlined">edit</mat-icon>
+              </button>
+              {{fruit.name}}
+              <button matChipRemove [attr.aria-label]="'remove ' + fruit.name">
+                <mat-icon class="material-symbols-outlined">cancel</mat-icon>
+              </button>
+            </mat-chip-row>
+          }
+        </mat-chip-grid>
+        <input
+          placeholder="New fruit..."
+          [matChipInputFor]="chipGrid"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          [matChipInputAddOnBlur]="true"
+          (matChipInputTokenEnd)="addFruit($event)"
+        />
+      </mat-form-field>
+    </div>
+  </div>
+  <div [innerHTML]="gridCode()"></div>
+</div>

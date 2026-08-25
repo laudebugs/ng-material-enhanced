@@ -13,8 +13,6 @@ import { githubLightTheme } from '@tanstack/highlight/themes/github-light';
     `
       :host {
         display: block;
-        height: calc(100% - 4em);
-        width: calc(100% - 4em);
         padding: 2em;
       }
     `,

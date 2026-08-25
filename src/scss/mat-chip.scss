@@ -24,22 +24,22 @@
       width: calc($height * 9 / 16);
     }
   }
-  &[shape='round'] {
+  &.sh-round {
     @include mat.chips-overrides(
       (
         container-shape-radius: 9999px,
       )
     );
   }
-  &[shape='square'] {
+  &.sh-square {
     @include mat.chips-overrides(
       (
         container-shape-radius: 0px,
       )
     );
   }
-  &[shape='squircle'],
-  &:not([shape]) {
+  &.sh-squircle,
+  &:not(.sh-round):not(.sh-square):not(.sh-squircle) {
     @include mat.chips-overrides(
       (
         container-shape-radius: math.div($height, 4),
@@ -50,7 +50,7 @@
 
 @mixin chip-overrides($sizes) {
   @each $size, $height in $sizes {
-    &[size='#{$size}'] {
+    &.sz-#{$size} {
       @include configure-chip($height);
     }
   }
@@ -61,9 +61,9 @@ mat-chip-row {
   // use function to apply overrides for all sizes
   @include chip-overrides(sizes.$chip-sizes);
 
-  // if no size attribute, use the medium size as default
-  &:not([size]) {
-    $medium-height: map.get(sizes.$chip-sizes, small);
+  // if no size class, use the medium size as default
+  &:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
+    $medium-height: map.get(sizes.$chip-sizes, medium);
     @include configure-chip($medium-height);
   }
 }

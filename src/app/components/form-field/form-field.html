@@ -1,96 +1,271 @@
-<mat-form-field appearance="outline" class="sz-small sh-square">
-  <!-- <mat-label>First Name (small)</mat-label> -->
-  <mat-icon matPrefix>sentiment_very_satisfied</mat-icon>
+<h2>
+  Form Fields
+</h2>
 
-  <input matInput type="text" [(ngModel)]="firstName">
-  @if (firstName()) {
-    <button matSuffix matIconButton aria-label="Clear" (click)="firstName.set('')">
-      <mat-icon>close</mat-icon>
-    </button>
-  }
-</mat-form-field>
-<mat-form-field appearance="outline" class="sz-medium">
-  <mat-label>Last Name (medium)</mat-label>
-  <mat-icon matPrefix>sentiment_very_satisfied</mat-icon>
+<!-- Text Input -->
+<div class="element">
+  <h3>Text Input</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- appearance -->
+      <mat-form-field class="no-hint">
+        <mat-label>Appearance</mat-label>
+        <mat-select [(ngModel)]="inputAppearance">
+          @for (appearance of appearances; track appearance) {
+            <mat-option [value]="appearance">{{appearance}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Size</mat-label>
+        <mat-select [(ngModel)]="inputSize">
+          @for (size of formFieldSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- shape -->
+      <mat-form-field class="no-hint">
+        <mat-label>Shape</mat-label>
+        <mat-select [(ngModel)]="inputShape">
+          @for (shape of formFieldShapes; track shape) {
+            <mat-option [value]="shape">{{shape}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- label -->
+      <mat-form-field class="no-hint">
+        <mat-label>Label</mat-label>
+        <input matInput type="text" [(ngModel)]="inputLabel">
+      </mat-form-field>
+      <!-- prefix icon -->
+      <mat-form-field class="no-hint">
+        <mat-label>Prefix Icon</mat-label>
+        <input matInput type="text" [(ngModel)]="inputPrefixIcon">
+      </mat-form-field>
+      <!-- hint -->
+      <mat-form-field class="no-hint">
+        <mat-label>Hint</mat-label>
+        <input matInput type="text" [(ngModel)]="inputHint">
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="inputClearable">Clear Button</mat-checkbox>
+      <mat-checkbox [(ngModel)]="inputDisabled">Disabled</mat-checkbox>
+    </div>
+    <div class="demo">
+      <mat-form-field
+        [appearance]="inputAppearance()"
+        [class]="'sz-' + inputSize() + ' sh-' + inputShape()">
+        <mat-label>{{inputLabel()}}</mat-label>
+        @if (inputPrefixIcon()) {
+          <mat-icon matPrefix class="material-symbols-outlined">{{inputPrefixIcon()}}</mat-icon>
+        }
+        <input matInput [disabled]="inputDisabled()" [(ngModel)]="inputValue">
+        @if (inputClearable() && inputValue()) {
+          <button matSuffix matIconButton aria-label="Clear" (click)="inputValue.set('')">
+            <mat-icon class="material-symbols-outlined">close</mat-icon>
+          </button>
+        }
+        @if (inputHint()) {
+          <mat-hint>{{inputHint()}}</mat-hint>
+        }
+      </mat-form-field>
+    </div>
+  </div>
+  <div [innerHTML]="inputCode()"></div>
+</div>
 
-  <input matInput type="text" [(ngModel)]="lastName">
-  <button matSuffix matIconButton class="sz-medium" (click)="lastName.set('')">
-    <mat-icon>close</mat-icon>
-  </button>
-</mat-form-field>
-<mat-form-field appearance="outline" class="sz-large">
-  <mat-label>Password (Large)</mat-label>
-  <input matInput [type]="passwordType()" [(ngModel)]="password">
-  <button matSuffix matIconButton (click)="togglePasswordType()" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordType() === 'text'">
-    <mat-icon>{{ passwordType() === 'password' ? 'visibility_off' : 'visibility' }}</mat-icon>
-  </button>
-</mat-form-field>
-<mat-form-field class="sz-small">
-  <mat-label>School (small)</mat-label>
-  <input matInput type="text" [(ngModel)]="school">
-  @if (school()) {
-    <button matSuffix matIconButton aria-label="Clear" (click)="school.set('')">
-      <mat-icon>close</mat-icon>
-    </button>
-  }
-</mat-form-field>
-<mat-form-field class="sz-medium">
-  <mat-label>School (medium)</mat-label>
-  <input matInput type="text" [(ngModel)]="school">
-  @if (school()) {
-    <button matSuffix matIconButton aria-label="Clear" (click)="school.set('')">
-      <mat-icon>close</mat-icon>
-    </button>
-  }
-</mat-form-field>
-<mat-form-field class="sz-large">
-  <mat-label>School (large)</mat-label>
-  <input matInput type="text" [(ngModel)]="school">
-  @if (school()) {
-    <button matSuffix matIconButton aria-label="Clear" (click)="school.set('')">
-      <mat-icon>close</mat-icon>
-    </button>
-  }
-</mat-form-field>
-<mat-form-field>
-  <mat-label>Country</mat-label>
-  <input matInput type="text" [(ngModel)]="country">
-  @if (country()) {
-    <button matSuffix matIconButton aria-label="Clear" (click)="country.set('')">
-      <mat-icon>close</mat-icon>
-    </button>
-  }
-</mat-form-field>
+<!-- Password Input -->
+<div class="element">
+  <h3>Password Input</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- appearance -->
+      <mat-form-field class="no-hint">
+        <mat-label>Appearance</mat-label>
+        <mat-select [(ngModel)]="passwordAppearance">
+          @for (appearance of appearances; track appearance) {
+            <mat-option [value]="appearance">{{appearance}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Size</mat-label>
+        <mat-select [(ngModel)]="passwordSize">
+          @for (size of formFieldSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- shape -->
+      <mat-form-field class="no-hint">
+        <mat-label>Shape</mat-label>
+        <mat-select [(ngModel)]="passwordShape">
+          @for (shape of formFieldShapes; track shape) {
+            <mat-option [value]="shape">{{shape}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="passwordDisabled">Disabled</mat-checkbox>
+    </div>
+    <div class="demo">
+      <mat-form-field
+        [appearance]="passwordAppearance()"
+        [class]="'sz-' + passwordSize() + ' sh-' + passwordShape()">
+        <mat-label>Password</mat-label>
+        <mat-icon matPrefix class="material-symbols-outlined">lock</mat-icon>
+        <input matInput [type]="passwordHide() ? 'password' : 'text'" [disabled]="passwordDisabled()" [(ngModel)]="passwordValue">
+        <button matSuffix matIconButton (click)="passwordHide.set(!passwordHide())" [attr.aria-label]="passwordHide() ? 'Show password' : 'Hide password'">
+          <mat-icon class="material-symbols-outlined">{{passwordHide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </div>
+  <div [innerHTML]="passwordCode()"></div>
+</div>
 
-<mat-form-field class="example-full-width" appearance="outline">
-  <mat-label>Leave a comment</mat-label>
-  <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-</mat-form-field>
+<!-- Select Form Field -->
+<div class="element">
+  <h3>Select Dropdown</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- appearance -->
+      <mat-form-field class="no-hint">
+        <mat-label>Appearance</mat-label>
+        <mat-select [(ngModel)]="selectAppearance">
+          @for (appearance of appearances; track appearance) {
+            <mat-option [value]="appearance">{{appearance}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Size</mat-label>
+        <mat-select [(ngModel)]="selectSize">
+          @for (size of formFieldSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- shape -->
+      <mat-form-field class="no-hint">
+        <mat-label>Shape</mat-label>
+        <mat-select [(ngModel)]="selectShape">
+          @for (shape of formFieldShapes; track shape) {
+            <mat-option [value]="shape">{{shape}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- label -->
+      <mat-form-field class="no-hint">
+        <mat-label>Label</mat-label>
+        <input matInput type="text" [(ngModel)]="selectLabel">
+      </mat-form-field>
+      <!-- icon -->
+      <mat-form-field class="no-hint">
+        <mat-label>Prefix Icon</mat-label>
+        <input matInput type="text" [(ngModel)]="selectPrefixIcon">
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="selectDisabled">Disabled</mat-checkbox>
+    </div>
+    <div class="demo">
+      <mat-form-field
+        [appearance]="selectAppearance()"
+        [class]="'sz-' + selectSize() + ' sh-' + selectShape()">
+        <mat-label>{{selectLabel()}}</mat-label>
+        @if (selectPrefixIcon()) {
+          <mat-icon matPrefix class="material-symbols-outlined">{{selectPrefixIcon()}}</mat-icon>
+        }
+        <mat-select [(ngModel)]="selectValue" [disabled]="selectDisabled()">
+          @for (food of foods; track food.value) {
+            <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div [innerHTML]="selectCode()"></div>
+</div>
 
+<!-- Textarea Form Field -->
+<div class="element">
+  <h3>Textarea</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- appearance -->
+      <mat-form-field class="no-hint">
+        <mat-label>Appearance</mat-label>
+        <mat-select [(ngModel)]="textareaAppearance">
+          @for (appearance of appearances; track appearance) {
+            <mat-option [value]="appearance">{{appearance}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Size</mat-label>
+        <mat-select [(ngModel)]="textareaSize">
+          @for (size of formFieldSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- shape -->
+      <mat-form-field class="no-hint">
+        <mat-label>Shape</mat-label>
+        <mat-select [(ngModel)]="textareaShape">
+          @for (shape of formFieldShapes; track shape) {
+            <mat-option [value]="shape">{{shape}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- label -->
+      <mat-form-field class="no-hint">
+        <mat-label>Label</mat-label>
+        <input matInput type="text" [(ngModel)]="textareaLabel">
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="textareaDisabled">Disabled</mat-checkbox>
+    </div>
+    <div class="demo">
+      <mat-form-field
+        [appearance]="textareaAppearance()"
+        [class]="'sz-' + textareaSize() + ' sh-' + textareaShape()">
+        <mat-label>{{textareaLabel()}}</mat-label>
+        <textarea matInput [rows]="textareaRows()" [disabled]="textareaDisabled()" [(ngModel)]="textareaValue"></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+  <div [innerHTML]="textareaCode()"></div>
+</div>
 
-<mat-form-field size="small" appearance="outline">
-  <mat-label>Favorite food</mat-label>
-  <mat-select>
-    @for (food of foods; track food) {
-      <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
-    }
-  </mat-select>
-</mat-form-field>
-
-<mat-form-field>
-  <mat-label>Pick a time</mat-label>
-  <input matInput [matTimepicker]="picker">
-  <mat-timepicker-toggle matIconSuffix [for]="picker"/>
-  <mat-timepicker #picker/>
-</mat-form-field>
-
-<mat-radio-group
-  aria-labelledby="example-radio-group-label"
-  class="example-radio-group"
-  [(ngModel)]="favoriteSeason">
-  @for (season of seasons; track season) {
-    <mat-radio-button size="small" class="example-radio-button" [value]="season">{{season}}</mat-radio-button>
-  }
-</mat-radio-group>
-
-      <mat-checkbox class="example-margin" [(ngModel)]="checked">Checked</mat-checkbox>
+<!-- Radio Group -->
+<div class="element">
+  <h3>Radio Group</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Radio Size</mat-label>
+        <mat-select [(ngModel)]="radioSize">
+          @for (size of formFieldSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="radioDisabled">Disabled</mat-checkbox>
+    </div>
+    <div class="demo">
+      <mat-radio-group
+        [(ngModel)]="radioValue"
+        [disabled]="radioDisabled()"
+        aria-label="Favorite Season"
+        style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        @for (season of seasons; track season) {
+          <mat-radio-button [class]="'sz-' + radioSize()" [value]="season">{{season}}</mat-radio-button>
+        }
+      </mat-radio-group>
+    </div>
+  </div>
+  <div [innerHTML]="radioCode()"></div>
+</div>

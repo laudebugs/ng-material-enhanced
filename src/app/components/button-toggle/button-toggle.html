@@ -1,12 +1,140 @@
-<mat-button-toggle-group name="fontStyle" size="xsmall">
-  <mat-button-toggle value="bold">Bold</mat-button-toggle>
-  <mat-button-toggle value="italic">Italic</mat-button-toggle>
-  <mat-button-toggle value="underline">Underline</mat-button-toggle>
-</mat-button-toggle-group>
+<h2>
+  Button Toggle
+</h2>
 
+<!-- Standard Button Toggle -->
+<div class="element">
+  <h3>Button Toggle</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Toggle Size</mat-label>
+        <mat-select [(ngModel)]="buttonToggleSize">
+          @for (size of buttonToggleSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- shape -->
+      <mat-form-field class="no-hint">
+        <mat-label>Toggle Shape</mat-label>
+        <mat-select [(ngModel)]="buttonToggleShape">
+          @for (shape of buttonToggleShapes; track shape) {
+            <mat-option [value]="shape">{{shape}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="buttonToggleVertical">Vertical</mat-checkbox>
+      <mat-checkbox [(ngModel)]="buttonToggleDisabled">Disabled</mat-checkbox>
+    </div>
+    <div class="demo">
+      <mat-button-toggle-group
+        [(ngModel)]="buttonToggleValue"
+        [vertical]="buttonToggleVertical()"
+        [disabled]="buttonToggleDisabled()"
+        [class]="'sz-' + buttonToggleSize() + ' sh-' + buttonToggleShape()"
+        aria-label="Font Style">
+        <mat-button-toggle value="bold">Bold</mat-button-toggle>
+        <mat-button-toggle value="italic">Italic</mat-button-toggle>
+        <mat-button-toggle value="underline">Underline</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </div>
+  <div [innerHTML]="buttonToggleCode()"></div>
+</div>
 
-<mat-button-toggle-group name="fontStyle" size="medium" aria-label="Font Style">
-  <mat-button-toggle value="bold">H1</mat-button-toggle>
-  <mat-button-toggle value="italic">H2</mat-button-toggle>
-  <mat-button-toggle value="underline">H3</mat-button-toggle>
-</mat-button-toggle-group>
+<!-- Icon Button Toggle -->
+<div class="element">
+  <h3>Icon Button Toggle</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Toggle Size</mat-label>
+        <mat-select [(ngModel)]="iconToggleSize">
+          @for (size of buttonToggleSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- shape -->
+      <mat-form-field class="no-hint">
+        <mat-label>Toggle Shape</mat-label>
+        <mat-select [(ngModel)]="iconToggleShape">
+          @for (shape of buttonToggleShapes; track shape) {
+            <mat-option [value]="shape">{{shape}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="iconToggleVertical">Vertical</mat-checkbox>
+      <mat-checkbox [(ngModel)]="iconToggleDisabled">Disabled</mat-checkbox>
+    </div>
+    <div class="demo">
+      <mat-button-toggle-group
+        [(ngModel)]="iconToggleValue"
+        [vertical]="iconToggleVertical()"
+        [disabled]="iconToggleDisabled()"
+        [class]="'sz-' + iconToggleSize() + ' sh-' + iconToggleShape()"
+        aria-label="Text Alignment">
+        <mat-button-toggle value="left" aria-label="Align left">
+          <mat-icon class="material-symbols-outlined">format_align_left</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle value="center" aria-label="Align center">
+          <mat-icon class="material-symbols-outlined">format_align_center</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle value="right" aria-label="Align right">
+          <mat-icon class="material-symbols-outlined">format_align_right</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle value="justify" aria-label="Align justify">
+          <mat-icon class="material-symbols-outlined">format_align_justify</mat-icon>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </div>
+  <div [innerHTML]="iconToggleCode()"></div>
+</div>
+
+<!-- Multiple Selection Button Toggle -->
+<div class="element">
+  <h3>Multiple Selection Toggle</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Toggle Size</mat-label>
+        <mat-select [(ngModel)]="multipleToggleSize">
+          @for (size of buttonToggleSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- shape -->
+      <mat-form-field class="no-hint">
+        <mat-label>Toggle Shape</mat-label>
+        <mat-select [(ngModel)]="multipleToggleShape">
+          @for (shape of buttonToggleShapes; track shape) {
+            <mat-option [value]="shape">{{shape}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="multipleToggleVertical">Vertical</mat-checkbox>
+      <mat-checkbox [(ngModel)]="multipleToggleDisabled">Disabled</mat-checkbox>
+    </div>
+    <div class="demo">
+      <mat-button-toggle-group
+        multiple
+        [(ngModel)]="multipleToggleValue"
+        [vertical]="multipleToggleVertical()"
+        [disabled]="multipleToggleDisabled()"
+        [class]="'sz-' + multipleToggleSize() + ' sh-' + multipleToggleShape()"
+        aria-label="Font Formatting">
+        <mat-button-toggle value="bold">Bold</mat-button-toggle>
+        <mat-button-toggle value="italic">Italic</mat-button-toggle>
+        <mat-button-toggle value="underline">Underline</mat-button-toggle>
+        <mat-button-toggle value="strikethrough">Strikethrough</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </div>
+  <div [innerHTML]="multipleToggleCode()"></div>
+</div>

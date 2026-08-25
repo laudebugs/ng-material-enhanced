@@ -18,8 +18,17 @@
       filled-with-label-container-padding-bottom: calc(($height - $input-height) / 4),
     )
   );
+  &.sh-round {
+    @include mat.form-field-overrides(
+      (
+        // BORDER RADIUS OF FORM FIELD
+        outlined-container-shape: 9999px,
+        filled-container-shape: 9999px
+      )
+    );
+  }
   &.sh-squircle,
-  &:not(.sh-square):not(.sh-squircle) {
+  &:not(.sh-square):not(.sh-squircle):not(.sh-round) {
     @include mat.form-field-overrides(
       (
         // BORDER RADIUS OF FORM FIELD
@@ -75,7 +84,7 @@
   align-self: flex-start;
 
   @each $size, $height in $sizes {
-    &.size-#{$size} {
+    &.sz-#{$size} {
       @include configure-form-field($height);
     }
   }
@@ -87,8 +96,8 @@
     &[matIconButton],
     &[matFab],
     &[matMiniFab] {
-      // doesn't have size attribute, use the size of the form field to determine the button size
-      &:not([size]) {
+      // doesn't have size class, use the size of the form field to determine the button size
+      &:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
         @include button-overrides.configure-button($height);
       }
     }
@@ -99,14 +108,14 @@ mat-form-field {
   // use function to apply overrides for all sizes
   @include form-field-overrides(sizes.$form-field-sizes);
 
-  // get attribute of size and apply the button overrides to the buttons inside the form field
+  // apply button overrides to the buttons inside the form field based on form-field size
   @each $size, $height in sizes.$form-field-sizes {
-    &.size-#{$size} {
+    &.sz-#{$size} {
       @include form-field-button-without-size-config($height);
     }
   }
-  // if no size attribute, use the medium size as default
-  &:not([class*='size-']) {
+  // if no size class, use the medium size as default
+  &:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
     $medium-height: map.get(sizes.$form-field-sizes, medium);
     @include configure-form-field($medium-height);
     @include form-field-button-without-size-config($medium-height);

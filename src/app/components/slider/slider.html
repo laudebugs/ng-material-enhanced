@@ -1,22 +1,166 @@
-<mat-slider size="xsmall" showTickMarks discrete min="0" max="100" step="10">
-  <input matSliderThumb aria-label="Slider with input thumb" [value]="10">
-</mat-slider>
+<h2>
+  Slider
+</h2>
 
-<mat-slider size="small" showTickMarks discrete min="0" max="100" step="10">
-  <input matSliderThumb aria-label="Slider with input thumb" value="20">
-</mat-slider>
+<!-- Continuous Slider -->
+<div class="element">
+  <h3>Continuous Slider</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Slider Size</mat-label>
+        <mat-select [(ngModel)]="sliderSize">
+          @for (size of sliderSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- min -->
+      <mat-form-field class="no-hint">
+        <mat-label>Min</mat-label>
+        <input matInput type="number" [(ngModel)]="sliderMin">
+      </mat-form-field>
+      <!-- max -->
+      <mat-form-field class="no-hint">
+        <mat-label>Max</mat-label>
+        <input matInput type="number" [(ngModel)]="sliderMax">
+      </mat-form-field>
+      <!-- step -->
+      <mat-form-field class="no-hint">
+        <mat-label>Step</mat-label>
+        <input matInput type="number" [(ngModel)]="sliderStep">
+      </mat-form-field>
+      <!-- value -->
+      <mat-form-field class="no-hint">
+        <mat-label>Value</mat-label>
+        <input matInput type="number" [(ngModel)]="sliderValue">
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="sliderDisabled">Disabled</mat-checkbox>
+    </div>
+    <div class="demo">
+      <mat-slider
+        [min]="sliderMin()"
+        [max]="sliderMax()"
+        [step]="sliderStep()"
+        [disabled]="sliderDisabled()"
+        [class]="'sz-' + sliderSize()">
+        <input matSliderThumb [(ngModel)]="sliderValue" aria-label="Continuous slider">
+      </mat-slider>
+    </div>
+  </div>
+  <div [innerHTML]="sliderCode()"></div>
+</div>
 
+<!-- Discrete Slider -->
+<div class="element">
+  <h3>Discrete Slider</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Slider Size</mat-label>
+        <mat-select [(ngModel)]="discreteSize">
+          @for (size of sliderSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- min -->
+      <mat-form-field class="no-hint">
+        <mat-label>Min</mat-label>
+        <input matInput type="number" [(ngModel)]="discreteMin">
+      </mat-form-field>
+      <!-- max -->
+      <mat-form-field class="no-hint">
+        <mat-label>Max</mat-label>
+        <input matInput type="number" [(ngModel)]="discreteMax">
+      </mat-form-field>
+      <!-- step -->
+      <mat-form-field class="no-hint">
+        <mat-label>Step</mat-label>
+        <input matInput type="number" [(ngModel)]="discreteStep">
+      </mat-form-field>
+      <!-- value -->
+      <mat-form-field class="no-hint">
+        <mat-label>Value</mat-label>
+        <input matInput type="number" [(ngModel)]="discreteValue">
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="discreteShowTicks">Show Tick Marks</mat-checkbox>
+      <mat-checkbox [(ngModel)]="discreteDisabled">Disabled</mat-checkbox>
+    </div>
+    <div class="demo">
+      <mat-slider
+        discrete
+        [showTickMarks]="discreteShowTicks()"
+        [min]="discreteMin()"
+        [max]="discreteMax()"
+        [step]="discreteStep()"
+        [disabled]="discreteDisabled()"
+        [class]="'sz-' + discreteSize()">
+        <input matSliderThumb [(ngModel)]="discreteValue" aria-label="Discrete slider">
+      </mat-slider>
+    </div>
+  </div>
+  <div [innerHTML]="discreteCode()"></div>
+</div>
 
-<mat-slider size="medium" showTickMarks discrete min="0" max="100" step="10">
-  <input matSliderThumb aria-label="Slider with input thumb" value="30">
-</mat-slider>
-
-
-<mat-slider size="large" showTickMarks discrete min="0" max="100" step="10" value="40">
-  <input matSliderThumb aria-label="Slider with input thumb" value="40">
-</mat-slider>
-
-
-<mat-slider size="xlarge" showTickMarks discrete min="0" max="100" step="10" value="50">
-  <input matSliderThumb aria-label="Slider with input thumb" value="50">
-</mat-slider>
+<!-- Range Slider -->
+<div class="element">
+  <h3>Range Slider</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Slider Size</mat-label>
+        <mat-select [(ngModel)]="rangeSize">
+          @for (size of sliderSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- min -->
+      <mat-form-field class="no-hint">
+        <mat-label>Min</mat-label>
+        <input matInput type="number" [(ngModel)]="rangeMin">
+      </mat-form-field>
+      <!-- max -->
+      <mat-form-field class="no-hint">
+        <mat-label>Max</mat-label>
+        <input matInput type="number" [(ngModel)]="rangeMax">
+      </mat-form-field>
+      <!-- step -->
+      <mat-form-field class="no-hint">
+        <mat-label>Step</mat-label>
+        <input matInput type="number" [(ngModel)]="rangeStep">
+      </mat-form-field>
+      <!-- start value -->
+      <mat-form-field class="no-hint">
+        <mat-label>Start Value</mat-label>
+        <input matInput type="number" [(ngModel)]="rangeStartValue">
+      </mat-form-field>
+      <!-- end value -->
+      <mat-form-field class="no-hint">
+        <mat-label>End Value</mat-label>
+        <input matInput type="number" [(ngModel)]="rangeEndValue">
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="rangeDiscrete">Discrete</mat-checkbox>
+      <mat-checkbox [(ngModel)]="rangeShowTicks">Show Tick Marks</mat-checkbox>
+      <mat-checkbox [(ngModel)]="rangeDisabled">Disabled</mat-checkbox>
+    </div>
+    <div class="demo">
+      <mat-slider
+        [discrete]="rangeDiscrete()"
+        [showTickMarks]="rangeShowTicks()"
+        [min]="rangeMin()"
+        [max]="rangeMax()"
+        [step]="rangeStep()"
+        [disabled]="rangeDisabled()"
+        [class]="'sz-' + rangeSize()">
+        <input matSliderStartThumb [(ngModel)]="rangeStartValue" aria-label="Range start">
+        <input matSliderEndThumb [(ngModel)]="rangeEndValue" aria-label="Range end">
+      </mat-slider>
+    </div>
+  </div>
+  <div [innerHTML]="rangeCode()"></div>
+</div>

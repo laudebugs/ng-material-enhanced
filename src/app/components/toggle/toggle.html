@@ -1,19 +1,78 @@
-<mat-slide-toggle size="xsmall">
-  X-Small
-</mat-slide-toggle>
+<h2>
+  Slide Toggle
+</h2>
 
-<mat-slide-toggle size="small">
-  Small
-</mat-slide-toggle>
+<!-- Basic Slide Toggle -->
+<div class="element">
+  <h3>Slide Toggle</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Toggle Size</mat-label>
+        <mat-select [(ngModel)]="toggleSize">
+          @for (size of toggleSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <!-- label -->
+      <mat-form-field class="no-hint">
+        <mat-label>Label</mat-label>
+        <input matInput type="text" [(ngModel)]="toggleLabel">
+      </mat-form-field>
+      <!-- label position -->
+      <mat-form-field class="no-hint">
+        <mat-label>Label Position</mat-label>
+        <mat-select [(ngModel)]="toggleLabelPosition">
+          @for (pos of labelPositions; track pos) {
+            <mat-option [value]="pos">{{pos}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="toggleChecked">Checked</mat-checkbox>
+      <mat-checkbox [(ngModel)]="toggleHideIcon">Hide Icon</mat-checkbox>
+      <mat-checkbox [(ngModel)]="toggleDisabled">Disabled</mat-checkbox>
+      <mat-checkbox [(ngModel)]="toggleRequired">Required</mat-checkbox>
+    </div>
+    <div class="demo">
+      <mat-slide-toggle
+        [(ngModel)]="toggleChecked"
+        [disabled]="toggleDisabled()"
+        [required]="toggleRequired()"
+        [hideIcon]="toggleHideIcon()"
+        [labelPosition]="toggleLabelPosition()"
+        [class]="'sz-' + toggleSize()">
+        {{toggleLabel()}}
+      </mat-slide-toggle>
+    </div>
+  </div>
+  <div [innerHTML]="toggleCode()"></div>
+</div>
 
-<mat-slide-toggle size="medium">
-  Medium
-</mat-slide-toggle>
-
-<mat-slide-toggle size="large">
-  Large
-</mat-slide-toggle>
-
-<mat-slide-toggle size="xlarge">
-  X-Large
-</mat-slide-toggle>
+<!-- Settings Slide Toggle Group -->
+<div class="element">
+  <h3>Settings Toggle Group</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Toggle Size</mat-label>
+        <mat-select [(ngModel)]="settingsSize">
+          @for (size of toggleSizes; track size) {
+            <mat-option [value]="size">{{size}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="demo">
+      <div class="toggle-group">
+        <mat-slide-toggle [class]="'sz-' + settingsSize()" [(ngModel)]="wifi">Wi-Fi</mat-slide-toggle>
+        <mat-slide-toggle [class]="'sz-' + settingsSize()" [(ngModel)]="bluetooth">Bluetooth</mat-slide-toggle>
+        <mat-slide-toggle [class]="'sz-' + settingsSize()" [(ngModel)]="airplaneMode">Airplane Mode</mat-slide-toggle>
+        <mat-slide-toggle [class]="'sz-' + settingsSize()" [(ngModel)]="darkMode">Dark Mode</mat-slide-toggle>
+      </div>
+    </div>
+  </div>
+  <div [innerHTML]="settingsCode()"></div>
+</div>
