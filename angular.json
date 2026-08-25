@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "ng-material-x-ray": {
+    "ng-material-extended": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -61,10 +61,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ng-material-x-ray:build:production"
+              "buildTarget": "ng-material-extended:build:production"
             },
             "development": {
-              "buildTarget": "ng-material-x-ray:build:development"
+              "buildTarget": "ng-material-extended:build:development"
             }
           },
           "defaultConfiguration": "development"
