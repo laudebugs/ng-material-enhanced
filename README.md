@@ -74,6 +74,21 @@ Include `_mat-overrides.scss` in your main `styles.scss`:
 
 ---
 
+## Custom Theme Color Palettes
+
+Theme colors (such as `_theme-colors.scss`) are intentionally excluded from the generic component overrides so that projects can define their own primary, secondary, and tertiary brand palettes.
+
+You can generate custom Material 3 color palettes for your project using the official Angular Material schematic:
+
+```bash
+ng generate @angular/material:theme-color
+```
+
+- [Material 3 Custom Theme Schematic Documentation](https://github.com/angular/components/blob/main/src/material/schematics/ng-generate/theme-color/README.md)
+- [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/)
+
+---
+
 ## Development & Scripts
 
 ```bash

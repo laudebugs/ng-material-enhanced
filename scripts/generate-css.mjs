@@ -28,10 +28,9 @@ function generate() {
       stdio: ['pipe', 'pipe', 'inherit'],
     });
 
-    // 2. Read individual SCSS files
+    // 2. Read individual SCSS files (excluding project-specific _theme-colors.scss)
     const scssFilesList = [
       'sizes.scss',
-      '_theme-colors.scss',
       'mat-button.scss',
       'mat-button-toggle.scss',
       'mat-checkbox.scss',
@@ -46,7 +45,7 @@ function generate() {
 
     const scssModules = [];
     let combinedScss = `// ============================================================================\n`;
-    combinedScss += `// Angular Material Enhanced - Component Overrides (All-in-One SCSS)\n`;
+    combinedScss += `// Angular Material Enhanced - Component Overrides (All-in-One Raw SCSS)\n`;
     combinedScss += `// https://github.com/laudebugs/ng-material-enhanced\n`;
     combinedScss += `// ============================================================================\n\n`;
 
@@ -54,7 +53,9 @@ function generate() {
       const filePath = join(scssDir, file);
       if (existsSync(filePath)) {
         const content = readFileSync(filePath, 'utf8');
-        scssModules.push({ filename: file, content });
+        const sizeKb = (Buffer.byteLength(content, 'utf8') / 1024).toFixed(1);
+        const lineCount = content.split('\n').length;
+        scssModules.push({ filename: file, content, sizeKb, lineCount });
 
         combinedScss += `// ----------------------------------------------------------------------------\n`;
         combinedScss += `// File: ${file}\n`;
@@ -80,6 +81,8 @@ function generate() {
 export interface ScssFileModule {
   filename: string;
   content: string;
+  sizeKb: string;
+  lineCount: number;
 }
 
 export const GENERATED_AT = ${JSON.stringify(new Date().toISOString())};
@@ -96,9 +99,230 @@ export const SCSS_FILES: ScssFileModule[] = ${JSON.stringify(scssModules, null, 
 
     writeFileSync(join(generatedDir, 'css-overrides.data.ts'), tsContent, 'utf8');
 
+    // 5. Autogenerate public/llms.txt with copyright, architecture reference, and BOTH raw SCSS + compiled CSS
+    const llmsContent = `# Angular Material Enhanced
+
+> **Copyright (c) 2026 laudebugs (https://github.com/laudebugs/ng-material-enhanced) - MIT License**
+> A demonstration application and CSS/SCSS extension system illustrating how to customize Angular Material 3 components using SCSS mixin overrides.
+
+## Overview
+
+Angular Material Enhanced provides a structured class-based design token and override system for Angular Material 3 (\`@angular/material\`). It demonstrates how to add multi-tier sizing, geometric corner radius control, destructive state styling, and scalable typography/icons to standard Material 3 components without breaking their built-in accessibility, ripple effects, or theming.
+
+- **Demo Website**: https://ng-material-enhanced.laudebugs.me
+- **Compiled CSS Asset**: https://ng-material-enhanced.laudebugs.me/material-overrides.css
+- **Raw SCSS Asset**: https://ng-material-enhanced.laudebugs.me/material-overrides.scss
+- **GitHub Repository**: https://github.com/laudebugs/ng-material-enhanced
+
+---
+
+## Sizing System
+
+Components support unified sizing classes defined in \`src/scss/sizes.scss\`:
+
+| Class | Height / Dimension | Applicable Components |
+| :--- | :--- | :--- |
+| \`sz-xsmall\` | 24px | Buttons, Button Toggle, Progress Bar, Slider, Slide Toggle |
+| \`sz-small\` | 32px | All Components (Buttons, Toggle, Checkbox, Chips, Form Field, Progress Bar, Slider, Slide Toggle, Radios) |
+| \`sz-medium\` | 40px | All Components (Default baseline) |
+| \`sz-large\` | 48px | All Components |
+| \`sz-xlarge\` | 64px | All Components |
+
+---
+
+## Shape & Geometry System
+
+Components support corner radius overrides via utility classes:
+
+| Class | Border Radius | Description |
+| :--- | :--- | :--- |
+| \`sh-round\` | \`9999px\` | Fully rounded pill / capsule shape |
+| \`sh-squircle\` | Proportional (\`height / 4\` or \`8px\`) | Smooth rounded rectangle (Default for most components) |
+| \`sh-square\` | \`0px\` | Sharp corners / rectangular geometry |
+
+---
+
+## Modifier Classes
+
+- \`destructive\`: Applies high-contrast error palette styling (\`#ba1a1a\` / error container colors) to Buttons and Checkboxes while maintaining Material 3 hover and ripple interactions.
+- \`no-hint\` / \`no-error\`: Hides the subscript wrapper in \`mat-form-field\` for compact form layouts.
+
+---
+
+## Component Reference & Code Examples
+
+### 1. Buttons (\`mat-button\`, \`mat-icon-button\`, \`mat-fab\`, \`mat-mini-fab\`)
+Supports appearances \`filled\`, \`tonal\`, \`outlined\`, \`elevated\`/\`protected\`, \`text\`.
+\`\`\`html
+<!-- Standard Button -->
+<button matButton="filled" class="sz-medium sh-squircle">
+  <mat-icon class="material-symbols-outlined">check</mat-icon>
+  Submit
+</button>
+
+<!-- Destructive Button -->
+<button matButton="filled" class="sz-medium sh-squircle destructive">
+  <mat-icon class="material-symbols-outlined">delete</mat-icon>
+  Delete Account
+</button>
+
+<!-- Icon Button -->
+<button matIconButton class="sz-small sh-square" aria-label="Settings">
+  <mat-icon class="material-symbols-outlined">settings</mat-icon>
+</button>
+\`\`\`
+
+### 2. Button Toggle (\`mat-button-toggle-group\`)
+Supports horizontal, vertical, single, multiple selection, and icon toggles.
+\`\`\`html
+<mat-button-toggle-group class="sz-medium sh-squircle" value="bold" aria-label="Font style">
+  <mat-button-toggle value="bold">Bold</mat-button-toggle>
+  <mat-button-toggle value="italic">Italic</mat-button-toggle>
+  <mat-button-toggle value="underline">Underline</mat-button-toggle>
+</mat-button-toggle-group>
+\`\`\`
+
+### 3. Checkbox (\`mat-checkbox\`)
+Supports sizes \`sz-small\`, \`sz-medium\`, \`sz-large\`, \`sz-xlarge\`, and \`destructive\`.
+\`\`\`html
+<mat-checkbox class="sz-medium" [checked]="true">Remember me</mat-checkbox>
+<mat-checkbox class="sz-medium destructive" [checked]="true">I understand the consequences</mat-checkbox>
+\`\`\`
+
+### 4. Chips (\`mat-chip\`, \`mat-chip-set\`, \`mat-chip-grid\`)
+Supports action chips, avatars, removable buttons, and chip input grids.
+\`\`\`html
+<mat-chip-set>
+  <mat-chip class="sz-medium sh-round">
+    <img matChipAvatar src="avatar.jpg" alt="Avatar" />
+    Jane Doe
+  </mat-chip>
+  <mat-chip class="sz-medium sh-squircle">
+    Tag Name
+    <button matChipRemove aria-label="Remove chip">
+      <mat-icon class="material-symbols-outlined">cancel</mat-icon>
+    </button>
+  </mat-chip>
+</mat-chip-set>
+\`\`\`
+
+### 5. Form Field & Radios (\`mat-form-field\`, \`mat-radio-button\`)
+Supports appearances \`outline\` and \`fill\`, prefix/suffix buttons, and scaled typography.
+\`\`\`html
+<mat-form-field appearance="outline" class="sz-medium sh-squircle">
+  <mat-label>Email Address</mat-label>
+  <mat-icon matPrefix class="material-symbols-outlined">email</mat-icon>
+  <input matInput placeholder="name@example.com">
+</mat-form-field>
+
+<mat-radio-group value="standard">
+  <mat-radio-button class="sz-medium" value="standard">Standard Option</mat-radio-button>
+</mat-radio-group>
+\`\`\`
+
+### 6. Progress Bar (\`mat-progress-bar\`)
+Supports modes \`determinate\`, \`indeterminate\`, \`buffer\`, and \`query\`.
+\`\`\`html
+<mat-progress-bar mode="determinate" [value]="75" class="sz-medium sh-round"></mat-progress-bar>
+<mat-progress-bar mode="buffer" [value]="40" [bufferValue]="80" class="sz-large sh-squircle"></mat-progress-bar>
+\`\`\`
+
+### 7. Slider (\`mat-slider\`)
+Supports continuous, discrete (with tick marks), and range sliders.
+\`\`\`html
+<!-- Continuous Slider -->
+<mat-slider class="sz-medium" [min]="0" [max]="100">
+  <input matSliderThumb [value]="40" aria-label="Volume">
+</mat-slider>
+
+<!-- Range Slider -->
+<mat-slider class="sz-medium" [min]="0" [max]="100">
+  <input matSliderStartThumb [value]="20" aria-label="Min price">
+  <input matSliderEndThumb [value]="80" aria-label="Max price">
+</mat-slider>
+\`\`\`
+
+### 8. Slide Toggle (\`mat-slide-toggle\`)
+Supports sizes \`sz-xsmall\` through \`sz-xlarge\` with calibrated track, thumb, and touch target sizes.
+\`\`\`html
+<mat-slide-toggle class="sz-medium" [checked]="true">Enable notifications</mat-slide-toggle>
+\`\`\`
+
+---
+
+## SCSS Architecture
+
+The overrides leverage Angular Material 3 Sass mixins (\`@use '@angular/material' as mat\`):
+- \`mat.button-overrides(...)\`
+- \`mat.icon-button-overrides(...)\`
+- \`mat.fab-overrides(...)\`
+- \`mat.button-toggle-overrides(...)\`
+- \`mat.checkbox-overrides(...)\`
+- \`mat.chips-overrides(...)\`
+- \`mat.form-field-overrides(...)\`
+- \`mat.progress-bar-overrides(...)\`
+- \`mat.radio-overrides(...)\`
+- \`mat.slide-toggle-overrides(...)\`
+- \`mat.slider-overrides(...)\`
+
+All overrides are bundled via \`src/scss/_mat-overrides.scss\` and compiled into pure CSS via \`scripts/generate-css.mjs\`.
+
+---
+
+## Theme Color Palettes
+
+Theme colors (such as \`_theme-colors.scss\`) are intentionally not bundled in the generic component overrides so that projects can define their own primary, secondary, and tertiary palettes.
+
+To generate a custom Material 3 theme palette for your project, run the official Angular Material schematic:
+
+\`\`\`bash
+ng generate @angular/material:theme-color
+\`\`\`
+
+Refer to the official [Material 3 Custom Theme Schematic Documentation](https://github.com/angular/components/blob/main/src/material/schematics/ng-generate/theme-color/README.md) for full options and color specifications.
+
+---
+
+## Routes
+
+- \`/\`: Complete showcase gallery of all components, sizes, and variations.
+- \`/buttons\`: Interactive Button configurator with live code snippets.
+- \`/button-toggle\`: Interactive Button Toggle configurator.
+- \`/checkbox\`: Interactive Checkbox configurator.
+- \`/chips\`: Interactive Chips configurator.
+- \`/form-field\`: Interactive Form Field & Radio configurator.
+- \`/progress-loader\`: Interactive Progress Bar configurator.
+- \`/slider\`: Interactive Slider configurator.
+- \`/toggle\`: Interactive Slide Toggle configurator.
+- \`/css\`: Full compiled CSS & SCSS overrides viewer and copy tool.
+
+---
+
+## Raw SCSS Overrides (All-in-One Source)
+
+The following is the complete, raw SCSS source containing all component mixins and Sass logic:
+
+\`\`\`scss
+${combinedScss.trim()}
+\`\`\`
+
+---
+
+## Full Compiled Pure CSS Overrides
+
+The following is the complete, autogenerated pure CSS containing all component overrides, custom sizes (\`sz-*\`), shapes (\`sh-*\`), states (\`destructive\`), and density calibrations:
+
+\`\`\`css
+${compiledCss.trim()}
+\`\`\`
+`;
+
+    writeFileSync(join(publicDir, 'llms.txt'), llmsContent, 'utf8');
+
     console.log(`[generate-css] Successfully generated:`);
     console.log(`  - public/material-overrides.css (${cssSizeKb} KB, ${cssLineCount} lines)`);
     console.log(`  - public/material-overrides.scss (${scssSizeKb} KB, ${scssLineCount} lines)`);
+    console.log(`  - public/llms.txt (with raw SCSS + compiled CSS)`);
     console.log(`  - src/app/generated/css-overrides.data.ts`);
   } catch (err) {
     console.error('[generate-css] Error during generation:', err);

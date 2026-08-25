@@ -2,7 +2,9 @@ import { Component, computed, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
 import {
   COMPILED_CSS,
   COMBINED_SCSS,
@@ -17,7 +19,14 @@ import { highlighter } from '../../highlighter';
 
 @Component({
   selector: 'css-overrides',
-  imports: [MatButtonModule, MatIconModule, MatButtonToggleModule, FormsModule],
+  imports: [
+    MatButtonModule,
+    MatIconModule,
+    MatButtonToggleModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    FormsModule,
+  ],
   templateUrl: './css-overrides.html',
   host: {
     'class': 'component-container',
@@ -31,17 +40,59 @@ export class CssOverrides {
   readonly generatedAt = GENERATED_AT;
   readonly scssFiles = SCSS_FILES;
 
-  viewMode = signal<'css' | 'scss'>('css');
+  viewTab = signal<'compiled' | 'scss' | 'module'>('compiled');
+  selectedModule = signal<string>('mat-button.scss');
   copied = signal(false);
 
+  selectedModuleData = computed(() => {
+    return this.scssFiles.find(f => f.filename === this.selectedModule()) || this.scssFiles[0];
+  });
+
   currentCodeRaw = computed(() => {
-    return this.viewMode() === 'css' ? COMPILED_CSS : COMBINED_SCSS;
+    const tab = this.viewTab();
+    if (tab === 'compiled') {
+      return COMPILED_CSS;
+    }
+    if (tab === 'scss') {
+      return COMBINED_SCSS;
+    }
+    return this.selectedModuleData()?.content || '';
+  });
+
+  readonly currentLang = 'css';
+
+  currentSizeKb = computed(() => {
+    const tab = this.viewTab();
+    if (tab === 'compiled') return this.cssSizeKb;
+    if (tab === 'scss') return this.scssSizeKb;
+    return this.selectedModuleData()?.sizeKb || '0.0';
+  });
+
+  currentLineCount = computed(() => {
+    const tab = this.viewTab();
+    if (tab === 'compiled') return this.cssLineCount;
+    if (tab === 'scss') return this.scssLineCount;
+    return this.selectedModuleData()?.lineCount || 0;
+  });
+
+  currentDownloadFilename = computed(() => {
+    const tab = this.viewTab();
+    if (tab === 'compiled') return 'material-overrides.css';
+    if (tab === 'scss') return 'material-overrides.scss';
+    return this.selectedModuleData()?.filename || 'module.scss';
+  });
+
+  downloadDataUri = computed(() => {
+    const tab = this.viewTab();
+    if (tab === 'compiled') return '/material-overrides.css';
+    if (tab === 'scss') return '/material-overrides.scss';
+    const content = encodeURIComponent(this.currentCodeRaw());
+    return `data:text/plain;charset=utf-8,${content}`;
   });
 
   highlightedCode = computed(() => {
-    const lang = this.viewMode() === 'css' ? 'css' : 'scss';
     const code = this.currentCodeRaw();
-    return highlighter.highlight(code, { lang }).html;
+    return highlighter.highlight(code, { lang: this.currentLang }).html;
   });
 
   async copyCode(): Promise<void> {
@@ -50,7 +101,6 @@ export class CssOverrides {
       this.copied.set(true);
       setTimeout(() => this.copied.set(false), 2000);
     } catch {
-      // Fallback
       const textArea = document.createElement('textarea');
       textArea.value = this.currentCodeRaw();
       document.body.appendChild(textArea);

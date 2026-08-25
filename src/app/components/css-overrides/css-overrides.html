@@ -6,50 +6,73 @@
   <h3>Export & Copy Overrides</h3>
   <div class="element-container">
     <div class="controls">
-      <!-- Format toggle -->
-      <mat-button-toggle-group [(ngModel)]="viewMode" class="sh-square sz-medium" aria-label="Format selection">
-        <mat-button-toggle value="css">Compiled CSS ({{ cssSizeKb }} KB)</mat-button-toggle>
-        <mat-button-toggle value="scss">All-in-One SCSS ({{ scssSizeKb }} KB)</mat-button-toggle>
+      <!-- Tabs: Compiled CSS vs Raw SCSS vs Individual Files -->
+      <mat-button-toggle-group [(ngModel)]="viewTab" class="sh-square sz-medium" aria-label="Format selection">
+        <mat-button-toggle value="compiled">Compiled CSS</mat-button-toggle>
+        <mat-button-toggle value="scss">All-in-One SCSS</mat-button-toggle>
+        <mat-button-toggle value="module">Raw .scss Files</mat-button-toggle>
       </mat-button-toggle-group>
 
-      <!-- Copy action -->
+      <!-- If Individual Module tab is selected, show file dropdown -->
+      @if (viewTab() === 'module') {
+        <mat-form-field appearance="outline" class="sz-medium sh-square module-select-field">
+          <mat-label>Select SCSS Module</mat-label>
+          <mat-select [(ngModel)]="selectedModule">
+            @for (file of scssFiles; track file.filename) {
+              <mat-option [value]="file.filename">
+                {{ file.filename }} ({{ file.sizeKb }} KB)
+              </mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      }
+
+      <!-- Copy Action -->
       <button matButton="filled" class="sh-square sz-medium" (click)="copyCode()">
         <mat-icon class="material-symbols-outlined">
           {{ copied() ? 'check' : 'content_copy' }}
         </mat-icon>
-        {{ copied() ? 'Copied to Clipboard!' : 'Copy ' + (viewMode() === 'css' ? 'CSS' : 'SCSS') }}
+        {{ copied() ? 'Copied to Clipboard!' : 'Copy ' + (viewTab() === 'compiled' ? 'CSS' : 'SCSS') }}
       </button>
 
-      <!-- Direct Download / Asset Links -->
+      <!-- Direct Download / Link -->
       <a
         matButton="outlined"
         class="sh-square sz-medium"
-        [href]="viewMode() === 'css' ? '/material-overrides.css' : '/material-overrides.scss'"
-        [download]="viewMode() === 'css' ? 'material-overrides.css' : 'material-overrides.scss'"
+        [href]="downloadDataUri()"
+        [download]="currentDownloadFilename()"
         target="_blank">
         <mat-icon class="material-symbols-outlined">download</mat-icon>
-        Download {{ viewMode() === 'css' ? 'CSS' : 'SCSS' }}
+        Download {{ currentDownloadFilename() }}
       </a>
     </div>
 
     <div class="demo">
       <div class="info-card">
         <div class="info-item">
-          <span class="info-label">Format</span>
-          <span class="info-value">{{ viewMode() === 'css' ? 'Compiled Pure CSS' : 'Sass / SCSS Mixins' }}</span>
-        </div>
-        <div class="info-item">
-          <span class="info-label">Size</span>
-          <span class="info-value">{{ viewMode() === 'css' ? cssSizeKb + ' KB' : scssSizeKb + ' KB' }}</span>
-        </div>
-        <div class="info-item">
-          <span class="info-label">Lines</span>
-          <span class="info-value">{{ viewMode() === 'css' ? cssLineCount : scssLineCount }}</span>
-        </div>
-        <div class="info-item">
-          <span class="info-label">Direct URL</span>
+          <span class="info-label">Active View</span>
           <span class="info-value">
-            <code>{{ viewMode() === 'css' ? '/material-overrides.css' : '/material-overrides.scss' }}</code>
+            @if (viewTab() === 'compiled') {
+              Compiled Pure CSS
+            } @else if (viewTab() === 'scss') {
+              All-in-One Raw SCSS
+            } @else {
+              Raw <code>{{ selectedModule() }}</code>
+            }
+          </span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">File Size</span>
+          <span class="info-value">{{ currentSizeKb() }} KB</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Line Count</span>
+          <span class="info-value">{{ currentLineCount() }} lines</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Output Filename</span>
+          <span class="info-value">
+            <code>{{ currentDownloadFilename() }}</code>
           </span>
         </div>
       </div>
@@ -57,4 +80,23 @@
   </div>
 
   <div class="code-preview" [innerHTML]="highlightedCode()"></div>
+</div>
+
+<div class="element theme-info-box">
+  <h3>Custom Theme Color Palettes</h3>
+  <div class="theme-info-content">
+    <p>
+      Theme colors (such as <code>_theme-colors.scss</code>) are intentionally excluded from the generic component overrides so you can supply your own primary, secondary, and tertiary brand palettes.
+    </p>
+    <p>
+      Generate your custom Material 3 color palettes using the official Angular Material schematic:
+    </p>
+    <pre><code>ng generate &#64;angular/material:theme-color</code></pre>
+    <p>
+      For configuration options and color palette options, visit the
+      <a href="https://github.com/angular/components/blob/main/src/material/schematics/ng-generate/theme-color/README.md" target="_blank" rel="noopener noreferrer">
+        Material 3 Custom Theme Schematic Documentation &rarr;
+      </a>
+    </p>
+  </div>
 </div>
