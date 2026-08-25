@@ -17,3 +17,15 @@ fs.cpSync(ssr, worker, { recursive: true });
 
 fs.renameSync(join(worker, "server.mjs"), join(worker, "index.js"));
 
+// Replace dynamic import("xhr2") in server bundles to avoid esbuild resolution errors during Cloudflare Pages deployment
+const mainServerPath = join(worker, "main.server.mjs");
+if (fs.existsSync(mainServerPath)) {
+  let mainServerContent = fs.readFileSync(mainServerPath, "utf8");
+  mainServerContent = mainServerContent.replace(
+    /import\s*\(\s*["']xhr2["']\s*\)/g,
+    'Promise.resolve({ default: globalThis.XMLHttpRequest || class XMLHttpRequest {} })'
+  );
+  fs.writeFileSync(mainServerPath, mainServerContent, "utf8");
+}
+
+
