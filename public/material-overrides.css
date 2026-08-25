@@ -1,0 +1,2846 @@
+/* ============================================================================
+ * Angular Material Enhanced - Component Overrides (Compiled CSS)
+ * Generated on: 2026-08-25T18:54:30.807Z
+ * https://github.com/laudebugs/ng-material-enhanced
+ * ============================================================================ */
+
+mat-button-toggle-group.sz-xsmall {
+  --mat-button-toggle-height: 24px;
+}
+mat-button-toggle-group.sz-xsmall .material-symbols-outlined {
+  font-size: 14.4px;
+}
+mat-button-toggle-group.sz-xsmall mat-icon {
+  font-size: 14.4px;
+  width: 14.4px;
+  height: 14.4px;
+}
+mat-button-toggle-group.sz-small {
+  --mat-button-toggle-height: 32px;
+}
+mat-button-toggle-group.sz-small .material-symbols-outlined {
+  font-size: 19.2px;
+}
+mat-button-toggle-group.sz-small mat-icon {
+  font-size: 19.2px;
+  width: 19.2px;
+  height: 19.2px;
+}
+mat-button-toggle-group.sz-medium {
+  --mat-button-toggle-height: 40px;
+}
+mat-button-toggle-group.sz-medium .material-symbols-outlined {
+  font-size: 24px;
+}
+mat-button-toggle-group.sz-medium mat-icon {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+mat-button-toggle-group.sz-large {
+  --mat-button-toggle-height: 48px;
+}
+mat-button-toggle-group.sz-large .material-symbols-outlined {
+  font-size: 28.8px;
+}
+mat-button-toggle-group.sz-large mat-icon {
+  font-size: 28.8px;
+  width: 28.8px;
+  height: 28.8px;
+}
+mat-button-toggle-group.sz-xlarge {
+  --mat-button-toggle-height: 64px;
+}
+mat-button-toggle-group.sz-xlarge .material-symbols-outlined {
+  font-size: 38.4px;
+}
+mat-button-toggle-group.sz-xlarge mat-icon {
+  font-size: 38.4px;
+  width: 38.4px;
+  height: 38.4px;
+}
+mat-button-toggle-group.sh-round {
+  --mat-button-toggle-shape: 9999px;
+}
+mat-button-toggle-group.sh-square {
+  --mat-button-toggle-shape: 0px;
+}
+mat-button-toggle-group.sh-squircle, mat-button-toggle-group:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-button-toggle-shape: 8px;
+}
+
+button[matButton].sz-xsmall, button[matIconButton].sz-xsmall, button[matFab].sz-xsmall, button[matMiniFab].sz-xsmall {
+  --mat-button-filled-container-height: 24px;
+  --mat-button-filled-touch-target-size: 32px;
+  --mat-button-filled-icon-spacing: 4.8px;
+  --mat-button-filled-icon-offset: -4.8px;
+  --mat-button-outlined-container-height: 24px;
+  --mat-button-outlined-touch-target-size: 32px;
+  --mat-button-outlined-icon-spacing: 4.8px;
+  --mat-button-outlined-icon-offset: -4.8px;
+  --mat-button-protected-container-height: 24px;
+  --mat-button-protected-touch-target-size: 32px;
+  --mat-button-protected-icon-spacing: 4.8px;
+  --mat-button-protected-icon-offset: -4.8px;
+  --mat-button-tonal-container-height: 24px;
+  --mat-button-tonal-touch-target-size: 32px;
+  --mat-button-tonal-icon-spacing: 4.8px;
+  --mat-button-tonal-icon-offset: -4.8px;
+  --mat-button-text-container-height: 24px;
+  --mat-button-text-touch-target-size: 32px;
+  --mat-button-text-icon-spacing: 4.8px;
+  --mat-button-text-icon-offset: -4.8px;
+  --mat-button-filled-horizontal-padding: 14.4px;
+  --mat-button-outlined-horizontal-padding: 14.4px;
+  --mat-button-protected-horizontal-padding: 14.4px;
+  --mat-button-tonal-horizontal-padding: 14.4px;
+  --mat-button-text-with-icon-horizontal-padding: 9.6px;
+}
+button[matButton].sz-xsmall .material-symbols-outlined, button[matIconButton].sz-xsmall .material-symbols-outlined, button[matFab].sz-xsmall .material-symbols-outlined, button[matMiniFab].sz-xsmall .material-symbols-outlined {
+  font-size: 14.4px;
+}
+button[matButton].sz-xsmall mat-icon, button[matIconButton].sz-xsmall mat-icon, button[matFab].sz-xsmall mat-icon, button[matMiniFab].sz-xsmall mat-icon {
+  font-size: 14.4px;
+  width: 14.4px;
+  height: 14.4px;
+}
+button[matButton].sz-xsmall[matIconButton], button[matIconButton].sz-xsmall[matIconButton], button[matFab].sz-xsmall[matIconButton], button[matMiniFab].sz-xsmall[matIconButton] {
+  --mat-icon-button-state-layer-size: 24px;
+  --mat-icon-button-icon-size: 14.4px;
+  --mat-icon-button-touch-target-size: 28px;
+}
+button[matButton].sz-xsmall[matFab], button[matIconButton].sz-xsmall[matFab], button[matFab].sz-xsmall[matFab], button[matMiniFab].sz-xsmall[matFab] {
+  --mat-fab-extended-container-height: 33.6px;
+  --mat-fab-touch-target-size: 37.6px;
+  --mat-fab-small-touch-target-size: 37.6px;
+}
+button[matButton].sz-xsmall[matFab] .material-symbols-outlined, button[matIconButton].sz-xsmall[matFab] .material-symbols-outlined, button[matFab].sz-xsmall[matFab] .material-symbols-outlined, button[matMiniFab].sz-xsmall[matFab] .material-symbols-outlined {
+  font-size: 19.2px;
+}
+button[matButton].sz-xsmall[matFab] mat-icon, button[matIconButton].sz-xsmall[matFab] mat-icon, button[matFab].sz-xsmall[matFab] mat-icon, button[matMiniFab].sz-xsmall[matFab] mat-icon {
+  font-size: 19.2px;
+  width: 19.2px;
+  height: 19.2px;
+}
+button[matButton].sz-xsmall[matFab].mat-mdc-fab-base, button[matIconButton].sz-xsmall[matFab].mat-mdc-fab-base, button[matFab].sz-xsmall[matFab].mat-mdc-fab-base, button[matMiniFab].sz-xsmall[matFab].mat-mdc-fab-base {
+  height: 33.6px;
+}
+button[matButton].sz-xsmall[matFab].mat-mdc-fab-base:not([extended]), button[matIconButton].sz-xsmall[matFab].mat-mdc-fab-base:not([extended]), button[matFab].sz-xsmall[matFab].mat-mdc-fab-base:not([extended]), button[matMiniFab].sz-xsmall[matFab].mat-mdc-fab-base:not([extended]) {
+  width: 33.6px;
+}
+button[matButton].sz-xsmall[matMiniFab].mat-mdc-fab-base, button[matIconButton].sz-xsmall[matMiniFab].mat-mdc-fab-base, button[matFab].sz-xsmall[matMiniFab].mat-mdc-fab-base, button[matMiniFab].sz-xsmall[matMiniFab].mat-mdc-fab-base {
+  height: 24px;
+  width: 24px;
+}
+button[matButton].sz-xsmall[matMiniFab], button[matIconButton].sz-xsmall[matMiniFab], button[matFab].sz-xsmall[matMiniFab], button[matMiniFab].sz-xsmall[matMiniFab] {
+  --mat-fab-extended-container-height: 24px;
+  --mat-fab-touch-target-size: 28px;
+  --mat-fab-small-touch-target-size: 28px;
+}
+button[matButton].sz-xsmall.sh-round, button[matIconButton].sz-xsmall.sh-round, button[matFab].sz-xsmall.sh-round, button[matMiniFab].sz-xsmall.sh-round {
+  --mat-button-filled-container-shape: 9999px;
+  --mat-button-outlined-container-shape: 9999px;
+  --mat-button-protected-container-shape: 9999px;
+  --mat-button-text-container-shape: 9999px;
+  --mat-button-tonal-container-shape: 9999px;
+  --mat-icon-button-container-shape: 9999px;
+  --mat-fab-container-shape: 9999px;
+  --mat-fab-extended-container-shape: 9999px;
+  --mat-fab-small-container-shape: 9999px;
+}
+button[matButton].sz-xsmall.sh-square, button[matIconButton].sz-xsmall.sh-square, button[matFab].sz-xsmall.sh-square, button[matMiniFab].sz-xsmall.sh-square {
+  --mat-button-filled-container-shape: 0px;
+  --mat-button-outlined-container-shape: 0px;
+  --mat-button-protected-container-shape: 0px;
+  --mat-button-text-container-shape: 0px;
+  --mat-button-tonal-container-shape: 0px;
+  --mat-icon-button-container-shape: 0px;
+  --mat-fab-container-shape: 0px;
+  --mat-fab-extended-container-shape: 0px;
+  --mat-fab-small-container-shape: 0px;
+}
+button[matButton].sz-xsmall.sh-squircle, button[matButton].sz-xsmall:not(.sh-round):not(.sh-square):not(.sh-squircle), button[matIconButton].sz-xsmall.sh-squircle, button[matIconButton].sz-xsmall:not(.sh-round):not(.sh-square):not(.sh-squircle), button[matFab].sz-xsmall.sh-squircle, button[matFab].sz-xsmall:not(.sh-round):not(.sh-square):not(.sh-squircle), button[matMiniFab].sz-xsmall.sh-squircle, button[matMiniFab].sz-xsmall:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-button-filled-container-shape: 6px;
+  --mat-button-outlined-container-shape: 6px;
+  --mat-button-protected-container-shape: 6px;
+  --mat-button-text-container-shape: 6px;
+  --mat-button-tonal-container-shape: 6px;
+  --mat-icon-button-container-shape: 6px;
+  --mat-fab-container-shape: 8.4px;
+  --mat-fab-extended-container-shape: 8.4px;
+  --mat-fab-small-container-shape: 8.4px;
+}
+button[matButton].sz-xsmall.destructive, button[matIconButton].sz-xsmall.destructive, button[matFab].sz-xsmall.destructive, button[matMiniFab].sz-xsmall.destructive {
+  --mat-button-filled-container-color: #c0000c;
+  --mat-button-filled-state-layer-color: color-mix(in srgb, #ffffff 8%, #c0000c);
+  --mat-button-filled-ripple-color: color-mix(in srgb, #ffffff 12%, #c0000c);
+  --mat-button-tonal-container-color: #ffdad5;
+  --mat-button-tonal-label-text-color: #c0000c;
+  --mat-button-tonal-state-layer-color: color-mix(in srgb, #930007 8%, #ffdad5);
+  --mat-button-tonal-ripple-color: color-mix(in srgb, #930007 12%, #ffdad5);
+  --mat-button-outlined-outline-color: #c0000c;
+  --mat-button-outlined-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-button-outlined-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-button-outlined-label-text-color: #c0000c;
+  --mat-button-protected-label-text-color: #c0000c;
+  --mat-button-protected-state-layer-color: color-mix(in srgb, #c0000c 8%, #f2f5e9);
+  --mat-button-protected-ripple-color: color-mix(in srgb, #c0000c 12%, #f2f5e9);
+  --mat-icon-button-icon-color: #c0000c;
+  --mat-icon-button-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-icon-button-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-fab-container-color: #ffb4aa;
+  --mat-fab-foreground-color: #c0000c;
+  --mat-fab-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-fab-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+}
+button[matButton].sz-small, button[matIconButton].sz-small, button[matFab].sz-small, button[matMiniFab].sz-small {
+  --mat-button-filled-container-height: 32px;
+  --mat-button-filled-touch-target-size: 40px;
+  --mat-button-filled-icon-spacing: 6.4px;
+  --mat-button-filled-icon-offset: -6.4px;
+  --mat-button-outlined-container-height: 32px;
+  --mat-button-outlined-touch-target-size: 40px;
+  --mat-button-outlined-icon-spacing: 6.4px;
+  --mat-button-outlined-icon-offset: -6.4px;
+  --mat-button-protected-container-height: 32px;
+  --mat-button-protected-touch-target-size: 40px;
+  --mat-button-protected-icon-spacing: 6.4px;
+  --mat-button-protected-icon-offset: -6.4px;
+  --mat-button-tonal-container-height: 32px;
+  --mat-button-tonal-touch-target-size: 40px;
+  --mat-button-tonal-icon-spacing: 6.4px;
+  --mat-button-tonal-icon-offset: -6.4px;
+  --mat-button-text-container-height: 32px;
+  --mat-button-text-touch-target-size: 40px;
+  --mat-button-text-icon-spacing: 6.4px;
+  --mat-button-text-icon-offset: -6.4px;
+  --mat-button-filled-horizontal-padding: 19.2px;
+  --mat-button-outlined-horizontal-padding: 19.2px;
+  --mat-button-protected-horizontal-padding: 19.2px;
+  --mat-button-tonal-horizontal-padding: 19.2px;
+  --mat-button-text-with-icon-horizontal-padding: 12.8px;
+}
+button[matButton].sz-small .material-symbols-outlined, button[matIconButton].sz-small .material-symbols-outlined, button[matFab].sz-small .material-symbols-outlined, button[matMiniFab].sz-small .material-symbols-outlined {
+  font-size: 19.2px;
+}
+button[matButton].sz-small mat-icon, button[matIconButton].sz-small mat-icon, button[matFab].sz-small mat-icon, button[matMiniFab].sz-small mat-icon {
+  font-size: 19.2px;
+  width: 19.2px;
+  height: 19.2px;
+}
+button[matButton].sz-small[matIconButton], button[matIconButton].sz-small[matIconButton], button[matFab].sz-small[matIconButton], button[matMiniFab].sz-small[matIconButton] {
+  --mat-icon-button-state-layer-size: 32px;
+  --mat-icon-button-icon-size: 19.2px;
+  --mat-icon-button-touch-target-size: 36px;
+}
+button[matButton].sz-small[matFab], button[matIconButton].sz-small[matFab], button[matFab].sz-small[matFab], button[matMiniFab].sz-small[matFab] {
+  --mat-fab-extended-container-height: 44.8px;
+  --mat-fab-touch-target-size: 48.8px;
+  --mat-fab-small-touch-target-size: 48.8px;
+}
+button[matButton].sz-small[matFab] .material-symbols-outlined, button[matIconButton].sz-small[matFab] .material-symbols-outlined, button[matFab].sz-small[matFab] .material-symbols-outlined, button[matMiniFab].sz-small[matFab] .material-symbols-outlined {
+  font-size: 25.6px;
+}
+button[matButton].sz-small[matFab] mat-icon, button[matIconButton].sz-small[matFab] mat-icon, button[matFab].sz-small[matFab] mat-icon, button[matMiniFab].sz-small[matFab] mat-icon {
+  font-size: 25.6px;
+  width: 25.6px;
+  height: 25.6px;
+}
+button[matButton].sz-small[matFab].mat-mdc-fab-base, button[matIconButton].sz-small[matFab].mat-mdc-fab-base, button[matFab].sz-small[matFab].mat-mdc-fab-base, button[matMiniFab].sz-small[matFab].mat-mdc-fab-base {
+  height: 44.8px;
+}
+button[matButton].sz-small[matFab].mat-mdc-fab-base:not([extended]), button[matIconButton].sz-small[matFab].mat-mdc-fab-base:not([extended]), button[matFab].sz-small[matFab].mat-mdc-fab-base:not([extended]), button[matMiniFab].sz-small[matFab].mat-mdc-fab-base:not([extended]) {
+  width: 44.8px;
+}
+button[matButton].sz-small[matMiniFab].mat-mdc-fab-base, button[matIconButton].sz-small[matMiniFab].mat-mdc-fab-base, button[matFab].sz-small[matMiniFab].mat-mdc-fab-base, button[matMiniFab].sz-small[matMiniFab].mat-mdc-fab-base {
+  height: 32px;
+  width: 32px;
+}
+button[matButton].sz-small[matMiniFab], button[matIconButton].sz-small[matMiniFab], button[matFab].sz-small[matMiniFab], button[matMiniFab].sz-small[matMiniFab] {
+  --mat-fab-extended-container-height: 32px;
+  --mat-fab-touch-target-size: 36px;
+  --mat-fab-small-touch-target-size: 36px;
+}
+button[matButton].sz-small.sh-round, button[matIconButton].sz-small.sh-round, button[matFab].sz-small.sh-round, button[matMiniFab].sz-small.sh-round {
+  --mat-button-filled-container-shape: 9999px;
+  --mat-button-outlined-container-shape: 9999px;
+  --mat-button-protected-container-shape: 9999px;
+  --mat-button-text-container-shape: 9999px;
+  --mat-button-tonal-container-shape: 9999px;
+  --mat-icon-button-container-shape: 9999px;
+  --mat-fab-container-shape: 9999px;
+  --mat-fab-extended-container-shape: 9999px;
+  --mat-fab-small-container-shape: 9999px;
+}
+button[matButton].sz-small.sh-square, button[matIconButton].sz-small.sh-square, button[matFab].sz-small.sh-square, button[matMiniFab].sz-small.sh-square {
+  --mat-button-filled-container-shape: 0px;
+  --mat-button-outlined-container-shape: 0px;
+  --mat-button-protected-container-shape: 0px;
+  --mat-button-text-container-shape: 0px;
+  --mat-button-tonal-container-shape: 0px;
+  --mat-icon-button-container-shape: 0px;
+  --mat-fab-container-shape: 0px;
+  --mat-fab-extended-container-shape: 0px;
+  --mat-fab-small-container-shape: 0px;
+}
+button[matButton].sz-small.sh-squircle, button[matButton].sz-small:not(.sh-round):not(.sh-square):not(.sh-squircle), button[matIconButton].sz-small.sh-squircle, button[matIconButton].sz-small:not(.sh-round):not(.sh-square):not(.sh-squircle), button[matFab].sz-small.sh-squircle, button[matFab].sz-small:not(.sh-round):not(.sh-square):not(.sh-squircle), button[matMiniFab].sz-small.sh-squircle, button[matMiniFab].sz-small:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-button-filled-container-shape: 8px;
+  --mat-button-outlined-container-shape: 8px;
+  --mat-button-protected-container-shape: 8px;
+  --mat-button-text-container-shape: 8px;
+  --mat-button-tonal-container-shape: 8px;
+  --mat-icon-button-container-shape: 8px;
+  --mat-fab-container-shape: 11.2px;
+  --mat-fab-extended-container-shape: 11.2px;
+  --mat-fab-small-container-shape: 11.2px;
+}
+button[matButton].sz-small.destructive, button[matIconButton].sz-small.destructive, button[matFab].sz-small.destructive, button[matMiniFab].sz-small.destructive {
+  --mat-button-filled-container-color: #c0000c;
+  --mat-button-filled-state-layer-color: color-mix(in srgb, #ffffff 8%, #c0000c);
+  --mat-button-filled-ripple-color: color-mix(in srgb, #ffffff 12%, #c0000c);
+  --mat-button-tonal-container-color: #ffdad5;
+  --mat-button-tonal-label-text-color: #c0000c;
+  --mat-button-tonal-state-layer-color: color-mix(in srgb, #930007 8%, #ffdad5);
+  --mat-button-tonal-ripple-color: color-mix(in srgb, #930007 12%, #ffdad5);
+  --mat-button-outlined-outline-color: #c0000c;
+  --mat-button-outlined-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-button-outlined-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-button-outlined-label-text-color: #c0000c;
+  --mat-button-protected-label-text-color: #c0000c;
+  --mat-button-protected-state-layer-color: color-mix(in srgb, #c0000c 8%, #f2f5e9);
+  --mat-button-protected-ripple-color: color-mix(in srgb, #c0000c 12%, #f2f5e9);
+  --mat-icon-button-icon-color: #c0000c;
+  --mat-icon-button-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-icon-button-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-fab-container-color: #ffb4aa;
+  --mat-fab-foreground-color: #c0000c;
+  --mat-fab-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-fab-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+}
+button[matButton].sz-medium, button[matIconButton].sz-medium, button[matFab].sz-medium, button[matMiniFab].sz-medium {
+  --mat-button-filled-container-height: 40px;
+  --mat-button-filled-touch-target-size: 48px;
+  --mat-button-filled-icon-spacing: 8px;
+  --mat-button-filled-icon-offset: -8px;
+  --mat-button-outlined-container-height: 40px;
+  --mat-button-outlined-touch-target-size: 48px;
+  --mat-button-outlined-icon-spacing: 8px;
+  --mat-button-outlined-icon-offset: -8px;
+  --mat-button-protected-container-height: 40px;
+  --mat-button-protected-touch-target-size: 48px;
+  --mat-button-protected-icon-spacing: 8px;
+  --mat-button-protected-icon-offset: -8px;
+  --mat-button-tonal-container-height: 40px;
+  --mat-button-tonal-touch-target-size: 48px;
+  --mat-button-tonal-icon-spacing: 8px;
+  --mat-button-tonal-icon-offset: -8px;
+  --mat-button-text-container-height: 40px;
+  --mat-button-text-touch-target-size: 48px;
+  --mat-button-text-icon-spacing: 8px;
+  --mat-button-text-icon-offset: -8px;
+  --mat-button-filled-horizontal-padding: 24px;
+  --mat-button-outlined-horizontal-padding: 24px;
+  --mat-button-protected-horizontal-padding: 24px;
+  --mat-button-tonal-horizontal-padding: 24px;
+  --mat-button-text-with-icon-horizontal-padding: 16px;
+}
+button[matButton].sz-medium .material-symbols-outlined, button[matIconButton].sz-medium .material-symbols-outlined, button[matFab].sz-medium .material-symbols-outlined, button[matMiniFab].sz-medium .material-symbols-outlined {
+  font-size: 24px;
+}
+button[matButton].sz-medium mat-icon, button[matIconButton].sz-medium mat-icon, button[matFab].sz-medium mat-icon, button[matMiniFab].sz-medium mat-icon {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+button[matButton].sz-medium[matIconButton], button[matIconButton].sz-medium[matIconButton], button[matFab].sz-medium[matIconButton], button[matMiniFab].sz-medium[matIconButton] {
+  --mat-icon-button-state-layer-size: 40px;
+  --mat-icon-button-icon-size: 24px;
+  --mat-icon-button-touch-target-size: 44px;
+}
+button[matButton].sz-medium[matFab], button[matIconButton].sz-medium[matFab], button[matFab].sz-medium[matFab], button[matMiniFab].sz-medium[matFab] {
+  --mat-fab-extended-container-height: 56px;
+  --mat-fab-touch-target-size: 60px;
+  --mat-fab-small-touch-target-size: 60px;
+}
+button[matButton].sz-medium[matFab] .material-symbols-outlined, button[matIconButton].sz-medium[matFab] .material-symbols-outlined, button[matFab].sz-medium[matFab] .material-symbols-outlined, button[matMiniFab].sz-medium[matFab] .material-symbols-outlined {
+  font-size: 32px;
+}
+button[matButton].sz-medium[matFab] mat-icon, button[matIconButton].sz-medium[matFab] mat-icon, button[matFab].sz-medium[matFab] mat-icon, button[matMiniFab].sz-medium[matFab] mat-icon {
+  font-size: 32px;
+  width: 32px;
+  height: 32px;
+}
+button[matButton].sz-medium[matFab].mat-mdc-fab-base, button[matIconButton].sz-medium[matFab].mat-mdc-fab-base, button[matFab].sz-medium[matFab].mat-mdc-fab-base, button[matMiniFab].sz-medium[matFab].mat-mdc-fab-base {
+  height: 56px;
+}
+button[matButton].sz-medium[matFab].mat-mdc-fab-base:not([extended]), button[matIconButton].sz-medium[matFab].mat-mdc-fab-base:not([extended]), button[matFab].sz-medium[matFab].mat-mdc-fab-base:not([extended]), button[matMiniFab].sz-medium[matFab].mat-mdc-fab-base:not([extended]) {
+  width: 56px;
+}
+button[matButton].sz-medium[matMiniFab].mat-mdc-fab-base, button[matIconButton].sz-medium[matMiniFab].mat-mdc-fab-base, button[matFab].sz-medium[matMiniFab].mat-mdc-fab-base, button[matMiniFab].sz-medium[matMiniFab].mat-mdc-fab-base {
+  height: 40px;
+  width: 40px;
+}
+button[matButton].sz-medium[matMiniFab], button[matIconButton].sz-medium[matMiniFab], button[matFab].sz-medium[matMiniFab], button[matMiniFab].sz-medium[matMiniFab] {
+  --mat-fab-extended-container-height: 40px;
+  --mat-fab-touch-target-size: 44px;
+  --mat-fab-small-touch-target-size: 44px;
+}
+button[matButton].sz-medium.sh-round, button[matIconButton].sz-medium.sh-round, button[matFab].sz-medium.sh-round, button[matMiniFab].sz-medium.sh-round {
+  --mat-button-filled-container-shape: 9999px;
+  --mat-button-outlined-container-shape: 9999px;
+  --mat-button-protected-container-shape: 9999px;
+  --mat-button-text-container-shape: 9999px;
+  --mat-button-tonal-container-shape: 9999px;
+  --mat-icon-button-container-shape: 9999px;
+  --mat-fab-container-shape: 9999px;
+  --mat-fab-extended-container-shape: 9999px;
+  --mat-fab-small-container-shape: 9999px;
+}
+button[matButton].sz-medium.sh-square, button[matIconButton].sz-medium.sh-square, button[matFab].sz-medium.sh-square, button[matMiniFab].sz-medium.sh-square {
+  --mat-button-filled-container-shape: 0px;
+  --mat-button-outlined-container-shape: 0px;
+  --mat-button-protected-container-shape: 0px;
+  --mat-button-text-container-shape: 0px;
+  --mat-button-tonal-container-shape: 0px;
+  --mat-icon-button-container-shape: 0px;
+  --mat-fab-container-shape: 0px;
+  --mat-fab-extended-container-shape: 0px;
+  --mat-fab-small-container-shape: 0px;
+}
+button[matButton].sz-medium.sh-squircle, button[matButton].sz-medium:not(.sh-round):not(.sh-square):not(.sh-squircle), button[matIconButton].sz-medium.sh-squircle, button[matIconButton].sz-medium:not(.sh-round):not(.sh-square):not(.sh-squircle), button[matFab].sz-medium.sh-squircle, button[matFab].sz-medium:not(.sh-round):not(.sh-square):not(.sh-squircle), button[matMiniFab].sz-medium.sh-squircle, button[matMiniFab].sz-medium:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-button-filled-container-shape: 10px;
+  --mat-button-outlined-container-shape: 10px;
+  --mat-button-protected-container-shape: 10px;
+  --mat-button-text-container-shape: 10px;
+  --mat-button-tonal-container-shape: 10px;
+  --mat-icon-button-container-shape: 10px;
+  --mat-fab-container-shape: 14px;
+  --mat-fab-extended-container-shape: 14px;
+  --mat-fab-small-container-shape: 14px;
+}
+button[matButton].sz-medium.destructive, button[matIconButton].sz-medium.destructive, button[matFab].sz-medium.destructive, button[matMiniFab].sz-medium.destructive {
+  --mat-button-filled-container-color: #c0000c;
+  --mat-button-filled-state-layer-color: color-mix(in srgb, #ffffff 8%, #c0000c);
+  --mat-button-filled-ripple-color: color-mix(in srgb, #ffffff 12%, #c0000c);
+  --mat-button-tonal-container-color: #ffdad5;
+  --mat-button-tonal-label-text-color: #c0000c;
+  --mat-button-tonal-state-layer-color: color-mix(in srgb, #930007 8%, #ffdad5);
+  --mat-button-tonal-ripple-color: color-mix(in srgb, #930007 12%, #ffdad5);
+  --mat-button-outlined-outline-color: #c0000c;
+  --mat-button-outlined-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-button-outlined-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-button-outlined-label-text-color: #c0000c;
+  --mat-button-protected-label-text-color: #c0000c;
+  --mat-button-protected-state-layer-color: color-mix(in srgb, #c0000c 8%, #f2f5e9);
+  --mat-button-protected-ripple-color: color-mix(in srgb, #c0000c 12%, #f2f5e9);
+  --mat-icon-button-icon-color: #c0000c;
+  --mat-icon-button-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-icon-button-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-fab-container-color: #ffb4aa;
+  --mat-fab-foreground-color: #c0000c;
+  --mat-fab-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-fab-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+}
+button[matButton].sz-large, button[matIconButton].sz-large, button[matFab].sz-large, button[matMiniFab].sz-large {
+  --mat-button-filled-container-height: 48px;
+  --mat-button-filled-touch-target-size: 56px;
+  --mat-button-filled-icon-spacing: 9.6px;
+  --mat-button-filled-icon-offset: -9.6px;
+  --mat-button-outlined-container-height: 48px;
+  --mat-button-outlined-touch-target-size: 56px;
+  --mat-button-outlined-icon-spacing: 9.6px;
+  --mat-button-outlined-icon-offset: -9.6px;
+  --mat-button-protected-container-height: 48px;
+  --mat-button-protected-touch-target-size: 56px;
+  --mat-button-protected-icon-spacing: 9.6px;
+  --mat-button-protected-icon-offset: -9.6px;
+  --mat-button-tonal-container-height: 48px;
+  --mat-button-tonal-touch-target-size: 56px;
+  --mat-button-tonal-icon-spacing: 9.6px;
+  --mat-button-tonal-icon-offset: -9.6px;
+  --mat-button-text-container-height: 48px;
+  --mat-button-text-touch-target-size: 56px;
+  --mat-button-text-icon-spacing: 9.6px;
+  --mat-button-text-icon-offset: -9.6px;
+  --mat-button-filled-horizontal-padding: 28.8px;
+  --mat-button-outlined-horizontal-padding: 28.8px;
+  --mat-button-protected-horizontal-padding: 28.8px;
+  --mat-button-tonal-horizontal-padding: 28.8px;
+  --mat-button-text-with-icon-horizontal-padding: 19.2px;
+}
+button[matButton].sz-large .material-symbols-outlined, button[matIconButton].sz-large .material-symbols-outlined, button[matFab].sz-large .material-symbols-outlined, button[matMiniFab].sz-large .material-symbols-outlined {
+  font-size: 28.8px;
+}
+button[matButton].sz-large mat-icon, button[matIconButton].sz-large mat-icon, button[matFab].sz-large mat-icon, button[matMiniFab].sz-large mat-icon {
+  font-size: 28.8px;
+  width: 28.8px;
+  height: 28.8px;
+}
+button[matButton].sz-large[matIconButton], button[matIconButton].sz-large[matIconButton], button[matFab].sz-large[matIconButton], button[matMiniFab].sz-large[matIconButton] {
+  --mat-icon-button-state-layer-size: 48px;
+  --mat-icon-button-icon-size: 28.8px;
+  --mat-icon-button-touch-target-size: 52px;
+}
+button[matButton].sz-large[matFab], button[matIconButton].sz-large[matFab], button[matFab].sz-large[matFab], button[matMiniFab].sz-large[matFab] {
+  --mat-fab-extended-container-height: 67.2px;
+  --mat-fab-touch-target-size: 71.2px;
+  --mat-fab-small-touch-target-size: 71.2px;
+}
+button[matButton].sz-large[matFab] .material-symbols-outlined, button[matIconButton].sz-large[matFab] .material-symbols-outlined, button[matFab].sz-large[matFab] .material-symbols-outlined, button[matMiniFab].sz-large[matFab] .material-symbols-outlined {
+  font-size: 38.4px;
+}
+button[matButton].sz-large[matFab] mat-icon, button[matIconButton].sz-large[matFab] mat-icon, button[matFab].sz-large[matFab] mat-icon, button[matMiniFab].sz-large[matFab] mat-icon {
+  font-size: 38.4px;
+  width: 38.4px;
+  height: 38.4px;
+}
+button[matButton].sz-large[matFab].mat-mdc-fab-base, button[matIconButton].sz-large[matFab].mat-mdc-fab-base, button[matFab].sz-large[matFab].mat-mdc-fab-base, button[matMiniFab].sz-large[matFab].mat-mdc-fab-base {
+  height: 67.2px;
+}
+button[matButton].sz-large[matFab].mat-mdc-fab-base:not([extended]), button[matIconButton].sz-large[matFab].mat-mdc-fab-base:not([extended]), button[matFab].sz-large[matFab].mat-mdc-fab-base:not([extended]), button[matMiniFab].sz-large[matFab].mat-mdc-fab-base:not([extended]) {
+  width: 67.2px;
+}
+button[matButton].sz-large[matMiniFab].mat-mdc-fab-base, button[matIconButton].sz-large[matMiniFab].mat-mdc-fab-base, button[matFab].sz-large[matMiniFab].mat-mdc-fab-base, button[matMiniFab].sz-large[matMiniFab].mat-mdc-fab-base {
+  height: 48px;
+  width: 48px;
+}
+button[matButton].sz-large[matMiniFab], button[matIconButton].sz-large[matMiniFab], button[matFab].sz-large[matMiniFab], button[matMiniFab].sz-large[matMiniFab] {
+  --mat-fab-extended-container-height: 48px;
+  --mat-fab-touch-target-size: 52px;
+  --mat-fab-small-touch-target-size: 52px;
+}
+button[matButton].sz-large.sh-round, button[matIconButton].sz-large.sh-round, button[matFab].sz-large.sh-round, button[matMiniFab].sz-large.sh-round {
+  --mat-button-filled-container-shape: 9999px;
+  --mat-button-outlined-container-shape: 9999px;
+  --mat-button-protected-container-shape: 9999px;
+  --mat-button-text-container-shape: 9999px;
+  --mat-button-tonal-container-shape: 9999px;
+  --mat-icon-button-container-shape: 9999px;
+  --mat-fab-container-shape: 9999px;
+  --mat-fab-extended-container-shape: 9999px;
+  --mat-fab-small-container-shape: 9999px;
+}
+button[matButton].sz-large.sh-square, button[matIconButton].sz-large.sh-square, button[matFab].sz-large.sh-square, button[matMiniFab].sz-large.sh-square {
+  --mat-button-filled-container-shape: 0px;
+  --mat-button-outlined-container-shape: 0px;
+  --mat-button-protected-container-shape: 0px;
+  --mat-button-text-container-shape: 0px;
+  --mat-button-tonal-container-shape: 0px;
+  --mat-icon-button-container-shape: 0px;
+  --mat-fab-container-shape: 0px;
+  --mat-fab-extended-container-shape: 0px;
+  --mat-fab-small-container-shape: 0px;
+}
+button[matButton].sz-large.sh-squircle, button[matButton].sz-large:not(.sh-round):not(.sh-square):not(.sh-squircle), button[matIconButton].sz-large.sh-squircle, button[matIconButton].sz-large:not(.sh-round):not(.sh-square):not(.sh-squircle), button[matFab].sz-large.sh-squircle, button[matFab].sz-large:not(.sh-round):not(.sh-square):not(.sh-squircle), button[matMiniFab].sz-large.sh-squircle, button[matMiniFab].sz-large:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-button-filled-container-shape: 12px;
+  --mat-button-outlined-container-shape: 12px;
+  --mat-button-protected-container-shape: 12px;
+  --mat-button-text-container-shape: 12px;
+  --mat-button-tonal-container-shape: 12px;
+  --mat-icon-button-container-shape: 12px;
+  --mat-fab-container-shape: 16.8px;
+  --mat-fab-extended-container-shape: 16.8px;
+  --mat-fab-small-container-shape: 16.8px;
+}
+button[matButton].sz-large.destructive, button[matIconButton].sz-large.destructive, button[matFab].sz-large.destructive, button[matMiniFab].sz-large.destructive {
+  --mat-button-filled-container-color: #c0000c;
+  --mat-button-filled-state-layer-color: color-mix(in srgb, #ffffff 8%, #c0000c);
+  --mat-button-filled-ripple-color: color-mix(in srgb, #ffffff 12%, #c0000c);
+  --mat-button-tonal-container-color: #ffdad5;
+  --mat-button-tonal-label-text-color: #c0000c;
+  --mat-button-tonal-state-layer-color: color-mix(in srgb, #930007 8%, #ffdad5);
+  --mat-button-tonal-ripple-color: color-mix(in srgb, #930007 12%, #ffdad5);
+  --mat-button-outlined-outline-color: #c0000c;
+  --mat-button-outlined-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-button-outlined-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-button-outlined-label-text-color: #c0000c;
+  --mat-button-protected-label-text-color: #c0000c;
+  --mat-button-protected-state-layer-color: color-mix(in srgb, #c0000c 8%, #f2f5e9);
+  --mat-button-protected-ripple-color: color-mix(in srgb, #c0000c 12%, #f2f5e9);
+  --mat-icon-button-icon-color: #c0000c;
+  --mat-icon-button-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-icon-button-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-fab-container-color: #ffb4aa;
+  --mat-fab-foreground-color: #c0000c;
+  --mat-fab-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-fab-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+}
+button[matButton].sz-xlarge, button[matIconButton].sz-xlarge, button[matFab].sz-xlarge, button[matMiniFab].sz-xlarge {
+  --mat-button-filled-container-height: 64px;
+  --mat-button-filled-touch-target-size: 72px;
+  --mat-button-filled-icon-spacing: 12.8px;
+  --mat-button-filled-icon-offset: -12.8px;
+  --mat-button-outlined-container-height: 64px;
+  --mat-button-outlined-touch-target-size: 72px;
+  --mat-button-outlined-icon-spacing: 12.8px;
+  --mat-button-outlined-icon-offset: -12.8px;
+  --mat-button-protected-container-height: 64px;
+  --mat-button-protected-touch-target-size: 72px;
+  --mat-button-protected-icon-spacing: 12.8px;
+  --mat-button-protected-icon-offset: -12.8px;
+  --mat-button-tonal-container-height: 64px;
+  --mat-button-tonal-touch-target-size: 72px;
+  --mat-button-tonal-icon-spacing: 12.8px;
+  --mat-button-tonal-icon-offset: -12.8px;
+  --mat-button-text-container-height: 64px;
+  --mat-button-text-touch-target-size: 72px;
+  --mat-button-text-icon-spacing: 12.8px;
+  --mat-button-text-icon-offset: -12.8px;
+  --mat-button-filled-horizontal-padding: 38.4px;
+  --mat-button-outlined-horizontal-padding: 38.4px;
+  --mat-button-protected-horizontal-padding: 38.4px;
+  --mat-button-tonal-horizontal-padding: 38.4px;
+  --mat-button-text-with-icon-horizontal-padding: 25.6px;
+}
+button[matButton].sz-xlarge .material-symbols-outlined, button[matIconButton].sz-xlarge .material-symbols-outlined, button[matFab].sz-xlarge .material-symbols-outlined, button[matMiniFab].sz-xlarge .material-symbols-outlined {
+  font-size: 38.4px;
+}
+button[matButton].sz-xlarge mat-icon, button[matIconButton].sz-xlarge mat-icon, button[matFab].sz-xlarge mat-icon, button[matMiniFab].sz-xlarge mat-icon {
+  font-size: 38.4px;
+  width: 38.4px;
+  height: 38.4px;
+}
+button[matButton].sz-xlarge[matIconButton], button[matIconButton].sz-xlarge[matIconButton], button[matFab].sz-xlarge[matIconButton], button[matMiniFab].sz-xlarge[matIconButton] {
+  --mat-icon-button-state-layer-size: 64px;
+  --mat-icon-button-icon-size: 38.4px;
+  --mat-icon-button-touch-target-size: 68px;
+}
+button[matButton].sz-xlarge[matFab], button[matIconButton].sz-xlarge[matFab], button[matFab].sz-xlarge[matFab], button[matMiniFab].sz-xlarge[matFab] {
+  --mat-fab-extended-container-height: 89.6px;
+  --mat-fab-touch-target-size: 93.6px;
+  --mat-fab-small-touch-target-size: 93.6px;
+}
+button[matButton].sz-xlarge[matFab] .material-symbols-outlined, button[matIconButton].sz-xlarge[matFab] .material-symbols-outlined, button[matFab].sz-xlarge[matFab] .material-symbols-outlined, button[matMiniFab].sz-xlarge[matFab] .material-symbols-outlined {
+  font-size: 51.2px;
+}
+button[matButton].sz-xlarge[matFab] mat-icon, button[matIconButton].sz-xlarge[matFab] mat-icon, button[matFab].sz-xlarge[matFab] mat-icon, button[matMiniFab].sz-xlarge[matFab] mat-icon {
+  font-size: 51.2px;
+  width: 51.2px;
+  height: 51.2px;
+}
+button[matButton].sz-xlarge[matFab].mat-mdc-fab-base, button[matIconButton].sz-xlarge[matFab].mat-mdc-fab-base, button[matFab].sz-xlarge[matFab].mat-mdc-fab-base, button[matMiniFab].sz-xlarge[matFab].mat-mdc-fab-base {
+  height: 89.6px;
+}
+button[matButton].sz-xlarge[matFab].mat-mdc-fab-base:not([extended]), button[matIconButton].sz-xlarge[matFab].mat-mdc-fab-base:not([extended]), button[matFab].sz-xlarge[matFab].mat-mdc-fab-base:not([extended]), button[matMiniFab].sz-xlarge[matFab].mat-mdc-fab-base:not([extended]) {
+  width: 89.6px;
+}
+button[matButton].sz-xlarge[matMiniFab].mat-mdc-fab-base, button[matIconButton].sz-xlarge[matMiniFab].mat-mdc-fab-base, button[matFab].sz-xlarge[matMiniFab].mat-mdc-fab-base, button[matMiniFab].sz-xlarge[matMiniFab].mat-mdc-fab-base {
+  height: 64px;
+  width: 64px;
+}
+button[matButton].sz-xlarge[matMiniFab], button[matIconButton].sz-xlarge[matMiniFab], button[matFab].sz-xlarge[matMiniFab], button[matMiniFab].sz-xlarge[matMiniFab] {
+  --mat-fab-extended-container-height: 64px;
+  --mat-fab-touch-target-size: 68px;
+  --mat-fab-small-touch-target-size: 68px;
+}
+button[matButton].sz-xlarge.sh-round, button[matIconButton].sz-xlarge.sh-round, button[matFab].sz-xlarge.sh-round, button[matMiniFab].sz-xlarge.sh-round {
+  --mat-button-filled-container-shape: 9999px;
+  --mat-button-outlined-container-shape: 9999px;
+  --mat-button-protected-container-shape: 9999px;
+  --mat-button-text-container-shape: 9999px;
+  --mat-button-tonal-container-shape: 9999px;
+  --mat-icon-button-container-shape: 9999px;
+  --mat-fab-container-shape: 9999px;
+  --mat-fab-extended-container-shape: 9999px;
+  --mat-fab-small-container-shape: 9999px;
+}
+button[matButton].sz-xlarge.sh-square, button[matIconButton].sz-xlarge.sh-square, button[matFab].sz-xlarge.sh-square, button[matMiniFab].sz-xlarge.sh-square {
+  --mat-button-filled-container-shape: 0px;
+  --mat-button-outlined-container-shape: 0px;
+  --mat-button-protected-container-shape: 0px;
+  --mat-button-text-container-shape: 0px;
+  --mat-button-tonal-container-shape: 0px;
+  --mat-icon-button-container-shape: 0px;
+  --mat-fab-container-shape: 0px;
+  --mat-fab-extended-container-shape: 0px;
+  --mat-fab-small-container-shape: 0px;
+}
+button[matButton].sz-xlarge.sh-squircle, button[matButton].sz-xlarge:not(.sh-round):not(.sh-square):not(.sh-squircle), button[matIconButton].sz-xlarge.sh-squircle, button[matIconButton].sz-xlarge:not(.sh-round):not(.sh-square):not(.sh-squircle), button[matFab].sz-xlarge.sh-squircle, button[matFab].sz-xlarge:not(.sh-round):not(.sh-square):not(.sh-squircle), button[matMiniFab].sz-xlarge.sh-squircle, button[matMiniFab].sz-xlarge:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-button-filled-container-shape: 16px;
+  --mat-button-outlined-container-shape: 16px;
+  --mat-button-protected-container-shape: 16px;
+  --mat-button-text-container-shape: 16px;
+  --mat-button-tonal-container-shape: 16px;
+  --mat-icon-button-container-shape: 16px;
+  --mat-fab-container-shape: 22.4px;
+  --mat-fab-extended-container-shape: 22.4px;
+  --mat-fab-small-container-shape: 22.4px;
+}
+button[matButton].sz-xlarge.destructive, button[matIconButton].sz-xlarge.destructive, button[matFab].sz-xlarge.destructive, button[matMiniFab].sz-xlarge.destructive {
+  --mat-button-filled-container-color: #c0000c;
+  --mat-button-filled-state-layer-color: color-mix(in srgb, #ffffff 8%, #c0000c);
+  --mat-button-filled-ripple-color: color-mix(in srgb, #ffffff 12%, #c0000c);
+  --mat-button-tonal-container-color: #ffdad5;
+  --mat-button-tonal-label-text-color: #c0000c;
+  --mat-button-tonal-state-layer-color: color-mix(in srgb, #930007 8%, #ffdad5);
+  --mat-button-tonal-ripple-color: color-mix(in srgb, #930007 12%, #ffdad5);
+  --mat-button-outlined-outline-color: #c0000c;
+  --mat-button-outlined-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-button-outlined-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-button-outlined-label-text-color: #c0000c;
+  --mat-button-protected-label-text-color: #c0000c;
+  --mat-button-protected-state-layer-color: color-mix(in srgb, #c0000c 8%, #f2f5e9);
+  --mat-button-protected-ripple-color: color-mix(in srgb, #c0000c 12%, #f2f5e9);
+  --mat-icon-button-icon-color: #c0000c;
+  --mat-icon-button-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-icon-button-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-fab-container-color: #ffb4aa;
+  --mat-fab-foreground-color: #c0000c;
+  --mat-fab-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-fab-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+}
+
+mat-checkbox.sz-small {
+  --mat-checkbox-state-layer-size: 32px;
+  --mat-checkbox-touch-target-size: 40px;
+}
+mat-checkbox.sz-medium {
+  --mat-checkbox-state-layer-size: 40px;
+  --mat-checkbox-touch-target-size: 48px;
+}
+mat-checkbox.sz-large {
+  --mat-checkbox-state-layer-size: 48px;
+  --mat-checkbox-touch-target-size: 56px;
+}
+mat-checkbox.sz-xlarge {
+  --mat-checkbox-state-layer-size: 56px;
+  --mat-checkbox-touch-target-size: 64px;
+}
+mat-checkbox:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
+  --mat-checkbox-state-layer-size: 40px;
+  --mat-checkbox-touch-target-size: 48px;
+}
+mat-checkbox.destructive {
+  --mat-checkbox-selected-hover-icon-color: #c0000c;
+  --mat-checkbox-selected-icon-color: #c0000c;
+  --mat-checkbox-selected-focus-icon-color: #c0000c;
+  --mat-checkbox-selected-pressed-icon-color: #c0000c;
+  --mat-checkbox-selected-checkmark-color: #ffdad5;
+  --mat-checkbox-selected-focus-state-layer-color: color-mix(in srgb, #c0000c 8%, #f2f5e9);
+  --mat-checkbox-selected-pressed-state-layer-color: color-mix(in srgb, #c0000c 12%, #f2f5e9);
+  --mat-checkbox-unselected-pressed-state-layer-color: #c0000c;
+}
+
+mat-chip.sz-small,
+mat-chip-row.sz-small {
+  --mat-chip-container-height: 24px;
+  --mat-chip-container-shape-radius: 6px;
+  --mat-chip-with-avatar-avatar-shape-radius: 18px;
+  --mat-chip-with-avatar-avatar-size: 18px;
+  --mat-chip-with-icon-icon-size: 13.5px;
+}
+mat-chip.sz-small button[matChipEdit], mat-chip.sz-small button[matChipRemove],
+mat-chip-row.sz-small button[matChipEdit],
+mat-chip-row.sz-small button[matChipRemove] {
+  --mat-button-filled-container-height: 24px;
+  --mat-button-filled-touch-target-size: 32px;
+  --mat-button-filled-icon-spacing: 4.8px;
+  --mat-button-filled-icon-offset: -4.8px;
+  --mat-button-outlined-container-height: 24px;
+  --mat-button-outlined-touch-target-size: 32px;
+  --mat-button-outlined-icon-spacing: 4.8px;
+  --mat-button-outlined-icon-offset: -4.8px;
+  --mat-button-protected-container-height: 24px;
+  --mat-button-protected-touch-target-size: 32px;
+  --mat-button-protected-icon-spacing: 4.8px;
+  --mat-button-protected-icon-offset: -4.8px;
+  --mat-button-tonal-container-height: 24px;
+  --mat-button-tonal-touch-target-size: 32px;
+  --mat-button-tonal-icon-spacing: 4.8px;
+  --mat-button-tonal-icon-offset: -4.8px;
+  --mat-button-text-container-height: 24px;
+  --mat-button-text-touch-target-size: 32px;
+  --mat-button-text-icon-spacing: 4.8px;
+  --mat-button-text-icon-offset: -4.8px;
+  --mat-button-filled-horizontal-padding: 14.4px;
+  --mat-button-outlined-horizontal-padding: 14.4px;
+  --mat-button-protected-horizontal-padding: 14.4px;
+  --mat-button-tonal-horizontal-padding: 14.4px;
+  --mat-button-text-with-icon-horizontal-padding: 9.6px;
+}
+mat-chip.sz-small button[matChipEdit] .material-symbols-outlined, mat-chip.sz-small button[matChipRemove] .material-symbols-outlined,
+mat-chip-row.sz-small button[matChipEdit] .material-symbols-outlined,
+mat-chip-row.sz-small button[matChipRemove] .material-symbols-outlined {
+  font-size: 14.4px;
+}
+mat-chip.sz-small button[matChipEdit] mat-icon, mat-chip.sz-small button[matChipRemove] mat-icon,
+mat-chip-row.sz-small button[matChipEdit] mat-icon,
+mat-chip-row.sz-small button[matChipRemove] mat-icon {
+  font-size: 14.4px;
+  width: 14.4px;
+  height: 14.4px;
+}
+mat-chip.sz-small button[matChipEdit][matIconButton], mat-chip.sz-small button[matChipRemove][matIconButton],
+mat-chip-row.sz-small button[matChipEdit][matIconButton],
+mat-chip-row.sz-small button[matChipRemove][matIconButton] {
+  --mat-icon-button-state-layer-size: 24px;
+  --mat-icon-button-icon-size: 14.4px;
+  --mat-icon-button-touch-target-size: 28px;
+}
+mat-chip.sz-small button[matChipEdit][matFab], mat-chip.sz-small button[matChipRemove][matFab],
+mat-chip-row.sz-small button[matChipEdit][matFab],
+mat-chip-row.sz-small button[matChipRemove][matFab] {
+  --mat-fab-extended-container-height: 33.6px;
+  --mat-fab-touch-target-size: 37.6px;
+  --mat-fab-small-touch-target-size: 37.6px;
+}
+mat-chip.sz-small button[matChipEdit][matFab] .material-symbols-outlined, mat-chip.sz-small button[matChipRemove][matFab] .material-symbols-outlined,
+mat-chip-row.sz-small button[matChipEdit][matFab] .material-symbols-outlined,
+mat-chip-row.sz-small button[matChipRemove][matFab] .material-symbols-outlined {
+  font-size: 19.2px;
+}
+mat-chip.sz-small button[matChipEdit][matFab] mat-icon, mat-chip.sz-small button[matChipRemove][matFab] mat-icon,
+mat-chip-row.sz-small button[matChipEdit][matFab] mat-icon,
+mat-chip-row.sz-small button[matChipRemove][matFab] mat-icon {
+  font-size: 19.2px;
+  width: 19.2px;
+  height: 19.2px;
+}
+mat-chip.sz-small button[matChipEdit][matFab].mat-mdc-fab-base, mat-chip.sz-small button[matChipRemove][matFab].mat-mdc-fab-base,
+mat-chip-row.sz-small button[matChipEdit][matFab].mat-mdc-fab-base,
+mat-chip-row.sz-small button[matChipRemove][matFab].mat-mdc-fab-base {
+  height: 33.6px;
+}
+mat-chip.sz-small button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), mat-chip.sz-small button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]),
+mat-chip-row.sz-small button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]),
+mat-chip-row.sz-small button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]) {
+  width: 33.6px;
+}
+mat-chip.sz-small button[matChipEdit][matMiniFab].mat-mdc-fab-base, mat-chip.sz-small button[matChipRemove][matMiniFab].mat-mdc-fab-base,
+mat-chip-row.sz-small button[matChipEdit][matMiniFab].mat-mdc-fab-base,
+mat-chip-row.sz-small button[matChipRemove][matMiniFab].mat-mdc-fab-base {
+  height: 24px;
+  width: 24px;
+}
+mat-chip.sz-small button[matChipEdit][matMiniFab], mat-chip.sz-small button[matChipRemove][matMiniFab],
+mat-chip-row.sz-small button[matChipEdit][matMiniFab],
+mat-chip-row.sz-small button[matChipRemove][matMiniFab] {
+  --mat-fab-extended-container-height: 24px;
+  --mat-fab-touch-target-size: 28px;
+  --mat-fab-small-touch-target-size: 28px;
+}
+mat-chip.sz-small button[matChipEdit].sh-round, mat-chip.sz-small button[matChipRemove].sh-round,
+mat-chip-row.sz-small button[matChipEdit].sh-round,
+mat-chip-row.sz-small button[matChipRemove].sh-round {
+  --mat-button-filled-container-shape: 9999px;
+  --mat-button-outlined-container-shape: 9999px;
+  --mat-button-protected-container-shape: 9999px;
+  --mat-button-text-container-shape: 9999px;
+  --mat-button-tonal-container-shape: 9999px;
+  --mat-icon-button-container-shape: 9999px;
+  --mat-fab-container-shape: 9999px;
+  --mat-fab-extended-container-shape: 9999px;
+  --mat-fab-small-container-shape: 9999px;
+}
+mat-chip.sz-small button[matChipEdit].sh-square, mat-chip.sz-small button[matChipRemove].sh-square,
+mat-chip-row.sz-small button[matChipEdit].sh-square,
+mat-chip-row.sz-small button[matChipRemove].sh-square {
+  --mat-button-filled-container-shape: 0px;
+  --mat-button-outlined-container-shape: 0px;
+  --mat-button-protected-container-shape: 0px;
+  --mat-button-text-container-shape: 0px;
+  --mat-button-tonal-container-shape: 0px;
+  --mat-icon-button-container-shape: 0px;
+  --mat-fab-container-shape: 0px;
+  --mat-fab-extended-container-shape: 0px;
+  --mat-fab-small-container-shape: 0px;
+}
+mat-chip.sz-small button[matChipEdit].sh-squircle, mat-chip.sz-small button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-chip.sz-small button[matChipRemove].sh-squircle, mat-chip.sz-small button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle),
+mat-chip-row.sz-small button[matChipEdit].sh-squircle,
+mat-chip-row.sz-small button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle),
+mat-chip-row.sz-small button[matChipRemove].sh-squircle,
+mat-chip-row.sz-small button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-button-filled-container-shape: 6px;
+  --mat-button-outlined-container-shape: 6px;
+  --mat-button-protected-container-shape: 6px;
+  --mat-button-text-container-shape: 6px;
+  --mat-button-tonal-container-shape: 6px;
+  --mat-icon-button-container-shape: 6px;
+  --mat-fab-container-shape: 8.4px;
+  --mat-fab-extended-container-shape: 8.4px;
+  --mat-fab-small-container-shape: 8.4px;
+}
+mat-chip.sz-small button[matChipEdit].destructive, mat-chip.sz-small button[matChipRemove].destructive,
+mat-chip-row.sz-small button[matChipEdit].destructive,
+mat-chip-row.sz-small button[matChipRemove].destructive {
+  --mat-button-filled-container-color: #c0000c;
+  --mat-button-filled-state-layer-color: color-mix(in srgb, #ffffff 8%, #c0000c);
+  --mat-button-filled-ripple-color: color-mix(in srgb, #ffffff 12%, #c0000c);
+  --mat-button-tonal-container-color: #ffdad5;
+  --mat-button-tonal-label-text-color: #c0000c;
+  --mat-button-tonal-state-layer-color: color-mix(in srgb, #930007 8%, #ffdad5);
+  --mat-button-tonal-ripple-color: color-mix(in srgb, #930007 12%, #ffdad5);
+  --mat-button-outlined-outline-color: #c0000c;
+  --mat-button-outlined-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-button-outlined-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-button-outlined-label-text-color: #c0000c;
+  --mat-button-protected-label-text-color: #c0000c;
+  --mat-button-protected-state-layer-color: color-mix(in srgb, #c0000c 8%, #f2f5e9);
+  --mat-button-protected-ripple-color: color-mix(in srgb, #c0000c 12%, #f2f5e9);
+  --mat-icon-button-icon-color: #c0000c;
+  --mat-icon-button-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-icon-button-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-fab-container-color: #ffb4aa;
+  --mat-fab-foreground-color: #c0000c;
+  --mat-fab-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-fab-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+}
+mat-chip.sz-small button[matChipEdit], mat-chip.sz-small button[matChipRemove],
+mat-chip-row.sz-small button[matChipEdit],
+mat-chip-row.sz-small button[matChipRemove] {
+  height: 13.5px;
+  width: 13.5px;
+}
+mat-chip.sz-small.sh-round,
+mat-chip-row.sz-small.sh-round {
+  --mat-chip-container-shape-radius: 9999px;
+}
+mat-chip.sz-small.sh-square,
+mat-chip-row.sz-small.sh-square {
+  --mat-chip-container-shape-radius: 0px;
+}
+mat-chip.sz-small.sh-squircle, mat-chip.sz-small:not(.sh-round):not(.sh-square):not(.sh-squircle),
+mat-chip-row.sz-small.sh-squircle,
+mat-chip-row.sz-small:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-chip-container-shape-radius: 6px;
+}
+mat-chip.sz-medium,
+mat-chip-row.sz-medium {
+  --mat-chip-container-height: 32px;
+  --mat-chip-container-shape-radius: 8px;
+  --mat-chip-with-avatar-avatar-shape-radius: 24px;
+  --mat-chip-with-avatar-avatar-size: 24px;
+  --mat-chip-with-icon-icon-size: 18px;
+}
+mat-chip.sz-medium button[matChipEdit], mat-chip.sz-medium button[matChipRemove],
+mat-chip-row.sz-medium button[matChipEdit],
+mat-chip-row.sz-medium button[matChipRemove] {
+  --mat-button-filled-container-height: 32px;
+  --mat-button-filled-touch-target-size: 40px;
+  --mat-button-filled-icon-spacing: 6.4px;
+  --mat-button-filled-icon-offset: -6.4px;
+  --mat-button-outlined-container-height: 32px;
+  --mat-button-outlined-touch-target-size: 40px;
+  --mat-button-outlined-icon-spacing: 6.4px;
+  --mat-button-outlined-icon-offset: -6.4px;
+  --mat-button-protected-container-height: 32px;
+  --mat-button-protected-touch-target-size: 40px;
+  --mat-button-protected-icon-spacing: 6.4px;
+  --mat-button-protected-icon-offset: -6.4px;
+  --mat-button-tonal-container-height: 32px;
+  --mat-button-tonal-touch-target-size: 40px;
+  --mat-button-tonal-icon-spacing: 6.4px;
+  --mat-button-tonal-icon-offset: -6.4px;
+  --mat-button-text-container-height: 32px;
+  --mat-button-text-touch-target-size: 40px;
+  --mat-button-text-icon-spacing: 6.4px;
+  --mat-button-text-icon-offset: -6.4px;
+  --mat-button-filled-horizontal-padding: 19.2px;
+  --mat-button-outlined-horizontal-padding: 19.2px;
+  --mat-button-protected-horizontal-padding: 19.2px;
+  --mat-button-tonal-horizontal-padding: 19.2px;
+  --mat-button-text-with-icon-horizontal-padding: 12.8px;
+}
+mat-chip.sz-medium button[matChipEdit] .material-symbols-outlined, mat-chip.sz-medium button[matChipRemove] .material-symbols-outlined,
+mat-chip-row.sz-medium button[matChipEdit] .material-symbols-outlined,
+mat-chip-row.sz-medium button[matChipRemove] .material-symbols-outlined {
+  font-size: 19.2px;
+}
+mat-chip.sz-medium button[matChipEdit] mat-icon, mat-chip.sz-medium button[matChipRemove] mat-icon,
+mat-chip-row.sz-medium button[matChipEdit] mat-icon,
+mat-chip-row.sz-medium button[matChipRemove] mat-icon {
+  font-size: 19.2px;
+  width: 19.2px;
+  height: 19.2px;
+}
+mat-chip.sz-medium button[matChipEdit][matIconButton], mat-chip.sz-medium button[matChipRemove][matIconButton],
+mat-chip-row.sz-medium button[matChipEdit][matIconButton],
+mat-chip-row.sz-medium button[matChipRemove][matIconButton] {
+  --mat-icon-button-state-layer-size: 32px;
+  --mat-icon-button-icon-size: 19.2px;
+  --mat-icon-button-touch-target-size: 36px;
+}
+mat-chip.sz-medium button[matChipEdit][matFab], mat-chip.sz-medium button[matChipRemove][matFab],
+mat-chip-row.sz-medium button[matChipEdit][matFab],
+mat-chip-row.sz-medium button[matChipRemove][matFab] {
+  --mat-fab-extended-container-height: 44.8px;
+  --mat-fab-touch-target-size: 48.8px;
+  --mat-fab-small-touch-target-size: 48.8px;
+}
+mat-chip.sz-medium button[matChipEdit][matFab] .material-symbols-outlined, mat-chip.sz-medium button[matChipRemove][matFab] .material-symbols-outlined,
+mat-chip-row.sz-medium button[matChipEdit][matFab] .material-symbols-outlined,
+mat-chip-row.sz-medium button[matChipRemove][matFab] .material-symbols-outlined {
+  font-size: 25.6px;
+}
+mat-chip.sz-medium button[matChipEdit][matFab] mat-icon, mat-chip.sz-medium button[matChipRemove][matFab] mat-icon,
+mat-chip-row.sz-medium button[matChipEdit][matFab] mat-icon,
+mat-chip-row.sz-medium button[matChipRemove][matFab] mat-icon {
+  font-size: 25.6px;
+  width: 25.6px;
+  height: 25.6px;
+}
+mat-chip.sz-medium button[matChipEdit][matFab].mat-mdc-fab-base, mat-chip.sz-medium button[matChipRemove][matFab].mat-mdc-fab-base,
+mat-chip-row.sz-medium button[matChipEdit][matFab].mat-mdc-fab-base,
+mat-chip-row.sz-medium button[matChipRemove][matFab].mat-mdc-fab-base {
+  height: 44.8px;
+}
+mat-chip.sz-medium button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), mat-chip.sz-medium button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]),
+mat-chip-row.sz-medium button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]),
+mat-chip-row.sz-medium button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]) {
+  width: 44.8px;
+}
+mat-chip.sz-medium button[matChipEdit][matMiniFab].mat-mdc-fab-base, mat-chip.sz-medium button[matChipRemove][matMiniFab].mat-mdc-fab-base,
+mat-chip-row.sz-medium button[matChipEdit][matMiniFab].mat-mdc-fab-base,
+mat-chip-row.sz-medium button[matChipRemove][matMiniFab].mat-mdc-fab-base {
+  height: 32px;
+  width: 32px;
+}
+mat-chip.sz-medium button[matChipEdit][matMiniFab], mat-chip.sz-medium button[matChipRemove][matMiniFab],
+mat-chip-row.sz-medium button[matChipEdit][matMiniFab],
+mat-chip-row.sz-medium button[matChipRemove][matMiniFab] {
+  --mat-fab-extended-container-height: 32px;
+  --mat-fab-touch-target-size: 36px;
+  --mat-fab-small-touch-target-size: 36px;
+}
+mat-chip.sz-medium button[matChipEdit].sh-round, mat-chip.sz-medium button[matChipRemove].sh-round,
+mat-chip-row.sz-medium button[matChipEdit].sh-round,
+mat-chip-row.sz-medium button[matChipRemove].sh-round {
+  --mat-button-filled-container-shape: 9999px;
+  --mat-button-outlined-container-shape: 9999px;
+  --mat-button-protected-container-shape: 9999px;
+  --mat-button-text-container-shape: 9999px;
+  --mat-button-tonal-container-shape: 9999px;
+  --mat-icon-button-container-shape: 9999px;
+  --mat-fab-container-shape: 9999px;
+  --mat-fab-extended-container-shape: 9999px;
+  --mat-fab-small-container-shape: 9999px;
+}
+mat-chip.sz-medium button[matChipEdit].sh-square, mat-chip.sz-medium button[matChipRemove].sh-square,
+mat-chip-row.sz-medium button[matChipEdit].sh-square,
+mat-chip-row.sz-medium button[matChipRemove].sh-square {
+  --mat-button-filled-container-shape: 0px;
+  --mat-button-outlined-container-shape: 0px;
+  --mat-button-protected-container-shape: 0px;
+  --mat-button-text-container-shape: 0px;
+  --mat-button-tonal-container-shape: 0px;
+  --mat-icon-button-container-shape: 0px;
+  --mat-fab-container-shape: 0px;
+  --mat-fab-extended-container-shape: 0px;
+  --mat-fab-small-container-shape: 0px;
+}
+mat-chip.sz-medium button[matChipEdit].sh-squircle, mat-chip.sz-medium button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-chip.sz-medium button[matChipRemove].sh-squircle, mat-chip.sz-medium button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle),
+mat-chip-row.sz-medium button[matChipEdit].sh-squircle,
+mat-chip-row.sz-medium button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle),
+mat-chip-row.sz-medium button[matChipRemove].sh-squircle,
+mat-chip-row.sz-medium button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-button-filled-container-shape: 8px;
+  --mat-button-outlined-container-shape: 8px;
+  --mat-button-protected-container-shape: 8px;
+  --mat-button-text-container-shape: 8px;
+  --mat-button-tonal-container-shape: 8px;
+  --mat-icon-button-container-shape: 8px;
+  --mat-fab-container-shape: 11.2px;
+  --mat-fab-extended-container-shape: 11.2px;
+  --mat-fab-small-container-shape: 11.2px;
+}
+mat-chip.sz-medium button[matChipEdit].destructive, mat-chip.sz-medium button[matChipRemove].destructive,
+mat-chip-row.sz-medium button[matChipEdit].destructive,
+mat-chip-row.sz-medium button[matChipRemove].destructive {
+  --mat-button-filled-container-color: #c0000c;
+  --mat-button-filled-state-layer-color: color-mix(in srgb, #ffffff 8%, #c0000c);
+  --mat-button-filled-ripple-color: color-mix(in srgb, #ffffff 12%, #c0000c);
+  --mat-button-tonal-container-color: #ffdad5;
+  --mat-button-tonal-label-text-color: #c0000c;
+  --mat-button-tonal-state-layer-color: color-mix(in srgb, #930007 8%, #ffdad5);
+  --mat-button-tonal-ripple-color: color-mix(in srgb, #930007 12%, #ffdad5);
+  --mat-button-outlined-outline-color: #c0000c;
+  --mat-button-outlined-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-button-outlined-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-button-outlined-label-text-color: #c0000c;
+  --mat-button-protected-label-text-color: #c0000c;
+  --mat-button-protected-state-layer-color: color-mix(in srgb, #c0000c 8%, #f2f5e9);
+  --mat-button-protected-ripple-color: color-mix(in srgb, #c0000c 12%, #f2f5e9);
+  --mat-icon-button-icon-color: #c0000c;
+  --mat-icon-button-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-icon-button-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-fab-container-color: #ffb4aa;
+  --mat-fab-foreground-color: #c0000c;
+  --mat-fab-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-fab-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+}
+mat-chip.sz-medium button[matChipEdit], mat-chip.sz-medium button[matChipRemove],
+mat-chip-row.sz-medium button[matChipEdit],
+mat-chip-row.sz-medium button[matChipRemove] {
+  height: 18px;
+  width: 18px;
+}
+mat-chip.sz-medium.sh-round,
+mat-chip-row.sz-medium.sh-round {
+  --mat-chip-container-shape-radius: 9999px;
+}
+mat-chip.sz-medium.sh-square,
+mat-chip-row.sz-medium.sh-square {
+  --mat-chip-container-shape-radius: 0px;
+}
+mat-chip.sz-medium.sh-squircle, mat-chip.sz-medium:not(.sh-round):not(.sh-square):not(.sh-squircle),
+mat-chip-row.sz-medium.sh-squircle,
+mat-chip-row.sz-medium:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-chip-container-shape-radius: 8px;
+}
+mat-chip.sz-large,
+mat-chip-row.sz-large {
+  --mat-chip-container-height: 40px;
+  --mat-chip-container-shape-radius: 10px;
+  --mat-chip-with-avatar-avatar-shape-radius: 30px;
+  --mat-chip-with-avatar-avatar-size: 30px;
+  --mat-chip-with-icon-icon-size: 22.5px;
+}
+mat-chip.sz-large button[matChipEdit], mat-chip.sz-large button[matChipRemove],
+mat-chip-row.sz-large button[matChipEdit],
+mat-chip-row.sz-large button[matChipRemove] {
+  --mat-button-filled-container-height: 40px;
+  --mat-button-filled-touch-target-size: 48px;
+  --mat-button-filled-icon-spacing: 8px;
+  --mat-button-filled-icon-offset: -8px;
+  --mat-button-outlined-container-height: 40px;
+  --mat-button-outlined-touch-target-size: 48px;
+  --mat-button-outlined-icon-spacing: 8px;
+  --mat-button-outlined-icon-offset: -8px;
+  --mat-button-protected-container-height: 40px;
+  --mat-button-protected-touch-target-size: 48px;
+  --mat-button-protected-icon-spacing: 8px;
+  --mat-button-protected-icon-offset: -8px;
+  --mat-button-tonal-container-height: 40px;
+  --mat-button-tonal-touch-target-size: 48px;
+  --mat-button-tonal-icon-spacing: 8px;
+  --mat-button-tonal-icon-offset: -8px;
+  --mat-button-text-container-height: 40px;
+  --mat-button-text-touch-target-size: 48px;
+  --mat-button-text-icon-spacing: 8px;
+  --mat-button-text-icon-offset: -8px;
+  --mat-button-filled-horizontal-padding: 24px;
+  --mat-button-outlined-horizontal-padding: 24px;
+  --mat-button-protected-horizontal-padding: 24px;
+  --mat-button-tonal-horizontal-padding: 24px;
+  --mat-button-text-with-icon-horizontal-padding: 16px;
+}
+mat-chip.sz-large button[matChipEdit] .material-symbols-outlined, mat-chip.sz-large button[matChipRemove] .material-symbols-outlined,
+mat-chip-row.sz-large button[matChipEdit] .material-symbols-outlined,
+mat-chip-row.sz-large button[matChipRemove] .material-symbols-outlined {
+  font-size: 24px;
+}
+mat-chip.sz-large button[matChipEdit] mat-icon, mat-chip.sz-large button[matChipRemove] mat-icon,
+mat-chip-row.sz-large button[matChipEdit] mat-icon,
+mat-chip-row.sz-large button[matChipRemove] mat-icon {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+mat-chip.sz-large button[matChipEdit][matIconButton], mat-chip.sz-large button[matChipRemove][matIconButton],
+mat-chip-row.sz-large button[matChipEdit][matIconButton],
+mat-chip-row.sz-large button[matChipRemove][matIconButton] {
+  --mat-icon-button-state-layer-size: 40px;
+  --mat-icon-button-icon-size: 24px;
+  --mat-icon-button-touch-target-size: 44px;
+}
+mat-chip.sz-large button[matChipEdit][matFab], mat-chip.sz-large button[matChipRemove][matFab],
+mat-chip-row.sz-large button[matChipEdit][matFab],
+mat-chip-row.sz-large button[matChipRemove][matFab] {
+  --mat-fab-extended-container-height: 56px;
+  --mat-fab-touch-target-size: 60px;
+  --mat-fab-small-touch-target-size: 60px;
+}
+mat-chip.sz-large button[matChipEdit][matFab] .material-symbols-outlined, mat-chip.sz-large button[matChipRemove][matFab] .material-symbols-outlined,
+mat-chip-row.sz-large button[matChipEdit][matFab] .material-symbols-outlined,
+mat-chip-row.sz-large button[matChipRemove][matFab] .material-symbols-outlined {
+  font-size: 32px;
+}
+mat-chip.sz-large button[matChipEdit][matFab] mat-icon, mat-chip.sz-large button[matChipRemove][matFab] mat-icon,
+mat-chip-row.sz-large button[matChipEdit][matFab] mat-icon,
+mat-chip-row.sz-large button[matChipRemove][matFab] mat-icon {
+  font-size: 32px;
+  width: 32px;
+  height: 32px;
+}
+mat-chip.sz-large button[matChipEdit][matFab].mat-mdc-fab-base, mat-chip.sz-large button[matChipRemove][matFab].mat-mdc-fab-base,
+mat-chip-row.sz-large button[matChipEdit][matFab].mat-mdc-fab-base,
+mat-chip-row.sz-large button[matChipRemove][matFab].mat-mdc-fab-base {
+  height: 56px;
+}
+mat-chip.sz-large button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), mat-chip.sz-large button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]),
+mat-chip-row.sz-large button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]),
+mat-chip-row.sz-large button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]) {
+  width: 56px;
+}
+mat-chip.sz-large button[matChipEdit][matMiniFab].mat-mdc-fab-base, mat-chip.sz-large button[matChipRemove][matMiniFab].mat-mdc-fab-base,
+mat-chip-row.sz-large button[matChipEdit][matMiniFab].mat-mdc-fab-base,
+mat-chip-row.sz-large button[matChipRemove][matMiniFab].mat-mdc-fab-base {
+  height: 40px;
+  width: 40px;
+}
+mat-chip.sz-large button[matChipEdit][matMiniFab], mat-chip.sz-large button[matChipRemove][matMiniFab],
+mat-chip-row.sz-large button[matChipEdit][matMiniFab],
+mat-chip-row.sz-large button[matChipRemove][matMiniFab] {
+  --mat-fab-extended-container-height: 40px;
+  --mat-fab-touch-target-size: 44px;
+  --mat-fab-small-touch-target-size: 44px;
+}
+mat-chip.sz-large button[matChipEdit].sh-round, mat-chip.sz-large button[matChipRemove].sh-round,
+mat-chip-row.sz-large button[matChipEdit].sh-round,
+mat-chip-row.sz-large button[matChipRemove].sh-round {
+  --mat-button-filled-container-shape: 9999px;
+  --mat-button-outlined-container-shape: 9999px;
+  --mat-button-protected-container-shape: 9999px;
+  --mat-button-text-container-shape: 9999px;
+  --mat-button-tonal-container-shape: 9999px;
+  --mat-icon-button-container-shape: 9999px;
+  --mat-fab-container-shape: 9999px;
+  --mat-fab-extended-container-shape: 9999px;
+  --mat-fab-small-container-shape: 9999px;
+}
+mat-chip.sz-large button[matChipEdit].sh-square, mat-chip.sz-large button[matChipRemove].sh-square,
+mat-chip-row.sz-large button[matChipEdit].sh-square,
+mat-chip-row.sz-large button[matChipRemove].sh-square {
+  --mat-button-filled-container-shape: 0px;
+  --mat-button-outlined-container-shape: 0px;
+  --mat-button-protected-container-shape: 0px;
+  --mat-button-text-container-shape: 0px;
+  --mat-button-tonal-container-shape: 0px;
+  --mat-icon-button-container-shape: 0px;
+  --mat-fab-container-shape: 0px;
+  --mat-fab-extended-container-shape: 0px;
+  --mat-fab-small-container-shape: 0px;
+}
+mat-chip.sz-large button[matChipEdit].sh-squircle, mat-chip.sz-large button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-chip.sz-large button[matChipRemove].sh-squircle, mat-chip.sz-large button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle),
+mat-chip-row.sz-large button[matChipEdit].sh-squircle,
+mat-chip-row.sz-large button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle),
+mat-chip-row.sz-large button[matChipRemove].sh-squircle,
+mat-chip-row.sz-large button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-button-filled-container-shape: 10px;
+  --mat-button-outlined-container-shape: 10px;
+  --mat-button-protected-container-shape: 10px;
+  --mat-button-text-container-shape: 10px;
+  --mat-button-tonal-container-shape: 10px;
+  --mat-icon-button-container-shape: 10px;
+  --mat-fab-container-shape: 14px;
+  --mat-fab-extended-container-shape: 14px;
+  --mat-fab-small-container-shape: 14px;
+}
+mat-chip.sz-large button[matChipEdit].destructive, mat-chip.sz-large button[matChipRemove].destructive,
+mat-chip-row.sz-large button[matChipEdit].destructive,
+mat-chip-row.sz-large button[matChipRemove].destructive {
+  --mat-button-filled-container-color: #c0000c;
+  --mat-button-filled-state-layer-color: color-mix(in srgb, #ffffff 8%, #c0000c);
+  --mat-button-filled-ripple-color: color-mix(in srgb, #ffffff 12%, #c0000c);
+  --mat-button-tonal-container-color: #ffdad5;
+  --mat-button-tonal-label-text-color: #c0000c;
+  --mat-button-tonal-state-layer-color: color-mix(in srgb, #930007 8%, #ffdad5);
+  --mat-button-tonal-ripple-color: color-mix(in srgb, #930007 12%, #ffdad5);
+  --mat-button-outlined-outline-color: #c0000c;
+  --mat-button-outlined-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-button-outlined-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-button-outlined-label-text-color: #c0000c;
+  --mat-button-protected-label-text-color: #c0000c;
+  --mat-button-protected-state-layer-color: color-mix(in srgb, #c0000c 8%, #f2f5e9);
+  --mat-button-protected-ripple-color: color-mix(in srgb, #c0000c 12%, #f2f5e9);
+  --mat-icon-button-icon-color: #c0000c;
+  --mat-icon-button-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-icon-button-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-fab-container-color: #ffb4aa;
+  --mat-fab-foreground-color: #c0000c;
+  --mat-fab-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-fab-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+}
+mat-chip.sz-large button[matChipEdit], mat-chip.sz-large button[matChipRemove],
+mat-chip-row.sz-large button[matChipEdit],
+mat-chip-row.sz-large button[matChipRemove] {
+  height: 22.5px;
+  width: 22.5px;
+}
+mat-chip.sz-large.sh-round,
+mat-chip-row.sz-large.sh-round {
+  --mat-chip-container-shape-radius: 9999px;
+}
+mat-chip.sz-large.sh-square,
+mat-chip-row.sz-large.sh-square {
+  --mat-chip-container-shape-radius: 0px;
+}
+mat-chip.sz-large.sh-squircle, mat-chip.sz-large:not(.sh-round):not(.sh-square):not(.sh-squircle),
+mat-chip-row.sz-large.sh-squircle,
+mat-chip-row.sz-large:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-chip-container-shape-radius: 10px;
+}
+mat-chip.sz-xlarge,
+mat-chip-row.sz-xlarge {
+  --mat-chip-container-height: 48px;
+  --mat-chip-container-shape-radius: 12px;
+  --mat-chip-with-avatar-avatar-shape-radius: 36px;
+  --mat-chip-with-avatar-avatar-size: 36px;
+  --mat-chip-with-icon-icon-size: 27px;
+}
+mat-chip.sz-xlarge button[matChipEdit], mat-chip.sz-xlarge button[matChipRemove],
+mat-chip-row.sz-xlarge button[matChipEdit],
+mat-chip-row.sz-xlarge button[matChipRemove] {
+  --mat-button-filled-container-height: 48px;
+  --mat-button-filled-touch-target-size: 56px;
+  --mat-button-filled-icon-spacing: 9.6px;
+  --mat-button-filled-icon-offset: -9.6px;
+  --mat-button-outlined-container-height: 48px;
+  --mat-button-outlined-touch-target-size: 56px;
+  --mat-button-outlined-icon-spacing: 9.6px;
+  --mat-button-outlined-icon-offset: -9.6px;
+  --mat-button-protected-container-height: 48px;
+  --mat-button-protected-touch-target-size: 56px;
+  --mat-button-protected-icon-spacing: 9.6px;
+  --mat-button-protected-icon-offset: -9.6px;
+  --mat-button-tonal-container-height: 48px;
+  --mat-button-tonal-touch-target-size: 56px;
+  --mat-button-tonal-icon-spacing: 9.6px;
+  --mat-button-tonal-icon-offset: -9.6px;
+  --mat-button-text-container-height: 48px;
+  --mat-button-text-touch-target-size: 56px;
+  --mat-button-text-icon-spacing: 9.6px;
+  --mat-button-text-icon-offset: -9.6px;
+  --mat-button-filled-horizontal-padding: 28.8px;
+  --mat-button-outlined-horizontal-padding: 28.8px;
+  --mat-button-protected-horizontal-padding: 28.8px;
+  --mat-button-tonal-horizontal-padding: 28.8px;
+  --mat-button-text-with-icon-horizontal-padding: 19.2px;
+}
+mat-chip.sz-xlarge button[matChipEdit] .material-symbols-outlined, mat-chip.sz-xlarge button[matChipRemove] .material-symbols-outlined,
+mat-chip-row.sz-xlarge button[matChipEdit] .material-symbols-outlined,
+mat-chip-row.sz-xlarge button[matChipRemove] .material-symbols-outlined {
+  font-size: 28.8px;
+}
+mat-chip.sz-xlarge button[matChipEdit] mat-icon, mat-chip.sz-xlarge button[matChipRemove] mat-icon,
+mat-chip-row.sz-xlarge button[matChipEdit] mat-icon,
+mat-chip-row.sz-xlarge button[matChipRemove] mat-icon {
+  font-size: 28.8px;
+  width: 28.8px;
+  height: 28.8px;
+}
+mat-chip.sz-xlarge button[matChipEdit][matIconButton], mat-chip.sz-xlarge button[matChipRemove][matIconButton],
+mat-chip-row.sz-xlarge button[matChipEdit][matIconButton],
+mat-chip-row.sz-xlarge button[matChipRemove][matIconButton] {
+  --mat-icon-button-state-layer-size: 48px;
+  --mat-icon-button-icon-size: 28.8px;
+  --mat-icon-button-touch-target-size: 52px;
+}
+mat-chip.sz-xlarge button[matChipEdit][matFab], mat-chip.sz-xlarge button[matChipRemove][matFab],
+mat-chip-row.sz-xlarge button[matChipEdit][matFab],
+mat-chip-row.sz-xlarge button[matChipRemove][matFab] {
+  --mat-fab-extended-container-height: 67.2px;
+  --mat-fab-touch-target-size: 71.2px;
+  --mat-fab-small-touch-target-size: 71.2px;
+}
+mat-chip.sz-xlarge button[matChipEdit][matFab] .material-symbols-outlined, mat-chip.sz-xlarge button[matChipRemove][matFab] .material-symbols-outlined,
+mat-chip-row.sz-xlarge button[matChipEdit][matFab] .material-symbols-outlined,
+mat-chip-row.sz-xlarge button[matChipRemove][matFab] .material-symbols-outlined {
+  font-size: 38.4px;
+}
+mat-chip.sz-xlarge button[matChipEdit][matFab] mat-icon, mat-chip.sz-xlarge button[matChipRemove][matFab] mat-icon,
+mat-chip-row.sz-xlarge button[matChipEdit][matFab] mat-icon,
+mat-chip-row.sz-xlarge button[matChipRemove][matFab] mat-icon {
+  font-size: 38.4px;
+  width: 38.4px;
+  height: 38.4px;
+}
+mat-chip.sz-xlarge button[matChipEdit][matFab].mat-mdc-fab-base, mat-chip.sz-xlarge button[matChipRemove][matFab].mat-mdc-fab-base,
+mat-chip-row.sz-xlarge button[matChipEdit][matFab].mat-mdc-fab-base,
+mat-chip-row.sz-xlarge button[matChipRemove][matFab].mat-mdc-fab-base {
+  height: 67.2px;
+}
+mat-chip.sz-xlarge button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), mat-chip.sz-xlarge button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]),
+mat-chip-row.sz-xlarge button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]),
+mat-chip-row.sz-xlarge button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]) {
+  width: 67.2px;
+}
+mat-chip.sz-xlarge button[matChipEdit][matMiniFab].mat-mdc-fab-base, mat-chip.sz-xlarge button[matChipRemove][matMiniFab].mat-mdc-fab-base,
+mat-chip-row.sz-xlarge button[matChipEdit][matMiniFab].mat-mdc-fab-base,
+mat-chip-row.sz-xlarge button[matChipRemove][matMiniFab].mat-mdc-fab-base {
+  height: 48px;
+  width: 48px;
+}
+mat-chip.sz-xlarge button[matChipEdit][matMiniFab], mat-chip.sz-xlarge button[matChipRemove][matMiniFab],
+mat-chip-row.sz-xlarge button[matChipEdit][matMiniFab],
+mat-chip-row.sz-xlarge button[matChipRemove][matMiniFab] {
+  --mat-fab-extended-container-height: 48px;
+  --mat-fab-touch-target-size: 52px;
+  --mat-fab-small-touch-target-size: 52px;
+}
+mat-chip.sz-xlarge button[matChipEdit].sh-round, mat-chip.sz-xlarge button[matChipRemove].sh-round,
+mat-chip-row.sz-xlarge button[matChipEdit].sh-round,
+mat-chip-row.sz-xlarge button[matChipRemove].sh-round {
+  --mat-button-filled-container-shape: 9999px;
+  --mat-button-outlined-container-shape: 9999px;
+  --mat-button-protected-container-shape: 9999px;
+  --mat-button-text-container-shape: 9999px;
+  --mat-button-tonal-container-shape: 9999px;
+  --mat-icon-button-container-shape: 9999px;
+  --mat-fab-container-shape: 9999px;
+  --mat-fab-extended-container-shape: 9999px;
+  --mat-fab-small-container-shape: 9999px;
+}
+mat-chip.sz-xlarge button[matChipEdit].sh-square, mat-chip.sz-xlarge button[matChipRemove].sh-square,
+mat-chip-row.sz-xlarge button[matChipEdit].sh-square,
+mat-chip-row.sz-xlarge button[matChipRemove].sh-square {
+  --mat-button-filled-container-shape: 0px;
+  --mat-button-outlined-container-shape: 0px;
+  --mat-button-protected-container-shape: 0px;
+  --mat-button-text-container-shape: 0px;
+  --mat-button-tonal-container-shape: 0px;
+  --mat-icon-button-container-shape: 0px;
+  --mat-fab-container-shape: 0px;
+  --mat-fab-extended-container-shape: 0px;
+  --mat-fab-small-container-shape: 0px;
+}
+mat-chip.sz-xlarge button[matChipEdit].sh-squircle, mat-chip.sz-xlarge button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-chip.sz-xlarge button[matChipRemove].sh-squircle, mat-chip.sz-xlarge button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle),
+mat-chip-row.sz-xlarge button[matChipEdit].sh-squircle,
+mat-chip-row.sz-xlarge button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle),
+mat-chip-row.sz-xlarge button[matChipRemove].sh-squircle,
+mat-chip-row.sz-xlarge button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-button-filled-container-shape: 12px;
+  --mat-button-outlined-container-shape: 12px;
+  --mat-button-protected-container-shape: 12px;
+  --mat-button-text-container-shape: 12px;
+  --mat-button-tonal-container-shape: 12px;
+  --mat-icon-button-container-shape: 12px;
+  --mat-fab-container-shape: 16.8px;
+  --mat-fab-extended-container-shape: 16.8px;
+  --mat-fab-small-container-shape: 16.8px;
+}
+mat-chip.sz-xlarge button[matChipEdit].destructive, mat-chip.sz-xlarge button[matChipRemove].destructive,
+mat-chip-row.sz-xlarge button[matChipEdit].destructive,
+mat-chip-row.sz-xlarge button[matChipRemove].destructive {
+  --mat-button-filled-container-color: #c0000c;
+  --mat-button-filled-state-layer-color: color-mix(in srgb, #ffffff 8%, #c0000c);
+  --mat-button-filled-ripple-color: color-mix(in srgb, #ffffff 12%, #c0000c);
+  --mat-button-tonal-container-color: #ffdad5;
+  --mat-button-tonal-label-text-color: #c0000c;
+  --mat-button-tonal-state-layer-color: color-mix(in srgb, #930007 8%, #ffdad5);
+  --mat-button-tonal-ripple-color: color-mix(in srgb, #930007 12%, #ffdad5);
+  --mat-button-outlined-outline-color: #c0000c;
+  --mat-button-outlined-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-button-outlined-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-button-outlined-label-text-color: #c0000c;
+  --mat-button-protected-label-text-color: #c0000c;
+  --mat-button-protected-state-layer-color: color-mix(in srgb, #c0000c 8%, #f2f5e9);
+  --mat-button-protected-ripple-color: color-mix(in srgb, #c0000c 12%, #f2f5e9);
+  --mat-icon-button-icon-color: #c0000c;
+  --mat-icon-button-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-icon-button-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-fab-container-color: #ffb4aa;
+  --mat-fab-foreground-color: #c0000c;
+  --mat-fab-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-fab-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+}
+mat-chip.sz-xlarge button[matChipEdit], mat-chip.sz-xlarge button[matChipRemove],
+mat-chip-row.sz-xlarge button[matChipEdit],
+mat-chip-row.sz-xlarge button[matChipRemove] {
+  height: 27px;
+  width: 27px;
+}
+mat-chip.sz-xlarge.sh-round,
+mat-chip-row.sz-xlarge.sh-round {
+  --mat-chip-container-shape-radius: 9999px;
+}
+mat-chip.sz-xlarge.sh-square,
+mat-chip-row.sz-xlarge.sh-square {
+  --mat-chip-container-shape-radius: 0px;
+}
+mat-chip.sz-xlarge.sh-squircle, mat-chip.sz-xlarge:not(.sh-round):not(.sh-square):not(.sh-squircle),
+mat-chip-row.sz-xlarge.sh-squircle,
+mat-chip-row.sz-xlarge:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-chip-container-shape-radius: 12px;
+}
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge),
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
+  --mat-chip-container-height: 32px;
+  --mat-chip-container-shape-radius: 8px;
+  --mat-chip-with-avatar-avatar-shape-radius: 24px;
+  --mat-chip-with-avatar-avatar-size: 24px;
+  --mat-chip-with-icon-icon-size: 18px;
+}
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove],
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit],
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove] {
+  --mat-button-filled-container-height: 32px;
+  --mat-button-filled-touch-target-size: 40px;
+  --mat-button-filled-icon-spacing: 6.4px;
+  --mat-button-filled-icon-offset: -6.4px;
+  --mat-button-outlined-container-height: 32px;
+  --mat-button-outlined-touch-target-size: 40px;
+  --mat-button-outlined-icon-spacing: 6.4px;
+  --mat-button-outlined-icon-offset: -6.4px;
+  --mat-button-protected-container-height: 32px;
+  --mat-button-protected-touch-target-size: 40px;
+  --mat-button-protected-icon-spacing: 6.4px;
+  --mat-button-protected-icon-offset: -6.4px;
+  --mat-button-tonal-container-height: 32px;
+  --mat-button-tonal-touch-target-size: 40px;
+  --mat-button-tonal-icon-spacing: 6.4px;
+  --mat-button-tonal-icon-offset: -6.4px;
+  --mat-button-text-container-height: 32px;
+  --mat-button-text-touch-target-size: 40px;
+  --mat-button-text-icon-spacing: 6.4px;
+  --mat-button-text-icon-offset: -6.4px;
+  --mat-button-filled-horizontal-padding: 19.2px;
+  --mat-button-outlined-horizontal-padding: 19.2px;
+  --mat-button-protected-horizontal-padding: 19.2px;
+  --mat-button-tonal-horizontal-padding: 19.2px;
+  --mat-button-text-with-icon-horizontal-padding: 12.8px;
+}
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit] .material-symbols-outlined, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove] .material-symbols-outlined,
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit] .material-symbols-outlined,
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove] .material-symbols-outlined {
+  font-size: 19.2px;
+}
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit] mat-icon, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove] mat-icon,
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit] mat-icon,
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove] mat-icon {
+  font-size: 19.2px;
+  width: 19.2px;
+  height: 19.2px;
+}
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matIconButton], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matIconButton],
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matIconButton],
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matIconButton] {
+  --mat-icon-button-state-layer-size: 32px;
+  --mat-icon-button-icon-size: 19.2px;
+  --mat-icon-button-touch-target-size: 36px;
+}
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab],
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab],
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab] {
+  --mat-fab-extended-container-height: 44.8px;
+  --mat-fab-touch-target-size: 48.8px;
+  --mat-fab-small-touch-target-size: 48.8px;
+}
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab] .material-symbols-outlined, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab] .material-symbols-outlined,
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab] .material-symbols-outlined,
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab] .material-symbols-outlined {
+  font-size: 25.6px;
+}
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab] mat-icon, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab] mat-icon,
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab] mat-icon,
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab] mat-icon {
+  font-size: 25.6px;
+  width: 25.6px;
+  height: 25.6px;
+}
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab].mat-mdc-fab-base, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab].mat-mdc-fab-base,
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab].mat-mdc-fab-base,
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab].mat-mdc-fab-base {
+  height: 44.8px;
+}
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]),
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]),
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]) {
+  width: 44.8px;
+}
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matMiniFab].mat-mdc-fab-base, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matMiniFab].mat-mdc-fab-base,
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matMiniFab].mat-mdc-fab-base,
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matMiniFab].mat-mdc-fab-base {
+  height: 32px;
+  width: 32px;
+}
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matMiniFab], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matMiniFab],
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matMiniFab],
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matMiniFab] {
+  --mat-fab-extended-container-height: 32px;
+  --mat-fab-touch-target-size: 36px;
+  --mat-fab-small-touch-target-size: 36px;
+}
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].sh-round, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].sh-round,
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].sh-round,
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].sh-round {
+  --mat-button-filled-container-shape: 9999px;
+  --mat-button-outlined-container-shape: 9999px;
+  --mat-button-protected-container-shape: 9999px;
+  --mat-button-text-container-shape: 9999px;
+  --mat-button-tonal-container-shape: 9999px;
+  --mat-icon-button-container-shape: 9999px;
+  --mat-fab-container-shape: 9999px;
+  --mat-fab-extended-container-shape: 9999px;
+  --mat-fab-small-container-shape: 9999px;
+}
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].sh-square, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].sh-square,
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].sh-square,
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].sh-square {
+  --mat-button-filled-container-shape: 0px;
+  --mat-button-outlined-container-shape: 0px;
+  --mat-button-protected-container-shape: 0px;
+  --mat-button-text-container-shape: 0px;
+  --mat-button-tonal-container-shape: 0px;
+  --mat-icon-button-container-shape: 0px;
+  --mat-fab-container-shape: 0px;
+  --mat-fab-extended-container-shape: 0px;
+  --mat-fab-small-container-shape: 0px;
+}
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].sh-squircle, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].sh-squircle, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle),
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].sh-squircle,
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle),
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].sh-squircle,
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-button-filled-container-shape: 8px;
+  --mat-button-outlined-container-shape: 8px;
+  --mat-button-protected-container-shape: 8px;
+  --mat-button-text-container-shape: 8px;
+  --mat-button-tonal-container-shape: 8px;
+  --mat-icon-button-container-shape: 8px;
+  --mat-fab-container-shape: 11.2px;
+  --mat-fab-extended-container-shape: 11.2px;
+  --mat-fab-small-container-shape: 11.2px;
+}
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].destructive, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].destructive,
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].destructive,
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].destructive {
+  --mat-button-filled-container-color: #c0000c;
+  --mat-button-filled-state-layer-color: color-mix(in srgb, #ffffff 8%, #c0000c);
+  --mat-button-filled-ripple-color: color-mix(in srgb, #ffffff 12%, #c0000c);
+  --mat-button-tonal-container-color: #ffdad5;
+  --mat-button-tonal-label-text-color: #c0000c;
+  --mat-button-tonal-state-layer-color: color-mix(in srgb, #930007 8%, #ffdad5);
+  --mat-button-tonal-ripple-color: color-mix(in srgb, #930007 12%, #ffdad5);
+  --mat-button-outlined-outline-color: #c0000c;
+  --mat-button-outlined-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-button-outlined-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-button-outlined-label-text-color: #c0000c;
+  --mat-button-protected-label-text-color: #c0000c;
+  --mat-button-protected-state-layer-color: color-mix(in srgb, #c0000c 8%, #f2f5e9);
+  --mat-button-protected-ripple-color: color-mix(in srgb, #c0000c 12%, #f2f5e9);
+  --mat-icon-button-icon-color: #c0000c;
+  --mat-icon-button-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-icon-button-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-fab-container-color: #ffb4aa;
+  --mat-fab-foreground-color: #c0000c;
+  --mat-fab-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-fab-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+}
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove],
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit],
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove] {
+  height: 18px;
+  width: 18px;
+}
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round,
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round {
+  --mat-chip-container-shape-radius: 9999px;
+}
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square,
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square {
+  --mat-chip-container-shape-radius: 0px;
+}
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle),
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle,
+mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-chip-container-shape-radius: 8px;
+}
+
+mat-form-field {
+  align-self: flex-start;
+}
+mat-form-field.sz-small {
+  --mat-form-field-container-height: 32px;
+  --mat-form-field-container-text-size: 1em;
+  --mat-form-field-filled-label-text-size: 0.9rem;
+  --mat-form-field-container-vertical-padding: 5.3333333333px;
+  --mat-form-field-filled-with-label-container-padding-top: 8px;
+  --mat-form-field-filled-with-label-container-padding-bottom: 2.6666666667px;
+}
+mat-form-field.sz-small.sh-squircle, mat-form-field.sz-small:not(.sh-square):not(.sh-squircle) {
+  --mat-form-field-outlined-container-shape: 4px;
+  --mat-form-field-filled-container-shape: 4px;
+}
+mat-form-field.sz-small.sh-square {
+  --mat-form-field-outlined-container-shape: 0px;
+  --mat-form-field-filled-container-shape: 0px;
+}
+mat-form-field.sz-small.no-hint .mat-mdc-form-field-subscript-wrapper, mat-form-field.sz-small.no-error .mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+mat-form-field.sz-small .mat-mdc-form-field-icon-prefix > .mat-icon, mat-form-field.sz-small .mat-mdc-form-field-icon-suffix > .mat-icon {
+  padding: 0 4px;
+}
+mat-form-field.sz-small input.mat-mdc-input-element.mat-mdc-input-element {
+  height: 21.3333333333px;
+}
+mat-form-field.sz-small .mat-mdc-text-field-wrapper {
+  padding-left: 8px;
+}
+mat-form-field.sz-small .mat-mdc-form-field-flex:has(input[matInput]),
+mat-form-field.sz-small .mat-mdc-text-field-wrapper:has(input[matInput]),
+mat-form-field.sz-small .mat-mdc-form-field-infix:has(input[matInput]) {
+  height: 32px;
+}
+mat-form-field.sz-small mat-select,
+mat-form-field.sz-small mat-select > .mat-mdc-select-trigger {
+  min-height: 21.3333333333px;
+}
+mat-form-field.sz-small mat-option {
+  min-height: 32px;
+}
+mat-form-field.sz-medium {
+  --mat-form-field-container-height: 40px;
+  --mat-form-field-container-text-size: 1em;
+  --mat-form-field-filled-label-text-size: 0.9rem;
+  --mat-form-field-container-vertical-padding: 6.6666666667px;
+  --mat-form-field-filled-with-label-container-padding-top: 10px;
+  --mat-form-field-filled-with-label-container-padding-bottom: 3.3333333333px;
+}
+mat-form-field.sz-medium.sh-squircle, mat-form-field.sz-medium:not(.sh-square):not(.sh-squircle) {
+  --mat-form-field-outlined-container-shape: 5px;
+  --mat-form-field-filled-container-shape: 5px;
+}
+mat-form-field.sz-medium.sh-square {
+  --mat-form-field-outlined-container-shape: 0px;
+  --mat-form-field-filled-container-shape: 0px;
+}
+mat-form-field.sz-medium.no-hint .mat-mdc-form-field-subscript-wrapper, mat-form-field.sz-medium.no-error .mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+mat-form-field.sz-medium .mat-mdc-form-field-icon-prefix > .mat-icon, mat-form-field.sz-medium .mat-mdc-form-field-icon-suffix > .mat-icon {
+  padding: 0 5px;
+}
+mat-form-field.sz-medium input.mat-mdc-input-element.mat-mdc-input-element {
+  height: 26.6666666667px;
+}
+mat-form-field.sz-medium .mat-mdc-text-field-wrapper {
+  padding-left: 10px;
+}
+mat-form-field.sz-medium .mat-mdc-form-field-flex:has(input[matInput]),
+mat-form-field.sz-medium .mat-mdc-text-field-wrapper:has(input[matInput]),
+mat-form-field.sz-medium .mat-mdc-form-field-infix:has(input[matInput]) {
+  height: 40px;
+}
+mat-form-field.sz-medium mat-select,
+mat-form-field.sz-medium mat-select > .mat-mdc-select-trigger {
+  min-height: 26.6666666667px;
+}
+mat-form-field.sz-medium mat-option {
+  min-height: 40px;
+}
+mat-form-field.sz-large {
+  --mat-form-field-container-height: 48px;
+  --mat-form-field-container-text-size: 1em;
+  --mat-form-field-filled-label-text-size: 0.9rem;
+  --mat-form-field-container-vertical-padding: 8px;
+  --mat-form-field-filled-with-label-container-padding-top: 12px;
+  --mat-form-field-filled-with-label-container-padding-bottom: 4px;
+}
+mat-form-field.sz-large.sh-squircle, mat-form-field.sz-large:not(.sh-square):not(.sh-squircle) {
+  --mat-form-field-outlined-container-shape: 6px;
+  --mat-form-field-filled-container-shape: 6px;
+}
+mat-form-field.sz-large.sh-square {
+  --mat-form-field-outlined-container-shape: 0px;
+  --mat-form-field-filled-container-shape: 0px;
+}
+mat-form-field.sz-large.no-hint .mat-mdc-form-field-subscript-wrapper, mat-form-field.sz-large.no-error .mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+mat-form-field.sz-large .mat-mdc-form-field-icon-prefix > .mat-icon, mat-form-field.sz-large .mat-mdc-form-field-icon-suffix > .mat-icon {
+  padding: 0 6px;
+}
+mat-form-field.sz-large input.mat-mdc-input-element.mat-mdc-input-element {
+  height: 32px;
+}
+mat-form-field.sz-large .mat-mdc-text-field-wrapper {
+  padding-left: 12px;
+}
+mat-form-field.sz-large .mat-mdc-form-field-flex:has(input[matInput]),
+mat-form-field.sz-large .mat-mdc-text-field-wrapper:has(input[matInput]),
+mat-form-field.sz-large .mat-mdc-form-field-infix:has(input[matInput]) {
+  height: 48px;
+}
+mat-form-field.sz-large mat-select,
+mat-form-field.sz-large mat-select > .mat-mdc-select-trigger {
+  min-height: 32px;
+}
+mat-form-field.sz-large mat-option {
+  min-height: 48px;
+}
+mat-form-field.sz-xlarge {
+  --mat-form-field-container-height: 56px;
+  --mat-form-field-container-text-size: 1em;
+  --mat-form-field-filled-label-text-size: 0.9rem;
+  --mat-form-field-container-vertical-padding: 9.3333333333px;
+  --mat-form-field-filled-with-label-container-padding-top: 14px;
+  --mat-form-field-filled-with-label-container-padding-bottom: 4.6666666667px;
+}
+mat-form-field.sz-xlarge.sh-squircle, mat-form-field.sz-xlarge:not(.sh-square):not(.sh-squircle) {
+  --mat-form-field-outlined-container-shape: 7px;
+  --mat-form-field-filled-container-shape: 7px;
+}
+mat-form-field.sz-xlarge.sh-square {
+  --mat-form-field-outlined-container-shape: 0px;
+  --mat-form-field-filled-container-shape: 0px;
+}
+mat-form-field.sz-xlarge.no-hint .mat-mdc-form-field-subscript-wrapper, mat-form-field.sz-xlarge.no-error .mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+mat-form-field.sz-xlarge .mat-mdc-form-field-icon-prefix > .mat-icon, mat-form-field.sz-xlarge .mat-mdc-form-field-icon-suffix > .mat-icon {
+  padding: 0 7px;
+}
+mat-form-field.sz-xlarge input.mat-mdc-input-element.mat-mdc-input-element {
+  height: 37.3333333333px;
+}
+mat-form-field.sz-xlarge .mat-mdc-text-field-wrapper {
+  padding-left: 14px;
+}
+mat-form-field.sz-xlarge .mat-mdc-form-field-flex:has(input[matInput]),
+mat-form-field.sz-xlarge .mat-mdc-text-field-wrapper:has(input[matInput]),
+mat-form-field.sz-xlarge .mat-mdc-form-field-infix:has(input[matInput]) {
+  height: 56px;
+}
+mat-form-field.sz-xlarge mat-select,
+mat-form-field.sz-xlarge mat-select > .mat-mdc-select-trigger {
+  min-height: 37.3333333333px;
+}
+mat-form-field.sz-xlarge mat-option {
+  min-height: 56px;
+}
+mat-form-field.sz-small button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), mat-form-field.sz-small button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), mat-form-field.sz-small button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), mat-form-field.sz-small button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
+  --mat-button-filled-container-height: 32px;
+  --mat-button-filled-touch-target-size: 40px;
+  --mat-button-filled-icon-spacing: 6.4px;
+  --mat-button-filled-icon-offset: -6.4px;
+  --mat-button-outlined-container-height: 32px;
+  --mat-button-outlined-touch-target-size: 40px;
+  --mat-button-outlined-icon-spacing: 6.4px;
+  --mat-button-outlined-icon-offset: -6.4px;
+  --mat-button-protected-container-height: 32px;
+  --mat-button-protected-touch-target-size: 40px;
+  --mat-button-protected-icon-spacing: 6.4px;
+  --mat-button-protected-icon-offset: -6.4px;
+  --mat-button-tonal-container-height: 32px;
+  --mat-button-tonal-touch-target-size: 40px;
+  --mat-button-tonal-icon-spacing: 6.4px;
+  --mat-button-tonal-icon-offset: -6.4px;
+  --mat-button-text-container-height: 32px;
+  --mat-button-text-touch-target-size: 40px;
+  --mat-button-text-icon-spacing: 6.4px;
+  --mat-button-text-icon-offset: -6.4px;
+  --mat-button-filled-horizontal-padding: 19.2px;
+  --mat-button-outlined-horizontal-padding: 19.2px;
+  --mat-button-protected-horizontal-padding: 19.2px;
+  --mat-button-tonal-horizontal-padding: 19.2px;
+  --mat-button-text-with-icon-horizontal-padding: 12.8px;
+}
+mat-form-field.sz-small button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, mat-form-field.sz-small button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, mat-form-field.sz-small button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, mat-form-field.sz-small button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined {
+  font-size: 19.2px;
+}
+mat-form-field.sz-small button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, mat-form-field.sz-small button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, mat-form-field.sz-small button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, mat-form-field.sz-small button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon {
+  font-size: 19.2px;
+  width: 19.2px;
+  height: 19.2px;
+}
+mat-form-field.sz-small button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], mat-form-field.sz-small button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], mat-form-field.sz-small button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], mat-form-field.sz-small button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton] {
+  --mat-icon-button-state-layer-size: 32px;
+  --mat-icon-button-icon-size: 19.2px;
+  --mat-icon-button-touch-target-size: 36px;
+}
+mat-form-field.sz-small button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], mat-form-field.sz-small button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], mat-form-field.sz-small button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], mat-form-field.sz-small button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] {
+  --mat-fab-extended-container-height: 44.8px;
+  --mat-fab-touch-target-size: 48.8px;
+  --mat-fab-small-touch-target-size: 48.8px;
+}
+mat-form-field.sz-small button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, mat-form-field.sz-small button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, mat-form-field.sz-small button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, mat-form-field.sz-small button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined {
+  font-size: 25.6px;
+}
+mat-form-field.sz-small button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, mat-form-field.sz-small button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, mat-form-field.sz-small button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, mat-form-field.sz-small button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon {
+  font-size: 25.6px;
+  width: 25.6px;
+  height: 25.6px;
+}
+mat-form-field.sz-small button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, mat-form-field.sz-small button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, mat-form-field.sz-small button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, mat-form-field.sz-small button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base {
+  height: 44.8px;
+}
+mat-form-field.sz-small button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), mat-form-field.sz-small button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), mat-form-field.sz-small button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), mat-form-field.sz-small button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]) {
+  width: 44.8px;
+}
+mat-form-field.sz-small button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, mat-form-field.sz-small button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, mat-form-field.sz-small button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, mat-form-field.sz-small button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base {
+  height: 32px;
+  width: 32px;
+}
+mat-form-field.sz-small button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], mat-form-field.sz-small button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], mat-form-field.sz-small button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], mat-form-field.sz-small button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab] {
+  --mat-fab-extended-container-height: 32px;
+  --mat-fab-touch-target-size: 36px;
+  --mat-fab-small-touch-target-size: 36px;
+}
+mat-form-field.sz-small button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, mat-form-field.sz-small button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, mat-form-field.sz-small button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, mat-form-field.sz-small button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round {
+  --mat-button-filled-container-shape: 9999px;
+  --mat-button-outlined-container-shape: 9999px;
+  --mat-button-protected-container-shape: 9999px;
+  --mat-button-text-container-shape: 9999px;
+  --mat-button-tonal-container-shape: 9999px;
+  --mat-icon-button-container-shape: 9999px;
+  --mat-fab-container-shape: 9999px;
+  --mat-fab-extended-container-shape: 9999px;
+  --mat-fab-small-container-shape: 9999px;
+}
+mat-form-field.sz-small button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, mat-form-field.sz-small button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, mat-form-field.sz-small button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, mat-form-field.sz-small button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square {
+  --mat-button-filled-container-shape: 0px;
+  --mat-button-outlined-container-shape: 0px;
+  --mat-button-protected-container-shape: 0px;
+  --mat-button-text-container-shape: 0px;
+  --mat-button-tonal-container-shape: 0px;
+  --mat-icon-button-container-shape: 0px;
+  --mat-fab-container-shape: 0px;
+  --mat-fab-extended-container-shape: 0px;
+  --mat-fab-small-container-shape: 0px;
+}
+mat-form-field.sz-small button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-form-field.sz-small button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), mat-form-field.sz-small button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-form-field.sz-small button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), mat-form-field.sz-small button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-form-field.sz-small button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), mat-form-field.sz-small button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-form-field.sz-small button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-button-filled-container-shape: 8px;
+  --mat-button-outlined-container-shape: 8px;
+  --mat-button-protected-container-shape: 8px;
+  --mat-button-text-container-shape: 8px;
+  --mat-button-tonal-container-shape: 8px;
+  --mat-icon-button-container-shape: 8px;
+  --mat-fab-container-shape: 11.2px;
+  --mat-fab-extended-container-shape: 11.2px;
+  --mat-fab-small-container-shape: 11.2px;
+}
+mat-form-field.sz-small button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, mat-form-field.sz-small button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, mat-form-field.sz-small button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, mat-form-field.sz-small button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive {
+  --mat-button-filled-container-color: #c0000c;
+  --mat-button-filled-state-layer-color: color-mix(in srgb, #ffffff 8%, #c0000c);
+  --mat-button-filled-ripple-color: color-mix(in srgb, #ffffff 12%, #c0000c);
+  --mat-button-tonal-container-color: #ffdad5;
+  --mat-button-tonal-label-text-color: #c0000c;
+  --mat-button-tonal-state-layer-color: color-mix(in srgb, #930007 8%, #ffdad5);
+  --mat-button-tonal-ripple-color: color-mix(in srgb, #930007 12%, #ffdad5);
+  --mat-button-outlined-outline-color: #c0000c;
+  --mat-button-outlined-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-button-outlined-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-button-outlined-label-text-color: #c0000c;
+  --mat-button-protected-label-text-color: #c0000c;
+  --mat-button-protected-state-layer-color: color-mix(in srgb, #c0000c 8%, #f2f5e9);
+  --mat-button-protected-ripple-color: color-mix(in srgb, #c0000c 12%, #f2f5e9);
+  --mat-icon-button-icon-color: #c0000c;
+  --mat-icon-button-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-icon-button-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-fab-container-color: #ffb4aa;
+  --mat-fab-foreground-color: #c0000c;
+  --mat-fab-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-fab-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+}
+mat-form-field.sz-medium button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), mat-form-field.sz-medium button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), mat-form-field.sz-medium button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), mat-form-field.sz-medium button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
+  --mat-button-filled-container-height: 40px;
+  --mat-button-filled-touch-target-size: 48px;
+  --mat-button-filled-icon-spacing: 8px;
+  --mat-button-filled-icon-offset: -8px;
+  --mat-button-outlined-container-height: 40px;
+  --mat-button-outlined-touch-target-size: 48px;
+  --mat-button-outlined-icon-spacing: 8px;
+  --mat-button-outlined-icon-offset: -8px;
+  --mat-button-protected-container-height: 40px;
+  --mat-button-protected-touch-target-size: 48px;
+  --mat-button-protected-icon-spacing: 8px;
+  --mat-button-protected-icon-offset: -8px;
+  --mat-button-tonal-container-height: 40px;
+  --mat-button-tonal-touch-target-size: 48px;
+  --mat-button-tonal-icon-spacing: 8px;
+  --mat-button-tonal-icon-offset: -8px;
+  --mat-button-text-container-height: 40px;
+  --mat-button-text-touch-target-size: 48px;
+  --mat-button-text-icon-spacing: 8px;
+  --mat-button-text-icon-offset: -8px;
+  --mat-button-filled-horizontal-padding: 24px;
+  --mat-button-outlined-horizontal-padding: 24px;
+  --mat-button-protected-horizontal-padding: 24px;
+  --mat-button-tonal-horizontal-padding: 24px;
+  --mat-button-text-with-icon-horizontal-padding: 16px;
+}
+mat-form-field.sz-medium button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, mat-form-field.sz-medium button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, mat-form-field.sz-medium button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, mat-form-field.sz-medium button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined {
+  font-size: 24px;
+}
+mat-form-field.sz-medium button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, mat-form-field.sz-medium button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, mat-form-field.sz-medium button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, mat-form-field.sz-medium button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+mat-form-field.sz-medium button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], mat-form-field.sz-medium button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], mat-form-field.sz-medium button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], mat-form-field.sz-medium button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton] {
+  --mat-icon-button-state-layer-size: 40px;
+  --mat-icon-button-icon-size: 24px;
+  --mat-icon-button-touch-target-size: 44px;
+}
+mat-form-field.sz-medium button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], mat-form-field.sz-medium button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], mat-form-field.sz-medium button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], mat-form-field.sz-medium button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] {
+  --mat-fab-extended-container-height: 56px;
+  --mat-fab-touch-target-size: 60px;
+  --mat-fab-small-touch-target-size: 60px;
+}
+mat-form-field.sz-medium button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, mat-form-field.sz-medium button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, mat-form-field.sz-medium button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, mat-form-field.sz-medium button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined {
+  font-size: 32px;
+}
+mat-form-field.sz-medium button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, mat-form-field.sz-medium button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, mat-form-field.sz-medium button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, mat-form-field.sz-medium button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon {
+  font-size: 32px;
+  width: 32px;
+  height: 32px;
+}
+mat-form-field.sz-medium button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, mat-form-field.sz-medium button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, mat-form-field.sz-medium button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, mat-form-field.sz-medium button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base {
+  height: 56px;
+}
+mat-form-field.sz-medium button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), mat-form-field.sz-medium button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), mat-form-field.sz-medium button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), mat-form-field.sz-medium button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]) {
+  width: 56px;
+}
+mat-form-field.sz-medium button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, mat-form-field.sz-medium button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, mat-form-field.sz-medium button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, mat-form-field.sz-medium button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base {
+  height: 40px;
+  width: 40px;
+}
+mat-form-field.sz-medium button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], mat-form-field.sz-medium button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], mat-form-field.sz-medium button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], mat-form-field.sz-medium button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab] {
+  --mat-fab-extended-container-height: 40px;
+  --mat-fab-touch-target-size: 44px;
+  --mat-fab-small-touch-target-size: 44px;
+}
+mat-form-field.sz-medium button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, mat-form-field.sz-medium button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, mat-form-field.sz-medium button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, mat-form-field.sz-medium button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round {
+  --mat-button-filled-container-shape: 9999px;
+  --mat-button-outlined-container-shape: 9999px;
+  --mat-button-protected-container-shape: 9999px;
+  --mat-button-text-container-shape: 9999px;
+  --mat-button-tonal-container-shape: 9999px;
+  --mat-icon-button-container-shape: 9999px;
+  --mat-fab-container-shape: 9999px;
+  --mat-fab-extended-container-shape: 9999px;
+  --mat-fab-small-container-shape: 9999px;
+}
+mat-form-field.sz-medium button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, mat-form-field.sz-medium button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, mat-form-field.sz-medium button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, mat-form-field.sz-medium button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square {
+  --mat-button-filled-container-shape: 0px;
+  --mat-button-outlined-container-shape: 0px;
+  --mat-button-protected-container-shape: 0px;
+  --mat-button-text-container-shape: 0px;
+  --mat-button-tonal-container-shape: 0px;
+  --mat-icon-button-container-shape: 0px;
+  --mat-fab-container-shape: 0px;
+  --mat-fab-extended-container-shape: 0px;
+  --mat-fab-small-container-shape: 0px;
+}
+mat-form-field.sz-medium button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-form-field.sz-medium button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), mat-form-field.sz-medium button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-form-field.sz-medium button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), mat-form-field.sz-medium button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-form-field.sz-medium button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), mat-form-field.sz-medium button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-form-field.sz-medium button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-button-filled-container-shape: 10px;
+  --mat-button-outlined-container-shape: 10px;
+  --mat-button-protected-container-shape: 10px;
+  --mat-button-text-container-shape: 10px;
+  --mat-button-tonal-container-shape: 10px;
+  --mat-icon-button-container-shape: 10px;
+  --mat-fab-container-shape: 14px;
+  --mat-fab-extended-container-shape: 14px;
+  --mat-fab-small-container-shape: 14px;
+}
+mat-form-field.sz-medium button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, mat-form-field.sz-medium button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, mat-form-field.sz-medium button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, mat-form-field.sz-medium button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive {
+  --mat-button-filled-container-color: #c0000c;
+  --mat-button-filled-state-layer-color: color-mix(in srgb, #ffffff 8%, #c0000c);
+  --mat-button-filled-ripple-color: color-mix(in srgb, #ffffff 12%, #c0000c);
+  --mat-button-tonal-container-color: #ffdad5;
+  --mat-button-tonal-label-text-color: #c0000c;
+  --mat-button-tonal-state-layer-color: color-mix(in srgb, #930007 8%, #ffdad5);
+  --mat-button-tonal-ripple-color: color-mix(in srgb, #930007 12%, #ffdad5);
+  --mat-button-outlined-outline-color: #c0000c;
+  --mat-button-outlined-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-button-outlined-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-button-outlined-label-text-color: #c0000c;
+  --mat-button-protected-label-text-color: #c0000c;
+  --mat-button-protected-state-layer-color: color-mix(in srgb, #c0000c 8%, #f2f5e9);
+  --mat-button-protected-ripple-color: color-mix(in srgb, #c0000c 12%, #f2f5e9);
+  --mat-icon-button-icon-color: #c0000c;
+  --mat-icon-button-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-icon-button-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-fab-container-color: #ffb4aa;
+  --mat-fab-foreground-color: #c0000c;
+  --mat-fab-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-fab-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+}
+mat-form-field.sz-large button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), mat-form-field.sz-large button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), mat-form-field.sz-large button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), mat-form-field.sz-large button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
+  --mat-button-filled-container-height: 48px;
+  --mat-button-filled-touch-target-size: 56px;
+  --mat-button-filled-icon-spacing: 9.6px;
+  --mat-button-filled-icon-offset: -9.6px;
+  --mat-button-outlined-container-height: 48px;
+  --mat-button-outlined-touch-target-size: 56px;
+  --mat-button-outlined-icon-spacing: 9.6px;
+  --mat-button-outlined-icon-offset: -9.6px;
+  --mat-button-protected-container-height: 48px;
+  --mat-button-protected-touch-target-size: 56px;
+  --mat-button-protected-icon-spacing: 9.6px;
+  --mat-button-protected-icon-offset: -9.6px;
+  --mat-button-tonal-container-height: 48px;
+  --mat-button-tonal-touch-target-size: 56px;
+  --mat-button-tonal-icon-spacing: 9.6px;
+  --mat-button-tonal-icon-offset: -9.6px;
+  --mat-button-text-container-height: 48px;
+  --mat-button-text-touch-target-size: 56px;
+  --mat-button-text-icon-spacing: 9.6px;
+  --mat-button-text-icon-offset: -9.6px;
+  --mat-button-filled-horizontal-padding: 28.8px;
+  --mat-button-outlined-horizontal-padding: 28.8px;
+  --mat-button-protected-horizontal-padding: 28.8px;
+  --mat-button-tonal-horizontal-padding: 28.8px;
+  --mat-button-text-with-icon-horizontal-padding: 19.2px;
+}
+mat-form-field.sz-large button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, mat-form-field.sz-large button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, mat-form-field.sz-large button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, mat-form-field.sz-large button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined {
+  font-size: 28.8px;
+}
+mat-form-field.sz-large button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, mat-form-field.sz-large button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, mat-form-field.sz-large button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, mat-form-field.sz-large button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon {
+  font-size: 28.8px;
+  width: 28.8px;
+  height: 28.8px;
+}
+mat-form-field.sz-large button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], mat-form-field.sz-large button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], mat-form-field.sz-large button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], mat-form-field.sz-large button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton] {
+  --mat-icon-button-state-layer-size: 48px;
+  --mat-icon-button-icon-size: 28.8px;
+  --mat-icon-button-touch-target-size: 52px;
+}
+mat-form-field.sz-large button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], mat-form-field.sz-large button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], mat-form-field.sz-large button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], mat-form-field.sz-large button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] {
+  --mat-fab-extended-container-height: 67.2px;
+  --mat-fab-touch-target-size: 71.2px;
+  --mat-fab-small-touch-target-size: 71.2px;
+}
+mat-form-field.sz-large button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, mat-form-field.sz-large button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, mat-form-field.sz-large button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, mat-form-field.sz-large button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined {
+  font-size: 38.4px;
+}
+mat-form-field.sz-large button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, mat-form-field.sz-large button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, mat-form-field.sz-large button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, mat-form-field.sz-large button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon {
+  font-size: 38.4px;
+  width: 38.4px;
+  height: 38.4px;
+}
+mat-form-field.sz-large button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, mat-form-field.sz-large button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, mat-form-field.sz-large button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, mat-form-field.sz-large button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base {
+  height: 67.2px;
+}
+mat-form-field.sz-large button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), mat-form-field.sz-large button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), mat-form-field.sz-large button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), mat-form-field.sz-large button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]) {
+  width: 67.2px;
+}
+mat-form-field.sz-large button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, mat-form-field.sz-large button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, mat-form-field.sz-large button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, mat-form-field.sz-large button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base {
+  height: 48px;
+  width: 48px;
+}
+mat-form-field.sz-large button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], mat-form-field.sz-large button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], mat-form-field.sz-large button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], mat-form-field.sz-large button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab] {
+  --mat-fab-extended-container-height: 48px;
+  --mat-fab-touch-target-size: 52px;
+  --mat-fab-small-touch-target-size: 52px;
+}
+mat-form-field.sz-large button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, mat-form-field.sz-large button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, mat-form-field.sz-large button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, mat-form-field.sz-large button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round {
+  --mat-button-filled-container-shape: 9999px;
+  --mat-button-outlined-container-shape: 9999px;
+  --mat-button-protected-container-shape: 9999px;
+  --mat-button-text-container-shape: 9999px;
+  --mat-button-tonal-container-shape: 9999px;
+  --mat-icon-button-container-shape: 9999px;
+  --mat-fab-container-shape: 9999px;
+  --mat-fab-extended-container-shape: 9999px;
+  --mat-fab-small-container-shape: 9999px;
+}
+mat-form-field.sz-large button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, mat-form-field.sz-large button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, mat-form-field.sz-large button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, mat-form-field.sz-large button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square {
+  --mat-button-filled-container-shape: 0px;
+  --mat-button-outlined-container-shape: 0px;
+  --mat-button-protected-container-shape: 0px;
+  --mat-button-text-container-shape: 0px;
+  --mat-button-tonal-container-shape: 0px;
+  --mat-icon-button-container-shape: 0px;
+  --mat-fab-container-shape: 0px;
+  --mat-fab-extended-container-shape: 0px;
+  --mat-fab-small-container-shape: 0px;
+}
+mat-form-field.sz-large button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-form-field.sz-large button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), mat-form-field.sz-large button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-form-field.sz-large button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), mat-form-field.sz-large button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-form-field.sz-large button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), mat-form-field.sz-large button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-form-field.sz-large button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-button-filled-container-shape: 12px;
+  --mat-button-outlined-container-shape: 12px;
+  --mat-button-protected-container-shape: 12px;
+  --mat-button-text-container-shape: 12px;
+  --mat-button-tonal-container-shape: 12px;
+  --mat-icon-button-container-shape: 12px;
+  --mat-fab-container-shape: 16.8px;
+  --mat-fab-extended-container-shape: 16.8px;
+  --mat-fab-small-container-shape: 16.8px;
+}
+mat-form-field.sz-large button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, mat-form-field.sz-large button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, mat-form-field.sz-large button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, mat-form-field.sz-large button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive {
+  --mat-button-filled-container-color: #c0000c;
+  --mat-button-filled-state-layer-color: color-mix(in srgb, #ffffff 8%, #c0000c);
+  --mat-button-filled-ripple-color: color-mix(in srgb, #ffffff 12%, #c0000c);
+  --mat-button-tonal-container-color: #ffdad5;
+  --mat-button-tonal-label-text-color: #c0000c;
+  --mat-button-tonal-state-layer-color: color-mix(in srgb, #930007 8%, #ffdad5);
+  --mat-button-tonal-ripple-color: color-mix(in srgb, #930007 12%, #ffdad5);
+  --mat-button-outlined-outline-color: #c0000c;
+  --mat-button-outlined-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-button-outlined-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-button-outlined-label-text-color: #c0000c;
+  --mat-button-protected-label-text-color: #c0000c;
+  --mat-button-protected-state-layer-color: color-mix(in srgb, #c0000c 8%, #f2f5e9);
+  --mat-button-protected-ripple-color: color-mix(in srgb, #c0000c 12%, #f2f5e9);
+  --mat-icon-button-icon-color: #c0000c;
+  --mat-icon-button-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-icon-button-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-fab-container-color: #ffb4aa;
+  --mat-fab-foreground-color: #c0000c;
+  --mat-fab-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-fab-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+}
+mat-form-field.sz-xlarge button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), mat-form-field.sz-xlarge button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), mat-form-field.sz-xlarge button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), mat-form-field.sz-xlarge button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
+  --mat-button-filled-container-height: 56px;
+  --mat-button-filled-touch-target-size: 64px;
+  --mat-button-filled-icon-spacing: 11.2px;
+  --mat-button-filled-icon-offset: -11.2px;
+  --mat-button-outlined-container-height: 56px;
+  --mat-button-outlined-touch-target-size: 64px;
+  --mat-button-outlined-icon-spacing: 11.2px;
+  --mat-button-outlined-icon-offset: -11.2px;
+  --mat-button-protected-container-height: 56px;
+  --mat-button-protected-touch-target-size: 64px;
+  --mat-button-protected-icon-spacing: 11.2px;
+  --mat-button-protected-icon-offset: -11.2px;
+  --mat-button-tonal-container-height: 56px;
+  --mat-button-tonal-touch-target-size: 64px;
+  --mat-button-tonal-icon-spacing: 11.2px;
+  --mat-button-tonal-icon-offset: -11.2px;
+  --mat-button-text-container-height: 56px;
+  --mat-button-text-touch-target-size: 64px;
+  --mat-button-text-icon-spacing: 11.2px;
+  --mat-button-text-icon-offset: -11.2px;
+  --mat-button-filled-horizontal-padding: 33.6px;
+  --mat-button-outlined-horizontal-padding: 33.6px;
+  --mat-button-protected-horizontal-padding: 33.6px;
+  --mat-button-tonal-horizontal-padding: 33.6px;
+  --mat-button-text-with-icon-horizontal-padding: 22.4px;
+}
+mat-form-field.sz-xlarge button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, mat-form-field.sz-xlarge button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, mat-form-field.sz-xlarge button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, mat-form-field.sz-xlarge button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined {
+  font-size: 33.6px;
+}
+mat-form-field.sz-xlarge button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, mat-form-field.sz-xlarge button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, mat-form-field.sz-xlarge button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, mat-form-field.sz-xlarge button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon {
+  font-size: 33.6px;
+  width: 33.6px;
+  height: 33.6px;
+}
+mat-form-field.sz-xlarge button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], mat-form-field.sz-xlarge button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], mat-form-field.sz-xlarge button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], mat-form-field.sz-xlarge button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton] {
+  --mat-icon-button-state-layer-size: 56px;
+  --mat-icon-button-icon-size: 33.6px;
+  --mat-icon-button-touch-target-size: 60px;
+}
+mat-form-field.sz-xlarge button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], mat-form-field.sz-xlarge button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], mat-form-field.sz-xlarge button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], mat-form-field.sz-xlarge button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] {
+  --mat-fab-extended-container-height: 78.4px;
+  --mat-fab-touch-target-size: 82.4px;
+  --mat-fab-small-touch-target-size: 82.4px;
+}
+mat-form-field.sz-xlarge button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, mat-form-field.sz-xlarge button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, mat-form-field.sz-xlarge button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, mat-form-field.sz-xlarge button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined {
+  font-size: 44.8px;
+}
+mat-form-field.sz-xlarge button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, mat-form-field.sz-xlarge button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, mat-form-field.sz-xlarge button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, mat-form-field.sz-xlarge button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon {
+  font-size: 44.8px;
+  width: 44.8px;
+  height: 44.8px;
+}
+mat-form-field.sz-xlarge button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, mat-form-field.sz-xlarge button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, mat-form-field.sz-xlarge button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, mat-form-field.sz-xlarge button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base {
+  height: 78.4px;
+}
+mat-form-field.sz-xlarge button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), mat-form-field.sz-xlarge button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), mat-form-field.sz-xlarge button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), mat-form-field.sz-xlarge button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]) {
+  width: 78.4px;
+}
+mat-form-field.sz-xlarge button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, mat-form-field.sz-xlarge button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, mat-form-field.sz-xlarge button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, mat-form-field.sz-xlarge button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base {
+  height: 56px;
+  width: 56px;
+}
+mat-form-field.sz-xlarge button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], mat-form-field.sz-xlarge button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], mat-form-field.sz-xlarge button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], mat-form-field.sz-xlarge button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab] {
+  --mat-fab-extended-container-height: 56px;
+  --mat-fab-touch-target-size: 60px;
+  --mat-fab-small-touch-target-size: 60px;
+}
+mat-form-field.sz-xlarge button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, mat-form-field.sz-xlarge button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, mat-form-field.sz-xlarge button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, mat-form-field.sz-xlarge button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round {
+  --mat-button-filled-container-shape: 9999px;
+  --mat-button-outlined-container-shape: 9999px;
+  --mat-button-protected-container-shape: 9999px;
+  --mat-button-text-container-shape: 9999px;
+  --mat-button-tonal-container-shape: 9999px;
+  --mat-icon-button-container-shape: 9999px;
+  --mat-fab-container-shape: 9999px;
+  --mat-fab-extended-container-shape: 9999px;
+  --mat-fab-small-container-shape: 9999px;
+}
+mat-form-field.sz-xlarge button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, mat-form-field.sz-xlarge button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, mat-form-field.sz-xlarge button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, mat-form-field.sz-xlarge button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square {
+  --mat-button-filled-container-shape: 0px;
+  --mat-button-outlined-container-shape: 0px;
+  --mat-button-protected-container-shape: 0px;
+  --mat-button-text-container-shape: 0px;
+  --mat-button-tonal-container-shape: 0px;
+  --mat-icon-button-container-shape: 0px;
+  --mat-fab-container-shape: 0px;
+  --mat-fab-extended-container-shape: 0px;
+  --mat-fab-small-container-shape: 0px;
+}
+mat-form-field.sz-xlarge button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-form-field.sz-xlarge button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), mat-form-field.sz-xlarge button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-form-field.sz-xlarge button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), mat-form-field.sz-xlarge button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-form-field.sz-xlarge button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), mat-form-field.sz-xlarge button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-form-field.sz-xlarge button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-button-filled-container-shape: 14px;
+  --mat-button-outlined-container-shape: 14px;
+  --mat-button-protected-container-shape: 14px;
+  --mat-button-text-container-shape: 14px;
+  --mat-button-tonal-container-shape: 14px;
+  --mat-icon-button-container-shape: 14px;
+  --mat-fab-container-shape: 19.6px;
+  --mat-fab-extended-container-shape: 19.6px;
+  --mat-fab-small-container-shape: 19.6px;
+}
+mat-form-field.sz-xlarge button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, mat-form-field.sz-xlarge button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, mat-form-field.sz-xlarge button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, mat-form-field.sz-xlarge button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive {
+  --mat-button-filled-container-color: #c0000c;
+  --mat-button-filled-state-layer-color: color-mix(in srgb, #ffffff 8%, #c0000c);
+  --mat-button-filled-ripple-color: color-mix(in srgb, #ffffff 12%, #c0000c);
+  --mat-button-tonal-container-color: #ffdad5;
+  --mat-button-tonal-label-text-color: #c0000c;
+  --mat-button-tonal-state-layer-color: color-mix(in srgb, #930007 8%, #ffdad5);
+  --mat-button-tonal-ripple-color: color-mix(in srgb, #930007 12%, #ffdad5);
+  --mat-button-outlined-outline-color: #c0000c;
+  --mat-button-outlined-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-button-outlined-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-button-outlined-label-text-color: #c0000c;
+  --mat-button-protected-label-text-color: #c0000c;
+  --mat-button-protected-state-layer-color: color-mix(in srgb, #c0000c 8%, #f2f5e9);
+  --mat-button-protected-ripple-color: color-mix(in srgb, #c0000c 12%, #f2f5e9);
+  --mat-icon-button-icon-color: #c0000c;
+  --mat-icon-button-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-icon-button-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-fab-container-color: #ffb4aa;
+  --mat-fab-foreground-color: #c0000c;
+  --mat-fab-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-fab-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+}
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
+  --mat-form-field-container-height: 40px;
+  --mat-form-field-container-text-size: 1em;
+  --mat-form-field-filled-label-text-size: 0.9rem;
+  --mat-form-field-container-vertical-padding: 6.6666666667px;
+  --mat-form-field-filled-with-label-container-padding-top: 10px;
+  --mat-form-field-filled-with-label-container-padding-bottom: 3.3333333333px;
+}
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-square):not(.sh-squircle) {
+  --mat-form-field-outlined-container-shape: 5px;
+  --mat-form-field-filled-container-shape: 5px;
+}
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square {
+  --mat-form-field-outlined-container-shape: 0px;
+  --mat-form-field-filled-container-shape: 0px;
+}
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).no-hint .mat-mdc-form-field-subscript-wrapper, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).no-error .mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .mat-mdc-form-field-icon-prefix > .mat-icon, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .mat-mdc-form-field-icon-suffix > .mat-icon {
+  padding: 0 5px;
+}
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) input.mat-mdc-input-element.mat-mdc-input-element {
+  height: 26.6666666667px;
+}
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .mat-mdc-text-field-wrapper {
+  padding-left: 10px;
+}
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .mat-mdc-form-field-flex:has(input[matInput]),
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .mat-mdc-text-field-wrapper:has(input[matInput]),
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .mat-mdc-form-field-infix:has(input[matInput]) {
+  height: 40px;
+}
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-select,
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-select > .mat-mdc-select-trigger {
+  min-height: 26.6666666667px;
+}
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-option {
+  min-height: 40px;
+}
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
+  --mat-button-filled-container-height: 40px;
+  --mat-button-filled-touch-target-size: 48px;
+  --mat-button-filled-icon-spacing: 8px;
+  --mat-button-filled-icon-offset: -8px;
+  --mat-button-outlined-container-height: 40px;
+  --mat-button-outlined-touch-target-size: 48px;
+  --mat-button-outlined-icon-spacing: 8px;
+  --mat-button-outlined-icon-offset: -8px;
+  --mat-button-protected-container-height: 40px;
+  --mat-button-protected-touch-target-size: 48px;
+  --mat-button-protected-icon-spacing: 8px;
+  --mat-button-protected-icon-offset: -8px;
+  --mat-button-tonal-container-height: 40px;
+  --mat-button-tonal-touch-target-size: 48px;
+  --mat-button-tonal-icon-spacing: 8px;
+  --mat-button-tonal-icon-offset: -8px;
+  --mat-button-text-container-height: 40px;
+  --mat-button-text-touch-target-size: 48px;
+  --mat-button-text-icon-spacing: 8px;
+  --mat-button-text-icon-offset: -8px;
+  --mat-button-filled-horizontal-padding: 24px;
+  --mat-button-outlined-horizontal-padding: 24px;
+  --mat-button-protected-horizontal-padding: 24px;
+  --mat-button-tonal-horizontal-padding: 24px;
+  --mat-button-text-with-icon-horizontal-padding: 16px;
+}
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined {
+  font-size: 24px;
+}
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton] {
+  --mat-icon-button-state-layer-size: 40px;
+  --mat-icon-button-icon-size: 24px;
+  --mat-icon-button-touch-target-size: 44px;
+}
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] {
+  --mat-fab-extended-container-height: 56px;
+  --mat-fab-touch-target-size: 60px;
+  --mat-fab-small-touch-target-size: 60px;
+}
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined {
+  font-size: 32px;
+}
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon {
+  font-size: 32px;
+  width: 32px;
+  height: 32px;
+}
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base {
+  height: 56px;
+}
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]) {
+  width: 56px;
+}
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base {
+  height: 40px;
+  width: 40px;
+}
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab] {
+  --mat-fab-extended-container-height: 40px;
+  --mat-fab-touch-target-size: 44px;
+  --mat-fab-small-touch-target-size: 44px;
+}
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round {
+  --mat-button-filled-container-shape: 9999px;
+  --mat-button-outlined-container-shape: 9999px;
+  --mat-button-protected-container-shape: 9999px;
+  --mat-button-text-container-shape: 9999px;
+  --mat-button-tonal-container-shape: 9999px;
+  --mat-icon-button-container-shape: 9999px;
+  --mat-fab-container-shape: 9999px;
+  --mat-fab-extended-container-shape: 9999px;
+  --mat-fab-small-container-shape: 9999px;
+}
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square {
+  --mat-button-filled-container-shape: 0px;
+  --mat-button-outlined-container-shape: 0px;
+  --mat-button-protected-container-shape: 0px;
+  --mat-button-text-container-shape: 0px;
+  --mat-button-tonal-container-shape: 0px;
+  --mat-icon-button-container-shape: 0px;
+  --mat-fab-container-shape: 0px;
+  --mat-fab-extended-container-shape: 0px;
+  --mat-fab-small-container-shape: 0px;
+}
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-button-filled-container-shape: 10px;
+  --mat-button-outlined-container-shape: 10px;
+  --mat-button-protected-container-shape: 10px;
+  --mat-button-text-container-shape: 10px;
+  --mat-button-tonal-container-shape: 10px;
+  --mat-icon-button-container-shape: 10px;
+  --mat-fab-container-shape: 14px;
+  --mat-fab-extended-container-shape: 14px;
+  --mat-fab-small-container-shape: 14px;
+}
+mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matIconButton]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matMiniFab]:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive {
+  --mat-button-filled-container-color: #c0000c;
+  --mat-button-filled-state-layer-color: color-mix(in srgb, #ffffff 8%, #c0000c);
+  --mat-button-filled-ripple-color: color-mix(in srgb, #ffffff 12%, #c0000c);
+  --mat-button-tonal-container-color: #ffdad5;
+  --mat-button-tonal-label-text-color: #c0000c;
+  --mat-button-tonal-state-layer-color: color-mix(in srgb, #930007 8%, #ffdad5);
+  --mat-button-tonal-ripple-color: color-mix(in srgb, #930007 12%, #ffdad5);
+  --mat-button-outlined-outline-color: #c0000c;
+  --mat-button-outlined-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-button-outlined-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-button-outlined-label-text-color: #c0000c;
+  --mat-button-protected-label-text-color: #c0000c;
+  --mat-button-protected-state-layer-color: color-mix(in srgb, #c0000c 8%, #f2f5e9);
+  --mat-button-protected-ripple-color: color-mix(in srgb, #c0000c 12%, #f2f5e9);
+  --mat-icon-button-icon-color: #c0000c;
+  --mat-icon-button-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-icon-button-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-fab-container-color: #ffb4aa;
+  --mat-fab-foreground-color: #c0000c;
+  --mat-fab-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-fab-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+}
+
+mat-progress-bar.sz-xsmall {
+  --mat-progress-bar-active-indicator-height: 1px;
+  --mat-progress-bar-track-height: 1px;
+}
+mat-progress-bar.sz-xsmall.sh-round {
+  --mat-progress-bar-track-shape: 9999px;
+  border-radius: 0.25px;
+}
+mat-progress-bar.sz-xsmall.sh-squircle, mat-progress-bar.sz-xsmall:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-progress-bar-track-shape: 0.25px;
+  border-radius: 0.25px;
+}
+mat-progress-bar.sz-xsmall.sh-square {
+  --mat-progress-bar-track-shape: 0px;
+  border-radius: 0px;
+}
+mat-progress-bar.sz-small {
+  --mat-progress-bar-active-indicator-height: 2px;
+  --mat-progress-bar-track-height: 2px;
+}
+mat-progress-bar.sz-small.sh-round {
+  --mat-progress-bar-track-shape: 9999px;
+  border-radius: 0.5px;
+}
+mat-progress-bar.sz-small.sh-squircle, mat-progress-bar.sz-small:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-progress-bar-track-shape: 0.5px;
+  border-radius: 0.5px;
+}
+mat-progress-bar.sz-small.sh-square {
+  --mat-progress-bar-track-shape: 0px;
+  border-radius: 0px;
+}
+mat-progress-bar.sz-medium {
+  --mat-progress-bar-active-indicator-height: 4px;
+  --mat-progress-bar-track-height: 4px;
+}
+mat-progress-bar.sz-medium.sh-round {
+  --mat-progress-bar-track-shape: 9999px;
+  border-radius: 1px;
+}
+mat-progress-bar.sz-medium.sh-squircle, mat-progress-bar.sz-medium:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-progress-bar-track-shape: 1px;
+  border-radius: 1px;
+}
+mat-progress-bar.sz-medium.sh-square {
+  --mat-progress-bar-track-shape: 0px;
+  border-radius: 0px;
+}
+mat-progress-bar.sz-large {
+  --mat-progress-bar-active-indicator-height: 6px;
+  --mat-progress-bar-track-height: 6px;
+}
+mat-progress-bar.sz-large.sh-round {
+  --mat-progress-bar-track-shape: 9999px;
+  border-radius: 1.5px;
+}
+mat-progress-bar.sz-large.sh-squircle, mat-progress-bar.sz-large:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-progress-bar-track-shape: 1.5px;
+  border-radius: 1.5px;
+}
+mat-progress-bar.sz-large.sh-square {
+  --mat-progress-bar-track-shape: 0px;
+  border-radius: 0px;
+}
+mat-progress-bar.sz-xlarge {
+  --mat-progress-bar-active-indicator-height: 8px;
+  --mat-progress-bar-track-height: 8px;
+}
+mat-progress-bar.sz-xlarge.sh-round {
+  --mat-progress-bar-track-shape: 9999px;
+  border-radius: 2px;
+}
+mat-progress-bar.sz-xlarge.sh-squircle, mat-progress-bar.sz-xlarge:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-progress-bar-track-shape: 2px;
+  border-radius: 2px;
+}
+mat-progress-bar.sz-xlarge.sh-square {
+  --mat-progress-bar-track-shape: 0px;
+  border-radius: 0px;
+}
+mat-progress-bar:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
+  --mat-progress-bar-active-indicator-height: 4px;
+  --mat-progress-bar-track-height: 4px;
+}
+mat-progress-bar:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round {
+  --mat-progress-bar-track-shape: 9999px;
+  border-radius: 1px;
+}
+mat-progress-bar:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-progress-bar:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-progress-bar-track-shape: 1px;
+  border-radius: 1px;
+}
+mat-progress-bar:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square {
+  --mat-progress-bar-track-shape: 0px;
+  border-radius: 0px;
+}
+
+mat-radio-button.sz-small {
+  --mat-radio-state-layer-size: 32px;
+  --mat-radio-touch-target-size: 40px;
+}
+mat-radio-button.sz-medium {
+  --mat-radio-state-layer-size: 40px;
+  --mat-radio-touch-target-size: 48px;
+}
+mat-radio-button.sz-large {
+  --mat-radio-state-layer-size: 48px;
+  --mat-radio-touch-target-size: 56px;
+}
+mat-radio-button.sz-xlarge {
+  --mat-radio-state-layer-size: 56px;
+  --mat-radio-touch-target-size: 64px;
+}
+mat-radio-button:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
+  --mat-radio-state-layer-size: 40px;
+  --mat-radio-touch-target-size: 48px;
+}
+
+mat-slide-toggle.sz-xsmall {
+  --mat-slide-toggle-state-layer-size: 25px;
+  --mat-slide-toggle-track-height: 20px;
+  --mat-slide-toggle-pressed-handle-size: 17.5px;
+  --mat-slide-toggle-unselected-handle-size: 10px;
+  --mat-slide-toggle-selected-handle-size: 15px;
+  --mat-slide-toggle-unselected-icon-size: 10px;
+  --mat-slide-toggle-selected-icon-size: 10px;
+  --mat-slide-toggle-with-icon-handle-size: 15px;
+  --mat-slide-toggle-touch-target-size: 30px;
+  --mat-slide-toggle-track-width: 32.5px;
+  --mat-slide-toggle-selected-handle-horizontal-margin: 0 15px;
+  --mat-slide-toggle-selected-pressed-handle-horizontal-margin: 0 13.75px;
+  --mat-slide-toggle-selected-with-icon-handle-horizontal-margin: 0 15px;
+  --mat-slide-toggle-unselected-handle-horizontal-margin: 0 5px;
+}
+mat-slide-toggle.sz-small {
+  --mat-slide-toggle-state-layer-size: 30px;
+  --mat-slide-toggle-track-height: 24px;
+  --mat-slide-toggle-pressed-handle-size: 21px;
+  --mat-slide-toggle-unselected-handle-size: 12px;
+  --mat-slide-toggle-selected-handle-size: 18px;
+  --mat-slide-toggle-unselected-icon-size: 12px;
+  --mat-slide-toggle-selected-icon-size: 12px;
+  --mat-slide-toggle-with-icon-handle-size: 18px;
+  --mat-slide-toggle-touch-target-size: 36px;
+  --mat-slide-toggle-track-width: 39px;
+  --mat-slide-toggle-selected-handle-horizontal-margin: 0 18px;
+  --mat-slide-toggle-selected-pressed-handle-horizontal-margin: 0 16.5px;
+  --mat-slide-toggle-selected-with-icon-handle-horizontal-margin: 0 18px;
+  --mat-slide-toggle-unselected-handle-horizontal-margin: 0 6px;
+}
+mat-slide-toggle.sz-medium {
+  --mat-slide-toggle-state-layer-size: 40px;
+  --mat-slide-toggle-track-height: 32px;
+  --mat-slide-toggle-pressed-handle-size: 28px;
+  --mat-slide-toggle-unselected-handle-size: 16px;
+  --mat-slide-toggle-selected-handle-size: 24px;
+  --mat-slide-toggle-unselected-icon-size: 16px;
+  --mat-slide-toggle-selected-icon-size: 16px;
+  --mat-slide-toggle-with-icon-handle-size: 24px;
+  --mat-slide-toggle-touch-target-size: 48px;
+  --mat-slide-toggle-track-width: 52px;
+  --mat-slide-toggle-selected-handle-horizontal-margin: 0 24px;
+  --mat-slide-toggle-selected-pressed-handle-horizontal-margin: 0 22px;
+  --mat-slide-toggle-selected-with-icon-handle-horizontal-margin: 0 24px;
+  --mat-slide-toggle-unselected-handle-horizontal-margin: 0 8px;
+}
+mat-slide-toggle.sz-large {
+  --mat-slide-toggle-state-layer-size: 50px;
+  --mat-slide-toggle-track-height: 40px;
+  --mat-slide-toggle-pressed-handle-size: 35px;
+  --mat-slide-toggle-unselected-handle-size: 20px;
+  --mat-slide-toggle-selected-handle-size: 30px;
+  --mat-slide-toggle-unselected-icon-size: 20px;
+  --mat-slide-toggle-selected-icon-size: 20px;
+  --mat-slide-toggle-with-icon-handle-size: 30px;
+  --mat-slide-toggle-touch-target-size: 60px;
+  --mat-slide-toggle-track-width: 65px;
+  --mat-slide-toggle-selected-handle-horizontal-margin: 0 30px;
+  --mat-slide-toggle-selected-pressed-handle-horizontal-margin: 0 27.5px;
+  --mat-slide-toggle-selected-with-icon-handle-horizontal-margin: 0 30px;
+  --mat-slide-toggle-unselected-handle-horizontal-margin: 0 10px;
+}
+mat-slide-toggle.sz-xlarge {
+  --mat-slide-toggle-state-layer-size: 60px;
+  --mat-slide-toggle-track-height: 48px;
+  --mat-slide-toggle-pressed-handle-size: 42px;
+  --mat-slide-toggle-unselected-handle-size: 24px;
+  --mat-slide-toggle-selected-handle-size: 36px;
+  --mat-slide-toggle-unselected-icon-size: 24px;
+  --mat-slide-toggle-selected-icon-size: 24px;
+  --mat-slide-toggle-with-icon-handle-size: 36px;
+  --mat-slide-toggle-touch-target-size: 72px;
+  --mat-slide-toggle-track-width: 78px;
+  --mat-slide-toggle-selected-handle-horizontal-margin: 0 36px;
+  --mat-slide-toggle-selected-pressed-handle-horizontal-margin: 0 33px;
+  --mat-slide-toggle-selected-with-icon-handle-horizontal-margin: 0 36px;
+  --mat-slide-toggle-unselected-handle-horizontal-margin: 0 12px;
+}
+mat-slide-toggle:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
+  --mat-slide-toggle-state-layer-size: 40px;
+  --mat-slide-toggle-track-height: 32px;
+  --mat-slide-toggle-pressed-handle-size: 28px;
+  --mat-slide-toggle-unselected-handle-size: 16px;
+  --mat-slide-toggle-selected-handle-size: 24px;
+  --mat-slide-toggle-unselected-icon-size: 16px;
+  --mat-slide-toggle-selected-icon-size: 16px;
+  --mat-slide-toggle-with-icon-handle-size: 24px;
+  --mat-slide-toggle-touch-target-size: 48px;
+  --mat-slide-toggle-track-width: 52px;
+  --mat-slide-toggle-selected-handle-horizontal-margin: 0 24px;
+  --mat-slide-toggle-selected-pressed-handle-horizontal-margin: 0 22px;
+  --mat-slide-toggle-selected-with-icon-handle-horizontal-margin: 0 24px;
+  --mat-slide-toggle-unselected-handle-horizontal-margin: 0 8px;
+}
+
+mat-slider.sz-xsmall {
+  --mat-slider-handle-height: 12px;
+  --mat-slider-handle-width: 12px;
+  --mat-slider-inactive-track-height: 3px;
+  --mat-slider-active-track-height: 3px;
+  --mat-slider-value-indicator-height: 18px;
+  --mat-slider-value-indicator-width: 18px;
+  --mat-slider-value-indicator-transform-origin: 0, 9px;
+  --mat-slider-value-indicator-container-transform: translateX(-50%) translateY(-24px) rotate(-45deg);
+  --mat-slider-label-label-text-size: 0.45rem;
+  height: 28.8px;
+}
+mat-slider.sz-xsmall mat-slider-visual-thumb {
+  height: 28.8px;
+  width: 28.8px;
+}
+mat-slider.sz-xsmall mat-slider-visual-thumb .mat-ripple {
+  border-radius: 9px;
+}
+mat-slider.sz-xsmall input {
+  height: 26.4px;
+}
+mat-slider.sz-xsmall .mdc-slider__track {
+  left: -8px;
+}
+mat-slider.sz-xsmall .mdc-slider__value-indicator-container {
+  bottom: 0;
+}
+mat-slider.sz-small {
+  --mat-slider-handle-height: 16px;
+  --mat-slider-handle-width: 16px;
+  --mat-slider-inactive-track-height: 4px;
+  --mat-slider-active-track-height: 4px;
+  --mat-slider-value-indicator-height: 24px;
+  --mat-slider-value-indicator-width: 24px;
+  --mat-slider-value-indicator-transform-origin: 0, 12px;
+  --mat-slider-value-indicator-container-transform: translateX(-50%) translateY(-32px) rotate(-45deg);
+  --mat-slider-label-label-text-size: 0.6rem;
+  height: 38.4px;
+}
+mat-slider.sz-small mat-slider-visual-thumb {
+  height: 38.4px;
+  width: 38.4px;
+}
+mat-slider.sz-small mat-slider-visual-thumb .mat-ripple {
+  border-radius: 12px;
+}
+mat-slider.sz-small input {
+  height: 35.2px;
+}
+mat-slider.sz-small .mdc-slider__track {
+  left: -4px;
+}
+mat-slider.sz-small .mdc-slider__value-indicator-container {
+  bottom: 0;
+}
+mat-slider.sz-medium {
+  --mat-slider-handle-height: 20px;
+  --mat-slider-handle-width: 20px;
+  --mat-slider-inactive-track-height: 5px;
+  --mat-slider-active-track-height: 5px;
+  --mat-slider-value-indicator-height: 30px;
+  --mat-slider-value-indicator-width: 30px;
+  --mat-slider-value-indicator-transform-origin: 0, 15px;
+  --mat-slider-value-indicator-container-transform: translateX(-50%) translateY(-40px) rotate(-45deg);
+  --mat-slider-label-label-text-size: 0.75rem;
+  height: 48px;
+}
+mat-slider.sz-medium mat-slider-visual-thumb {
+  height: 48px;
+  width: 48px;
+}
+mat-slider.sz-medium mat-slider-visual-thumb .mat-ripple {
+  border-radius: 15px;
+}
+mat-slider.sz-medium input {
+  height: 44px;
+}
+mat-slider.sz-medium .mdc-slider__track {
+  left: 0px;
+}
+mat-slider.sz-medium .mdc-slider__value-indicator-container {
+  bottom: 0;
+}
+mat-slider.sz-large {
+  --mat-slider-handle-height: 24px;
+  --mat-slider-handle-width: 24px;
+  --mat-slider-inactive-track-height: 6px;
+  --mat-slider-active-track-height: 6px;
+  --mat-slider-value-indicator-height: 36px;
+  --mat-slider-value-indicator-width: 36px;
+  --mat-slider-value-indicator-transform-origin: 0, 18px;
+  --mat-slider-value-indicator-container-transform: translateX(-50%) translateY(-48px) rotate(-45deg);
+  --mat-slider-label-label-text-size: 0.9rem;
+  height: 57.6px;
+}
+mat-slider.sz-large mat-slider-visual-thumb {
+  height: 57.6px;
+  width: 57.6px;
+}
+mat-slider.sz-large mat-slider-visual-thumb .mat-ripple {
+  border-radius: 18px;
+}
+mat-slider.sz-large input {
+  height: 52.8px;
+}
+mat-slider.sz-large .mdc-slider__track {
+  left: 4px;
+}
+mat-slider.sz-large .mdc-slider__value-indicator-container {
+  bottom: 0;
+}
+mat-slider.sz-xlarge {
+  --mat-slider-handle-height: 32px;
+  --mat-slider-handle-width: 32px;
+  --mat-slider-inactive-track-height: 8px;
+  --mat-slider-active-track-height: 8px;
+  --mat-slider-value-indicator-height: 48px;
+  --mat-slider-value-indicator-width: 48px;
+  --mat-slider-value-indicator-transform-origin: 0, 24px;
+  --mat-slider-value-indicator-container-transform: translateX(-50%) translateY(-64px) rotate(-45deg);
+  --mat-slider-label-label-text-size: 1.2rem;
+  height: 76.8px;
+}
+mat-slider.sz-xlarge mat-slider-visual-thumb {
+  height: 76.8px;
+  width: 76.8px;
+}
+mat-slider.sz-xlarge mat-slider-visual-thumb .mat-ripple {
+  border-radius: 24px;
+}
+mat-slider.sz-xlarge input {
+  height: 70.4px;
+}
+mat-slider.sz-xlarge .mdc-slider__track {
+  left: 12px;
+}
+mat-slider.sz-xlarge .mdc-slider__value-indicator-container {
+  bottom: 0;
+}
+mat-slider:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
+  --mat-slider-handle-height: 20px;
+  --mat-slider-handle-width: 20px;
+  --mat-slider-inactive-track-height: 5px;
+  --mat-slider-active-track-height: 5px;
+  --mat-slider-value-indicator-height: 30px;
+  --mat-slider-value-indicator-width: 30px;
+  --mat-slider-value-indicator-transform-origin: 0, 15px;
+  --mat-slider-value-indicator-container-transform: translateX(-50%) translateY(-40px) rotate(-45deg);
+  --mat-slider-label-label-text-size: 0.75rem;
+  height: 48px;
+}
+mat-slider:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-slider-visual-thumb {
+  height: 48px;
+  width: 48px;
+}
+mat-slider:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-slider-visual-thumb .mat-ripple {
+  border-radius: 15px;
+}
+mat-slider:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) input {
+  height: 44px;
+}
+mat-slider:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .mdc-slider__track {
+  left: 0px;
+}
+mat-slider:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .mdc-slider__value-indicator-container {
+  bottom: 0;
+}

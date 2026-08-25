@@ -35,8 +35,8 @@
             "security": {
               "allowedHosts": [
                 "localhost",
-                "*.ng-material-enhanced.pages.dev",
-                "ng-material-enhanced.laudebugs.me"
+                "ng-material-enhanced.laudebugs.me",
+                "ng-material-enhanced.pages.dev"
               ]
             },
             "ssr": {

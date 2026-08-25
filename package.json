@@ -3,15 +3,16 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "pnpm run build && wrangler pages dev",
-    "build": "ng build && pnpm run process",
-    "watch": "ng build --watch --configuration development",
+    "generate:css": "node ./scripts/generate-css.mjs",
+    "start": "pnpm run generate:css && pnpm run build && wrangler pages dev",
+    "build": "pnpm run generate:css && ng build && pnpm run process",
+    "watch": "pnpm run generate:css && ng build --watch --configuration development",
     "test": "ng test",
     "deploy": "pnpm run build && wrangler pages deploy",
-		"process": "node ./tools/copy-files.mjs",
+    "process": "node ./tools/copy-files.mjs",
     "preview": "pnpm run build && wrangler dev",
     "serve:ssr:ng-material-enhanced": "node dist/ng-material-enhanced/server/server.mjs",
-		"cf-typegen": "wrangler types"
+    "cf-typegen": "wrangler types"
   },
   "private": true,
   "packageManager": "pnpm@11.22.0",

@@ -1,0 +1,495 @@
+<div class="overview-hero">
+  <div class="hero-badge">
+    <mat-icon class="material-symbols-outlined">palette</mat-icon>
+    <span>Material 3 Component Overrides Demo</span>
+  </div>
+  <h2>Angular Material Enhanced</h2>
+  <p class="hero-description">
+    This demo illustrates how to utilize Angular Material component overrides to customize how components look and feel.
+    Explore custom sizing scales (<code>sz-xsmall</code> to <code>sz-xlarge</code>), corner geometries (<code>sh-round</code>, <code>sh-squircle</code>, <code>sh-square</code>), state modifiers (<code>destructive</code>), and cohesive Material 3 styling.
+  </p>
+  <div class="hero-actions">
+    <a matButton="filled" class="sh-square sz-medium" [routerLink]="['/css']">
+      <mat-icon class="material-symbols-outlined">css</mat-icon>
+      Copy CSS / SCSS Overrides
+    </a>
+    <a matButton="outlined" class="sh-square sz-medium" [routerLink]="['/buttons']">
+      <mat-icon class="material-symbols-outlined">tune</mat-icon>
+      Interactive Component Configurator
+    </a>
+  </div>
+</div>
+
+<!-- Quick Navigation Bar -->
+<div class="quick-nav-bar">
+  <span class="quick-nav-label">Jump to:</span>
+  <a matButton="text" class="sh-square sz-small" [routerLink]="['/buttons']">Buttons</a>
+  <a matButton="text" class="sh-square sz-small" [routerLink]="['/button-toggle']">Button Toggle</a>
+  <a matButton="text" class="sh-square sz-small" [routerLink]="['/checkbox']">Checkbox</a>
+  <a matButton="text" class="sh-square sz-small" [routerLink]="['/chips']">Chips</a>
+  <a matButton="text" class="sh-square sz-small" [routerLink]="['/form-field']">Form Field</a>
+  <a matButton="text" class="sh-square sz-small" [routerLink]="['/progress-loader']">Progress Bar</a>
+  <a matButton="text" class="sh-square sz-small" [routerLink]="['/slider']">Slider</a>
+  <a matButton="text" class="sh-square sz-small" [routerLink]="['/toggle']">Slide Toggle</a>
+  <a matButton="text" class="sh-square sz-small" [routerLink]="['/css']">CSS Overrides</a>
+</div>
+
+<!-- All Components Showcase -->
+<div class="showcase-container">
+
+  <!-- 1. BUTTONS -->
+  <div class="showcase-section">
+    <div class="section-header">
+      <div class="section-title-wrap">
+        <mat-icon class="material-symbols-outlined section-icon">smart_button</mat-icon>
+        <h3>Buttons (<code>mat-button</code>)</h3>
+      </div>
+      <a matButton="text" class="sh-square sz-small" [routerLink]="['/buttons']">Configure Buttons &rarr;</a>
+    </div>
+
+    <!-- Sizes -->
+    <div class="variant-group">
+      <div class="variant-label">Sizes (<code>sz-xsmall</code> to <code>sz-xlarge</code>)</div>
+      <div class="variant-items-row">
+        <button matButton="filled" class="sz-xsmall sh-squircle">X-Small</button>
+        <button matButton="filled" class="sz-small sh-squircle">Small</button>
+        <button matButton="filled" class="sz-medium sh-squircle">Medium</button>
+        <button matButton="filled" class="sz-large sh-squircle">Large</button>
+        <button matButton="filled" class="sz-xlarge sh-squircle">X-Large</button>
+      </div>
+    </div>
+
+    <!-- Appearances -->
+    <div class="variant-group">
+      <div class="variant-label">Appearances (Filled, Tonal, Outlined, Elevated/Protected, Text)</div>
+      <div class="variant-items-row">
+        <button matButton="filled" class="sz-medium sh-squircle">Filled</button>
+        <button matButton="tonal" class="sz-medium sh-squircle">Tonal</button>
+        <button matButton="outlined" class="sz-medium sh-squircle">Outlined</button>
+        <button matButton="elevated" class="sz-medium sh-squircle">Elevated</button>
+        <button matButton="text" class="sz-medium sh-squircle">Text</button>
+      </div>
+    </div>
+
+    <!-- Shapes -->
+    <div class="variant-group">
+      <div class="variant-label">Shapes (<code>sh-round</code>, <code>sh-squircle</code>, <code>sh-square</code>)</div>
+      <div class="variant-items-row">
+        <button matButton="filled" class="sz-medium sh-round">Round (Pill)</button>
+        <button matButton="filled" class="sz-medium sh-squircle">Squircle</button>
+        <button matButton="filled" class="sz-medium sh-square">Square</button>
+      </div>
+    </div>
+
+    <!-- Variants & Modifiers -->
+    <div class="variant-group">
+      <div class="variant-label">Modifiers & Icon Buttons (Destructive, Icon Button, FAB, Mini-FAB, With Icon)</div>
+      <div class="variant-items-row">
+        <button matButton="filled" class="sz-medium sh-squircle destructive">
+          <mat-icon class="material-symbols-outlined">delete</mat-icon>
+          Destructive
+        </button>
+        <button matButton="outlined" class="sz-medium sh-squircle destructive">
+          <mat-icon class="material-symbols-outlined">delete</mat-icon>
+          Outlined Destructive
+        </button>
+        <button matIconButton class="sz-medium sh-round" aria-label="Favorite">
+          <mat-icon class="material-symbols-outlined">favorite</mat-icon>
+        </button>
+        <button matIconButton class="sz-medium sh-squircle destructive" aria-label="Delete">
+          <mat-icon class="material-symbols-outlined">delete</mat-icon>
+        </button>
+        <button matFab class="sz-medium sh-round" aria-label="Add">
+          <mat-icon class="material-symbols-outlined">add</mat-icon>
+        </button>
+        <button matMiniFab class="sz-medium sh-squircle" aria-label="Edit">
+          <mat-icon class="material-symbols-outlined">edit</mat-icon>
+        </button>
+        <button matFab extended class="sz-medium sh-squircle">
+          <mat-icon class="material-symbols-outlined">navigation</mat-icon>
+          Navigate
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. BUTTON TOGGLE -->
+  <div class="showcase-section">
+    <div class="section-header">
+      <div class="section-title-wrap">
+        <mat-icon class="material-symbols-outlined section-icon">view_week</mat-icon>
+        <h3>Button Toggle (<code>mat-button-toggle-group</code>)</h3>
+      </div>
+      <a matButton="text" class="sh-square sz-small" [routerLink]="['/button-toggle']">Configure Button Toggle &rarr;</a>
+    </div>
+
+    <!-- Sizes -->
+    <div class="variant-group">
+      <div class="variant-label">Sizes (<code>sz-xsmall</code> to <code>sz-xlarge</code>)</div>
+      <div class="variant-items-column">
+        <mat-button-toggle-group class="sz-xsmall sh-squircle" value="day" aria-label="Timescale X-Small">
+          <mat-button-toggle value="day">Day</mat-button-toggle>
+          <mat-button-toggle value="week">Week</mat-button-toggle>
+          <mat-button-toggle value="month">Month</mat-button-toggle>
+        </mat-button-toggle-group>
+        <mat-button-toggle-group class="sz-small sh-squircle" value="day" aria-label="Timescale Small">
+          <mat-button-toggle value="day">Day</mat-button-toggle>
+          <mat-button-toggle value="week">Week</mat-button-toggle>
+          <mat-button-toggle value="month">Month</mat-button-toggle>
+        </mat-button-toggle-group>
+        <mat-button-toggle-group class="sz-medium sh-squircle" value="day" aria-label="Timescale Medium">
+          <mat-button-toggle value="day">Day</mat-button-toggle>
+          <mat-button-toggle value="week">Week</mat-button-toggle>
+          <mat-button-toggle value="month">Month</mat-button-toggle>
+        </mat-button-toggle-group>
+        <mat-button-toggle-group class="sz-large sh-squircle" value="day" aria-label="Timescale Large">
+          <mat-button-toggle value="day">Day</mat-button-toggle>
+          <mat-button-toggle value="week">Week</mat-button-toggle>
+          <mat-button-toggle value="month">Month</mat-button-toggle>
+        </mat-button-toggle-group>
+        <mat-button-toggle-group class="sz-xlarge sh-squircle" value="day" aria-label="Timescale X-Large">
+          <mat-button-toggle value="day">Day</mat-button-toggle>
+          <mat-button-toggle value="week">Week</mat-button-toggle>
+          <mat-button-toggle value="month">Month</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+    </div>
+
+    <!-- Shapes & Variations -->
+    <div class="variant-group">
+      <div class="variant-label">Shapes & Variations (Round, Square, Icon Group, Vertical)</div>
+      <div class="variant-items-row">
+        <mat-button-toggle-group class="sz-medium sh-round" value="left" aria-label="Alignment Round">
+          <mat-button-toggle value="left">
+            <mat-icon class="material-symbols-outlined">format_align_left</mat-icon>
+          </mat-button-toggle>
+          <mat-button-toggle value="center">
+            <mat-icon class="material-symbols-outlined">format_align_center</mat-icon>
+          </mat-button-toggle>
+          <mat-button-toggle value="right">
+            <mat-icon class="material-symbols-outlined">format_align_right</mat-icon>
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+
+        <mat-button-toggle-group class="sz-medium sh-square" value="bold" aria-label="Style Square">
+          <mat-button-toggle value="bold">Bold</mat-button-toggle>
+          <mat-button-toggle value="italic">Italic</mat-button-toggle>
+          <mat-button-toggle value="underline">Underline</mat-button-toggle>
+        </mat-button-toggle-group>
+
+        <mat-button-toggle-group vertical class="sz-small sh-squircle" value="list" aria-label="Vertical Toggle">
+          <mat-button-toggle value="grid">Grid</mat-button-toggle>
+          <mat-button-toggle value="list">List</mat-button-toggle>
+          <mat-button-toggle value="compact">Compact</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. CHECKBOX -->
+  <div class="showcase-section">
+    <div class="section-header">
+      <div class="section-title-wrap">
+        <mat-icon class="material-symbols-outlined section-icon">check_box</mat-icon>
+        <h3>Checkbox (<code>mat-checkbox</code>)</h3>
+      </div>
+      <a matButton="text" class="sh-square sz-small" [routerLink]="['/checkbox']">Configure Checkbox &rarr;</a>
+    </div>
+
+    <!-- Sizes -->
+    <div class="variant-group">
+      <div class="variant-label">Sizes (<code>sz-small</code> to <code>sz-xlarge</code>)</div>
+      <div class="variant-items-row">
+        <mat-checkbox class="sz-small" [checked]="true">Small</mat-checkbox>
+        <mat-checkbox class="sz-medium" [checked]="true">Medium</mat-checkbox>
+        <mat-checkbox class="sz-large" [checked]="true">Large</mat-checkbox>
+        <mat-checkbox class="sz-xlarge" [checked]="true">X-Large</mat-checkbox>
+      </div>
+    </div>
+
+    <!-- States & Modifiers -->
+    <div class="variant-group">
+      <div class="variant-label">States & Modifiers (Checked, Unchecked, Indeterminate, Destructive, Disabled)</div>
+      <div class="variant-items-row">
+        <mat-checkbox class="sz-medium" [checked]="true">Checked</mat-checkbox>
+        <mat-checkbox class="sz-medium" [checked]="false">Unchecked</mat-checkbox>
+        <mat-checkbox class="sz-medium" [indeterminate]="true">Indeterminate</mat-checkbox>
+        <mat-checkbox class="sz-medium destructive" [checked]="true">Destructive</mat-checkbox>
+        <mat-checkbox class="sz-medium" [disabled]="true" [checked]="true">Disabled</mat-checkbox>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. CHIPS -->
+  <div class="showcase-section">
+    <div class="section-header">
+      <div class="section-title-wrap">
+        <mat-icon class="material-symbols-outlined section-icon">category</mat-icon>
+        <h3>Chips (<code>mat-chip</code>)</h3>
+      </div>
+      <a matButton="text" class="sh-square sz-small" [routerLink]="['/chips']">Configure Chips &rarr;</a>
+    </div>
+
+    <!-- Sizes -->
+    <div class="variant-group">
+      <div class="variant-label">Sizes (<code>sz-small</code> to <code>sz-xlarge</code>)</div>
+      <div class="variant-items-row">
+        <mat-chip-set>
+          <mat-chip class="sz-small sh-squircle">Small Chip</mat-chip>
+          <mat-chip class="sz-medium sh-squircle">Medium Chip</mat-chip>
+          <mat-chip class="sz-large sh-squircle">Large Chip</mat-chip>
+          <mat-chip class="sz-xlarge sh-squircle">X-Large Chip</mat-chip>
+        </mat-chip-set>
+      </div>
+    </div>
+
+    <!-- Shapes & Variants -->
+    <div class="variant-group">
+      <div class="variant-label">Shapes & Variants (Round, Squircle, Square, Avatar, Removable)</div>
+      <div class="variant-items-row">
+        <mat-chip-set>
+          <mat-chip class="sz-medium sh-round">Round Pill</mat-chip>
+          <mat-chip class="sz-medium sh-squircle">Squircle</mat-chip>
+          <mat-chip class="sz-medium sh-square">Square</mat-chip>
+          <mat-chip class="sz-medium sh-round">
+            <img matChipAvatar src="https://material.angular.dev/assets/img/examples/shiba1.jpg" alt="Avatar" />
+            Jane Doe
+          </mat-chip>
+          <mat-chip class="sz-medium sh-squircle">
+            Angular
+            <button matChipRemove aria-label="Remove chip">
+              <mat-icon class="material-symbols-outlined">cancel</mat-icon>
+            </button>
+          </mat-chip>
+        </mat-chip-set>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. FORM FIELD -->
+  <div class="showcase-section">
+    <div class="section-header">
+      <div class="section-title-wrap">
+        <mat-icon class="material-symbols-outlined section-icon">input</mat-icon>
+        <h3>Form Field & Radios (<code>mat-form-field</code> & <code>mat-radio-button</code>)</h3>
+      </div>
+      <a matButton="text" class="sh-square sz-small" [routerLink]="['/form-field']">Configure Form Fields &rarr;</a>
+    </div>
+
+    <!-- Input Sizes -->
+    <div class="variant-group">
+      <div class="variant-label">Sizes (<code>sz-small</code> to <code>sz-xlarge</code>)</div>
+      <div class="form-fields-grid">
+        <mat-form-field appearance="outline" class="sz-small sh-squircle">
+          <mat-label>Small Input</mat-label>
+          <input matInput value="Small value">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="sz-medium sh-squircle">
+          <mat-label>Medium Input</mat-label>
+          <input matInput value="Medium value">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="sz-large sh-squircle">
+          <mat-label>Large Input</mat-label>
+          <input matInput value="Large value">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="sz-xlarge sh-squircle">
+          <mat-label>X-Large Input</mat-label>
+          <input matInput value="X-Large value">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <!-- Appearances & Controls -->
+    <div class="variant-group">
+      <div class="variant-label">Appearances, Shapes & Controls (Fill vs Outline, Square vs Squircle, Select, Radio)</div>
+      <div class="form-fields-grid">
+        <mat-form-field appearance="fill" class="sz-medium sh-squircle">
+          <mat-label>Filled Squircle</mat-label>
+          <mat-icon matPrefix class="material-symbols-outlined">search</mat-icon>
+          <input matInput value="Search query...">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="sz-medium sh-square">
+          <mat-label>Square Outlined</mat-label>
+          <mat-icon matPrefix class="material-symbols-outlined">lock</mat-icon>
+          <input matInput type="password" value="Secret123">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="sz-medium sh-squircle">
+          <mat-label>Select Framework</mat-label>
+          <mat-select value="angular">
+            <mat-option value="angular">Angular 22</mat-option>
+            <mat-option value="material">Material 3</mat-option>
+            <mat-option value="signals">Signals</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- Radio Buttons Row -->
+      <div class="variant-items-row" style="margin-top: 1rem;">
+        <mat-radio-group value="medium" style="display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
+          <mat-radio-button class="sz-small" value="small">Small Radio</mat-radio-button>
+          <mat-radio-button class="sz-medium" value="medium">Medium Radio</mat-radio-button>
+          <mat-radio-button class="sz-large" value="large">Large Radio</mat-radio-button>
+          <mat-radio-button class="sz-xlarge" value="xlarge">X-Large Radio</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. PROGRESS BAR -->
+  <div class="showcase-section">
+    <div class="section-header">
+      <div class="section-title-wrap">
+        <mat-icon class="material-symbols-outlined section-icon">download</mat-icon>
+        <h3>Progress Bar (<code>mat-progress-bar</code>)</h3>
+      </div>
+      <a matButton="text" class="sh-square sz-small" [routerLink]="['/progress-loader']">Configure Progress Bar &rarr;</a>
+    </div>
+
+    <!-- Sizes -->
+    <div class="variant-group">
+      <div class="variant-label">Sizes (<code>sz-xsmall</code> to <code>sz-xlarge</code>)</div>
+      <div class="progress-bars-stack">
+        <div class="progress-row">
+          <span class="size-label">X-Small (4px):</span>
+          <mat-progress-bar mode="determinate" [value]="35" class="sz-xsmall sh-round"></mat-progress-bar>
+        </div>
+        <div class="progress-row">
+          <span class="size-label">Small (8px):</span>
+          <mat-progress-bar mode="determinate" [value]="50" class="sz-small sh-round"></mat-progress-bar>
+        </div>
+        <div class="progress-row">
+          <span class="size-label">Medium (12px):</span>
+          <mat-progress-bar mode="determinate" [value]="65" class="sz-medium sh-round"></mat-progress-bar>
+        </div>
+        <div class="progress-row">
+          <span class="size-label">Large (16px):</span>
+          <mat-progress-bar mode="determinate" [value]="80" class="sz-large sh-round"></mat-progress-bar>
+        </div>
+        <div class="progress-row">
+          <span class="size-label">X-Large (24px):</span>
+          <mat-progress-bar mode="determinate" [value]="95" class="sz-xlarge sh-round"></mat-progress-bar>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modes & Shapes -->
+    <div class="variant-group">
+      <div class="variant-label">Modes & Shapes (Buffer, Indeterminate, Squircle, Square)</div>
+      <div class="progress-bars-stack">
+        <div class="progress-row">
+          <span class="size-label">Buffer (Squircle):</span>
+          <mat-progress-bar mode="buffer" [value]="40" [bufferValue]="75" class="sz-medium sh-squircle"></mat-progress-bar>
+        </div>
+        <div class="progress-row">
+          <span class="size-label">Indeterminate (Square):</span>
+          <mat-progress-bar mode="indeterminate" class="sz-medium sh-square"></mat-progress-bar>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. SLIDER -->
+  <div class="showcase-section">
+    <div class="section-header">
+      <div class="section-title-wrap">
+        <mat-icon class="material-symbols-outlined section-icon">linear_scale</mat-icon>
+        <h3>Slider (<code>mat-slider</code>)</h3>
+      </div>
+      <a matButton="text" class="sh-square sz-small" [routerLink]="['/slider']">Configure Slider &rarr;</a>
+    </div>
+
+    <!-- Sizes -->
+    <div class="variant-group">
+      <div class="variant-label">Sizes (<code>sz-xsmall</code> to <code>sz-xlarge</code>)</div>
+      <div class="sliders-stack">
+        <div class="slider-row">
+          <span class="size-label">X-Small:</span>
+          <mat-slider class="sz-xsmall" [min]="0" [max]="100">
+            <input matSliderThumb [value]="25" aria-label="X-Small Slider">
+          </mat-slider>
+        </div>
+        <div class="slider-row">
+          <span class="size-label">Small:</span>
+          <mat-slider class="sz-small" [min]="0" [max]="100">
+            <input matSliderThumb [value]="45" aria-label="Small Slider">
+          </mat-slider>
+        </div>
+        <div class="slider-row">
+          <span class="size-label">Medium:</span>
+          <mat-slider class="sz-medium" [min]="0" [max]="100">
+            <input matSliderThumb [value]="60" aria-label="Medium Slider">
+          </mat-slider>
+        </div>
+        <div class="slider-row">
+          <span class="size-label">Large:</span>
+          <mat-slider class="sz-large" [min]="0" [max]="100">
+            <input matSliderThumb [value]="75" aria-label="Large Slider">
+          </mat-slider>
+        </div>
+        <div class="slider-row">
+          <span class="size-label">X-Large:</span>
+          <mat-slider class="sz-xlarge" [min]="0" [max]="100">
+            <input matSliderThumb [value]="90" aria-label="X-Large Slider">
+          </mat-slider>
+        </div>
+      </div>
+    </div>
+
+    <!-- Variations -->
+    <div class="variant-group">
+      <div class="variant-label">Variations (Discrete with Tick Marks, Range Slider)</div>
+      <div class="sliders-stack">
+        <div class="slider-row">
+          <span class="size-label">Discrete:</span>
+          <mat-slider discrete showTickMarks [step]="10" [min]="0" [max]="100" class="sz-medium">
+            <input matSliderThumb [value]="50" aria-label="Discrete Slider">
+          </mat-slider>
+        </div>
+        <div class="slider-row">
+          <span class="size-label">Range:</span>
+          <mat-slider class="sz-medium" [min]="0" [max]="100">
+            <input matSliderStartThumb [value]="20" aria-label="Range Start">
+            <input matSliderEndThumb [value]="80" aria-label="Range End">
+          </mat-slider>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. SLIDE TOGGLE -->
+  <div class="showcase-section">
+    <div class="section-header">
+      <div class="section-title-wrap">
+        <mat-icon class="material-symbols-outlined section-icon">toggle_on</mat-icon>
+        <h3>Slide Toggle (<code>mat-slide-toggle</code>)</h3>
+      </div>
+      <a matButton="text" class="sh-square sz-small" [routerLink]="['/toggle']">Configure Slide Toggle &rarr;</a>
+    </div>
+
+    <!-- Sizes -->
+    <div class="variant-group">
+      <div class="variant-label">Sizes (<code>sz-xsmall</code> to <code>sz-xlarge</code>)</div>
+      <div class="variant-items-row">
+        <mat-slide-toggle class="sz-xsmall" [checked]="true">X-Small</mat-slide-toggle>
+        <mat-slide-toggle class="sz-small" [checked]="true">Small</mat-slide-toggle>
+        <mat-slide-toggle class="sz-medium" [checked]="true">Medium</mat-slide-toggle>
+        <mat-slide-toggle class="sz-large" [checked]="true">Large</mat-slide-toggle>
+        <mat-slide-toggle class="sz-xlarge" [checked]="true">X-Large</mat-slide-toggle>
+      </div>
+    </div>
+
+    <!-- States -->
+    <div class="variant-group">
+      <div class="variant-label">States (Checked, Unchecked, Disabled)</div>
+      <div class="variant-items-row">
+        <mat-slide-toggle class="sz-medium" [checked]="true">Notifications</mat-slide-toggle>
+        <mat-slide-toggle class="sz-medium" [checked]="false">Airplane Mode</mat-slide-toggle>
+        <mat-slide-toggle class="sz-medium" [disabled]="true" [checked]="true">Disabled On</mat-slide-toggle>
+        <mat-slide-toggle class="sz-medium" [disabled]="true" [checked]="false">Disabled Off</mat-slide-toggle>
+      </div>
+    </div>
+  </div>
+
+</div>

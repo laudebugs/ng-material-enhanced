@@ -103,10 +103,48 @@ body {
     pre {
       margin: 0;
       border-radius: 0.5em;
+      max-height: 600px;
+      overflow: auto;
     }
     pre,
     code {
       font-family: 'Google Sans Code', monospace;
+    }
+
+    .info-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 100%;
+      max-width: 360px;
+      padding: 1rem;
+      border: 1px solid var(--mat-sys-outline-variant);
+      border-radius: 8px;
+      background: var(--mat-sys-surface-container-low);
+
+      .info-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+
+        .info-label {
+          color: var(--mat-sys-on-surface-variant);
+        }
+
+        .info-value {
+          font-weight: 600;
+          color: var(--mat-sys-on-surface);
+
+          code {
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            background: var(--mat-sys-surface-container);
+            font-size: 0.825rem;
+          }
+        }
+      }
     }
   }
 

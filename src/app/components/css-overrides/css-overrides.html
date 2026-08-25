@@ -1,0 +1,60 @@
+<h2>
+  CSS & SCSS Overrides
+</h2>
+
+<div class="element">
+  <h3>Export & Copy Overrides</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- Format toggle -->
+      <mat-button-toggle-group [(ngModel)]="viewMode" class="sh-square sz-medium" aria-label="Format selection">
+        <mat-button-toggle value="css">Compiled CSS ({{ cssSizeKb }} KB)</mat-button-toggle>
+        <mat-button-toggle value="scss">All-in-One SCSS ({{ scssSizeKb }} KB)</mat-button-toggle>
+      </mat-button-toggle-group>
+
+      <!-- Copy action -->
+      <button matButton="filled" class="sh-square sz-medium" (click)="copyCode()">
+        <mat-icon class="material-symbols-outlined">
+          {{ copied() ? 'check' : 'content_copy' }}
+        </mat-icon>
+        {{ copied() ? 'Copied to Clipboard!' : 'Copy ' + (viewMode() === 'css' ? 'CSS' : 'SCSS') }}
+      </button>
+
+      <!-- Direct Download / Asset Links -->
+      <a
+        matButton="outlined"
+        class="sh-square sz-medium"
+        [href]="viewMode() === 'css' ? '/material-overrides.css' : '/material-overrides.scss'"
+        [download]="viewMode() === 'css' ? 'material-overrides.css' : 'material-overrides.scss'"
+        target="_blank">
+        <mat-icon class="material-symbols-outlined">download</mat-icon>
+        Download {{ viewMode() === 'css' ? 'CSS' : 'SCSS' }}
+      </a>
+    </div>
+
+    <div class="demo">
+      <div class="info-card">
+        <div class="info-item">
+          <span class="info-label">Format</span>
+          <span class="info-value">{{ viewMode() === 'css' ? 'Compiled Pure CSS' : 'Sass / SCSS Mixins' }}</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Size</span>
+          <span class="info-value">{{ viewMode() === 'css' ? cssSizeKb + ' KB' : scssSizeKb + ' KB' }}</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Lines</span>
+          <span class="info-value">{{ viewMode() === 'css' ? cssLineCount : scssLineCount }}</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Direct URL</span>
+          <span class="info-value">
+            <code>{{ viewMode() === 'css' ? '/material-overrides.css' : '/material-overrides.scss' }}</code>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="code-preview" [innerHTML]="highlightedCode()"></div>
+</div>
