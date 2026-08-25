@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "ng-material-extended": {
+    "ng-material-enhanced": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -61,10 +61,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ng-material-extended:build:production"
+              "buildTarget": "ng-material-enhanced:build:production"
             },
             "development": {
-              "buildTarget": "ng-material-extended:build:development"
+              "buildTarget": "ng-material-enhanced:build:development"
             }
           },
           "defaultConfiguration": "development"
