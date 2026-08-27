@@ -2,7 +2,7 @@
 @use 'sass:map';
 @use 'sass:math';
 @use './sizes' as sizes;
-@use './mat-button.scss' as button-overrides;
+@use './mat-button' as button-overrides;
 
 @mixin configure-form-field($height) {
   $input-height: calc($height * 2 / 3);

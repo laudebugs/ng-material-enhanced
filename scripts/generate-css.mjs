@@ -28,7 +28,7 @@ function generate() {
       stdio: ['pipe', 'pipe', 'inherit'],
     });
 
-    // 2. Read individual SCSS files (excluding project-specific _theme-colors.scss)
+    // 2. Read individual SCSS files
     const scssFilesList = [
       'sizes.scss',
       'mat-button.scss',
@@ -44,11 +44,6 @@ function generate() {
     ];
 
     const scssModules = [];
-    let combinedScss = `// ============================================================================\n`;
-    combinedScss += `// Angular Material Enhanced - Component Overrides (All-in-One Raw SCSS)\n`;
-    combinedScss += `// https://github.com/laudebugs/ng-material-enhanced\n`;
-    combinedScss += `// ============================================================================\n\n`;
-
     for (const file of scssFilesList) {
       const filePath = join(scssDir, file);
       if (existsSync(filePath)) {
@@ -56,11 +51,48 @@ function generate() {
         const sizeKb = (Buffer.byteLength(content, 'utf8') / 1024).toFixed(1);
         const lineCount = content.split('\n').length;
         scssModules.push({ filename: file, content, sizeKb, lineCount });
+      }
+    }
+
+    // Build unified all-in-one SCSS with all @use rules at the top and no duplicated variables/imports
+    const combinedFilesList = [
+      'sizes.scss',
+      'mat-button.scss',
+      'mat-button-toggle.scss',
+      'mat-checkbox.scss',
+      'mat-chip.scss',
+      'mat-form-field.scss',
+      'mat-progress-bar.scss',
+      'mat-radio-button.scss',
+      'mat-slide-toggle.scss',
+      'mat-slider.scss',
+    ];
+
+    let combinedScss = `// ============================================================================\n`;
+    combinedScss += `// Angular Material Enhanced - Component Overrides (All-in-One Raw SCSS)\n`;
+    combinedScss += `// https://github.com/laudebugs/ng-material-enhanced\n`;
+    combinedScss += `// ============================================================================\n\n`;
+    combinedScss += `@use '@angular/material' as mat;\n`;
+    combinedScss += `@use 'sass:map';\n`;
+    combinedScss += `@use 'sass:math';\n`;
+    combinedScss += `@use './theme-colors' as theme-colors;\n\n`;
+
+    for (const file of combinedFilesList) {
+      const mod = scssModules.find(m => m.filename === file);
+      if (mod) {
+        // Strip @use / @forward statements and local module namespaces
+        const cleanedContent = mod.content
+          .split('\n')
+          .filter(line => !line.startsWith('@use ') && !line.startsWith('@forward '))
+          .join('\n')
+          .replace(/sizes\.\$/g, '$')
+          .replace(/button-overrides\./g, '')
+          .trim();
 
         combinedScss += `// ----------------------------------------------------------------------------\n`;
         combinedScss += `// File: ${file}\n`;
         combinedScss += `// ----------------------------------------------------------------------------\n`;
-        combinedScss += content + '\n\n';
+        combinedScss += cleanedContent + '\n\n';
       }
     }
 

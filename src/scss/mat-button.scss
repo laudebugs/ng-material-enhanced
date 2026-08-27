@@ -4,9 +4,6 @@
 @use './sizes' as sizes;
 @use './theme-colors' as theme-colors;
 
-$error-palette: map.get(theme-colors.$primary-palette, error);
-$neutral-palette: map.get(theme-colors.$primary-palette, neutral);
-
 // a list of filled, outlined, protected, tonal so that we can loop through it
 $button-variants: filled, outlined, protected, tonal, text;
 
@@ -40,7 +37,7 @@ $button-variants: filled, outlined, protected, tonal, text;
     width: math.div($height * 3, 5);
     height: math.div($height * 3, 5);
   }
-  &[matIconButton] {
+  &[matIconButton], &[mat-icon-button] {
     @include mat.icon-button-overrides(
       (
         state-layer-size: $height,
@@ -52,7 +49,7 @@ $button-variants: filled, outlined, protected, tonal, text;
 
   $fab-height: math.div($height * 7, 5);
 
-  &[matFab] {
+  &[matFab], &[mat-fab] {
     @include mat.fab-overrides(
       (
         extended-container-height: $fab-height,
@@ -75,7 +72,7 @@ $button-variants: filled, outlined, protected, tonal, text;
       }
     }
   }
-  &[matMiniFab] {
+  &[matMiniFab], &[mat-mini-fab] {
     &.mat-mdc-fab-base {
       height: $height;
       width: $height;
@@ -163,61 +160,61 @@ $button-variants: filled, outlined, protected, tonal, text;
   &.destructive {
     @include mat.button-overrides(
       (
-        filled-container-color: map.get($error-palette, 40),
+        filled-container-color: map.get(theme-colors.$error-palette, 40),
         filled-state-layer-color: color-mix(
             in srgb,
-            map.get($error-palette, 100) 8%,
-            map.get($error-palette, 40)
+            map.get(theme-colors.$error-palette, 100) 8%,
+            map.get(theme-colors.$error-palette, 40)
           ),
         filled-ripple-color: color-mix(
             in srgb,
-            map.get($error-palette, 100) 12%,
-            map.get($error-palette, 40)
+            map.get(theme-colors.$error-palette, 100) 12%,
+            map.get(theme-colors.$error-palette, 40)
           ),
-        tonal-container-color: map.get($error-palette, 90),
-        tonal-label-text-color: map.get($error-palette, 40),
+        tonal-container-color: map.get(theme-colors.$error-palette, 90),
+        tonal-label-text-color: map.get(theme-colors.$error-palette, 40),
         tonal-state-layer-color: color-mix(
             in srgb,
-            map.get($error-palette, 30) 8%,
-            map.get($error-palette, 90)
+            map.get(theme-colors.$error-palette, 30) 8%,
+            map.get(theme-colors.$error-palette, 90)
           ),
         tonal-ripple-color: color-mix(
             in srgb,
-            map.get($error-palette, 30) 12%,
-            map.get($error-palette, 90)
+            map.get(theme-colors.$error-palette, 30) 12%,
+            map.get(theme-colors.$error-palette, 90)
           ),
-        outlined-outline-color: map.get($error-palette, 40),
-        outlined-ripple-color: color-mix(in srgb, map.get($error-palette, 40) 12%, transparent),
-        outlined-state-layer-color: color-mix(in srgb, map.get($error-palette, 40) 8%, transparent),
-        outlined-label-text-color: map.get($error-palette, 40),
-        protected-label-text-color: map.get($error-palette, 40),
+        outlined-outline-color: map.get(theme-colors.$error-palette, 40),
+        outlined-ripple-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 12%, transparent),
+        outlined-state-layer-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 8%, transparent),
+        outlined-label-text-color: map.get(theme-colors.$error-palette, 40),
+        protected-label-text-color: map.get(theme-colors.$error-palette, 40),
         protected-state-layer-color: color-mix(
             in srgb,
-            map.get($error-palette, 40) 8%,
-            map.get($neutral-palette, 96)
+            map.get(theme-colors.$error-palette, 40) 8%,
+            map.get(theme-colors.$neutral-palette, 96)
           ),
         protected-ripple-color: color-mix(
             in srgb,
-            map.get($error-palette, 40) 12%,
-            map.get($neutral-palette, 96)
+            map.get(theme-colors.$error-palette, 40) 12%,
+            map.get(theme-colors.$neutral-palette, 96)
           ),
       )
     );
 
     @include mat.icon-button-overrides(
       (
-        icon-color: map.get($error-palette, 40),
-        ripple-color: color-mix(in srgb, map.get($error-palette, 40) 12%, transparent),
-        state-layer-color: color-mix(in srgb, map.get($error-palette, 40) 8%, transparent),
+        icon-color: map.get(theme-colors.$error-palette, 40),
+        ripple-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 12%, transparent),
+        state-layer-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 8%, transparent),
       )
     );
 
     @include mat.fab-overrides(
       (
-        container-color: map.get($error-palette, 80),
-        foreground-color: map.get($error-palette, 40),
-        ripple-color: color-mix(in srgb, map.get($error-palette, 40) 12%, transparent),
-        state-layer-color: color-mix(in srgb, map.get($error-palette, 40) 8%, transparent),
+        container-color: map.get(theme-colors.$error-palette, 80),
+        foreground-color: map.get(theme-colors.$error-palette, 40),
+        ripple-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 12%, transparent),
+        state-layer-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 8%, transparent),
       )
     );
   }
@@ -232,11 +229,25 @@ $button-variants: filled, outlined, protected, tonal, text;
   }
 }
 
-button {
+button,
+a {
   &[matButton],
   &[matIconButton],
+  &[mat-icon-button],
   &[matFab],
-  &[matMiniFab] {
+  &[mat-fab],
+  &[matMiniFab],
+  &[mat-mini-fab],
+  &[matButton],
+  &[matButton],
+  &[mat-button],
+  &[mat-raised-button],
+  &[mat-flat-button],
+  &[mat-stroked-button],
+  &[mat-button],
+  &[mat-raised-button],
+  &[mat-flat-button],
+  &[mat-stroked-button] {
     // use function to apply overrides for all sizes
     @include button-overrides(sizes.$button-sizes);
   }

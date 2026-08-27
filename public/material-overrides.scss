@@ -3,6 +3,11 @@
 // https://github.com/laudebugs/ng-material-enhanced
 // ============================================================================
 
+@use '@angular/material' as mat;
+@use 'sass:map';
+@use 'sass:math';
+@use './theme-colors' as theme-colors;
+
 // ----------------------------------------------------------------------------
 // File: sizes.scss
 // ----------------------------------------------------------------------------
@@ -52,19 +57,9 @@ $chip-sizes: (
   xlarge: 48px,
 );
 
-
 // ----------------------------------------------------------------------------
 // File: mat-button.scss
 // ----------------------------------------------------------------------------
-@use '@angular/material' as mat;
-@use 'sass:map';
-@use 'sass:math';
-@use './sizes' as sizes;
-@use './theme-colors' as theme-colors;
-
-$error-palette: map.get(theme-colors.$primary-palette, error);
-$neutral-palette: map.get(theme-colors.$primary-palette, neutral);
-
 // a list of filled, outlined, protected, tonal so that we can loop through it
 $button-variants: filled, outlined, protected, tonal, text;
 
@@ -98,7 +93,7 @@ $button-variants: filled, outlined, protected, tonal, text;
     width: math.div($height * 3, 5);
     height: math.div($height * 3, 5);
   }
-  &[matIconButton] {
+  &[matIconButton], &[mat-icon-button] {
     @include mat.icon-button-overrides(
       (
         state-layer-size: $height,
@@ -110,7 +105,7 @@ $button-variants: filled, outlined, protected, tonal, text;
 
   $fab-height: math.div($height * 7, 5);
 
-  &[matFab] {
+  &[matFab], &[mat-fab] {
     @include mat.fab-overrides(
       (
         extended-container-height: $fab-height,
@@ -133,7 +128,7 @@ $button-variants: filled, outlined, protected, tonal, text;
       }
     }
   }
-  &[matMiniFab] {
+  &[matMiniFab], &[mat-mini-fab] {
     &.mat-mdc-fab-base {
       height: $height;
       width: $height;
@@ -221,61 +216,61 @@ $button-variants: filled, outlined, protected, tonal, text;
   &.destructive {
     @include mat.button-overrides(
       (
-        filled-container-color: map.get($error-palette, 40),
+        filled-container-color: map.get(theme-colors.$error-palette, 40),
         filled-state-layer-color: color-mix(
             in srgb,
-            map.get($error-palette, 100) 8%,
-            map.get($error-palette, 40)
+            map.get(theme-colors.$error-palette, 100) 8%,
+            map.get(theme-colors.$error-palette, 40)
           ),
         filled-ripple-color: color-mix(
             in srgb,
-            map.get($error-palette, 100) 12%,
-            map.get($error-palette, 40)
+            map.get(theme-colors.$error-palette, 100) 12%,
+            map.get(theme-colors.$error-palette, 40)
           ),
-        tonal-container-color: map.get($error-palette, 90),
-        tonal-label-text-color: map.get($error-palette, 40),
+        tonal-container-color: map.get(theme-colors.$error-palette, 90),
+        tonal-label-text-color: map.get(theme-colors.$error-palette, 40),
         tonal-state-layer-color: color-mix(
             in srgb,
-            map.get($error-palette, 30) 8%,
-            map.get($error-palette, 90)
+            map.get(theme-colors.$error-palette, 30) 8%,
+            map.get(theme-colors.$error-palette, 90)
           ),
         tonal-ripple-color: color-mix(
             in srgb,
-            map.get($error-palette, 30) 12%,
-            map.get($error-palette, 90)
+            map.get(theme-colors.$error-palette, 30) 12%,
+            map.get(theme-colors.$error-palette, 90)
           ),
-        outlined-outline-color: map.get($error-palette, 40),
-        outlined-ripple-color: color-mix(in srgb, map.get($error-palette, 40) 12%, transparent),
-        outlined-state-layer-color: color-mix(in srgb, map.get($error-palette, 40) 8%, transparent),
-        outlined-label-text-color: map.get($error-palette, 40),
-        protected-label-text-color: map.get($error-palette, 40),
+        outlined-outline-color: map.get(theme-colors.$error-palette, 40),
+        outlined-ripple-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 12%, transparent),
+        outlined-state-layer-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 8%, transparent),
+        outlined-label-text-color: map.get(theme-colors.$error-palette, 40),
+        protected-label-text-color: map.get(theme-colors.$error-palette, 40),
         protected-state-layer-color: color-mix(
             in srgb,
-            map.get($error-palette, 40) 8%,
-            map.get($neutral-palette, 96)
+            map.get(theme-colors.$error-palette, 40) 8%,
+            map.get(theme-colors.$neutral-palette, 96)
           ),
         protected-ripple-color: color-mix(
             in srgb,
-            map.get($error-palette, 40) 12%,
-            map.get($neutral-palette, 96)
+            map.get(theme-colors.$error-palette, 40) 12%,
+            map.get(theme-colors.$neutral-palette, 96)
           ),
       )
     );
 
     @include mat.icon-button-overrides(
       (
-        icon-color: map.get($error-palette, 40),
-        ripple-color: color-mix(in srgb, map.get($error-palette, 40) 12%, transparent),
-        state-layer-color: color-mix(in srgb, map.get($error-palette, 40) 8%, transparent),
+        icon-color: map.get(theme-colors.$error-palette, 40),
+        ripple-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 12%, transparent),
+        state-layer-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 8%, transparent),
       )
     );
 
     @include mat.fab-overrides(
       (
-        container-color: map.get($error-palette, 80),
-        foreground-color: map.get($error-palette, 40),
-        ripple-color: color-mix(in srgb, map.get($error-palette, 40) 12%, transparent),
-        state-layer-color: color-mix(in srgb, map.get($error-palette, 40) 8%, transparent),
+        container-color: map.get(theme-colors.$error-palette, 80),
+        foreground-color: map.get(theme-colors.$error-palette, 40),
+        ripple-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 12%, transparent),
+        state-layer-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 8%, transparent),
       )
     );
   }
@@ -290,25 +285,33 @@ $button-variants: filled, outlined, protected, tonal, text;
   }
 }
 
-button {
+button,
+a {
   &[matButton],
   &[matIconButton],
+  &[mat-icon-button],
   &[matFab],
-  &[matMiniFab] {
+  &[mat-fab],
+  &[matMiniFab],
+  &[mat-mini-fab],
+  &[matButton],
+  &[matButton],
+  &[mat-button],
+  &[mat-raised-button],
+  &[mat-flat-button],
+  &[mat-stroked-button],
+  &[mat-button],
+  &[mat-raised-button],
+  &[mat-flat-button],
+  &[mat-stroked-button] {
     // use function to apply overrides for all sizes
-    @include button-overrides(sizes.$button-sizes);
+    @include button-overrides($button-sizes);
   }
 }
-
 
 // ----------------------------------------------------------------------------
 // File: mat-button-toggle.scss
 // ----------------------------------------------------------------------------
-@use '@angular/material' as mat;
-@use 'sass:math';
-@use './sizes.scss' as sizes;
-
-
 @mixin button-toggle-overrides($sizes) {
   @each $size, $height in $sizes {
     &.sz-#{$size} {
@@ -353,22 +356,12 @@ button {
 
 mat-button-toggle-group {
   // use function to apply overrides for all sizes
-  @include button-toggle-overrides(sizes.$button-sizes);
+  @include button-toggle-overrides($button-sizes);
 }
-
 
 // ----------------------------------------------------------------------------
 // File: mat-checkbox.scss
 // ----------------------------------------------------------------------------
-@use '@angular/material' as mat;
-@use 'sass:math';
-@use 'sass:map';
-@use './theme-colors' as theme-colors;
-@use './sizes.scss' as sizes;
-
-$neutral-palette: map.get(theme-colors.$primary-palette, neutral);
-$error-palette: map.get(theme-colors.$primary-palette, error);
-
 @mixin configure-check-box($height) {
   @include mat.checkbox-overrides(
     (
@@ -388,41 +381,33 @@ $error-palette: map.get(theme-colors.$primary-palette, error);
 
 mat-checkbox {
   // use function to apply overrides for all sizes
-  @include check-box-overrides(sizes.$form-field-sizes);
+  @include check-box-overrides($form-field-sizes);
 
   // if no size attribute, use the medium size as default
   &:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
-    $medium-height: map.get(sizes.$form-field-sizes, medium);
+    $medium-height: map.get($form-field-sizes, medium);
     @include configure-check-box($medium-height);
   }
 
    &.destructive {
     @include mat.checkbox-overrides(
       (
-        selected-hover-icon-color: map.get($error-palette, 40),
-        selected-icon-color: map.get($error-palette, 40),
-        selected-focus-icon-color: map.get($error-palette, 40),
-        selected-pressed-icon-color: map.get($error-palette, 40),
-        selected-checkmark-color: map.get($error-palette, 90),
-        selected-focus-state-layer-color: color-mix(in srgb, map.get($error-palette, 40) 8%, map.get($neutral-palette, 96)),
-        selected-pressed-state-layer-color: color-mix(in srgb, map.get($error-palette, 40) 12%, map.get($neutral-palette, 96)),
-        unselected-pressed-state-layer-color: map.get($error-palette, 40)
+        selected-hover-icon-color: map.get(theme-colors.$error-palette, 40),
+        selected-icon-color: map.get(theme-colors.$error-palette, 40),
+        selected-focus-icon-color: map.get(theme-colors.$error-palette, 40),
+        selected-pressed-icon-color: map.get(theme-colors.$error-palette, 40),
+        selected-checkmark-color: map.get(theme-colors.$error-palette, 90),
+        selected-focus-state-layer-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 8%, map.get(theme-colors.$neutral-palette, 96)),
+        selected-pressed-state-layer-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 12%, map.get(theme-colors.$neutral-palette, 96)),
+        unselected-pressed-state-layer-color: map.get(theme-colors.$error-palette, 40)
       )
     );
   }
 }
 
-
-
 // ----------------------------------------------------------------------------
 // File: mat-chip.scss
 // ----------------------------------------------------------------------------
-@use '@angular/material' as mat;
-@use 'sass:math';
-@use 'sass:map';
-@use './sizes.scss' as sizes;
-@use './mat-button.scss' as button-overrides;
-
 @mixin configure-chip($height) {
   @include mat.chips-overrides(
     (
@@ -438,7 +423,7 @@ mat-checkbox {
   button {
     &[matChipEdit],
     &[matChipRemove] {
-      @include button-overrides.configure-button($height);
+      @include configure-button($height);
       height: calc($height * 9 / 16);
       width: calc($height * 9 / 16);
     }
@@ -478,27 +463,18 @@ mat-checkbox {
 mat-chip,
 mat-chip-row {
   // use function to apply overrides for all sizes
-  @include chip-overrides(sizes.$chip-sizes);
+  @include chip-overrides($chip-sizes);
 
   // if no size class, use the medium size as default
   &:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
-    $medium-height: map.get(sizes.$chip-sizes, medium);
+    $medium-height: map.get($chip-sizes, medium);
     @include configure-chip($medium-height);
   }
 }
 
-
-
-
 // ----------------------------------------------------------------------------
 // File: mat-form-field.scss
 // ----------------------------------------------------------------------------
-@use '@angular/material' as mat;
-@use 'sass:map';
-@use 'sass:math';
-@use './sizes' as sizes;
-@use './mat-button.scss' as button-overrides;
-
 @mixin configure-form-field($height) {
   $input-height: calc($height * 2 / 3);
   // if size is small and not appearance outline, set height to 40px;
@@ -584,7 +560,7 @@ mat-chip-row {
     &[matMiniFab] {
       // doesn't have size class, use the size of the form field to determine the button size
       &:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
-        @include button-overrides.configure-button($height);
+        @include configure-button($height);
       }
     }
   }
@@ -592,33 +568,25 @@ mat-chip-row {
 
 mat-form-field {
   // use function to apply overrides for all sizes
-  @include form-field-overrides(sizes.$form-field-sizes);
+  @include form-field-overrides($form-field-sizes);
 
   // apply button overrides to the buttons inside the form field based on form-field size
-  @each $size, $height in sizes.$form-field-sizes {
+  @each $size, $height in $form-field-sizes {
     &.sz-#{$size} {
       @include form-field-button-without-size-config($height);
     }
   }
   // if no size class, use the medium size as default
   &:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
-    $medium-height: map.get(sizes.$form-field-sizes, medium);
+    $medium-height: map.get($form-field-sizes, medium);
     @include configure-form-field($medium-height);
     @include form-field-button-without-size-config($medium-height);
   }
 }
 
-
-
-
 // ----------------------------------------------------------------------------
 // File: mat-progress-bar.scss
 // ----------------------------------------------------------------------------
-@use '@angular/material' as mat;
-@use 'sass:map';
-@use './sizes.scss' as sizes;
-
-
 @mixin configure-progress-bar($height) {
   @include mat.progress-bar-overrides(
     (
@@ -664,24 +632,18 @@ mat-form-field {
 
 mat-progress-bar {
   // use function to apply overrides for all sizes
-  @include progress-bar-overrides(sizes.$progress-bar-sizes);
+  @include progress-bar-overrides($progress-bar-sizes);
 
   // if no size class, use the medium size as default
   &:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
-    $medium-height: map.get(sizes.$progress-bar-sizes, medium);
+    $medium-height: map.get($progress-bar-sizes, medium);
     @include configure-progress-bar($medium-height);
   }
 }
 
-
 // ----------------------------------------------------------------------------
 // File: mat-radio-button.scss
 // ----------------------------------------------------------------------------
-@use '@angular/material' as mat;
-@use 'sass:math';
-@use 'sass:map';
-@use './sizes.scss' as sizes;
-
 @mixin configure-radio-button($height) {
   @include mat.radio-overrides(
     (
@@ -701,24 +663,18 @@ mat-progress-bar {
 
 mat-radio-button {
   // use function to apply overrides for all sizes
-  @include radio-button-overrides(sizes.$form-field-sizes);
+  @include radio-button-overrides($form-field-sizes);
 
   // if no size class, use the medium size as default
   &:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
-    $medium-height: map.get(sizes.$form-field-sizes, medium);
+    $medium-height: map.get($form-field-sizes, medium);
     @include configure-radio-button($medium-height);
   }
 }
 
-
 // ----------------------------------------------------------------------------
 // File: mat-slide-toggle.scss
 // ----------------------------------------------------------------------------
-@use '@angular/material' as mat;
-@use 'sass:math';
-@use 'sass:map';
-@use './sizes.scss' as sizes;
-
 @mixin configure-mat-slide-toggle($height) {
   @include mat.slide-toggle-overrides(
     (
@@ -751,25 +707,18 @@ mat-radio-button {
 
 mat-slide-toggle {
   // use function to apply overrides for all sizes
-  @include mat-slide-toggle-overrides(sizes.$slide-toggle-sizes);
+  @include mat-slide-toggle-overrides($slide-toggle-sizes);
 
   // if no size class, use the medium size as default
   &:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
-    $medium-height: map.get(sizes.$slide-toggle-sizes, medium);
+    $medium-height: map.get($slide-toggle-sizes, medium);
     @include configure-mat-slide-toggle($medium-height);
   }
 }
 
-
-
-
 // ----------------------------------------------------------------------------
 // File: mat-slider.scss
 // ----------------------------------------------------------------------------
-@use '@angular/material' as mat;
-@use 'sass:map';
-@use './sizes.scss' as sizes;
-
 @mixin configure-slider($height) {
   @include mat.slider-overrides(
     (
@@ -813,27 +762,12 @@ mat-slide-toggle {
 
 mat-slider {
   // use function to apply overrides for all sizes
-  @include slider-overrides(sizes.$slider-sizes);
+  @include slider-overrides($slider-sizes);
 
   // if no size class, use the medium size as default
   &:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
-    $medium-height: map.get(sizes.$slider-sizes, medium);
+    $medium-height: map.get($slider-sizes, medium);
     @include configure-slider($medium-height);
   }
 }
-
-
-// ----------------------------------------------------------------------------
-// File: _mat-overrides.scss
-// ----------------------------------------------------------------------------
-@forward './mat-button-toggle.scss';
-@forward './mat-button.scss' hide $neutral-palette, $error-palette;
-@forward './mat-checkbox.scss' hide $neutral-palette, $error-palette;
-@forward './mat-chip.scss';
-@forward './mat-form-field.scss';
-@forward './mat-progress-bar.scss';
-@forward './mat-radio-button.scss';
-@forward './mat-slide-toggle.scss';
-@forward './mat-slider.scss';
-
 

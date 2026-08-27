@@ -1,6 +1,6 @@
 @use '@angular/material' as mat;
 @use 'sass:math';
-@use './sizes.scss' as sizes;
+@use './sizes' as sizes;
 
 
 @mixin button-toggle-overrides($sizes) {

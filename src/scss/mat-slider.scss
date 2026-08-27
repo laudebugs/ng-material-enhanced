@@ -1,6 +1,6 @@
 @use '@angular/material' as mat;
 @use 'sass:map';
-@use './sizes.scss' as sizes;
+@use './sizes' as sizes;
 
 @mixin configure-slider($height) {
   @include mat.slider-overrides(

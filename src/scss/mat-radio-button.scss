@@ -1,7 +1,7 @@
 @use '@angular/material' as mat;
-@use 'sass:math';
 @use 'sass:map';
-@use './sizes.scss' as sizes;
+@use 'sass:math';
+@use './sizes' as sizes;
 
 @mixin configure-radio-button($height) {
   @include mat.radio-overrides(

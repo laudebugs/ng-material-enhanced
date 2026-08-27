@@ -1,13 +1,14 @@
+@use '@angular/material' as mat;
+@use 'sass:map';
+@use 'sass:math';
+@use './scss/theme-colors' as theme-colors;
+@use './scss/mat-overrides';
+
 // Include theming for Angular Material with `mat.theme()`.
 // This Sass mixin will define CSS variables that are used for styling Angular Material
 // components according to the Material 3 design spec.
 // Learn more about theming and how to use it for your application's
 // custom components at https://material.angular.dev/guide/theming
-@use '@angular/material' as mat;
-@use 'sass:math';
-@use 'sass:map';
-@use './scss/theme-colors' as theme-colors;
-@use './scss/mat-overrides.scss';
 
 html {
   color-scheme: light dark;

@@ -1,9 +1,9 @@
-@forward './mat-button-toggle.scss';
-@forward './mat-button.scss' hide $neutral-palette, $error-palette;
-@forward './mat-checkbox.scss' hide $neutral-palette, $error-palette;
-@forward './mat-chip.scss';
-@forward './mat-form-field.scss';
-@forward './mat-progress-bar.scss';
-@forward './mat-radio-button.scss';
-@forward './mat-slide-toggle.scss';
-@forward './mat-slider.scss';
+@forward './mat-button-toggle';
+@forward './mat-button';
+@forward './mat-checkbox';
+@forward './mat-chip';
+@forward './mat-form-field';
+@forward './mat-progress-bar';
+@forward './mat-radio-button';
+@forward './mat-slide-toggle';
+@forward './mat-slider';
