@@ -102,15 +102,8 @@ export class CssOverrides {
       await navigator.clipboard.writeText(this.currentCodeRaw());
       this.copied.set(true);
       setTimeout(() => this.copied.set(false), 2000);
-    } catch {
-      const textArea = document.createElement('textarea');
-      textArea.value = this.currentCodeRaw();
-      document.body.appendChild(textArea);
-      textArea.select();
-      document.execCommand('copy');
-      document.body.removeChild(textArea);
-      this.copied.set(true);
-      setTimeout(() => this.copied.set(false), 2000);
+    } catch (error) {
+      console.error('Failed to copy to clipboard via Clipboard API:', error);
     }
   }
 }
