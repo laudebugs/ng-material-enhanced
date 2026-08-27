@@ -1,7 +1,8 @@
 import { execSync } from 'child_process';
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
+import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'fs';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
+import { deflateRawSync } from 'zlib';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -13,6 +14,99 @@ const generatedDir = join(rootDir, 'src', 'app', 'generated');
 function ensureDirectories() {
   if (!existsSync(publicDir)) mkdirSync(publicDir, { recursive: true });
   if (!existsSync(generatedDir)) mkdirSync(generatedDir, { recursive: true });
+}
+
+function createZipArchive(files) {
+  const localHeaders = [];
+  const centralHeaders = [];
+  let offset = 0;
+
+  const crcTable = new Uint32Array(256);
+  for (let i = 0; i < 256; i++) {
+    let c = i;
+    for (let k = 0; k < 8; k++) {
+      c = (c & 1) ? (0xEDB88320 ^ (c >>> 1)) : (c >>> 1);
+    }
+    crcTable[i] = c;
+  }
+  function calcCrc32(buf) {
+    let crc = 0xFFFFFFFF;
+    for (let i = 0; i < buf.length; i++) {
+      crc = crcTable[(crc ^ buf[i]) & 0xFF] ^ (crc >>> 8);
+    }
+    return (crc ^ 0xFFFFFFFF) >>> 0;
+  }
+
+  const now = new Date();
+  const dosTime = (now.getHours() << 11) | (now.getMinutes() << 5) | Math.floor(now.getSeconds() / 2);
+  const dosDate = ((now.getFullYear() - 1980) << 9) | ((now.getMonth() + 1) << 5) | now.getDate();
+
+  for (const file of files) {
+    const dataBuf = Buffer.isBuffer(file.content) ? file.content : Buffer.from(file.content, 'utf8');
+    const compressedData = deflateRawSync(dataBuf);
+    const useCompressed = compressedData.length < dataBuf.length;
+    const finalData = useCompressed ? compressedData : dataBuf;
+    const method = useCompressed ? 8 : 0;
+    const crc = calcCrc32(dataBuf);
+    const nameBuf = Buffer.from(file.filename, 'utf8');
+
+    const localHeader = Buffer.alloc(30 + nameBuf.length);
+    localHeader.writeUInt32LE(0x04034b50, 0);
+    localHeader.writeUInt16LE(20, 4);
+    localHeader.writeUInt16LE(0, 6);
+    localHeader.writeUInt16LE(method, 8);
+    localHeader.writeUInt16LE(dosTime, 10);
+    localHeader.writeUInt16LE(dosDate, 12);
+    localHeader.writeUInt32LE(crc, 14);
+    localHeader.writeUInt32LE(finalData.length, 18);
+    localHeader.writeUInt32LE(dataBuf.length, 22);
+    localHeader.writeUInt16LE(nameBuf.length, 26);
+    localHeader.writeUInt16LE(0, 28);
+    nameBuf.copy(localHeader, 30);
+
+    localHeaders.push(localHeader, finalData);
+
+    const cdHeader = Buffer.alloc(46 + nameBuf.length);
+    cdHeader.writeUInt32LE(0x02014b50, 0);
+    cdHeader.writeUInt16LE(20, 4);
+    cdHeader.writeUInt16LE(20, 6);
+    cdHeader.writeUInt16LE(0, 8);
+    cdHeader.writeUInt16LE(method, 10);
+    cdHeader.writeUInt16LE(dosTime, 12);
+    cdHeader.writeUInt16LE(dosDate, 14);
+    cdHeader.writeUInt32LE(crc, 16);
+    cdHeader.writeUInt32LE(finalData.length, 20);
+    cdHeader.writeUInt32LE(dataBuf.length, 24);
+    cdHeader.writeUInt16LE(nameBuf.length, 28);
+    cdHeader.writeUInt16LE(0, 30);
+    cdHeader.writeUInt16LE(0, 32);
+    cdHeader.writeUInt16LE(0, 34);
+    cdHeader.writeUInt16LE(0, 36);
+    cdHeader.writeUInt32LE(0, 38);
+    cdHeader.writeUInt32LE(offset, 42);
+    nameBuf.copy(cdHeader, 46);
+
+    centralHeaders.push(cdHeader);
+    offset += localHeader.length + finalData.length;
+  }
+
+  const cdStart = offset;
+  let cdSize = 0;
+  for (const h of centralHeaders) {
+    cdSize += h.length;
+  }
+
+  const eocd = Buffer.alloc(22);
+  eocd.writeUInt32LE(0x06054b50, 0);
+  eocd.writeUInt16LE(0, 4);
+  eocd.writeUInt16LE(0, 6);
+  eocd.writeUInt16LE(files.length, 8);
+  eocd.writeUInt16LE(files.length, 10);
+  eocd.writeUInt32LE(cdSize, 12);
+  eocd.writeUInt32LE(cdStart, 16);
+  eocd.writeUInt16LE(0, 20);
+
+  return Buffer.concat([...localHeaders, ...centralHeaders, eocd]);
 }
 
 function generate() {
@@ -103,9 +197,28 @@ function generate() {
     writeFileSync(join(publicDir, 'material-overrides.css'), finalCss, 'utf8');
     writeFileSync(join(publicDir, 'material-overrides.scss'), combinedScss, 'utf8');
 
-    // 4. Write TypeScript data file for the /css route
+    // 4. Generate ZIP archive of all raw SCSS source files
+    const allScssDiskFiles = readdirSync(scssDir).filter(f => f.endsWith('.scss'));
+    const zipEntries = [];
+
+    for (const filename of allScssDiskFiles) {
+      const fullPath = join(scssDir, filename);
+      if (existsSync(fullPath)) {
+        zipEntries.push({
+          filename,
+          content: readFileSync(fullPath),
+        });
+      }
+    }
+
+    const zipBuffer = createZipArchive(zipEntries);
+    const zipPath = join(publicDir, 'material-overrides-scss.zip');
+    writeFileSync(zipPath, zipBuffer);
+
+    // 5. Write TypeScript data file for the /css route
     const cssSizeKb = (Buffer.byteLength(finalCss, 'utf8') / 1024).toFixed(1);
     const scssSizeKb = (Buffer.byteLength(combinedScss, 'utf8') / 1024).toFixed(1);
+    const zipSizeKb = (Buffer.byteLength(zipBuffer) / 1024).toFixed(1);
     const cssLineCount = finalCss.split('\n').length;
     const scssLineCount = combinedScss.split('\n').length;
 
@@ -120,6 +233,7 @@ export interface ScssFileModule {
 export const GENERATED_AT = ${JSON.stringify(new Date().toISOString())};
 export const CSS_SIZE_KB = ${JSON.stringify(cssSizeKb)};
 export const SCSS_SIZE_KB = ${JSON.stringify(scssSizeKb)};
+export const ZIP_SIZE_KB = ${JSON.stringify(zipSizeKb)};
 export const CSS_LINE_COUNT = ${cssLineCount};
 export const SCSS_LINE_COUNT = ${scssLineCount};
 
@@ -131,7 +245,7 @@ export const SCSS_FILES: ScssFileModule[] = ${JSON.stringify(scssModules, null, 
 
     writeFileSync(join(generatedDir, 'css-overrides.data.ts'), tsContent, 'utf8');
 
-    // 5. Autogenerate public/llms.txt with copyright, architecture reference, and BOTH raw SCSS + compiled CSS
+    // 6. Autogenerate public/llms.txt with copyright, architecture reference, and BOTH raw SCSS + compiled CSS
     const llmsContent = `# Angular Material Enhanced
 
 > **Copyright (c) 2026 laudebugs (https://github.com/laudebugs/ng-material-enhanced) - MIT License**
@@ -144,7 +258,22 @@ Angular Material Enhanced provides a structured class-based design token and ove
 - **Demo Website**: https://ng-material-enhanced.laudebugs.me
 - **Compiled CSS Asset**: https://ng-material-enhanced.laudebugs.me/material-overrides.css
 - **Raw SCSS Asset**: https://ng-material-enhanced.laudebugs.me/material-overrides.scss
+- **All SCSS Modules (ZIP)**: https://ng-material-enhanced.laudebugs.me/material-overrides-scss.zip
 - **GitHub Repository**: https://github.com/laudebugs/ng-material-enhanced
+
+---
+
+## Custom Theme Color Palettes
+
+Theme colors (such as \`_theme-colors.scss\`) are intentionally excluded from the generic component overrides so that projects can define their own primary, secondary, and tertiary palettes.
+
+To generate a custom Material 3 theme palette for your project, run the official Angular Material schematic:
+
+\`\`\`bash
+ng generate @angular/material:theme-color
+\`\`\`
+
+Refer to the official [Material 3 Custom Theme Schematic Documentation](https://github.com/angular/components/blob/main/src/material/schematics/ng-generate/theme-color/README.md) for full options and color specifications.
 
 ---
 
@@ -301,20 +430,6 @@ All overrides are bundled via \`src/scss/_mat-overrides.scss\` and compiled into
 
 ---
 
-## Theme Color Palettes
-
-Theme colors (such as \`_theme-colors.scss\`) are intentionally not bundled in the generic component overrides so that projects can define their own primary, secondary, and tertiary palettes.
-
-To generate a custom Material 3 theme palette for your project, run the official Angular Material schematic:
-
-\`\`\`bash
-ng generate @angular/material:theme-color
-\`\`\`
-
-Refer to the official [Material 3 Custom Theme Schematic Documentation](https://github.com/angular/components/blob/main/src/material/schematics/ng-generate/theme-color/README.md) for full options and color specifications.
-
----
-
 ## Routes
 
 - \`/\`: Complete showcase gallery of all components, sizes, and variations.
@@ -354,6 +469,7 @@ ${compiledCss.trim()}
     console.log(`[generate-css] Successfully generated:`);
     console.log(`  - public/material-overrides.css (${cssSizeKb} KB, ${cssLineCount} lines)`);
     console.log(`  - public/material-overrides.scss (${scssSizeKb} KB, ${scssLineCount} lines)`);
+    console.log(`  - public/material-overrides-scss.zip (${zipSizeKb} KB, ${zipEntries.length} files)`);
     console.log(`  - public/llms.txt (with raw SCSS + compiled CSS)`);
     console.log(`  - src/app/generated/css-overrides.data.ts`);
   } catch (err) {

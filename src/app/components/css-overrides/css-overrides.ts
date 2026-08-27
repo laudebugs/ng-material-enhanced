@@ -14,6 +14,7 @@ import {
   SCSS_FILES,
   SCSS_LINE_COUNT,
   SCSS_SIZE_KB,
+  ZIP_SIZE_KB,
 } from '../../generated/css-overrides.data';
 import { highlighter } from '../../highlighter';
 
@@ -35,6 +36,7 @@ import { highlighter } from '../../highlighter';
 export class CssOverrides {
   readonly cssSizeKb = CSS_SIZE_KB;
   readonly scssSizeKb = SCSS_SIZE_KB;
+  readonly zipSizeKb = ZIP_SIZE_KB;
   readonly cssLineCount = CSS_LINE_COUNT;
   readonly scssLineCount = SCSS_LINE_COUNT;
   readonly generatedAt = GENERATED_AT;

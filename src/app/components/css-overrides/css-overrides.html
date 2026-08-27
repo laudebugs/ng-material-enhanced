@@ -2,6 +2,25 @@
   CSS & SCSS Overrides
 </h2>
 
+<div class="element theme-info-box">
+  <h3>Custom Theme Color Palettes</h3>
+  <div class="theme-info-content">
+    <p>
+      Theme colors (such as <code>_theme-colors.scss</code>) are intentionally excluded from the generic component overrides so you can supply your own primary, secondary, and tertiary brand palettes.
+    </p>
+    <p>
+      Generate your custom Material 3 color palettes using the official Angular Material schematic:
+    </p>
+    <pre><code>ng generate &#64;angular/material:theme-color</code></pre>
+    <p>
+      For configuration options and color palette options, visit the
+      <a href="https://github.com/angular/components/blob/main/src/material/schematics/ng-generate/theme-color/README.md" target="_blank" rel="noopener noreferrer">
+        Material 3 Custom Theme Schematic Documentation &rarr;
+      </a>
+    </p>
+  </div>
+</div>
+
 <div class="element">
   <h3>Export & Copy Overrides</h3>
   <div class="element-container">
@@ -45,6 +64,18 @@
         <mat-icon class="material-symbols-outlined">download</mat-icon>
         Download {{ currentDownloadFilename() }}
       </a>
+
+      <!-- Download All SCSS as ZIP (Only for Raw SCSS Modules) -->
+      @if (viewTab() === 'module') {
+        <a
+          matButton="tonal"
+          class="sh-square sz-medium"
+          href="/material-overrides-scss.zip"
+          download="material-overrides-scss.zip">
+          <mat-icon class="material-symbols-outlined">folder_zip</mat-icon>
+          Download All (.zip)
+        </a>
+      }
     </div>
 
     <div class="demo">
@@ -80,23 +111,4 @@
   </div>
 
   <div class="code-preview" [innerHTML]="highlightedCode()"></div>
-</div>
-
-<div class="element theme-info-box">
-  <h3>Custom Theme Color Palettes</h3>
-  <div class="theme-info-content">
-    <p>
-      Theme colors (such as <code>_theme-colors.scss</code>) are intentionally excluded from the generic component overrides so you can supply your own primary, secondary, and tertiary brand palettes.
-    </p>
-    <p>
-      Generate your custom Material 3 color palettes using the official Angular Material schematic:
-    </p>
-    <pre><code>ng generate &#64;angular/material:theme-color</code></pre>
-    <p>
-      For configuration options and color palette options, visit the
-      <a href="https://github.com/angular/components/blob/main/src/material/schematics/ng-generate/theme-color/README.md" target="_blank" rel="noopener noreferrer">
-        Material 3 Custom Theme Schematic Documentation &rarr;
-      </a>
-    </p>
-  </div>
 </div>

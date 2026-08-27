@@ -5,7 +5,23 @@ A modern demonstration application and SCSS design extension illustrating how to
 - **Live Demo**: [ng-material-enhanced.laudebugs.me](https://ng-material-enhanced.laudebugs.me)
 - **Compiled CSS Overrides**: [`/material-overrides.css`](https://ng-material-enhanced.laudebugs.me/material-overrides.css)
 - **SCSS Source Overrides**: [`/material-overrides.scss`](https://ng-material-enhanced.laudebugs.me/material-overrides.scss)
+- **All SCSS Modules (ZIP)**: [`/material-overrides-scss.zip`](https://ng-material-enhanced.laudebugs.me/material-overrides-scss.zip)
 - **LLM Context Reference**: [`/llms.txt`](https://ng-material-enhanced.laudebugs.me/llms.txt)
+
+---
+
+## Custom Theme Color Palettes
+
+Theme colors (such as `_theme-colors.scss`) are intentionally excluded from the generic component overrides so that projects can define their own primary, secondary, and tertiary brand palettes.
+
+You can generate custom Material 3 color palettes for your project using the official Angular Material schematic:
+
+```bash
+ng generate @angular/material:theme-color
+```
+
+- [Material 3 Custom Theme Schematic Documentation](https://github.com/angular/components/blob/main/src/material/schematics/ng-generate/theme-color/README.md)
+- [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/)
 
 ---
 
@@ -71,21 +87,6 @@ Include `_mat-overrides.scss` in your main `styles.scss`:
 @use '@angular/material' as mat;
 @use './scss/mat-overrides.scss';
 ```
-
----
-
-## Custom Theme Color Palettes
-
-Theme colors (such as `_theme-colors.scss`) are intentionally excluded from the generic component overrides so that projects can define their own primary, secondary, and tertiary brand palettes.
-
-You can generate custom Material 3 color palettes for your project using the official Angular Material schematic:
-
-```bash
-ng generate @angular/material:theme-color
-```
-
-- [Material 3 Custom Theme Schematic Documentation](https://github.com/angular/components/blob/main/src/material/schematics/ng-generate/theme-color/README.md)
-- [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/)
 
 ---
 

@@ -10,7 +10,22 @@ Angular Material Enhanced provides a structured class-based design token and ove
 - **Demo Website**: https://ng-material-enhanced.laudebugs.me
 - **Compiled CSS Asset**: https://ng-material-enhanced.laudebugs.me/material-overrides.css
 - **Raw SCSS Asset**: https://ng-material-enhanced.laudebugs.me/material-overrides.scss
+- **All SCSS Modules (ZIP)**: https://ng-material-enhanced.laudebugs.me/material-overrides-scss.zip
 - **GitHub Repository**: https://github.com/laudebugs/ng-material-enhanced
+
+---
+
+## Custom Theme Color Palettes
+
+Theme colors (such as `_theme-colors.scss`) are intentionally excluded from the generic component overrides so that projects can define their own primary, secondary, and tertiary palettes.
+
+To generate a custom Material 3 theme palette for your project, run the official Angular Material schematic:
+
+```bash
+ng generate @angular/material:theme-color
+```
+
+Refer to the official [Material 3 Custom Theme Schematic Documentation](https://github.com/angular/components/blob/main/src/material/schematics/ng-generate/theme-color/README.md) for full options and color specifications.
 
 ---
 
@@ -164,20 +179,6 @@ The overrides leverage Angular Material 3 Sass mixins (`@use '@angular/material'
 - `mat.slider-overrides(...)`
 
 All overrides are bundled via `src/scss/_mat-overrides.scss` and compiled into pure CSS via `scripts/generate-css.mjs`.
-
----
-
-## Theme Color Palettes
-
-Theme colors (such as `_theme-colors.scss`) are intentionally not bundled in the generic component overrides so that projects can define their own primary, secondary, and tertiary palettes.
-
-To generate a custom Material 3 theme palette for your project, run the official Angular Material schematic:
-
-```bash
-ng generate @angular/material:theme-color
-```
-
-Refer to the official [Material 3 Custom Theme Schematic Documentation](https://github.com/angular/components/blob/main/src/material/schematics/ng-generate/theme-color/README.md) for full options and color specifications.
 
 ---
 
@@ -663,7 +664,7 @@ mat-checkbox {
   }
 }
 
-mat-chip,
+mat-chip, mat-basic-chip, [mat-basic-chip], [mat-chip],
 mat-chip-row {
   // use function to apply overrides for all sizes
   @include chip-overrides($chip-sizes);
@@ -3739,7 +3740,7 @@ mat-checkbox.destructive {
   --mat-checkbox-unselected-pressed-state-layer-color: #c0000c;
 }
 
-mat-chip.sz-small,
+mat-chip.sz-small, mat-basic-chip.sz-small, [mat-basic-chip].sz-small, [mat-chip].sz-small,
 mat-chip-row.sz-small {
   --mat-chip-container-height: 24px;
   --mat-chip-container-shape-radius: 6px;
@@ -3747,7 +3748,7 @@ mat-chip-row.sz-small {
   --mat-chip-with-avatar-avatar-size: 18px;
   --mat-chip-with-icon-icon-size: 13.5px;
 }
-mat-chip.sz-small button[matChipEdit], mat-chip.sz-small button[matChipRemove],
+mat-chip.sz-small button[matChipEdit], mat-chip.sz-small button[matChipRemove], mat-basic-chip.sz-small button[matChipEdit], mat-basic-chip.sz-small button[matChipRemove], [mat-basic-chip].sz-small button[matChipEdit], [mat-basic-chip].sz-small button[matChipRemove], [mat-chip].sz-small button[matChipEdit], [mat-chip].sz-small button[matChipRemove],
 mat-chip-row.sz-small button[matChipEdit],
 mat-chip-row.sz-small button[matChipRemove] {
   --mat-button-filled-container-height: 24px;
@@ -3776,19 +3777,19 @@ mat-chip-row.sz-small button[matChipRemove] {
   --mat-button-tonal-horizontal-padding: 14.4px;
   --mat-button-text-with-icon-horizontal-padding: 9.6px;
 }
-mat-chip.sz-small button[matChipEdit] .material-symbols-outlined, mat-chip.sz-small button[matChipRemove] .material-symbols-outlined,
+mat-chip.sz-small button[matChipEdit] .material-symbols-outlined, mat-chip.sz-small button[matChipRemove] .material-symbols-outlined, mat-basic-chip.sz-small button[matChipEdit] .material-symbols-outlined, mat-basic-chip.sz-small button[matChipRemove] .material-symbols-outlined, [mat-basic-chip].sz-small button[matChipEdit] .material-symbols-outlined, [mat-basic-chip].sz-small button[matChipRemove] .material-symbols-outlined, [mat-chip].sz-small button[matChipEdit] .material-symbols-outlined, [mat-chip].sz-small button[matChipRemove] .material-symbols-outlined,
 mat-chip-row.sz-small button[matChipEdit] .material-symbols-outlined,
 mat-chip-row.sz-small button[matChipRemove] .material-symbols-outlined {
   font-size: 14.4px;
 }
-mat-chip.sz-small button[matChipEdit] mat-icon, mat-chip.sz-small button[matChipRemove] mat-icon,
+mat-chip.sz-small button[matChipEdit] mat-icon, mat-chip.sz-small button[matChipRemove] mat-icon, mat-basic-chip.sz-small button[matChipEdit] mat-icon, mat-basic-chip.sz-small button[matChipRemove] mat-icon, [mat-basic-chip].sz-small button[matChipEdit] mat-icon, [mat-basic-chip].sz-small button[matChipRemove] mat-icon, [mat-chip].sz-small button[matChipEdit] mat-icon, [mat-chip].sz-small button[matChipRemove] mat-icon,
 mat-chip-row.sz-small button[matChipEdit] mat-icon,
 mat-chip-row.sz-small button[matChipRemove] mat-icon {
   font-size: 14.4px;
   width: 14.4px;
   height: 14.4px;
 }
-mat-chip.sz-small button[matChipEdit][matIconButton], mat-chip.sz-small button[matChipEdit][mat-icon-button], mat-chip.sz-small button[matChipRemove][matIconButton], mat-chip.sz-small button[matChipRemove][mat-icon-button],
+mat-chip.sz-small button[matChipEdit][matIconButton], mat-chip.sz-small button[matChipEdit][mat-icon-button], mat-chip.sz-small button[matChipRemove][matIconButton], mat-chip.sz-small button[matChipRemove][mat-icon-button], mat-basic-chip.sz-small button[matChipEdit][matIconButton], mat-basic-chip.sz-small button[matChipEdit][mat-icon-button], mat-basic-chip.sz-small button[matChipRemove][matIconButton], mat-basic-chip.sz-small button[matChipRemove][mat-icon-button], [mat-basic-chip].sz-small button[matChipEdit][matIconButton], [mat-basic-chip].sz-small button[matChipEdit][mat-icon-button], [mat-basic-chip].sz-small button[matChipRemove][matIconButton], [mat-basic-chip].sz-small button[matChipRemove][mat-icon-button], [mat-chip].sz-small button[matChipEdit][matIconButton], [mat-chip].sz-small button[matChipEdit][mat-icon-button], [mat-chip].sz-small button[matChipRemove][matIconButton], [mat-chip].sz-small button[matChipRemove][mat-icon-button],
 mat-chip-row.sz-small button[matChipEdit][matIconButton],
 mat-chip-row.sz-small button[matChipEdit][mat-icon-button],
 mat-chip-row.sz-small button[matChipRemove][matIconButton],
@@ -3797,7 +3798,7 @@ mat-chip-row.sz-small button[matChipRemove][mat-icon-button] {
   --mat-icon-button-icon-size: 14.4px;
   --mat-icon-button-touch-target-size: 28px;
 }
-mat-chip.sz-small button[matChipEdit][matFab], mat-chip.sz-small button[matChipEdit][mat-fab], mat-chip.sz-small button[matChipRemove][matFab], mat-chip.sz-small button[matChipRemove][mat-fab],
+mat-chip.sz-small button[matChipEdit][matFab], mat-chip.sz-small button[matChipEdit][mat-fab], mat-chip.sz-small button[matChipRemove][matFab], mat-chip.sz-small button[matChipRemove][mat-fab], mat-basic-chip.sz-small button[matChipEdit][matFab], mat-basic-chip.sz-small button[matChipEdit][mat-fab], mat-basic-chip.sz-small button[matChipRemove][matFab], mat-basic-chip.sz-small button[matChipRemove][mat-fab], [mat-basic-chip].sz-small button[matChipEdit][matFab], [mat-basic-chip].sz-small button[matChipEdit][mat-fab], [mat-basic-chip].sz-small button[matChipRemove][matFab], [mat-basic-chip].sz-small button[matChipRemove][mat-fab], [mat-chip].sz-small button[matChipEdit][matFab], [mat-chip].sz-small button[matChipEdit][mat-fab], [mat-chip].sz-small button[matChipRemove][matFab], [mat-chip].sz-small button[matChipRemove][mat-fab],
 mat-chip-row.sz-small button[matChipEdit][matFab],
 mat-chip-row.sz-small button[matChipEdit][mat-fab],
 mat-chip-row.sz-small button[matChipRemove][matFab],
@@ -3806,14 +3807,14 @@ mat-chip-row.sz-small button[matChipRemove][mat-fab] {
   --mat-fab-touch-target-size: 37.6px;
   --mat-fab-small-touch-target-size: 37.6px;
 }
-mat-chip.sz-small button[matChipEdit][matFab] .material-symbols-outlined, mat-chip.sz-small button[matChipEdit][mat-fab] .material-symbols-outlined, mat-chip.sz-small button[matChipRemove][matFab] .material-symbols-outlined, mat-chip.sz-small button[matChipRemove][mat-fab] .material-symbols-outlined,
+mat-chip.sz-small button[matChipEdit][matFab] .material-symbols-outlined, mat-chip.sz-small button[matChipEdit][mat-fab] .material-symbols-outlined, mat-chip.sz-small button[matChipRemove][matFab] .material-symbols-outlined, mat-chip.sz-small button[matChipRemove][mat-fab] .material-symbols-outlined, mat-basic-chip.sz-small button[matChipEdit][matFab] .material-symbols-outlined, mat-basic-chip.sz-small button[matChipEdit][mat-fab] .material-symbols-outlined, mat-basic-chip.sz-small button[matChipRemove][matFab] .material-symbols-outlined, mat-basic-chip.sz-small button[matChipRemove][mat-fab] .material-symbols-outlined, [mat-basic-chip].sz-small button[matChipEdit][matFab] .material-symbols-outlined, [mat-basic-chip].sz-small button[matChipEdit][mat-fab] .material-symbols-outlined, [mat-basic-chip].sz-small button[matChipRemove][matFab] .material-symbols-outlined, [mat-basic-chip].sz-small button[matChipRemove][mat-fab] .material-symbols-outlined, [mat-chip].sz-small button[matChipEdit][matFab] .material-symbols-outlined, [mat-chip].sz-small button[matChipEdit][mat-fab] .material-symbols-outlined, [mat-chip].sz-small button[matChipRemove][matFab] .material-symbols-outlined, [mat-chip].sz-small button[matChipRemove][mat-fab] .material-symbols-outlined,
 mat-chip-row.sz-small button[matChipEdit][matFab] .material-symbols-outlined,
 mat-chip-row.sz-small button[matChipEdit][mat-fab] .material-symbols-outlined,
 mat-chip-row.sz-small button[matChipRemove][matFab] .material-symbols-outlined,
 mat-chip-row.sz-small button[matChipRemove][mat-fab] .material-symbols-outlined {
   font-size: 19.2px;
 }
-mat-chip.sz-small button[matChipEdit][matFab] mat-icon, mat-chip.sz-small button[matChipEdit][mat-fab] mat-icon, mat-chip.sz-small button[matChipRemove][matFab] mat-icon, mat-chip.sz-small button[matChipRemove][mat-fab] mat-icon,
+mat-chip.sz-small button[matChipEdit][matFab] mat-icon, mat-chip.sz-small button[matChipEdit][mat-fab] mat-icon, mat-chip.sz-small button[matChipRemove][matFab] mat-icon, mat-chip.sz-small button[matChipRemove][mat-fab] mat-icon, mat-basic-chip.sz-small button[matChipEdit][matFab] mat-icon, mat-basic-chip.sz-small button[matChipEdit][mat-fab] mat-icon, mat-basic-chip.sz-small button[matChipRemove][matFab] mat-icon, mat-basic-chip.sz-small button[matChipRemove][mat-fab] mat-icon, [mat-basic-chip].sz-small button[matChipEdit][matFab] mat-icon, [mat-basic-chip].sz-small button[matChipEdit][mat-fab] mat-icon, [mat-basic-chip].sz-small button[matChipRemove][matFab] mat-icon, [mat-basic-chip].sz-small button[matChipRemove][mat-fab] mat-icon, [mat-chip].sz-small button[matChipEdit][matFab] mat-icon, [mat-chip].sz-small button[matChipEdit][mat-fab] mat-icon, [mat-chip].sz-small button[matChipRemove][matFab] mat-icon, [mat-chip].sz-small button[matChipRemove][mat-fab] mat-icon,
 mat-chip-row.sz-small button[matChipEdit][matFab] mat-icon,
 mat-chip-row.sz-small button[matChipEdit][mat-fab] mat-icon,
 mat-chip-row.sz-small button[matChipRemove][matFab] mat-icon,
@@ -3822,21 +3823,21 @@ mat-chip-row.sz-small button[matChipRemove][mat-fab] mat-icon {
   width: 19.2px;
   height: 19.2px;
 }
-mat-chip.sz-small button[matChipEdit][matFab].mat-mdc-fab-base, mat-chip.sz-small button[matChipEdit][mat-fab].mat-mdc-fab-base, mat-chip.sz-small button[matChipRemove][matFab].mat-mdc-fab-base, mat-chip.sz-small button[matChipRemove][mat-fab].mat-mdc-fab-base,
+mat-chip.sz-small button[matChipEdit][matFab].mat-mdc-fab-base, mat-chip.sz-small button[matChipEdit][mat-fab].mat-mdc-fab-base, mat-chip.sz-small button[matChipRemove][matFab].mat-mdc-fab-base, mat-chip.sz-small button[matChipRemove][mat-fab].mat-mdc-fab-base, mat-basic-chip.sz-small button[matChipEdit][matFab].mat-mdc-fab-base, mat-basic-chip.sz-small button[matChipEdit][mat-fab].mat-mdc-fab-base, mat-basic-chip.sz-small button[matChipRemove][matFab].mat-mdc-fab-base, mat-basic-chip.sz-small button[matChipRemove][mat-fab].mat-mdc-fab-base, [mat-basic-chip].sz-small button[matChipEdit][matFab].mat-mdc-fab-base, [mat-basic-chip].sz-small button[matChipEdit][mat-fab].mat-mdc-fab-base, [mat-basic-chip].sz-small button[matChipRemove][matFab].mat-mdc-fab-base, [mat-basic-chip].sz-small button[matChipRemove][mat-fab].mat-mdc-fab-base, [mat-chip].sz-small button[matChipEdit][matFab].mat-mdc-fab-base, [mat-chip].sz-small button[matChipEdit][mat-fab].mat-mdc-fab-base, [mat-chip].sz-small button[matChipRemove][matFab].mat-mdc-fab-base, [mat-chip].sz-small button[matChipRemove][mat-fab].mat-mdc-fab-base,
 mat-chip-row.sz-small button[matChipEdit][matFab].mat-mdc-fab-base,
 mat-chip-row.sz-small button[matChipEdit][mat-fab].mat-mdc-fab-base,
 mat-chip-row.sz-small button[matChipRemove][matFab].mat-mdc-fab-base,
 mat-chip-row.sz-small button[matChipRemove][mat-fab].mat-mdc-fab-base {
   height: 33.6px;
 }
-mat-chip.sz-small button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), mat-chip.sz-small button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]), mat-chip.sz-small button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]), mat-chip.sz-small button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]),
+mat-chip.sz-small button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), mat-chip.sz-small button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]), mat-chip.sz-small button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]), mat-chip.sz-small button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]), mat-basic-chip.sz-small button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), mat-basic-chip.sz-small button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]), mat-basic-chip.sz-small button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]), mat-basic-chip.sz-small button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]), [mat-basic-chip].sz-small button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), [mat-basic-chip].sz-small button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]), [mat-basic-chip].sz-small button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]), [mat-basic-chip].sz-small button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]), [mat-chip].sz-small button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), [mat-chip].sz-small button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]), [mat-chip].sz-small button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]), [mat-chip].sz-small button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]),
 mat-chip-row.sz-small button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]),
 mat-chip-row.sz-small button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]),
 mat-chip-row.sz-small button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]),
 mat-chip-row.sz-small button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]) {
   width: 33.6px;
 }
-mat-chip.sz-small button[matChipEdit][matMiniFab].mat-mdc-fab-base, mat-chip.sz-small button[matChipEdit][mat-mini-fab].mat-mdc-fab-base, mat-chip.sz-small button[matChipRemove][matMiniFab].mat-mdc-fab-base, mat-chip.sz-small button[matChipRemove][mat-mini-fab].mat-mdc-fab-base,
+mat-chip.sz-small button[matChipEdit][matMiniFab].mat-mdc-fab-base, mat-chip.sz-small button[matChipEdit][mat-mini-fab].mat-mdc-fab-base, mat-chip.sz-small button[matChipRemove][matMiniFab].mat-mdc-fab-base, mat-chip.sz-small button[matChipRemove][mat-mini-fab].mat-mdc-fab-base, mat-basic-chip.sz-small button[matChipEdit][matMiniFab].mat-mdc-fab-base, mat-basic-chip.sz-small button[matChipEdit][mat-mini-fab].mat-mdc-fab-base, mat-basic-chip.sz-small button[matChipRemove][matMiniFab].mat-mdc-fab-base, mat-basic-chip.sz-small button[matChipRemove][mat-mini-fab].mat-mdc-fab-base, [mat-basic-chip].sz-small button[matChipEdit][matMiniFab].mat-mdc-fab-base, [mat-basic-chip].sz-small button[matChipEdit][mat-mini-fab].mat-mdc-fab-base, [mat-basic-chip].sz-small button[matChipRemove][matMiniFab].mat-mdc-fab-base, [mat-basic-chip].sz-small button[matChipRemove][mat-mini-fab].mat-mdc-fab-base, [mat-chip].sz-small button[matChipEdit][matMiniFab].mat-mdc-fab-base, [mat-chip].sz-small button[matChipEdit][mat-mini-fab].mat-mdc-fab-base, [mat-chip].sz-small button[matChipRemove][matMiniFab].mat-mdc-fab-base, [mat-chip].sz-small button[matChipRemove][mat-mini-fab].mat-mdc-fab-base,
 mat-chip-row.sz-small button[matChipEdit][matMiniFab].mat-mdc-fab-base,
 mat-chip-row.sz-small button[matChipEdit][mat-mini-fab].mat-mdc-fab-base,
 mat-chip-row.sz-small button[matChipRemove][matMiniFab].mat-mdc-fab-base,
@@ -3844,7 +3845,7 @@ mat-chip-row.sz-small button[matChipRemove][mat-mini-fab].mat-mdc-fab-base {
   height: 24px;
   width: 24px;
 }
-mat-chip.sz-small button[matChipEdit][matMiniFab], mat-chip.sz-small button[matChipEdit][mat-mini-fab], mat-chip.sz-small button[matChipRemove][matMiniFab], mat-chip.sz-small button[matChipRemove][mat-mini-fab],
+mat-chip.sz-small button[matChipEdit][matMiniFab], mat-chip.sz-small button[matChipEdit][mat-mini-fab], mat-chip.sz-small button[matChipRemove][matMiniFab], mat-chip.sz-small button[matChipRemove][mat-mini-fab], mat-basic-chip.sz-small button[matChipEdit][matMiniFab], mat-basic-chip.sz-small button[matChipEdit][mat-mini-fab], mat-basic-chip.sz-small button[matChipRemove][matMiniFab], mat-basic-chip.sz-small button[matChipRemove][mat-mini-fab], [mat-basic-chip].sz-small button[matChipEdit][matMiniFab], [mat-basic-chip].sz-small button[matChipEdit][mat-mini-fab], [mat-basic-chip].sz-small button[matChipRemove][matMiniFab], [mat-basic-chip].sz-small button[matChipRemove][mat-mini-fab], [mat-chip].sz-small button[matChipEdit][matMiniFab], [mat-chip].sz-small button[matChipEdit][mat-mini-fab], [mat-chip].sz-small button[matChipRemove][matMiniFab], [mat-chip].sz-small button[matChipRemove][mat-mini-fab],
 mat-chip-row.sz-small button[matChipEdit][matMiniFab],
 mat-chip-row.sz-small button[matChipEdit][mat-mini-fab],
 mat-chip-row.sz-small button[matChipRemove][matMiniFab],
@@ -3853,7 +3854,7 @@ mat-chip-row.sz-small button[matChipRemove][mat-mini-fab] {
   --mat-fab-touch-target-size: 28px;
   --mat-fab-small-touch-target-size: 28px;
 }
-mat-chip.sz-small button[matChipEdit].sh-round, mat-chip.sz-small button[matChipRemove].sh-round,
+mat-chip.sz-small button[matChipEdit].sh-round, mat-chip.sz-small button[matChipRemove].sh-round, mat-basic-chip.sz-small button[matChipEdit].sh-round, mat-basic-chip.sz-small button[matChipRemove].sh-round, [mat-basic-chip].sz-small button[matChipEdit].sh-round, [mat-basic-chip].sz-small button[matChipRemove].sh-round, [mat-chip].sz-small button[matChipEdit].sh-round, [mat-chip].sz-small button[matChipRemove].sh-round,
 mat-chip-row.sz-small button[matChipEdit].sh-round,
 mat-chip-row.sz-small button[matChipRemove].sh-round {
   --mat-button-filled-container-shape: 9999px;
@@ -3866,7 +3867,7 @@ mat-chip-row.sz-small button[matChipRemove].sh-round {
   --mat-fab-extended-container-shape: 9999px;
   --mat-fab-small-container-shape: 9999px;
 }
-mat-chip.sz-small button[matChipEdit].sh-square, mat-chip.sz-small button[matChipRemove].sh-square,
+mat-chip.sz-small button[matChipEdit].sh-square, mat-chip.sz-small button[matChipRemove].sh-square, mat-basic-chip.sz-small button[matChipEdit].sh-square, mat-basic-chip.sz-small button[matChipRemove].sh-square, [mat-basic-chip].sz-small button[matChipEdit].sh-square, [mat-basic-chip].sz-small button[matChipRemove].sh-square, [mat-chip].sz-small button[matChipEdit].sh-square, [mat-chip].sz-small button[matChipRemove].sh-square,
 mat-chip-row.sz-small button[matChipEdit].sh-square,
 mat-chip-row.sz-small button[matChipRemove].sh-square {
   --mat-button-filled-container-shape: 0px;
@@ -3879,7 +3880,7 @@ mat-chip-row.sz-small button[matChipRemove].sh-square {
   --mat-fab-extended-container-shape: 0px;
   --mat-fab-small-container-shape: 0px;
 }
-mat-chip.sz-small button[matChipEdit].sh-squircle, mat-chip.sz-small button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-chip.sz-small button[matChipRemove].sh-squircle, mat-chip.sz-small button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle),
+mat-chip.sz-small button[matChipEdit].sh-squircle, mat-chip.sz-small button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-chip.sz-small button[matChipRemove].sh-squircle, mat-chip.sz-small button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-basic-chip.sz-small button[matChipEdit].sh-squircle, mat-basic-chip.sz-small button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-basic-chip.sz-small button[matChipRemove].sh-squircle, mat-basic-chip.sz-small button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-basic-chip].sz-small button[matChipEdit].sh-squircle, [mat-basic-chip].sz-small button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-basic-chip].sz-small button[matChipRemove].sh-squircle, [mat-basic-chip].sz-small button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-chip].sz-small button[matChipEdit].sh-squircle, [mat-chip].sz-small button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-chip].sz-small button[matChipRemove].sh-squircle, [mat-chip].sz-small button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle),
 mat-chip-row.sz-small button[matChipEdit].sh-squircle,
 mat-chip-row.sz-small button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle),
 mat-chip-row.sz-small button[matChipRemove].sh-squircle,
@@ -3894,7 +3895,7 @@ mat-chip-row.sz-small button[matChipRemove]:not(.sh-round):not(.sh-square):not(.
   --mat-fab-extended-container-shape: 8.4px;
   --mat-fab-small-container-shape: 8.4px;
 }
-mat-chip.sz-small button[matChipEdit].destructive, mat-chip.sz-small button[matChipRemove].destructive,
+mat-chip.sz-small button[matChipEdit].destructive, mat-chip.sz-small button[matChipRemove].destructive, mat-basic-chip.sz-small button[matChipEdit].destructive, mat-basic-chip.sz-small button[matChipRemove].destructive, [mat-basic-chip].sz-small button[matChipEdit].destructive, [mat-basic-chip].sz-small button[matChipRemove].destructive, [mat-chip].sz-small button[matChipEdit].destructive, [mat-chip].sz-small button[matChipRemove].destructive,
 mat-chip-row.sz-small button[matChipEdit].destructive,
 mat-chip-row.sz-small button[matChipRemove].destructive {
   --mat-button-filled-container-color: #c0000c;
@@ -3919,26 +3920,26 @@ mat-chip-row.sz-small button[matChipRemove].destructive {
   --mat-fab-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
   --mat-fab-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
 }
-mat-chip.sz-small button[matChipEdit], mat-chip.sz-small button[matChipRemove],
+mat-chip.sz-small button[matChipEdit], mat-chip.sz-small button[matChipRemove], mat-basic-chip.sz-small button[matChipEdit], mat-basic-chip.sz-small button[matChipRemove], [mat-basic-chip].sz-small button[matChipEdit], [mat-basic-chip].sz-small button[matChipRemove], [mat-chip].sz-small button[matChipEdit], [mat-chip].sz-small button[matChipRemove],
 mat-chip-row.sz-small button[matChipEdit],
 mat-chip-row.sz-small button[matChipRemove] {
   height: 13.5px;
   width: 13.5px;
 }
-mat-chip.sz-small.sh-round,
+mat-chip.sz-small.sh-round, mat-basic-chip.sz-small.sh-round, [mat-basic-chip].sz-small.sh-round, [mat-chip].sz-small.sh-round,
 mat-chip-row.sz-small.sh-round {
   --mat-chip-container-shape-radius: 9999px;
 }
-mat-chip.sz-small.sh-square,
+mat-chip.sz-small.sh-square, mat-basic-chip.sz-small.sh-square, [mat-basic-chip].sz-small.sh-square, [mat-chip].sz-small.sh-square,
 mat-chip-row.sz-small.sh-square {
   --mat-chip-container-shape-radius: 0px;
 }
-mat-chip.sz-small.sh-squircle, mat-chip.sz-small:not(.sh-round):not(.sh-square):not(.sh-squircle),
+mat-chip.sz-small.sh-squircle, mat-chip.sz-small:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-basic-chip.sz-small.sh-squircle, mat-basic-chip.sz-small:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-basic-chip].sz-small.sh-squircle, [mat-basic-chip].sz-small:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-chip].sz-small.sh-squircle, [mat-chip].sz-small:not(.sh-round):not(.sh-square):not(.sh-squircle),
 mat-chip-row.sz-small.sh-squircle,
 mat-chip-row.sz-small:not(.sh-round):not(.sh-square):not(.sh-squircle) {
   --mat-chip-container-shape-radius: 6px;
 }
-mat-chip.sz-medium,
+mat-chip.sz-medium, mat-basic-chip.sz-medium, [mat-basic-chip].sz-medium, [mat-chip].sz-medium,
 mat-chip-row.sz-medium {
   --mat-chip-container-height: 32px;
   --mat-chip-container-shape-radius: 8px;
@@ -3946,7 +3947,7 @@ mat-chip-row.sz-medium {
   --mat-chip-with-avatar-avatar-size: 24px;
   --mat-chip-with-icon-icon-size: 18px;
 }
-mat-chip.sz-medium button[matChipEdit], mat-chip.sz-medium button[matChipRemove],
+mat-chip.sz-medium button[matChipEdit], mat-chip.sz-medium button[matChipRemove], mat-basic-chip.sz-medium button[matChipEdit], mat-basic-chip.sz-medium button[matChipRemove], [mat-basic-chip].sz-medium button[matChipEdit], [mat-basic-chip].sz-medium button[matChipRemove], [mat-chip].sz-medium button[matChipEdit], [mat-chip].sz-medium button[matChipRemove],
 mat-chip-row.sz-medium button[matChipEdit],
 mat-chip-row.sz-medium button[matChipRemove] {
   --mat-button-filled-container-height: 32px;
@@ -3975,19 +3976,19 @@ mat-chip-row.sz-medium button[matChipRemove] {
   --mat-button-tonal-horizontal-padding: 19.2px;
   --mat-button-text-with-icon-horizontal-padding: 12.8px;
 }
-mat-chip.sz-medium button[matChipEdit] .material-symbols-outlined, mat-chip.sz-medium button[matChipRemove] .material-symbols-outlined,
+mat-chip.sz-medium button[matChipEdit] .material-symbols-outlined, mat-chip.sz-medium button[matChipRemove] .material-symbols-outlined, mat-basic-chip.sz-medium button[matChipEdit] .material-symbols-outlined, mat-basic-chip.sz-medium button[matChipRemove] .material-symbols-outlined, [mat-basic-chip].sz-medium button[matChipEdit] .material-symbols-outlined, [mat-basic-chip].sz-medium button[matChipRemove] .material-symbols-outlined, [mat-chip].sz-medium button[matChipEdit] .material-symbols-outlined, [mat-chip].sz-medium button[matChipRemove] .material-symbols-outlined,
 mat-chip-row.sz-medium button[matChipEdit] .material-symbols-outlined,
 mat-chip-row.sz-medium button[matChipRemove] .material-symbols-outlined {
   font-size: 19.2px;
 }
-mat-chip.sz-medium button[matChipEdit] mat-icon, mat-chip.sz-medium button[matChipRemove] mat-icon,
+mat-chip.sz-medium button[matChipEdit] mat-icon, mat-chip.sz-medium button[matChipRemove] mat-icon, mat-basic-chip.sz-medium button[matChipEdit] mat-icon, mat-basic-chip.sz-medium button[matChipRemove] mat-icon, [mat-basic-chip].sz-medium button[matChipEdit] mat-icon, [mat-basic-chip].sz-medium button[matChipRemove] mat-icon, [mat-chip].sz-medium button[matChipEdit] mat-icon, [mat-chip].sz-medium button[matChipRemove] mat-icon,
 mat-chip-row.sz-medium button[matChipEdit] mat-icon,
 mat-chip-row.sz-medium button[matChipRemove] mat-icon {
   font-size: 19.2px;
   width: 19.2px;
   height: 19.2px;
 }
-mat-chip.sz-medium button[matChipEdit][matIconButton], mat-chip.sz-medium button[matChipEdit][mat-icon-button], mat-chip.sz-medium button[matChipRemove][matIconButton], mat-chip.sz-medium button[matChipRemove][mat-icon-button],
+mat-chip.sz-medium button[matChipEdit][matIconButton], mat-chip.sz-medium button[matChipEdit][mat-icon-button], mat-chip.sz-medium button[matChipRemove][matIconButton], mat-chip.sz-medium button[matChipRemove][mat-icon-button], mat-basic-chip.sz-medium button[matChipEdit][matIconButton], mat-basic-chip.sz-medium button[matChipEdit][mat-icon-button], mat-basic-chip.sz-medium button[matChipRemove][matIconButton], mat-basic-chip.sz-medium button[matChipRemove][mat-icon-button], [mat-basic-chip].sz-medium button[matChipEdit][matIconButton], [mat-basic-chip].sz-medium button[matChipEdit][mat-icon-button], [mat-basic-chip].sz-medium button[matChipRemove][matIconButton], [mat-basic-chip].sz-medium button[matChipRemove][mat-icon-button], [mat-chip].sz-medium button[matChipEdit][matIconButton], [mat-chip].sz-medium button[matChipEdit][mat-icon-button], [mat-chip].sz-medium button[matChipRemove][matIconButton], [mat-chip].sz-medium button[matChipRemove][mat-icon-button],
 mat-chip-row.sz-medium button[matChipEdit][matIconButton],
 mat-chip-row.sz-medium button[matChipEdit][mat-icon-button],
 mat-chip-row.sz-medium button[matChipRemove][matIconButton],
@@ -3996,7 +3997,7 @@ mat-chip-row.sz-medium button[matChipRemove][mat-icon-button] {
   --mat-icon-button-icon-size: 19.2px;
   --mat-icon-button-touch-target-size: 36px;
 }
-mat-chip.sz-medium button[matChipEdit][matFab], mat-chip.sz-medium button[matChipEdit][mat-fab], mat-chip.sz-medium button[matChipRemove][matFab], mat-chip.sz-medium button[matChipRemove][mat-fab],
+mat-chip.sz-medium button[matChipEdit][matFab], mat-chip.sz-medium button[matChipEdit][mat-fab], mat-chip.sz-medium button[matChipRemove][matFab], mat-chip.sz-medium button[matChipRemove][mat-fab], mat-basic-chip.sz-medium button[matChipEdit][matFab], mat-basic-chip.sz-medium button[matChipEdit][mat-fab], mat-basic-chip.sz-medium button[matChipRemove][matFab], mat-basic-chip.sz-medium button[matChipRemove][mat-fab], [mat-basic-chip].sz-medium button[matChipEdit][matFab], [mat-basic-chip].sz-medium button[matChipEdit][mat-fab], [mat-basic-chip].sz-medium button[matChipRemove][matFab], [mat-basic-chip].sz-medium button[matChipRemove][mat-fab], [mat-chip].sz-medium button[matChipEdit][matFab], [mat-chip].sz-medium button[matChipEdit][mat-fab], [mat-chip].sz-medium button[matChipRemove][matFab], [mat-chip].sz-medium button[matChipRemove][mat-fab],
 mat-chip-row.sz-medium button[matChipEdit][matFab],
 mat-chip-row.sz-medium button[matChipEdit][mat-fab],
 mat-chip-row.sz-medium button[matChipRemove][matFab],
@@ -4005,14 +4006,14 @@ mat-chip-row.sz-medium button[matChipRemove][mat-fab] {
   --mat-fab-touch-target-size: 48.8px;
   --mat-fab-small-touch-target-size: 48.8px;
 }
-mat-chip.sz-medium button[matChipEdit][matFab] .material-symbols-outlined, mat-chip.sz-medium button[matChipEdit][mat-fab] .material-symbols-outlined, mat-chip.sz-medium button[matChipRemove][matFab] .material-symbols-outlined, mat-chip.sz-medium button[matChipRemove][mat-fab] .material-symbols-outlined,
+mat-chip.sz-medium button[matChipEdit][matFab] .material-symbols-outlined, mat-chip.sz-medium button[matChipEdit][mat-fab] .material-symbols-outlined, mat-chip.sz-medium button[matChipRemove][matFab] .material-symbols-outlined, mat-chip.sz-medium button[matChipRemove][mat-fab] .material-symbols-outlined, mat-basic-chip.sz-medium button[matChipEdit][matFab] .material-symbols-outlined, mat-basic-chip.sz-medium button[matChipEdit][mat-fab] .material-symbols-outlined, mat-basic-chip.sz-medium button[matChipRemove][matFab] .material-symbols-outlined, mat-basic-chip.sz-medium button[matChipRemove][mat-fab] .material-symbols-outlined, [mat-basic-chip].sz-medium button[matChipEdit][matFab] .material-symbols-outlined, [mat-basic-chip].sz-medium button[matChipEdit][mat-fab] .material-symbols-outlined, [mat-basic-chip].sz-medium button[matChipRemove][matFab] .material-symbols-outlined, [mat-basic-chip].sz-medium button[matChipRemove][mat-fab] .material-symbols-outlined, [mat-chip].sz-medium button[matChipEdit][matFab] .material-symbols-outlined, [mat-chip].sz-medium button[matChipEdit][mat-fab] .material-symbols-outlined, [mat-chip].sz-medium button[matChipRemove][matFab] .material-symbols-outlined, [mat-chip].sz-medium button[matChipRemove][mat-fab] .material-symbols-outlined,
 mat-chip-row.sz-medium button[matChipEdit][matFab] .material-symbols-outlined,
 mat-chip-row.sz-medium button[matChipEdit][mat-fab] .material-symbols-outlined,
 mat-chip-row.sz-medium button[matChipRemove][matFab] .material-symbols-outlined,
 mat-chip-row.sz-medium button[matChipRemove][mat-fab] .material-symbols-outlined {
   font-size: 25.6px;
 }
-mat-chip.sz-medium button[matChipEdit][matFab] mat-icon, mat-chip.sz-medium button[matChipEdit][mat-fab] mat-icon, mat-chip.sz-medium button[matChipRemove][matFab] mat-icon, mat-chip.sz-medium button[matChipRemove][mat-fab] mat-icon,
+mat-chip.sz-medium button[matChipEdit][matFab] mat-icon, mat-chip.sz-medium button[matChipEdit][mat-fab] mat-icon, mat-chip.sz-medium button[matChipRemove][matFab] mat-icon, mat-chip.sz-medium button[matChipRemove][mat-fab] mat-icon, mat-basic-chip.sz-medium button[matChipEdit][matFab] mat-icon, mat-basic-chip.sz-medium button[matChipEdit][mat-fab] mat-icon, mat-basic-chip.sz-medium button[matChipRemove][matFab] mat-icon, mat-basic-chip.sz-medium button[matChipRemove][mat-fab] mat-icon, [mat-basic-chip].sz-medium button[matChipEdit][matFab] mat-icon, [mat-basic-chip].sz-medium button[matChipEdit][mat-fab] mat-icon, [mat-basic-chip].sz-medium button[matChipRemove][matFab] mat-icon, [mat-basic-chip].sz-medium button[matChipRemove][mat-fab] mat-icon, [mat-chip].sz-medium button[matChipEdit][matFab] mat-icon, [mat-chip].sz-medium button[matChipEdit][mat-fab] mat-icon, [mat-chip].sz-medium button[matChipRemove][matFab] mat-icon, [mat-chip].sz-medium button[matChipRemove][mat-fab] mat-icon,
 mat-chip-row.sz-medium button[matChipEdit][matFab] mat-icon,
 mat-chip-row.sz-medium button[matChipEdit][mat-fab] mat-icon,
 mat-chip-row.sz-medium button[matChipRemove][matFab] mat-icon,
@@ -4021,21 +4022,21 @@ mat-chip-row.sz-medium button[matChipRemove][mat-fab] mat-icon {
   width: 25.6px;
   height: 25.6px;
 }
-mat-chip.sz-medium button[matChipEdit][matFab].mat-mdc-fab-base, mat-chip.sz-medium button[matChipEdit][mat-fab].mat-mdc-fab-base, mat-chip.sz-medium button[matChipRemove][matFab].mat-mdc-fab-base, mat-chip.sz-medium button[matChipRemove][mat-fab].mat-mdc-fab-base,
+mat-chip.sz-medium button[matChipEdit][matFab].mat-mdc-fab-base, mat-chip.sz-medium button[matChipEdit][mat-fab].mat-mdc-fab-base, mat-chip.sz-medium button[matChipRemove][matFab].mat-mdc-fab-base, mat-chip.sz-medium button[matChipRemove][mat-fab].mat-mdc-fab-base, mat-basic-chip.sz-medium button[matChipEdit][matFab].mat-mdc-fab-base, mat-basic-chip.sz-medium button[matChipEdit][mat-fab].mat-mdc-fab-base, mat-basic-chip.sz-medium button[matChipRemove][matFab].mat-mdc-fab-base, mat-basic-chip.sz-medium button[matChipRemove][mat-fab].mat-mdc-fab-base, [mat-basic-chip].sz-medium button[matChipEdit][matFab].mat-mdc-fab-base, [mat-basic-chip].sz-medium button[matChipEdit][mat-fab].mat-mdc-fab-base, [mat-basic-chip].sz-medium button[matChipRemove][matFab].mat-mdc-fab-base, [mat-basic-chip].sz-medium button[matChipRemove][mat-fab].mat-mdc-fab-base, [mat-chip].sz-medium button[matChipEdit][matFab].mat-mdc-fab-base, [mat-chip].sz-medium button[matChipEdit][mat-fab].mat-mdc-fab-base, [mat-chip].sz-medium button[matChipRemove][matFab].mat-mdc-fab-base, [mat-chip].sz-medium button[matChipRemove][mat-fab].mat-mdc-fab-base,
 mat-chip-row.sz-medium button[matChipEdit][matFab].mat-mdc-fab-base,
 mat-chip-row.sz-medium button[matChipEdit][mat-fab].mat-mdc-fab-base,
 mat-chip-row.sz-medium button[matChipRemove][matFab].mat-mdc-fab-base,
 mat-chip-row.sz-medium button[matChipRemove][mat-fab].mat-mdc-fab-base {
   height: 44.8px;
 }
-mat-chip.sz-medium button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), mat-chip.sz-medium button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]), mat-chip.sz-medium button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]), mat-chip.sz-medium button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]),
+mat-chip.sz-medium button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), mat-chip.sz-medium button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]), mat-chip.sz-medium button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]), mat-chip.sz-medium button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]), mat-basic-chip.sz-medium button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), mat-basic-chip.sz-medium button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]), mat-basic-chip.sz-medium button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]), mat-basic-chip.sz-medium button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]), [mat-basic-chip].sz-medium button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), [mat-basic-chip].sz-medium button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]), [mat-basic-chip].sz-medium button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]), [mat-basic-chip].sz-medium button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]), [mat-chip].sz-medium button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), [mat-chip].sz-medium button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]), [mat-chip].sz-medium button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]), [mat-chip].sz-medium button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]),
 mat-chip-row.sz-medium button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]),
 mat-chip-row.sz-medium button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]),
 mat-chip-row.sz-medium button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]),
 mat-chip-row.sz-medium button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]) {
   width: 44.8px;
 }
-mat-chip.sz-medium button[matChipEdit][matMiniFab].mat-mdc-fab-base, mat-chip.sz-medium button[matChipEdit][mat-mini-fab].mat-mdc-fab-base, mat-chip.sz-medium button[matChipRemove][matMiniFab].mat-mdc-fab-base, mat-chip.sz-medium button[matChipRemove][mat-mini-fab].mat-mdc-fab-base,
+mat-chip.sz-medium button[matChipEdit][matMiniFab].mat-mdc-fab-base, mat-chip.sz-medium button[matChipEdit][mat-mini-fab].mat-mdc-fab-base, mat-chip.sz-medium button[matChipRemove][matMiniFab].mat-mdc-fab-base, mat-chip.sz-medium button[matChipRemove][mat-mini-fab].mat-mdc-fab-base, mat-basic-chip.sz-medium button[matChipEdit][matMiniFab].mat-mdc-fab-base, mat-basic-chip.sz-medium button[matChipEdit][mat-mini-fab].mat-mdc-fab-base, mat-basic-chip.sz-medium button[matChipRemove][matMiniFab].mat-mdc-fab-base, mat-basic-chip.sz-medium button[matChipRemove][mat-mini-fab].mat-mdc-fab-base, [mat-basic-chip].sz-medium button[matChipEdit][matMiniFab].mat-mdc-fab-base, [mat-basic-chip].sz-medium button[matChipEdit][mat-mini-fab].mat-mdc-fab-base, [mat-basic-chip].sz-medium button[matChipRemove][matMiniFab].mat-mdc-fab-base, [mat-basic-chip].sz-medium button[matChipRemove][mat-mini-fab].mat-mdc-fab-base, [mat-chip].sz-medium button[matChipEdit][matMiniFab].mat-mdc-fab-base, [mat-chip].sz-medium button[matChipEdit][mat-mini-fab].mat-mdc-fab-base, [mat-chip].sz-medium button[matChipRemove][matMiniFab].mat-mdc-fab-base, [mat-chip].sz-medium button[matChipRemove][mat-mini-fab].mat-mdc-fab-base,
 mat-chip-row.sz-medium button[matChipEdit][matMiniFab].mat-mdc-fab-base,
 mat-chip-row.sz-medium button[matChipEdit][mat-mini-fab].mat-mdc-fab-base,
 mat-chip-row.sz-medium button[matChipRemove][matMiniFab].mat-mdc-fab-base,
@@ -4043,7 +4044,7 @@ mat-chip-row.sz-medium button[matChipRemove][mat-mini-fab].mat-mdc-fab-base {
   height: 32px;
   width: 32px;
 }
-mat-chip.sz-medium button[matChipEdit][matMiniFab], mat-chip.sz-medium button[matChipEdit][mat-mini-fab], mat-chip.sz-medium button[matChipRemove][matMiniFab], mat-chip.sz-medium button[matChipRemove][mat-mini-fab],
+mat-chip.sz-medium button[matChipEdit][matMiniFab], mat-chip.sz-medium button[matChipEdit][mat-mini-fab], mat-chip.sz-medium button[matChipRemove][matMiniFab], mat-chip.sz-medium button[matChipRemove][mat-mini-fab], mat-basic-chip.sz-medium button[matChipEdit][matMiniFab], mat-basic-chip.sz-medium button[matChipEdit][mat-mini-fab], mat-basic-chip.sz-medium button[matChipRemove][matMiniFab], mat-basic-chip.sz-medium button[matChipRemove][mat-mini-fab], [mat-basic-chip].sz-medium button[matChipEdit][matMiniFab], [mat-basic-chip].sz-medium button[matChipEdit][mat-mini-fab], [mat-basic-chip].sz-medium button[matChipRemove][matMiniFab], [mat-basic-chip].sz-medium button[matChipRemove][mat-mini-fab], [mat-chip].sz-medium button[matChipEdit][matMiniFab], [mat-chip].sz-medium button[matChipEdit][mat-mini-fab], [mat-chip].sz-medium button[matChipRemove][matMiniFab], [mat-chip].sz-medium button[matChipRemove][mat-mini-fab],
 mat-chip-row.sz-medium button[matChipEdit][matMiniFab],
 mat-chip-row.sz-medium button[matChipEdit][mat-mini-fab],
 mat-chip-row.sz-medium button[matChipRemove][matMiniFab],
@@ -4052,7 +4053,7 @@ mat-chip-row.sz-medium button[matChipRemove][mat-mini-fab] {
   --mat-fab-touch-target-size: 36px;
   --mat-fab-small-touch-target-size: 36px;
 }
-mat-chip.sz-medium button[matChipEdit].sh-round, mat-chip.sz-medium button[matChipRemove].sh-round,
+mat-chip.sz-medium button[matChipEdit].sh-round, mat-chip.sz-medium button[matChipRemove].sh-round, mat-basic-chip.sz-medium button[matChipEdit].sh-round, mat-basic-chip.sz-medium button[matChipRemove].sh-round, [mat-basic-chip].sz-medium button[matChipEdit].sh-round, [mat-basic-chip].sz-medium button[matChipRemove].sh-round, [mat-chip].sz-medium button[matChipEdit].sh-round, [mat-chip].sz-medium button[matChipRemove].sh-round,
 mat-chip-row.sz-medium button[matChipEdit].sh-round,
 mat-chip-row.sz-medium button[matChipRemove].sh-round {
   --mat-button-filled-container-shape: 9999px;
@@ -4065,7 +4066,7 @@ mat-chip-row.sz-medium button[matChipRemove].sh-round {
   --mat-fab-extended-container-shape: 9999px;
   --mat-fab-small-container-shape: 9999px;
 }
-mat-chip.sz-medium button[matChipEdit].sh-square, mat-chip.sz-medium button[matChipRemove].sh-square,
+mat-chip.sz-medium button[matChipEdit].sh-square, mat-chip.sz-medium button[matChipRemove].sh-square, mat-basic-chip.sz-medium button[matChipEdit].sh-square, mat-basic-chip.sz-medium button[matChipRemove].sh-square, [mat-basic-chip].sz-medium button[matChipEdit].sh-square, [mat-basic-chip].sz-medium button[matChipRemove].sh-square, [mat-chip].sz-medium button[matChipEdit].sh-square, [mat-chip].sz-medium button[matChipRemove].sh-square,
 mat-chip-row.sz-medium button[matChipEdit].sh-square,
 mat-chip-row.sz-medium button[matChipRemove].sh-square {
   --mat-button-filled-container-shape: 0px;
@@ -4078,7 +4079,7 @@ mat-chip-row.sz-medium button[matChipRemove].sh-square {
   --mat-fab-extended-container-shape: 0px;
   --mat-fab-small-container-shape: 0px;
 }
-mat-chip.sz-medium button[matChipEdit].sh-squircle, mat-chip.sz-medium button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-chip.sz-medium button[matChipRemove].sh-squircle, mat-chip.sz-medium button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle),
+mat-chip.sz-medium button[matChipEdit].sh-squircle, mat-chip.sz-medium button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-chip.sz-medium button[matChipRemove].sh-squircle, mat-chip.sz-medium button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-basic-chip.sz-medium button[matChipEdit].sh-squircle, mat-basic-chip.sz-medium button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-basic-chip.sz-medium button[matChipRemove].sh-squircle, mat-basic-chip.sz-medium button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-basic-chip].sz-medium button[matChipEdit].sh-squircle, [mat-basic-chip].sz-medium button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-basic-chip].sz-medium button[matChipRemove].sh-squircle, [mat-basic-chip].sz-medium button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-chip].sz-medium button[matChipEdit].sh-squircle, [mat-chip].sz-medium button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-chip].sz-medium button[matChipRemove].sh-squircle, [mat-chip].sz-medium button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle),
 mat-chip-row.sz-medium button[matChipEdit].sh-squircle,
 mat-chip-row.sz-medium button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle),
 mat-chip-row.sz-medium button[matChipRemove].sh-squircle,
@@ -4093,7 +4094,7 @@ mat-chip-row.sz-medium button[matChipRemove]:not(.sh-round):not(.sh-square):not(
   --mat-fab-extended-container-shape: 11.2px;
   --mat-fab-small-container-shape: 11.2px;
 }
-mat-chip.sz-medium button[matChipEdit].destructive, mat-chip.sz-medium button[matChipRemove].destructive,
+mat-chip.sz-medium button[matChipEdit].destructive, mat-chip.sz-medium button[matChipRemove].destructive, mat-basic-chip.sz-medium button[matChipEdit].destructive, mat-basic-chip.sz-medium button[matChipRemove].destructive, [mat-basic-chip].sz-medium button[matChipEdit].destructive, [mat-basic-chip].sz-medium button[matChipRemove].destructive, [mat-chip].sz-medium button[matChipEdit].destructive, [mat-chip].sz-medium button[matChipRemove].destructive,
 mat-chip-row.sz-medium button[matChipEdit].destructive,
 mat-chip-row.sz-medium button[matChipRemove].destructive {
   --mat-button-filled-container-color: #c0000c;
@@ -4118,26 +4119,26 @@ mat-chip-row.sz-medium button[matChipRemove].destructive {
   --mat-fab-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
   --mat-fab-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
 }
-mat-chip.sz-medium button[matChipEdit], mat-chip.sz-medium button[matChipRemove],
+mat-chip.sz-medium button[matChipEdit], mat-chip.sz-medium button[matChipRemove], mat-basic-chip.sz-medium button[matChipEdit], mat-basic-chip.sz-medium button[matChipRemove], [mat-basic-chip].sz-medium button[matChipEdit], [mat-basic-chip].sz-medium button[matChipRemove], [mat-chip].sz-medium button[matChipEdit], [mat-chip].sz-medium button[matChipRemove],
 mat-chip-row.sz-medium button[matChipEdit],
 mat-chip-row.sz-medium button[matChipRemove] {
   height: 18px;
   width: 18px;
 }
-mat-chip.sz-medium.sh-round,
+mat-chip.sz-medium.sh-round, mat-basic-chip.sz-medium.sh-round, [mat-basic-chip].sz-medium.sh-round, [mat-chip].sz-medium.sh-round,
 mat-chip-row.sz-medium.sh-round {
   --mat-chip-container-shape-radius: 9999px;
 }
-mat-chip.sz-medium.sh-square,
+mat-chip.sz-medium.sh-square, mat-basic-chip.sz-medium.sh-square, [mat-basic-chip].sz-medium.sh-square, [mat-chip].sz-medium.sh-square,
 mat-chip-row.sz-medium.sh-square {
   --mat-chip-container-shape-radius: 0px;
 }
-mat-chip.sz-medium.sh-squircle, mat-chip.sz-medium:not(.sh-round):not(.sh-square):not(.sh-squircle),
+mat-chip.sz-medium.sh-squircle, mat-chip.sz-medium:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-basic-chip.sz-medium.sh-squircle, mat-basic-chip.sz-medium:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-basic-chip].sz-medium.sh-squircle, [mat-basic-chip].sz-medium:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-chip].sz-medium.sh-squircle, [mat-chip].sz-medium:not(.sh-round):not(.sh-square):not(.sh-squircle),
 mat-chip-row.sz-medium.sh-squircle,
 mat-chip-row.sz-medium:not(.sh-round):not(.sh-square):not(.sh-squircle) {
   --mat-chip-container-shape-radius: 8px;
 }
-mat-chip.sz-large,
+mat-chip.sz-large, mat-basic-chip.sz-large, [mat-basic-chip].sz-large, [mat-chip].sz-large,
 mat-chip-row.sz-large {
   --mat-chip-container-height: 40px;
   --mat-chip-container-shape-radius: 10px;
@@ -4145,7 +4146,7 @@ mat-chip-row.sz-large {
   --mat-chip-with-avatar-avatar-size: 30px;
   --mat-chip-with-icon-icon-size: 22.5px;
 }
-mat-chip.sz-large button[matChipEdit], mat-chip.sz-large button[matChipRemove],
+mat-chip.sz-large button[matChipEdit], mat-chip.sz-large button[matChipRemove], mat-basic-chip.sz-large button[matChipEdit], mat-basic-chip.sz-large button[matChipRemove], [mat-basic-chip].sz-large button[matChipEdit], [mat-basic-chip].sz-large button[matChipRemove], [mat-chip].sz-large button[matChipEdit], [mat-chip].sz-large button[matChipRemove],
 mat-chip-row.sz-large button[matChipEdit],
 mat-chip-row.sz-large button[matChipRemove] {
   --mat-button-filled-container-height: 40px;
@@ -4174,19 +4175,19 @@ mat-chip-row.sz-large button[matChipRemove] {
   --mat-button-tonal-horizontal-padding: 24px;
   --mat-button-text-with-icon-horizontal-padding: 16px;
 }
-mat-chip.sz-large button[matChipEdit] .material-symbols-outlined, mat-chip.sz-large button[matChipRemove] .material-symbols-outlined,
+mat-chip.sz-large button[matChipEdit] .material-symbols-outlined, mat-chip.sz-large button[matChipRemove] .material-symbols-outlined, mat-basic-chip.sz-large button[matChipEdit] .material-symbols-outlined, mat-basic-chip.sz-large button[matChipRemove] .material-symbols-outlined, [mat-basic-chip].sz-large button[matChipEdit] .material-symbols-outlined, [mat-basic-chip].sz-large button[matChipRemove] .material-symbols-outlined, [mat-chip].sz-large button[matChipEdit] .material-symbols-outlined, [mat-chip].sz-large button[matChipRemove] .material-symbols-outlined,
 mat-chip-row.sz-large button[matChipEdit] .material-symbols-outlined,
 mat-chip-row.sz-large button[matChipRemove] .material-symbols-outlined {
   font-size: 24px;
 }
-mat-chip.sz-large button[matChipEdit] mat-icon, mat-chip.sz-large button[matChipRemove] mat-icon,
+mat-chip.sz-large button[matChipEdit] mat-icon, mat-chip.sz-large button[matChipRemove] mat-icon, mat-basic-chip.sz-large button[matChipEdit] mat-icon, mat-basic-chip.sz-large button[matChipRemove] mat-icon, [mat-basic-chip].sz-large button[matChipEdit] mat-icon, [mat-basic-chip].sz-large button[matChipRemove] mat-icon, [mat-chip].sz-large button[matChipEdit] mat-icon, [mat-chip].sz-large button[matChipRemove] mat-icon,
 mat-chip-row.sz-large button[matChipEdit] mat-icon,
 mat-chip-row.sz-large button[matChipRemove] mat-icon {
   font-size: 24px;
   width: 24px;
   height: 24px;
 }
-mat-chip.sz-large button[matChipEdit][matIconButton], mat-chip.sz-large button[matChipEdit][mat-icon-button], mat-chip.sz-large button[matChipRemove][matIconButton], mat-chip.sz-large button[matChipRemove][mat-icon-button],
+mat-chip.sz-large button[matChipEdit][matIconButton], mat-chip.sz-large button[matChipEdit][mat-icon-button], mat-chip.sz-large button[matChipRemove][matIconButton], mat-chip.sz-large button[matChipRemove][mat-icon-button], mat-basic-chip.sz-large button[matChipEdit][matIconButton], mat-basic-chip.sz-large button[matChipEdit][mat-icon-button], mat-basic-chip.sz-large button[matChipRemove][matIconButton], mat-basic-chip.sz-large button[matChipRemove][mat-icon-button], [mat-basic-chip].sz-large button[matChipEdit][matIconButton], [mat-basic-chip].sz-large button[matChipEdit][mat-icon-button], [mat-basic-chip].sz-large button[matChipRemove][matIconButton], [mat-basic-chip].sz-large button[matChipRemove][mat-icon-button], [mat-chip].sz-large button[matChipEdit][matIconButton], [mat-chip].sz-large button[matChipEdit][mat-icon-button], [mat-chip].sz-large button[matChipRemove][matIconButton], [mat-chip].sz-large button[matChipRemove][mat-icon-button],
 mat-chip-row.sz-large button[matChipEdit][matIconButton],
 mat-chip-row.sz-large button[matChipEdit][mat-icon-button],
 mat-chip-row.sz-large button[matChipRemove][matIconButton],
@@ -4195,7 +4196,7 @@ mat-chip-row.sz-large button[matChipRemove][mat-icon-button] {
   --mat-icon-button-icon-size: 24px;
   --mat-icon-button-touch-target-size: 44px;
 }
-mat-chip.sz-large button[matChipEdit][matFab], mat-chip.sz-large button[matChipEdit][mat-fab], mat-chip.sz-large button[matChipRemove][matFab], mat-chip.sz-large button[matChipRemove][mat-fab],
+mat-chip.sz-large button[matChipEdit][matFab], mat-chip.sz-large button[matChipEdit][mat-fab], mat-chip.sz-large button[matChipRemove][matFab], mat-chip.sz-large button[matChipRemove][mat-fab], mat-basic-chip.sz-large button[matChipEdit][matFab], mat-basic-chip.sz-large button[matChipEdit][mat-fab], mat-basic-chip.sz-large button[matChipRemove][matFab], mat-basic-chip.sz-large button[matChipRemove][mat-fab], [mat-basic-chip].sz-large button[matChipEdit][matFab], [mat-basic-chip].sz-large button[matChipEdit][mat-fab], [mat-basic-chip].sz-large button[matChipRemove][matFab], [mat-basic-chip].sz-large button[matChipRemove][mat-fab], [mat-chip].sz-large button[matChipEdit][matFab], [mat-chip].sz-large button[matChipEdit][mat-fab], [mat-chip].sz-large button[matChipRemove][matFab], [mat-chip].sz-large button[matChipRemove][mat-fab],
 mat-chip-row.sz-large button[matChipEdit][matFab],
 mat-chip-row.sz-large button[matChipEdit][mat-fab],
 mat-chip-row.sz-large button[matChipRemove][matFab],
@@ -4204,14 +4205,14 @@ mat-chip-row.sz-large button[matChipRemove][mat-fab] {
   --mat-fab-touch-target-size: 60px;
   --mat-fab-small-touch-target-size: 60px;
 }
-mat-chip.sz-large button[matChipEdit][matFab] .material-symbols-outlined, mat-chip.sz-large button[matChipEdit][mat-fab] .material-symbols-outlined, mat-chip.sz-large button[matChipRemove][matFab] .material-symbols-outlined, mat-chip.sz-large button[matChipRemove][mat-fab] .material-symbols-outlined,
+mat-chip.sz-large button[matChipEdit][matFab] .material-symbols-outlined, mat-chip.sz-large button[matChipEdit][mat-fab] .material-symbols-outlined, mat-chip.sz-large button[matChipRemove][matFab] .material-symbols-outlined, mat-chip.sz-large button[matChipRemove][mat-fab] .material-symbols-outlined, mat-basic-chip.sz-large button[matChipEdit][matFab] .material-symbols-outlined, mat-basic-chip.sz-large button[matChipEdit][mat-fab] .material-symbols-outlined, mat-basic-chip.sz-large button[matChipRemove][matFab] .material-symbols-outlined, mat-basic-chip.sz-large button[matChipRemove][mat-fab] .material-symbols-outlined, [mat-basic-chip].sz-large button[matChipEdit][matFab] .material-symbols-outlined, [mat-basic-chip].sz-large button[matChipEdit][mat-fab] .material-symbols-outlined, [mat-basic-chip].sz-large button[matChipRemove][matFab] .material-symbols-outlined, [mat-basic-chip].sz-large button[matChipRemove][mat-fab] .material-symbols-outlined, [mat-chip].sz-large button[matChipEdit][matFab] .material-symbols-outlined, [mat-chip].sz-large button[matChipEdit][mat-fab] .material-symbols-outlined, [mat-chip].sz-large button[matChipRemove][matFab] .material-symbols-outlined, [mat-chip].sz-large button[matChipRemove][mat-fab] .material-symbols-outlined,
 mat-chip-row.sz-large button[matChipEdit][matFab] .material-symbols-outlined,
 mat-chip-row.sz-large button[matChipEdit][mat-fab] .material-symbols-outlined,
 mat-chip-row.sz-large button[matChipRemove][matFab] .material-symbols-outlined,
 mat-chip-row.sz-large button[matChipRemove][mat-fab] .material-symbols-outlined {
   font-size: 32px;
 }
-mat-chip.sz-large button[matChipEdit][matFab] mat-icon, mat-chip.sz-large button[matChipEdit][mat-fab] mat-icon, mat-chip.sz-large button[matChipRemove][matFab] mat-icon, mat-chip.sz-large button[matChipRemove][mat-fab] mat-icon,
+mat-chip.sz-large button[matChipEdit][matFab] mat-icon, mat-chip.sz-large button[matChipEdit][mat-fab] mat-icon, mat-chip.sz-large button[matChipRemove][matFab] mat-icon, mat-chip.sz-large button[matChipRemove][mat-fab] mat-icon, mat-basic-chip.sz-large button[matChipEdit][matFab] mat-icon, mat-basic-chip.sz-large button[matChipEdit][mat-fab] mat-icon, mat-basic-chip.sz-large button[matChipRemove][matFab] mat-icon, mat-basic-chip.sz-large button[matChipRemove][mat-fab] mat-icon, [mat-basic-chip].sz-large button[matChipEdit][matFab] mat-icon, [mat-basic-chip].sz-large button[matChipEdit][mat-fab] mat-icon, [mat-basic-chip].sz-large button[matChipRemove][matFab] mat-icon, [mat-basic-chip].sz-large button[matChipRemove][mat-fab] mat-icon, [mat-chip].sz-large button[matChipEdit][matFab] mat-icon, [mat-chip].sz-large button[matChipEdit][mat-fab] mat-icon, [mat-chip].sz-large button[matChipRemove][matFab] mat-icon, [mat-chip].sz-large button[matChipRemove][mat-fab] mat-icon,
 mat-chip-row.sz-large button[matChipEdit][matFab] mat-icon,
 mat-chip-row.sz-large button[matChipEdit][mat-fab] mat-icon,
 mat-chip-row.sz-large button[matChipRemove][matFab] mat-icon,
@@ -4220,21 +4221,21 @@ mat-chip-row.sz-large button[matChipRemove][mat-fab] mat-icon {
   width: 32px;
   height: 32px;
 }
-mat-chip.sz-large button[matChipEdit][matFab].mat-mdc-fab-base, mat-chip.sz-large button[matChipEdit][mat-fab].mat-mdc-fab-base, mat-chip.sz-large button[matChipRemove][matFab].mat-mdc-fab-base, mat-chip.sz-large button[matChipRemove][mat-fab].mat-mdc-fab-base,
+mat-chip.sz-large button[matChipEdit][matFab].mat-mdc-fab-base, mat-chip.sz-large button[matChipEdit][mat-fab].mat-mdc-fab-base, mat-chip.sz-large button[matChipRemove][matFab].mat-mdc-fab-base, mat-chip.sz-large button[matChipRemove][mat-fab].mat-mdc-fab-base, mat-basic-chip.sz-large button[matChipEdit][matFab].mat-mdc-fab-base, mat-basic-chip.sz-large button[matChipEdit][mat-fab].mat-mdc-fab-base, mat-basic-chip.sz-large button[matChipRemove][matFab].mat-mdc-fab-base, mat-basic-chip.sz-large button[matChipRemove][mat-fab].mat-mdc-fab-base, [mat-basic-chip].sz-large button[matChipEdit][matFab].mat-mdc-fab-base, [mat-basic-chip].sz-large button[matChipEdit][mat-fab].mat-mdc-fab-base, [mat-basic-chip].sz-large button[matChipRemove][matFab].mat-mdc-fab-base, [mat-basic-chip].sz-large button[matChipRemove][mat-fab].mat-mdc-fab-base, [mat-chip].sz-large button[matChipEdit][matFab].mat-mdc-fab-base, [mat-chip].sz-large button[matChipEdit][mat-fab].mat-mdc-fab-base, [mat-chip].sz-large button[matChipRemove][matFab].mat-mdc-fab-base, [mat-chip].sz-large button[matChipRemove][mat-fab].mat-mdc-fab-base,
 mat-chip-row.sz-large button[matChipEdit][matFab].mat-mdc-fab-base,
 mat-chip-row.sz-large button[matChipEdit][mat-fab].mat-mdc-fab-base,
 mat-chip-row.sz-large button[matChipRemove][matFab].mat-mdc-fab-base,
 mat-chip-row.sz-large button[matChipRemove][mat-fab].mat-mdc-fab-base {
   height: 56px;
 }
-mat-chip.sz-large button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), mat-chip.sz-large button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]), mat-chip.sz-large button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]), mat-chip.sz-large button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]),
+mat-chip.sz-large button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), mat-chip.sz-large button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]), mat-chip.sz-large button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]), mat-chip.sz-large button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]), mat-basic-chip.sz-large button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), mat-basic-chip.sz-large button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]), mat-basic-chip.sz-large button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]), mat-basic-chip.sz-large button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]), [mat-basic-chip].sz-large button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), [mat-basic-chip].sz-large button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]), [mat-basic-chip].sz-large button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]), [mat-basic-chip].sz-large button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]), [mat-chip].sz-large button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), [mat-chip].sz-large button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]), [mat-chip].sz-large button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]), [mat-chip].sz-large button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]),
 mat-chip-row.sz-large button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]),
 mat-chip-row.sz-large button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]),
 mat-chip-row.sz-large button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]),
 mat-chip-row.sz-large button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]) {
   width: 56px;
 }
-mat-chip.sz-large button[matChipEdit][matMiniFab].mat-mdc-fab-base, mat-chip.sz-large button[matChipEdit][mat-mini-fab].mat-mdc-fab-base, mat-chip.sz-large button[matChipRemove][matMiniFab].mat-mdc-fab-base, mat-chip.sz-large button[matChipRemove][mat-mini-fab].mat-mdc-fab-base,
+mat-chip.sz-large button[matChipEdit][matMiniFab].mat-mdc-fab-base, mat-chip.sz-large button[matChipEdit][mat-mini-fab].mat-mdc-fab-base, mat-chip.sz-large button[matChipRemove][matMiniFab].mat-mdc-fab-base, mat-chip.sz-large button[matChipRemove][mat-mini-fab].mat-mdc-fab-base, mat-basic-chip.sz-large button[matChipEdit][matMiniFab].mat-mdc-fab-base, mat-basic-chip.sz-large button[matChipEdit][mat-mini-fab].mat-mdc-fab-base, mat-basic-chip.sz-large button[matChipRemove][matMiniFab].mat-mdc-fab-base, mat-basic-chip.sz-large button[matChipRemove][mat-mini-fab].mat-mdc-fab-base, [mat-basic-chip].sz-large button[matChipEdit][matMiniFab].mat-mdc-fab-base, [mat-basic-chip].sz-large button[matChipEdit][mat-mini-fab].mat-mdc-fab-base, [mat-basic-chip].sz-large button[matChipRemove][matMiniFab].mat-mdc-fab-base, [mat-basic-chip].sz-large button[matChipRemove][mat-mini-fab].mat-mdc-fab-base, [mat-chip].sz-large button[matChipEdit][matMiniFab].mat-mdc-fab-base, [mat-chip].sz-large button[matChipEdit][mat-mini-fab].mat-mdc-fab-base, [mat-chip].sz-large button[matChipRemove][matMiniFab].mat-mdc-fab-base, [mat-chip].sz-large button[matChipRemove][mat-mini-fab].mat-mdc-fab-base,
 mat-chip-row.sz-large button[matChipEdit][matMiniFab].mat-mdc-fab-base,
 mat-chip-row.sz-large button[matChipEdit][mat-mini-fab].mat-mdc-fab-base,
 mat-chip-row.sz-large button[matChipRemove][matMiniFab].mat-mdc-fab-base,
@@ -4242,7 +4243,7 @@ mat-chip-row.sz-large button[matChipRemove][mat-mini-fab].mat-mdc-fab-base {
   height: 40px;
   width: 40px;
 }
-mat-chip.sz-large button[matChipEdit][matMiniFab], mat-chip.sz-large button[matChipEdit][mat-mini-fab], mat-chip.sz-large button[matChipRemove][matMiniFab], mat-chip.sz-large button[matChipRemove][mat-mini-fab],
+mat-chip.sz-large button[matChipEdit][matMiniFab], mat-chip.sz-large button[matChipEdit][mat-mini-fab], mat-chip.sz-large button[matChipRemove][matMiniFab], mat-chip.sz-large button[matChipRemove][mat-mini-fab], mat-basic-chip.sz-large button[matChipEdit][matMiniFab], mat-basic-chip.sz-large button[matChipEdit][mat-mini-fab], mat-basic-chip.sz-large button[matChipRemove][matMiniFab], mat-basic-chip.sz-large button[matChipRemove][mat-mini-fab], [mat-basic-chip].sz-large button[matChipEdit][matMiniFab], [mat-basic-chip].sz-large button[matChipEdit][mat-mini-fab], [mat-basic-chip].sz-large button[matChipRemove][matMiniFab], [mat-basic-chip].sz-large button[matChipRemove][mat-mini-fab], [mat-chip].sz-large button[matChipEdit][matMiniFab], [mat-chip].sz-large button[matChipEdit][mat-mini-fab], [mat-chip].sz-large button[matChipRemove][matMiniFab], [mat-chip].sz-large button[matChipRemove][mat-mini-fab],
 mat-chip-row.sz-large button[matChipEdit][matMiniFab],
 mat-chip-row.sz-large button[matChipEdit][mat-mini-fab],
 mat-chip-row.sz-large button[matChipRemove][matMiniFab],
@@ -4251,7 +4252,7 @@ mat-chip-row.sz-large button[matChipRemove][mat-mini-fab] {
   --mat-fab-touch-target-size: 44px;
   --mat-fab-small-touch-target-size: 44px;
 }
-mat-chip.sz-large button[matChipEdit].sh-round, mat-chip.sz-large button[matChipRemove].sh-round,
+mat-chip.sz-large button[matChipEdit].sh-round, mat-chip.sz-large button[matChipRemove].sh-round, mat-basic-chip.sz-large button[matChipEdit].sh-round, mat-basic-chip.sz-large button[matChipRemove].sh-round, [mat-basic-chip].sz-large button[matChipEdit].sh-round, [mat-basic-chip].sz-large button[matChipRemove].sh-round, [mat-chip].sz-large button[matChipEdit].sh-round, [mat-chip].sz-large button[matChipRemove].sh-round,
 mat-chip-row.sz-large button[matChipEdit].sh-round,
 mat-chip-row.sz-large button[matChipRemove].sh-round {
   --mat-button-filled-container-shape: 9999px;
@@ -4264,7 +4265,7 @@ mat-chip-row.sz-large button[matChipRemove].sh-round {
   --mat-fab-extended-container-shape: 9999px;
   --mat-fab-small-container-shape: 9999px;
 }
-mat-chip.sz-large button[matChipEdit].sh-square, mat-chip.sz-large button[matChipRemove].sh-square,
+mat-chip.sz-large button[matChipEdit].sh-square, mat-chip.sz-large button[matChipRemove].sh-square, mat-basic-chip.sz-large button[matChipEdit].sh-square, mat-basic-chip.sz-large button[matChipRemove].sh-square, [mat-basic-chip].sz-large button[matChipEdit].sh-square, [mat-basic-chip].sz-large button[matChipRemove].sh-square, [mat-chip].sz-large button[matChipEdit].sh-square, [mat-chip].sz-large button[matChipRemove].sh-square,
 mat-chip-row.sz-large button[matChipEdit].sh-square,
 mat-chip-row.sz-large button[matChipRemove].sh-square {
   --mat-button-filled-container-shape: 0px;
@@ -4277,7 +4278,7 @@ mat-chip-row.sz-large button[matChipRemove].sh-square {
   --mat-fab-extended-container-shape: 0px;
   --mat-fab-small-container-shape: 0px;
 }
-mat-chip.sz-large button[matChipEdit].sh-squircle, mat-chip.sz-large button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-chip.sz-large button[matChipRemove].sh-squircle, mat-chip.sz-large button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle),
+mat-chip.sz-large button[matChipEdit].sh-squircle, mat-chip.sz-large button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-chip.sz-large button[matChipRemove].sh-squircle, mat-chip.sz-large button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-basic-chip.sz-large button[matChipEdit].sh-squircle, mat-basic-chip.sz-large button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-basic-chip.sz-large button[matChipRemove].sh-squircle, mat-basic-chip.sz-large button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-basic-chip].sz-large button[matChipEdit].sh-squircle, [mat-basic-chip].sz-large button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-basic-chip].sz-large button[matChipRemove].sh-squircle, [mat-basic-chip].sz-large button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-chip].sz-large button[matChipEdit].sh-squircle, [mat-chip].sz-large button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-chip].sz-large button[matChipRemove].sh-squircle, [mat-chip].sz-large button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle),
 mat-chip-row.sz-large button[matChipEdit].sh-squircle,
 mat-chip-row.sz-large button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle),
 mat-chip-row.sz-large button[matChipRemove].sh-squircle,
@@ -4292,7 +4293,7 @@ mat-chip-row.sz-large button[matChipRemove]:not(.sh-round):not(.sh-square):not(.
   --mat-fab-extended-container-shape: 14px;
   --mat-fab-small-container-shape: 14px;
 }
-mat-chip.sz-large button[matChipEdit].destructive, mat-chip.sz-large button[matChipRemove].destructive,
+mat-chip.sz-large button[matChipEdit].destructive, mat-chip.sz-large button[matChipRemove].destructive, mat-basic-chip.sz-large button[matChipEdit].destructive, mat-basic-chip.sz-large button[matChipRemove].destructive, [mat-basic-chip].sz-large button[matChipEdit].destructive, [mat-basic-chip].sz-large button[matChipRemove].destructive, [mat-chip].sz-large button[matChipEdit].destructive, [mat-chip].sz-large button[matChipRemove].destructive,
 mat-chip-row.sz-large button[matChipEdit].destructive,
 mat-chip-row.sz-large button[matChipRemove].destructive {
   --mat-button-filled-container-color: #c0000c;
@@ -4317,26 +4318,26 @@ mat-chip-row.sz-large button[matChipRemove].destructive {
   --mat-fab-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
   --mat-fab-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
 }
-mat-chip.sz-large button[matChipEdit], mat-chip.sz-large button[matChipRemove],
+mat-chip.sz-large button[matChipEdit], mat-chip.sz-large button[matChipRemove], mat-basic-chip.sz-large button[matChipEdit], mat-basic-chip.sz-large button[matChipRemove], [mat-basic-chip].sz-large button[matChipEdit], [mat-basic-chip].sz-large button[matChipRemove], [mat-chip].sz-large button[matChipEdit], [mat-chip].sz-large button[matChipRemove],
 mat-chip-row.sz-large button[matChipEdit],
 mat-chip-row.sz-large button[matChipRemove] {
   height: 22.5px;
   width: 22.5px;
 }
-mat-chip.sz-large.sh-round,
+mat-chip.sz-large.sh-round, mat-basic-chip.sz-large.sh-round, [mat-basic-chip].sz-large.sh-round, [mat-chip].sz-large.sh-round,
 mat-chip-row.sz-large.sh-round {
   --mat-chip-container-shape-radius: 9999px;
 }
-mat-chip.sz-large.sh-square,
+mat-chip.sz-large.sh-square, mat-basic-chip.sz-large.sh-square, [mat-basic-chip].sz-large.sh-square, [mat-chip].sz-large.sh-square,
 mat-chip-row.sz-large.sh-square {
   --mat-chip-container-shape-radius: 0px;
 }
-mat-chip.sz-large.sh-squircle, mat-chip.sz-large:not(.sh-round):not(.sh-square):not(.sh-squircle),
+mat-chip.sz-large.sh-squircle, mat-chip.sz-large:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-basic-chip.sz-large.sh-squircle, mat-basic-chip.sz-large:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-basic-chip].sz-large.sh-squircle, [mat-basic-chip].sz-large:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-chip].sz-large.sh-squircle, [mat-chip].sz-large:not(.sh-round):not(.sh-square):not(.sh-squircle),
 mat-chip-row.sz-large.sh-squircle,
 mat-chip-row.sz-large:not(.sh-round):not(.sh-square):not(.sh-squircle) {
   --mat-chip-container-shape-radius: 10px;
 }
-mat-chip.sz-xlarge,
+mat-chip.sz-xlarge, mat-basic-chip.sz-xlarge, [mat-basic-chip].sz-xlarge, [mat-chip].sz-xlarge,
 mat-chip-row.sz-xlarge {
   --mat-chip-container-height: 48px;
   --mat-chip-container-shape-radius: 12px;
@@ -4344,7 +4345,7 @@ mat-chip-row.sz-xlarge {
   --mat-chip-with-avatar-avatar-size: 36px;
   --mat-chip-with-icon-icon-size: 27px;
 }
-mat-chip.sz-xlarge button[matChipEdit], mat-chip.sz-xlarge button[matChipRemove],
+mat-chip.sz-xlarge button[matChipEdit], mat-chip.sz-xlarge button[matChipRemove], mat-basic-chip.sz-xlarge button[matChipEdit], mat-basic-chip.sz-xlarge button[matChipRemove], [mat-basic-chip].sz-xlarge button[matChipEdit], [mat-basic-chip].sz-xlarge button[matChipRemove], [mat-chip].sz-xlarge button[matChipEdit], [mat-chip].sz-xlarge button[matChipRemove],
 mat-chip-row.sz-xlarge button[matChipEdit],
 mat-chip-row.sz-xlarge button[matChipRemove] {
   --mat-button-filled-container-height: 48px;
@@ -4373,19 +4374,19 @@ mat-chip-row.sz-xlarge button[matChipRemove] {
   --mat-button-tonal-horizontal-padding: 28.8px;
   --mat-button-text-with-icon-horizontal-padding: 19.2px;
 }
-mat-chip.sz-xlarge button[matChipEdit] .material-symbols-outlined, mat-chip.sz-xlarge button[matChipRemove] .material-symbols-outlined,
+mat-chip.sz-xlarge button[matChipEdit] .material-symbols-outlined, mat-chip.sz-xlarge button[matChipRemove] .material-symbols-outlined, mat-basic-chip.sz-xlarge button[matChipEdit] .material-symbols-outlined, mat-basic-chip.sz-xlarge button[matChipRemove] .material-symbols-outlined, [mat-basic-chip].sz-xlarge button[matChipEdit] .material-symbols-outlined, [mat-basic-chip].sz-xlarge button[matChipRemove] .material-symbols-outlined, [mat-chip].sz-xlarge button[matChipEdit] .material-symbols-outlined, [mat-chip].sz-xlarge button[matChipRemove] .material-symbols-outlined,
 mat-chip-row.sz-xlarge button[matChipEdit] .material-symbols-outlined,
 mat-chip-row.sz-xlarge button[matChipRemove] .material-symbols-outlined {
   font-size: 28.8px;
 }
-mat-chip.sz-xlarge button[matChipEdit] mat-icon, mat-chip.sz-xlarge button[matChipRemove] mat-icon,
+mat-chip.sz-xlarge button[matChipEdit] mat-icon, mat-chip.sz-xlarge button[matChipRemove] mat-icon, mat-basic-chip.sz-xlarge button[matChipEdit] mat-icon, mat-basic-chip.sz-xlarge button[matChipRemove] mat-icon, [mat-basic-chip].sz-xlarge button[matChipEdit] mat-icon, [mat-basic-chip].sz-xlarge button[matChipRemove] mat-icon, [mat-chip].sz-xlarge button[matChipEdit] mat-icon, [mat-chip].sz-xlarge button[matChipRemove] mat-icon,
 mat-chip-row.sz-xlarge button[matChipEdit] mat-icon,
 mat-chip-row.sz-xlarge button[matChipRemove] mat-icon {
   font-size: 28.8px;
   width: 28.8px;
   height: 28.8px;
 }
-mat-chip.sz-xlarge button[matChipEdit][matIconButton], mat-chip.sz-xlarge button[matChipEdit][mat-icon-button], mat-chip.sz-xlarge button[matChipRemove][matIconButton], mat-chip.sz-xlarge button[matChipRemove][mat-icon-button],
+mat-chip.sz-xlarge button[matChipEdit][matIconButton], mat-chip.sz-xlarge button[matChipEdit][mat-icon-button], mat-chip.sz-xlarge button[matChipRemove][matIconButton], mat-chip.sz-xlarge button[matChipRemove][mat-icon-button], mat-basic-chip.sz-xlarge button[matChipEdit][matIconButton], mat-basic-chip.sz-xlarge button[matChipEdit][mat-icon-button], mat-basic-chip.sz-xlarge button[matChipRemove][matIconButton], mat-basic-chip.sz-xlarge button[matChipRemove][mat-icon-button], [mat-basic-chip].sz-xlarge button[matChipEdit][matIconButton], [mat-basic-chip].sz-xlarge button[matChipEdit][mat-icon-button], [mat-basic-chip].sz-xlarge button[matChipRemove][matIconButton], [mat-basic-chip].sz-xlarge button[matChipRemove][mat-icon-button], [mat-chip].sz-xlarge button[matChipEdit][matIconButton], [mat-chip].sz-xlarge button[matChipEdit][mat-icon-button], [mat-chip].sz-xlarge button[matChipRemove][matIconButton], [mat-chip].sz-xlarge button[matChipRemove][mat-icon-button],
 mat-chip-row.sz-xlarge button[matChipEdit][matIconButton],
 mat-chip-row.sz-xlarge button[matChipEdit][mat-icon-button],
 mat-chip-row.sz-xlarge button[matChipRemove][matIconButton],
@@ -4394,7 +4395,7 @@ mat-chip-row.sz-xlarge button[matChipRemove][mat-icon-button] {
   --mat-icon-button-icon-size: 28.8px;
   --mat-icon-button-touch-target-size: 52px;
 }
-mat-chip.sz-xlarge button[matChipEdit][matFab], mat-chip.sz-xlarge button[matChipEdit][mat-fab], mat-chip.sz-xlarge button[matChipRemove][matFab], mat-chip.sz-xlarge button[matChipRemove][mat-fab],
+mat-chip.sz-xlarge button[matChipEdit][matFab], mat-chip.sz-xlarge button[matChipEdit][mat-fab], mat-chip.sz-xlarge button[matChipRemove][matFab], mat-chip.sz-xlarge button[matChipRemove][mat-fab], mat-basic-chip.sz-xlarge button[matChipEdit][matFab], mat-basic-chip.sz-xlarge button[matChipEdit][mat-fab], mat-basic-chip.sz-xlarge button[matChipRemove][matFab], mat-basic-chip.sz-xlarge button[matChipRemove][mat-fab], [mat-basic-chip].sz-xlarge button[matChipEdit][matFab], [mat-basic-chip].sz-xlarge button[matChipEdit][mat-fab], [mat-basic-chip].sz-xlarge button[matChipRemove][matFab], [mat-basic-chip].sz-xlarge button[matChipRemove][mat-fab], [mat-chip].sz-xlarge button[matChipEdit][matFab], [mat-chip].sz-xlarge button[matChipEdit][mat-fab], [mat-chip].sz-xlarge button[matChipRemove][matFab], [mat-chip].sz-xlarge button[matChipRemove][mat-fab],
 mat-chip-row.sz-xlarge button[matChipEdit][matFab],
 mat-chip-row.sz-xlarge button[matChipEdit][mat-fab],
 mat-chip-row.sz-xlarge button[matChipRemove][matFab],
@@ -4403,14 +4404,14 @@ mat-chip-row.sz-xlarge button[matChipRemove][mat-fab] {
   --mat-fab-touch-target-size: 71.2px;
   --mat-fab-small-touch-target-size: 71.2px;
 }
-mat-chip.sz-xlarge button[matChipEdit][matFab] .material-symbols-outlined, mat-chip.sz-xlarge button[matChipEdit][mat-fab] .material-symbols-outlined, mat-chip.sz-xlarge button[matChipRemove][matFab] .material-symbols-outlined, mat-chip.sz-xlarge button[matChipRemove][mat-fab] .material-symbols-outlined,
+mat-chip.sz-xlarge button[matChipEdit][matFab] .material-symbols-outlined, mat-chip.sz-xlarge button[matChipEdit][mat-fab] .material-symbols-outlined, mat-chip.sz-xlarge button[matChipRemove][matFab] .material-symbols-outlined, mat-chip.sz-xlarge button[matChipRemove][mat-fab] .material-symbols-outlined, mat-basic-chip.sz-xlarge button[matChipEdit][matFab] .material-symbols-outlined, mat-basic-chip.sz-xlarge button[matChipEdit][mat-fab] .material-symbols-outlined, mat-basic-chip.sz-xlarge button[matChipRemove][matFab] .material-symbols-outlined, mat-basic-chip.sz-xlarge button[matChipRemove][mat-fab] .material-symbols-outlined, [mat-basic-chip].sz-xlarge button[matChipEdit][matFab] .material-symbols-outlined, [mat-basic-chip].sz-xlarge button[matChipEdit][mat-fab] .material-symbols-outlined, [mat-basic-chip].sz-xlarge button[matChipRemove][matFab] .material-symbols-outlined, [mat-basic-chip].sz-xlarge button[matChipRemove][mat-fab] .material-symbols-outlined, [mat-chip].sz-xlarge button[matChipEdit][matFab] .material-symbols-outlined, [mat-chip].sz-xlarge button[matChipEdit][mat-fab] .material-symbols-outlined, [mat-chip].sz-xlarge button[matChipRemove][matFab] .material-symbols-outlined, [mat-chip].sz-xlarge button[matChipRemove][mat-fab] .material-symbols-outlined,
 mat-chip-row.sz-xlarge button[matChipEdit][matFab] .material-symbols-outlined,
 mat-chip-row.sz-xlarge button[matChipEdit][mat-fab] .material-symbols-outlined,
 mat-chip-row.sz-xlarge button[matChipRemove][matFab] .material-symbols-outlined,
 mat-chip-row.sz-xlarge button[matChipRemove][mat-fab] .material-symbols-outlined {
   font-size: 38.4px;
 }
-mat-chip.sz-xlarge button[matChipEdit][matFab] mat-icon, mat-chip.sz-xlarge button[matChipEdit][mat-fab] mat-icon, mat-chip.sz-xlarge button[matChipRemove][matFab] mat-icon, mat-chip.sz-xlarge button[matChipRemove][mat-fab] mat-icon,
+mat-chip.sz-xlarge button[matChipEdit][matFab] mat-icon, mat-chip.sz-xlarge button[matChipEdit][mat-fab] mat-icon, mat-chip.sz-xlarge button[matChipRemove][matFab] mat-icon, mat-chip.sz-xlarge button[matChipRemove][mat-fab] mat-icon, mat-basic-chip.sz-xlarge button[matChipEdit][matFab] mat-icon, mat-basic-chip.sz-xlarge button[matChipEdit][mat-fab] mat-icon, mat-basic-chip.sz-xlarge button[matChipRemove][matFab] mat-icon, mat-basic-chip.sz-xlarge button[matChipRemove][mat-fab] mat-icon, [mat-basic-chip].sz-xlarge button[matChipEdit][matFab] mat-icon, [mat-basic-chip].sz-xlarge button[matChipEdit][mat-fab] mat-icon, [mat-basic-chip].sz-xlarge button[matChipRemove][matFab] mat-icon, [mat-basic-chip].sz-xlarge button[matChipRemove][mat-fab] mat-icon, [mat-chip].sz-xlarge button[matChipEdit][matFab] mat-icon, [mat-chip].sz-xlarge button[matChipEdit][mat-fab] mat-icon, [mat-chip].sz-xlarge button[matChipRemove][matFab] mat-icon, [mat-chip].sz-xlarge button[matChipRemove][mat-fab] mat-icon,
 mat-chip-row.sz-xlarge button[matChipEdit][matFab] mat-icon,
 mat-chip-row.sz-xlarge button[matChipEdit][mat-fab] mat-icon,
 mat-chip-row.sz-xlarge button[matChipRemove][matFab] mat-icon,
@@ -4419,21 +4420,21 @@ mat-chip-row.sz-xlarge button[matChipRemove][mat-fab] mat-icon {
   width: 38.4px;
   height: 38.4px;
 }
-mat-chip.sz-xlarge button[matChipEdit][matFab].mat-mdc-fab-base, mat-chip.sz-xlarge button[matChipEdit][mat-fab].mat-mdc-fab-base, mat-chip.sz-xlarge button[matChipRemove][matFab].mat-mdc-fab-base, mat-chip.sz-xlarge button[matChipRemove][mat-fab].mat-mdc-fab-base,
+mat-chip.sz-xlarge button[matChipEdit][matFab].mat-mdc-fab-base, mat-chip.sz-xlarge button[matChipEdit][mat-fab].mat-mdc-fab-base, mat-chip.sz-xlarge button[matChipRemove][matFab].mat-mdc-fab-base, mat-chip.sz-xlarge button[matChipRemove][mat-fab].mat-mdc-fab-base, mat-basic-chip.sz-xlarge button[matChipEdit][matFab].mat-mdc-fab-base, mat-basic-chip.sz-xlarge button[matChipEdit][mat-fab].mat-mdc-fab-base, mat-basic-chip.sz-xlarge button[matChipRemove][matFab].mat-mdc-fab-base, mat-basic-chip.sz-xlarge button[matChipRemove][mat-fab].mat-mdc-fab-base, [mat-basic-chip].sz-xlarge button[matChipEdit][matFab].mat-mdc-fab-base, [mat-basic-chip].sz-xlarge button[matChipEdit][mat-fab].mat-mdc-fab-base, [mat-basic-chip].sz-xlarge button[matChipRemove][matFab].mat-mdc-fab-base, [mat-basic-chip].sz-xlarge button[matChipRemove][mat-fab].mat-mdc-fab-base, [mat-chip].sz-xlarge button[matChipEdit][matFab].mat-mdc-fab-base, [mat-chip].sz-xlarge button[matChipEdit][mat-fab].mat-mdc-fab-base, [mat-chip].sz-xlarge button[matChipRemove][matFab].mat-mdc-fab-base, [mat-chip].sz-xlarge button[matChipRemove][mat-fab].mat-mdc-fab-base,
 mat-chip-row.sz-xlarge button[matChipEdit][matFab].mat-mdc-fab-base,
 mat-chip-row.sz-xlarge button[matChipEdit][mat-fab].mat-mdc-fab-base,
 mat-chip-row.sz-xlarge button[matChipRemove][matFab].mat-mdc-fab-base,
 mat-chip-row.sz-xlarge button[matChipRemove][mat-fab].mat-mdc-fab-base {
   height: 67.2px;
 }
-mat-chip.sz-xlarge button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), mat-chip.sz-xlarge button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]), mat-chip.sz-xlarge button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]), mat-chip.sz-xlarge button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]),
+mat-chip.sz-xlarge button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), mat-chip.sz-xlarge button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]), mat-chip.sz-xlarge button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]), mat-chip.sz-xlarge button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]), mat-basic-chip.sz-xlarge button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), mat-basic-chip.sz-xlarge button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]), mat-basic-chip.sz-xlarge button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]), mat-basic-chip.sz-xlarge button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]), [mat-basic-chip].sz-xlarge button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), [mat-basic-chip].sz-xlarge button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]), [mat-basic-chip].sz-xlarge button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]), [mat-basic-chip].sz-xlarge button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]), [mat-chip].sz-xlarge button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), [mat-chip].sz-xlarge button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]), [mat-chip].sz-xlarge button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]), [mat-chip].sz-xlarge button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]),
 mat-chip-row.sz-xlarge button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]),
 mat-chip-row.sz-xlarge button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]),
 mat-chip-row.sz-xlarge button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]),
 mat-chip-row.sz-xlarge button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]) {
   width: 67.2px;
 }
-mat-chip.sz-xlarge button[matChipEdit][matMiniFab].mat-mdc-fab-base, mat-chip.sz-xlarge button[matChipEdit][mat-mini-fab].mat-mdc-fab-base, mat-chip.sz-xlarge button[matChipRemove][matMiniFab].mat-mdc-fab-base, mat-chip.sz-xlarge button[matChipRemove][mat-mini-fab].mat-mdc-fab-base,
+mat-chip.sz-xlarge button[matChipEdit][matMiniFab].mat-mdc-fab-base, mat-chip.sz-xlarge button[matChipEdit][mat-mini-fab].mat-mdc-fab-base, mat-chip.sz-xlarge button[matChipRemove][matMiniFab].mat-mdc-fab-base, mat-chip.sz-xlarge button[matChipRemove][mat-mini-fab].mat-mdc-fab-base, mat-basic-chip.sz-xlarge button[matChipEdit][matMiniFab].mat-mdc-fab-base, mat-basic-chip.sz-xlarge button[matChipEdit][mat-mini-fab].mat-mdc-fab-base, mat-basic-chip.sz-xlarge button[matChipRemove][matMiniFab].mat-mdc-fab-base, mat-basic-chip.sz-xlarge button[matChipRemove][mat-mini-fab].mat-mdc-fab-base, [mat-basic-chip].sz-xlarge button[matChipEdit][matMiniFab].mat-mdc-fab-base, [mat-basic-chip].sz-xlarge button[matChipEdit][mat-mini-fab].mat-mdc-fab-base, [mat-basic-chip].sz-xlarge button[matChipRemove][matMiniFab].mat-mdc-fab-base, [mat-basic-chip].sz-xlarge button[matChipRemove][mat-mini-fab].mat-mdc-fab-base, [mat-chip].sz-xlarge button[matChipEdit][matMiniFab].mat-mdc-fab-base, [mat-chip].sz-xlarge button[matChipEdit][mat-mini-fab].mat-mdc-fab-base, [mat-chip].sz-xlarge button[matChipRemove][matMiniFab].mat-mdc-fab-base, [mat-chip].sz-xlarge button[matChipRemove][mat-mini-fab].mat-mdc-fab-base,
 mat-chip-row.sz-xlarge button[matChipEdit][matMiniFab].mat-mdc-fab-base,
 mat-chip-row.sz-xlarge button[matChipEdit][mat-mini-fab].mat-mdc-fab-base,
 mat-chip-row.sz-xlarge button[matChipRemove][matMiniFab].mat-mdc-fab-base,
@@ -4441,7 +4442,7 @@ mat-chip-row.sz-xlarge button[matChipRemove][mat-mini-fab].mat-mdc-fab-base {
   height: 48px;
   width: 48px;
 }
-mat-chip.sz-xlarge button[matChipEdit][matMiniFab], mat-chip.sz-xlarge button[matChipEdit][mat-mini-fab], mat-chip.sz-xlarge button[matChipRemove][matMiniFab], mat-chip.sz-xlarge button[matChipRemove][mat-mini-fab],
+mat-chip.sz-xlarge button[matChipEdit][matMiniFab], mat-chip.sz-xlarge button[matChipEdit][mat-mini-fab], mat-chip.sz-xlarge button[matChipRemove][matMiniFab], mat-chip.sz-xlarge button[matChipRemove][mat-mini-fab], mat-basic-chip.sz-xlarge button[matChipEdit][matMiniFab], mat-basic-chip.sz-xlarge button[matChipEdit][mat-mini-fab], mat-basic-chip.sz-xlarge button[matChipRemove][matMiniFab], mat-basic-chip.sz-xlarge button[matChipRemove][mat-mini-fab], [mat-basic-chip].sz-xlarge button[matChipEdit][matMiniFab], [mat-basic-chip].sz-xlarge button[matChipEdit][mat-mini-fab], [mat-basic-chip].sz-xlarge button[matChipRemove][matMiniFab], [mat-basic-chip].sz-xlarge button[matChipRemove][mat-mini-fab], [mat-chip].sz-xlarge button[matChipEdit][matMiniFab], [mat-chip].sz-xlarge button[matChipEdit][mat-mini-fab], [mat-chip].sz-xlarge button[matChipRemove][matMiniFab], [mat-chip].sz-xlarge button[matChipRemove][mat-mini-fab],
 mat-chip-row.sz-xlarge button[matChipEdit][matMiniFab],
 mat-chip-row.sz-xlarge button[matChipEdit][mat-mini-fab],
 mat-chip-row.sz-xlarge button[matChipRemove][matMiniFab],
@@ -4450,7 +4451,7 @@ mat-chip-row.sz-xlarge button[matChipRemove][mat-mini-fab] {
   --mat-fab-touch-target-size: 52px;
   --mat-fab-small-touch-target-size: 52px;
 }
-mat-chip.sz-xlarge button[matChipEdit].sh-round, mat-chip.sz-xlarge button[matChipRemove].sh-round,
+mat-chip.sz-xlarge button[matChipEdit].sh-round, mat-chip.sz-xlarge button[matChipRemove].sh-round, mat-basic-chip.sz-xlarge button[matChipEdit].sh-round, mat-basic-chip.sz-xlarge button[matChipRemove].sh-round, [mat-basic-chip].sz-xlarge button[matChipEdit].sh-round, [mat-basic-chip].sz-xlarge button[matChipRemove].sh-round, [mat-chip].sz-xlarge button[matChipEdit].sh-round, [mat-chip].sz-xlarge button[matChipRemove].sh-round,
 mat-chip-row.sz-xlarge button[matChipEdit].sh-round,
 mat-chip-row.sz-xlarge button[matChipRemove].sh-round {
   --mat-button-filled-container-shape: 9999px;
@@ -4463,7 +4464,7 @@ mat-chip-row.sz-xlarge button[matChipRemove].sh-round {
   --mat-fab-extended-container-shape: 9999px;
   --mat-fab-small-container-shape: 9999px;
 }
-mat-chip.sz-xlarge button[matChipEdit].sh-square, mat-chip.sz-xlarge button[matChipRemove].sh-square,
+mat-chip.sz-xlarge button[matChipEdit].sh-square, mat-chip.sz-xlarge button[matChipRemove].sh-square, mat-basic-chip.sz-xlarge button[matChipEdit].sh-square, mat-basic-chip.sz-xlarge button[matChipRemove].sh-square, [mat-basic-chip].sz-xlarge button[matChipEdit].sh-square, [mat-basic-chip].sz-xlarge button[matChipRemove].sh-square, [mat-chip].sz-xlarge button[matChipEdit].sh-square, [mat-chip].sz-xlarge button[matChipRemove].sh-square,
 mat-chip-row.sz-xlarge button[matChipEdit].sh-square,
 mat-chip-row.sz-xlarge button[matChipRemove].sh-square {
   --mat-button-filled-container-shape: 0px;
@@ -4476,7 +4477,7 @@ mat-chip-row.sz-xlarge button[matChipRemove].sh-square {
   --mat-fab-extended-container-shape: 0px;
   --mat-fab-small-container-shape: 0px;
 }
-mat-chip.sz-xlarge button[matChipEdit].sh-squircle, mat-chip.sz-xlarge button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-chip.sz-xlarge button[matChipRemove].sh-squircle, mat-chip.sz-xlarge button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle),
+mat-chip.sz-xlarge button[matChipEdit].sh-squircle, mat-chip.sz-xlarge button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-chip.sz-xlarge button[matChipRemove].sh-squircle, mat-chip.sz-xlarge button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-basic-chip.sz-xlarge button[matChipEdit].sh-squircle, mat-basic-chip.sz-xlarge button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-basic-chip.sz-xlarge button[matChipRemove].sh-squircle, mat-basic-chip.sz-xlarge button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-basic-chip].sz-xlarge button[matChipEdit].sh-squircle, [mat-basic-chip].sz-xlarge button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-basic-chip].sz-xlarge button[matChipRemove].sh-squircle, [mat-basic-chip].sz-xlarge button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-chip].sz-xlarge button[matChipEdit].sh-squircle, [mat-chip].sz-xlarge button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-chip].sz-xlarge button[matChipRemove].sh-squircle, [mat-chip].sz-xlarge button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle),
 mat-chip-row.sz-xlarge button[matChipEdit].sh-squircle,
 mat-chip-row.sz-xlarge button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle),
 mat-chip-row.sz-xlarge button[matChipRemove].sh-squircle,
@@ -4491,7 +4492,7 @@ mat-chip-row.sz-xlarge button[matChipRemove]:not(.sh-round):not(.sh-square):not(
   --mat-fab-extended-container-shape: 16.8px;
   --mat-fab-small-container-shape: 16.8px;
 }
-mat-chip.sz-xlarge button[matChipEdit].destructive, mat-chip.sz-xlarge button[matChipRemove].destructive,
+mat-chip.sz-xlarge button[matChipEdit].destructive, mat-chip.sz-xlarge button[matChipRemove].destructive, mat-basic-chip.sz-xlarge button[matChipEdit].destructive, mat-basic-chip.sz-xlarge button[matChipRemove].destructive, [mat-basic-chip].sz-xlarge button[matChipEdit].destructive, [mat-basic-chip].sz-xlarge button[matChipRemove].destructive, [mat-chip].sz-xlarge button[matChipEdit].destructive, [mat-chip].sz-xlarge button[matChipRemove].destructive,
 mat-chip-row.sz-xlarge button[matChipEdit].destructive,
 mat-chip-row.sz-xlarge button[matChipRemove].destructive {
   --mat-button-filled-container-color: #c0000c;
@@ -4516,26 +4517,26 @@ mat-chip-row.sz-xlarge button[matChipRemove].destructive {
   --mat-fab-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
   --mat-fab-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
 }
-mat-chip.sz-xlarge button[matChipEdit], mat-chip.sz-xlarge button[matChipRemove],
+mat-chip.sz-xlarge button[matChipEdit], mat-chip.sz-xlarge button[matChipRemove], mat-basic-chip.sz-xlarge button[matChipEdit], mat-basic-chip.sz-xlarge button[matChipRemove], [mat-basic-chip].sz-xlarge button[matChipEdit], [mat-basic-chip].sz-xlarge button[matChipRemove], [mat-chip].sz-xlarge button[matChipEdit], [mat-chip].sz-xlarge button[matChipRemove],
 mat-chip-row.sz-xlarge button[matChipEdit],
 mat-chip-row.sz-xlarge button[matChipRemove] {
   height: 27px;
   width: 27px;
 }
-mat-chip.sz-xlarge.sh-round,
+mat-chip.sz-xlarge.sh-round, mat-basic-chip.sz-xlarge.sh-round, [mat-basic-chip].sz-xlarge.sh-round, [mat-chip].sz-xlarge.sh-round,
 mat-chip-row.sz-xlarge.sh-round {
   --mat-chip-container-shape-radius: 9999px;
 }
-mat-chip.sz-xlarge.sh-square,
+mat-chip.sz-xlarge.sh-square, mat-basic-chip.sz-xlarge.sh-square, [mat-basic-chip].sz-xlarge.sh-square, [mat-chip].sz-xlarge.sh-square,
 mat-chip-row.sz-xlarge.sh-square {
   --mat-chip-container-shape-radius: 0px;
 }
-mat-chip.sz-xlarge.sh-squircle, mat-chip.sz-xlarge:not(.sh-round):not(.sh-square):not(.sh-squircle),
+mat-chip.sz-xlarge.sh-squircle, mat-chip.sz-xlarge:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-basic-chip.sz-xlarge.sh-squircle, mat-basic-chip.sz-xlarge:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-basic-chip].sz-xlarge.sh-squircle, [mat-basic-chip].sz-xlarge:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-chip].sz-xlarge.sh-squircle, [mat-chip].sz-xlarge:not(.sh-round):not(.sh-square):not(.sh-squircle),
 mat-chip-row.sz-xlarge.sh-squircle,
 mat-chip-row.sz-xlarge:not(.sh-round):not(.sh-square):not(.sh-squircle) {
   --mat-chip-container-shape-radius: 12px;
 }
-mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge),
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge),
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
   --mat-chip-container-height: 32px;
   --mat-chip-container-shape-radius: 8px;
@@ -4543,7 +4544,7 @@ mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
   --mat-chip-with-avatar-avatar-size: 24px;
   --mat-chip-with-icon-icon-size: 18px;
 }
-mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove],
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove], mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit], mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove], [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit], [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove], [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit], [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove],
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit],
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove] {
   --mat-button-filled-container-height: 32px;
@@ -4572,19 +4573,19 @@ mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) butto
   --mat-button-tonal-horizontal-padding: 19.2px;
   --mat-button-text-with-icon-horizontal-padding: 12.8px;
 }
-mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit] .material-symbols-outlined, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove] .material-symbols-outlined,
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit] .material-symbols-outlined, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove] .material-symbols-outlined, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit] .material-symbols-outlined, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove] .material-symbols-outlined, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit] .material-symbols-outlined, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove] .material-symbols-outlined, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit] .material-symbols-outlined, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove] .material-symbols-outlined,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit] .material-symbols-outlined,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove] .material-symbols-outlined {
   font-size: 19.2px;
 }
-mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit] mat-icon, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove] mat-icon,
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit] mat-icon, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove] mat-icon, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit] mat-icon, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove] mat-icon, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit] mat-icon, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove] mat-icon, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit] mat-icon, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove] mat-icon,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit] mat-icon,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove] mat-icon {
   font-size: 19.2px;
   width: 19.2px;
   height: 19.2px;
 }
-mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matIconButton], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-icon-button], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matIconButton], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-icon-button],
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matIconButton], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-icon-button], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matIconButton], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-icon-button], mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matIconButton], mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-icon-button], mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matIconButton], mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-icon-button], [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matIconButton], [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-icon-button], [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matIconButton], [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-icon-button], [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matIconButton], [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-icon-button], [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matIconButton], [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-icon-button],
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matIconButton],
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-icon-button],
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matIconButton],
@@ -4593,7 +4594,7 @@ mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) butto
   --mat-icon-button-icon-size: 19.2px;
   --mat-icon-button-touch-target-size: 36px;
 }
-mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab],
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab], mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab], mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab], mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab], mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab], [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab], [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab], [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab], [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab], [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab], [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab], [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab], [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab],
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab],
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab],
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab],
@@ -4602,14 +4603,14 @@ mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) butto
   --mat-fab-touch-target-size: 48.8px;
   --mat-fab-small-touch-target-size: 48.8px;
 }
-mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab] .material-symbols-outlined, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab] .material-symbols-outlined, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab] .material-symbols-outlined, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab] .material-symbols-outlined,
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab] .material-symbols-outlined, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab] .material-symbols-outlined, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab] .material-symbols-outlined, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab] .material-symbols-outlined, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab] .material-symbols-outlined, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab] .material-symbols-outlined, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab] .material-symbols-outlined, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab] .material-symbols-outlined, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab] .material-symbols-outlined, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab] .material-symbols-outlined, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab] .material-symbols-outlined, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab] .material-symbols-outlined, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab] .material-symbols-outlined, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab] .material-symbols-outlined, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab] .material-symbols-outlined, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab] .material-symbols-outlined,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab] .material-symbols-outlined,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab] .material-symbols-outlined,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab] .material-symbols-outlined,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab] .material-symbols-outlined {
   font-size: 25.6px;
 }
-mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab] mat-icon, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab] mat-icon, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab] mat-icon, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab] mat-icon,
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab] mat-icon, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab] mat-icon, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab] mat-icon, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab] mat-icon, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab] mat-icon, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab] mat-icon, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab] mat-icon, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab] mat-icon, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab] mat-icon, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab] mat-icon, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab] mat-icon, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab] mat-icon, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab] mat-icon, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab] mat-icon, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab] mat-icon, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab] mat-icon,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab] mat-icon,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab] mat-icon,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab] mat-icon,
@@ -4618,21 +4619,21 @@ mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) butto
   width: 25.6px;
   height: 25.6px;
 }
-mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab].mat-mdc-fab-base, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab].mat-mdc-fab-base, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab].mat-mdc-fab-base, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab].mat-mdc-fab-base,
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab].mat-mdc-fab-base, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab].mat-mdc-fab-base, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab].mat-mdc-fab-base, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab].mat-mdc-fab-base, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab].mat-mdc-fab-base, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab].mat-mdc-fab-base, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab].mat-mdc-fab-base, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab].mat-mdc-fab-base, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab].mat-mdc-fab-base, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab].mat-mdc-fab-base, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab].mat-mdc-fab-base, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab].mat-mdc-fab-base, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab].mat-mdc-fab-base, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab].mat-mdc-fab-base, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab].mat-mdc-fab-base, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab].mat-mdc-fab-base,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab].mat-mdc-fab-base,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab].mat-mdc-fab-base,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab].mat-mdc-fab-base,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab].mat-mdc-fab-base {
   height: 44.8px;
 }
-mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]), mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]), mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]),
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]), mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]), mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]), mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]), mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]), mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]), [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]), [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]), [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]), [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]), [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]), [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]), [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]),
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matFab].mat-mdc-fab-base:not([extended]),
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-fab].mat-mdc-fab-base:not([extended]),
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matFab].mat-mdc-fab-base:not([extended]),
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-fab].mat-mdc-fab-base:not([extended]) {
   width: 44.8px;
 }
-mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matMiniFab].mat-mdc-fab-base, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-mini-fab].mat-mdc-fab-base, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matMiniFab].mat-mdc-fab-base, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-mini-fab].mat-mdc-fab-base,
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matMiniFab].mat-mdc-fab-base, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-mini-fab].mat-mdc-fab-base, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matMiniFab].mat-mdc-fab-base, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-mini-fab].mat-mdc-fab-base, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matMiniFab].mat-mdc-fab-base, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-mini-fab].mat-mdc-fab-base, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matMiniFab].mat-mdc-fab-base, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-mini-fab].mat-mdc-fab-base, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matMiniFab].mat-mdc-fab-base, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-mini-fab].mat-mdc-fab-base, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matMiniFab].mat-mdc-fab-base, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-mini-fab].mat-mdc-fab-base, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matMiniFab].mat-mdc-fab-base, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-mini-fab].mat-mdc-fab-base, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matMiniFab].mat-mdc-fab-base, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-mini-fab].mat-mdc-fab-base,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matMiniFab].mat-mdc-fab-base,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-mini-fab].mat-mdc-fab-base,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matMiniFab].mat-mdc-fab-base,
@@ -4640,7 +4641,7 @@ mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) butto
   height: 32px;
   width: 32px;
 }
-mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matMiniFab], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-mini-fab], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matMiniFab], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-mini-fab],
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matMiniFab], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-mini-fab], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matMiniFab], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-mini-fab], mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matMiniFab], mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-mini-fab], mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matMiniFab], mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-mini-fab], [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matMiniFab], [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-mini-fab], [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matMiniFab], [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-mini-fab], [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matMiniFab], [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-mini-fab], [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matMiniFab], [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][mat-mini-fab],
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][matMiniFab],
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit][mat-mini-fab],
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove][matMiniFab],
@@ -4649,7 +4650,7 @@ mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) butto
   --mat-fab-touch-target-size: 36px;
   --mat-fab-small-touch-target-size: 36px;
 }
-mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].sh-round, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].sh-round,
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].sh-round, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].sh-round, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].sh-round, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].sh-round, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].sh-round, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].sh-round, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].sh-round, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].sh-round,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].sh-round,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].sh-round {
   --mat-button-filled-container-shape: 9999px;
@@ -4662,7 +4663,7 @@ mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) butto
   --mat-fab-extended-container-shape: 9999px;
   --mat-fab-small-container-shape: 9999px;
 }
-mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].sh-square, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].sh-square,
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].sh-square, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].sh-square, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].sh-square, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].sh-square, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].sh-square, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].sh-square, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].sh-square, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].sh-square,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].sh-square,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].sh-square {
   --mat-button-filled-container-shape: 0px;
@@ -4675,7 +4676,7 @@ mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) butto
   --mat-fab-extended-container-shape: 0px;
   --mat-fab-small-container-shape: 0px;
 }
-mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].sh-squircle, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].sh-squircle, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle),
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].sh-squircle, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].sh-squircle, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].sh-squircle, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].sh-squircle, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].sh-squircle, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].sh-squircle, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].sh-squircle, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].sh-squircle, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove]:not(.sh-round):not(.sh-square):not(.sh-squircle),
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].sh-squircle,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit]:not(.sh-round):not(.sh-square):not(.sh-squircle),
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].sh-squircle,
@@ -4690,7 +4691,7 @@ mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) butto
   --mat-fab-extended-container-shape: 11.2px;
   --mat-fab-small-container-shape: 11.2px;
 }
-mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].destructive, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].destructive,
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].destructive, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].destructive, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].destructive, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].destructive, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].destructive, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].destructive, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].destructive, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].destructive,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit].destructive,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove].destructive {
   --mat-button-filled-container-color: #c0000c;
@@ -4715,21 +4716,21 @@ mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) butto
   --mat-fab-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
   --mat-fab-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
 }
-mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove],
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit], mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove], mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit], mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove], [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit], [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove], [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit], [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove],
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipEdit],
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) button[matChipRemove] {
   height: 18px;
   width: 18px;
 }
-mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round,
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round {
   --mat-chip-container-shape-radius: 9999px;
 }
-mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square,
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square {
   --mat-chip-container-shape-radius: 0px;
 }
-mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle),
+mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-basic-chip:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, [mat-basic-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, [mat-chip]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle),
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle,
 mat-chip-row:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle) {
   --mat-chip-container-shape-radius: 8px;

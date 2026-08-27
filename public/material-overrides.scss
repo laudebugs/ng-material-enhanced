@@ -460,7 +460,7 @@ mat-checkbox {
   }
 }
 
-mat-chip,
+mat-chip, mat-basic-chip, [mat-basic-chip], [mat-chip],
 mat-chip-row {
   // use function to apply overrides for all sizes
   @include chip-overrides($chip-sizes);
