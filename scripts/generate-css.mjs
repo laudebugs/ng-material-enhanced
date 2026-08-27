@@ -125,6 +125,7 @@ function generate() {
     // 2. Read individual SCSS files
     const scssFilesList = [
       'sizes.scss',
+      'palettes.scss',
       'mat-button.scss',
       'mat-button-toggle.scss',
       'mat-checkbox.scss',
@@ -151,6 +152,7 @@ function generate() {
     // Build unified all-in-one SCSS with all @use rules at the top and no duplicated variables/imports
     const combinedFilesList = [
       'sizes.scss',
+      'palettes.scss',
       'mat-button.scss',
       'mat-button-toggle.scss',
       'mat-checkbox.scss',
@@ -180,6 +182,7 @@ function generate() {
           .filter(line => !line.startsWith('@use ') && !line.startsWith('@forward '))
           .join('\n')
           .replace(/sizes\.\$/g, '$')
+          .replace(/palettes\.\$/g, '$')
           .replace(/button-overrides\./g, '')
           .trim();
 

@@ -1,0 +1,5 @@
+@use 'sass:map';
+@use './theme-colors' as theme-colors;
+
+$error-palette: map.get(theme-colors.$primary-palette, error);
+$neutral-palette: map.get(theme-colors.$primary-palette, neutral);

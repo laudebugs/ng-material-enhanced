@@ -1,8 +1,8 @@
 @use '@angular/material' as mat;
 @use 'sass:map';
 @use 'sass:math';
+@use './palettes' as palettes;
 @use './sizes' as sizes;
-@use './theme-colors' as theme-colors;
 
 @mixin configure-check-box($height) {
   @include mat.checkbox-overrides(
@@ -34,14 +34,14 @@ mat-checkbox {
    &.destructive {
     @include mat.checkbox-overrides(
       (
-        selected-hover-icon-color: map.get(theme-colors.$error-palette, 40),
-        selected-icon-color: map.get(theme-colors.$error-palette, 40),
-        selected-focus-icon-color: map.get(theme-colors.$error-palette, 40),
-        selected-pressed-icon-color: map.get(theme-colors.$error-palette, 40),
-        selected-checkmark-color: map.get(theme-colors.$error-palette, 90),
-        selected-focus-state-layer-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 8%, map.get(theme-colors.$neutral-palette, 96)),
-        selected-pressed-state-layer-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 12%, map.get(theme-colors.$neutral-palette, 96)),
-        unselected-pressed-state-layer-color: map.get(theme-colors.$error-palette, 40)
+        selected-hover-icon-color: map.get(palettes.$error-palette, 40),
+        selected-icon-color: map.get(palettes.$error-palette, 40),
+        selected-focus-icon-color: map.get(palettes.$error-palette, 40),
+        selected-pressed-icon-color: map.get(palettes.$error-palette, 40),
+        selected-checkmark-color: map.get(palettes.$error-palette, 90),
+        selected-focus-state-layer-color: color-mix(in srgb, map.get(palettes.$error-palette, 40) 8%, map.get(palettes.$neutral-palette, 96)),
+        selected-pressed-state-layer-color: color-mix(in srgb, map.get(palettes.$error-palette, 40) 12%, map.get(palettes.$neutral-palette, 96)),
+        unselected-pressed-state-layer-color: map.get(palettes.$error-palette, 40)
       )
     );
   }

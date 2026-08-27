@@ -58,6 +58,12 @@ $chip-sizes: (
 );
 
 // ----------------------------------------------------------------------------
+// File: palettes.scss
+// ----------------------------------------------------------------------------
+$error-palette: map.get(theme-colors.$primary-palette, error);
+$neutral-palette: map.get(theme-colors.$primary-palette, neutral);
+
+// ----------------------------------------------------------------------------
 // File: mat-button.scss
 // ----------------------------------------------------------------------------
 // a list of filled, outlined, protected, tonal so that we can loop through it
@@ -216,61 +222,61 @@ $button-variants: filled, outlined, protected, tonal, text;
   &.destructive {
     @include mat.button-overrides(
       (
-        filled-container-color: map.get(theme-colors.$error-palette, 40),
+        filled-container-color: map.get($error-palette, 40),
         filled-state-layer-color: color-mix(
             in srgb,
-            map.get(theme-colors.$error-palette, 100) 8%,
-            map.get(theme-colors.$error-palette, 40)
+            map.get($error-palette, 100) 8%,
+            map.get($error-palette, 40)
           ),
         filled-ripple-color: color-mix(
             in srgb,
-            map.get(theme-colors.$error-palette, 100) 12%,
-            map.get(theme-colors.$error-palette, 40)
+            map.get($error-palette, 100) 12%,
+            map.get($error-palette, 40)
           ),
-        tonal-container-color: map.get(theme-colors.$error-palette, 90),
-        tonal-label-text-color: map.get(theme-colors.$error-palette, 40),
+        tonal-container-color: map.get($error-palette, 90),
+        tonal-label-text-color: map.get($error-palette, 40),
         tonal-state-layer-color: color-mix(
             in srgb,
-            map.get(theme-colors.$error-palette, 30) 8%,
-            map.get(theme-colors.$error-palette, 90)
+            map.get($error-palette, 30) 8%,
+            map.get($error-palette, 90)
           ),
         tonal-ripple-color: color-mix(
             in srgb,
-            map.get(theme-colors.$error-palette, 30) 12%,
-            map.get(theme-colors.$error-palette, 90)
+            map.get($error-palette, 30) 12%,
+            map.get($error-palette, 90)
           ),
-        outlined-outline-color: map.get(theme-colors.$error-palette, 40),
-        outlined-ripple-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 12%, transparent),
-        outlined-state-layer-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 8%, transparent),
-        outlined-label-text-color: map.get(theme-colors.$error-palette, 40),
-        protected-label-text-color: map.get(theme-colors.$error-palette, 40),
+        outlined-outline-color: map.get($error-palette, 40),
+        outlined-ripple-color: color-mix(in srgb, map.get($error-palette, 40) 12%, transparent),
+        outlined-state-layer-color: color-mix(in srgb, map.get($error-palette, 40) 8%, transparent),
+        outlined-label-text-color: map.get($error-palette, 40),
+        protected-label-text-color: map.get($error-palette, 40),
         protected-state-layer-color: color-mix(
             in srgb,
-            map.get(theme-colors.$error-palette, 40) 8%,
-            map.get(theme-colors.$neutral-palette, 96)
+            map.get($error-palette, 40) 8%,
+            map.get($neutral-palette, 96)
           ),
         protected-ripple-color: color-mix(
             in srgb,
-            map.get(theme-colors.$error-palette, 40) 12%,
-            map.get(theme-colors.$neutral-palette, 96)
+            map.get($error-palette, 40) 12%,
+            map.get($neutral-palette, 96)
           ),
       )
     );
 
     @include mat.icon-button-overrides(
       (
-        icon-color: map.get(theme-colors.$error-palette, 40),
-        ripple-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 12%, transparent),
-        state-layer-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 8%, transparent),
+        icon-color: map.get($error-palette, 40),
+        ripple-color: color-mix(in srgb, map.get($error-palette, 40) 12%, transparent),
+        state-layer-color: color-mix(in srgb, map.get($error-palette, 40) 8%, transparent),
       )
     );
 
     @include mat.fab-overrides(
       (
-        container-color: map.get(theme-colors.$error-palette, 80),
-        foreground-color: map.get(theme-colors.$error-palette, 40),
-        ripple-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 12%, transparent),
-        state-layer-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 8%, transparent),
+        container-color: map.get($error-palette, 80),
+        foreground-color: map.get($error-palette, 40),
+        ripple-color: color-mix(in srgb, map.get($error-palette, 40) 12%, transparent),
+        state-layer-color: color-mix(in srgb, map.get($error-palette, 40) 8%, transparent),
       )
     );
   }
@@ -306,6 +312,12 @@ a {
   &[mat-stroked-button] {
     // use function to apply overrides for all sizes
     @include button-overrides($button-sizes);
+
+    // if no size attribute, use the medium size as default
+    &:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
+      $medium-height: map.get($button-sizes, medium);
+      @include configure-button($medium-height);
+    }
   }
 }
 
@@ -392,14 +404,14 @@ mat-checkbox {
    &.destructive {
     @include mat.checkbox-overrides(
       (
-        selected-hover-icon-color: map.get(theme-colors.$error-palette, 40),
-        selected-icon-color: map.get(theme-colors.$error-palette, 40),
-        selected-focus-icon-color: map.get(theme-colors.$error-palette, 40),
-        selected-pressed-icon-color: map.get(theme-colors.$error-palette, 40),
-        selected-checkmark-color: map.get(theme-colors.$error-palette, 90),
-        selected-focus-state-layer-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 8%, map.get(theme-colors.$neutral-palette, 96)),
-        selected-pressed-state-layer-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 12%, map.get(theme-colors.$neutral-palette, 96)),
-        unselected-pressed-state-layer-color: map.get(theme-colors.$error-palette, 40)
+        selected-hover-icon-color: map.get($error-palette, 40),
+        selected-icon-color: map.get($error-palette, 40),
+        selected-focus-icon-color: map.get($error-palette, 40),
+        selected-pressed-icon-color: map.get($error-palette, 40),
+        selected-checkmark-color: map.get($error-palette, 90),
+        selected-focus-state-layer-color: color-mix(in srgb, map.get($error-palette, 40) 8%, map.get($neutral-palette, 96)),
+        selected-pressed-state-layer-color: color-mix(in srgb, map.get($error-palette, 40) 12%, map.get($neutral-palette, 96)),
+        unselected-pressed-state-layer-color: map.get($error-palette, 40)
       )
     );
   }

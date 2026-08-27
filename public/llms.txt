@@ -262,6 +262,12 @@ $chip-sizes: (
 );
 
 // ----------------------------------------------------------------------------
+// File: palettes.scss
+// ----------------------------------------------------------------------------
+$error-palette: map.get(theme-colors.$primary-palette, error);
+$neutral-palette: map.get(theme-colors.$primary-palette, neutral);
+
+// ----------------------------------------------------------------------------
 // File: mat-button.scss
 // ----------------------------------------------------------------------------
 // a list of filled, outlined, protected, tonal so that we can loop through it
@@ -420,61 +426,61 @@ $button-variants: filled, outlined, protected, tonal, text;
   &.destructive {
     @include mat.button-overrides(
       (
-        filled-container-color: map.get(theme-colors.$error-palette, 40),
+        filled-container-color: map.get($error-palette, 40),
         filled-state-layer-color: color-mix(
             in srgb,
-            map.get(theme-colors.$error-palette, 100) 8%,
-            map.get(theme-colors.$error-palette, 40)
+            map.get($error-palette, 100) 8%,
+            map.get($error-palette, 40)
           ),
         filled-ripple-color: color-mix(
             in srgb,
-            map.get(theme-colors.$error-palette, 100) 12%,
-            map.get(theme-colors.$error-palette, 40)
+            map.get($error-palette, 100) 12%,
+            map.get($error-palette, 40)
           ),
-        tonal-container-color: map.get(theme-colors.$error-palette, 90),
-        tonal-label-text-color: map.get(theme-colors.$error-palette, 40),
+        tonal-container-color: map.get($error-palette, 90),
+        tonal-label-text-color: map.get($error-palette, 40),
         tonal-state-layer-color: color-mix(
             in srgb,
-            map.get(theme-colors.$error-palette, 30) 8%,
-            map.get(theme-colors.$error-palette, 90)
+            map.get($error-palette, 30) 8%,
+            map.get($error-palette, 90)
           ),
         tonal-ripple-color: color-mix(
             in srgb,
-            map.get(theme-colors.$error-palette, 30) 12%,
-            map.get(theme-colors.$error-palette, 90)
+            map.get($error-palette, 30) 12%,
+            map.get($error-palette, 90)
           ),
-        outlined-outline-color: map.get(theme-colors.$error-palette, 40),
-        outlined-ripple-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 12%, transparent),
-        outlined-state-layer-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 8%, transparent),
-        outlined-label-text-color: map.get(theme-colors.$error-palette, 40),
-        protected-label-text-color: map.get(theme-colors.$error-palette, 40),
+        outlined-outline-color: map.get($error-palette, 40),
+        outlined-ripple-color: color-mix(in srgb, map.get($error-palette, 40) 12%, transparent),
+        outlined-state-layer-color: color-mix(in srgb, map.get($error-palette, 40) 8%, transparent),
+        outlined-label-text-color: map.get($error-palette, 40),
+        protected-label-text-color: map.get($error-palette, 40),
         protected-state-layer-color: color-mix(
             in srgb,
-            map.get(theme-colors.$error-palette, 40) 8%,
-            map.get(theme-colors.$neutral-palette, 96)
+            map.get($error-palette, 40) 8%,
+            map.get($neutral-palette, 96)
           ),
         protected-ripple-color: color-mix(
             in srgb,
-            map.get(theme-colors.$error-palette, 40) 12%,
-            map.get(theme-colors.$neutral-palette, 96)
+            map.get($error-palette, 40) 12%,
+            map.get($neutral-palette, 96)
           ),
       )
     );
 
     @include mat.icon-button-overrides(
       (
-        icon-color: map.get(theme-colors.$error-palette, 40),
-        ripple-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 12%, transparent),
-        state-layer-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 8%, transparent),
+        icon-color: map.get($error-palette, 40),
+        ripple-color: color-mix(in srgb, map.get($error-palette, 40) 12%, transparent),
+        state-layer-color: color-mix(in srgb, map.get($error-palette, 40) 8%, transparent),
       )
     );
 
     @include mat.fab-overrides(
       (
-        container-color: map.get(theme-colors.$error-palette, 80),
-        foreground-color: map.get(theme-colors.$error-palette, 40),
-        ripple-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 12%, transparent),
-        state-layer-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 8%, transparent),
+        container-color: map.get($error-palette, 80),
+        foreground-color: map.get($error-palette, 40),
+        ripple-color: color-mix(in srgb, map.get($error-palette, 40) 12%, transparent),
+        state-layer-color: color-mix(in srgb, map.get($error-palette, 40) 8%, transparent),
       )
     );
   }
@@ -510,6 +516,12 @@ a {
   &[mat-stroked-button] {
     // use function to apply overrides for all sizes
     @include button-overrides($button-sizes);
+
+    // if no size attribute, use the medium size as default
+    &:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
+      $medium-height: map.get($button-sizes, medium);
+      @include configure-button($medium-height);
+    }
   }
 }
 
@@ -596,14 +608,14 @@ mat-checkbox {
    &.destructive {
     @include mat.checkbox-overrides(
       (
-        selected-hover-icon-color: map.get(theme-colors.$error-palette, 40),
-        selected-icon-color: map.get(theme-colors.$error-palette, 40),
-        selected-focus-icon-color: map.get(theme-colors.$error-palette, 40),
-        selected-pressed-icon-color: map.get(theme-colors.$error-palette, 40),
-        selected-checkmark-color: map.get(theme-colors.$error-palette, 90),
-        selected-focus-state-layer-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 8%, map.get(theme-colors.$neutral-palette, 96)),
-        selected-pressed-state-layer-color: color-mix(in srgb, map.get(theme-colors.$error-palette, 40) 12%, map.get(theme-colors.$neutral-palette, 96)),
-        unselected-pressed-state-layer-color: map.get(theme-colors.$error-palette, 40)
+        selected-hover-icon-color: map.get($error-palette, 40),
+        selected-icon-color: map.get($error-palette, 40),
+        selected-focus-icon-color: map.get($error-palette, 40),
+        selected-pressed-icon-color: map.get($error-palette, 40),
+        selected-checkmark-color: map.get($error-palette, 90),
+        selected-focus-state-layer-color: color-mix(in srgb, map.get($error-palette, 40) 8%, map.get($neutral-palette, 96)),
+        selected-pressed-state-layer-color: color-mix(in srgb, map.get($error-palette, 40) 12%, map.get($neutral-palette, 96)),
+        unselected-pressed-state-layer-color: map.get($error-palette, 40)
       )
     );
   }
@@ -3686,6 +3698,538 @@ a[mat-button].sz-xlarge.destructive,
 a[mat-raised-button].sz-xlarge.destructive,
 a[mat-flat-button].sz-xlarge.destructive,
 a[mat-stroked-button].sz-xlarge.destructive {
+  --mat-button-filled-container-color: #c0000c;
+  --mat-button-filled-state-layer-color: color-mix(in srgb, #ffffff 8%, #c0000c);
+  --mat-button-filled-ripple-color: color-mix(in srgb, #ffffff 12%, #c0000c);
+  --mat-button-tonal-container-color: #ffdad5;
+  --mat-button-tonal-label-text-color: #c0000c;
+  --mat-button-tonal-state-layer-color: color-mix(in srgb, #930007 8%, #ffdad5);
+  --mat-button-tonal-ripple-color: color-mix(in srgb, #930007 12%, #ffdad5);
+  --mat-button-outlined-outline-color: #c0000c;
+  --mat-button-outlined-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-button-outlined-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-button-outlined-label-text-color: #c0000c;
+  --mat-button-protected-label-text-color: #c0000c;
+  --mat-button-protected-state-layer-color: color-mix(in srgb, #c0000c 8%, #f2f5e9);
+  --mat-button-protected-ripple-color: color-mix(in srgb, #c0000c 12%, #f2f5e9);
+  --mat-icon-button-icon-color: #c0000c;
+  --mat-icon-button-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-icon-button-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+  --mat-fab-container-color: #ffb4aa;
+  --mat-fab-foreground-color: #c0000c;
+  --mat-fab-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
+  --mat-fab-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+}
+button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), button[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), button[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), button[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), button[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), button[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), button[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge), button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge),
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge),
+a[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge),
+a[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge),
+a[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge),
+a[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge),
+a[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge),
+a[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge),
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge),
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge),
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge),
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge),
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge),
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge),
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge),
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge),
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge),
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
+  --mat-button-filled-container-height: 40px;
+  --mat-button-filled-touch-target-size: 48px;
+  --mat-button-filled-icon-spacing: 8px;
+  --mat-button-filled-icon-offset: -8px;
+  --mat-button-outlined-container-height: 40px;
+  --mat-button-outlined-touch-target-size: 48px;
+  --mat-button-outlined-icon-spacing: 8px;
+  --mat-button-outlined-icon-offset: -8px;
+  --mat-button-protected-container-height: 40px;
+  --mat-button-protected-touch-target-size: 48px;
+  --mat-button-protected-icon-spacing: 8px;
+  --mat-button-protected-icon-offset: -8px;
+  --mat-button-tonal-container-height: 40px;
+  --mat-button-tonal-touch-target-size: 48px;
+  --mat-button-tonal-icon-spacing: 8px;
+  --mat-button-tonal-icon-offset: -8px;
+  --mat-button-text-container-height: 40px;
+  --mat-button-text-touch-target-size: 48px;
+  --mat-button-text-icon-spacing: 8px;
+  --mat-button-text-icon-offset: -8px;
+  --mat-button-filled-horizontal-padding: 24px;
+  --mat-button-outlined-horizontal-padding: 24px;
+  --mat-button-protected-horizontal-padding: 24px;
+  --mat-button-tonal-horizontal-padding: 24px;
+  --mat-button-text-with-icon-horizontal-padding: 16px;
+}
+button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, button[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, button[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, button[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, button[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, button[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, button[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined,
+a[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined,
+a[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined,
+a[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined,
+a[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined,
+a[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined,
+a[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .material-symbols-outlined {
+  font-size: 24px;
+}
+button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, button[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, button[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, button[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, button[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, button[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, button[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon,
+a[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon,
+a[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon,
+a[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon,
+a[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon,
+a[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon,
+a[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) mat-icon {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button], button[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], button[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button], button[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], button[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button], button[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], button[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button], button[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], button[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button], button[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], button[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button], button[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], button[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button], button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button], button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button], button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button], button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button], button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button], button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button], button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button], button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button], button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button], button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton], button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button],
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton],
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button],
+a[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton],
+a[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button],
+a[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton],
+a[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button],
+a[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton],
+a[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button],
+a[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton],
+a[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button],
+a[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton],
+a[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button],
+a[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton],
+a[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button],
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton],
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button],
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton],
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button],
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton],
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button],
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton],
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button],
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton],
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button],
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton],
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button],
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton],
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button],
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton],
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button],
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton],
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button],
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matIconButton],
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-icon-button] {
+  --mat-icon-button-state-layer-size: 40px;
+  --mat-icon-button-icon-size: 24px;
+  --mat-icon-button-touch-target-size: 44px;
+}
+button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab], button[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], button[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab], button[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], button[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab], button[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], button[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab], button[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], button[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab], button[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], button[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab], button[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], button[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab], button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab], button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab], button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab], button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab], button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab], button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab], button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab], button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab], button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab], button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab], button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab],
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab],
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab],
+a[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab],
+a[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab],
+a[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab],
+a[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab],
+a[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab],
+a[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab],
+a[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab],
+a[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab],
+a[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab],
+a[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab],
+a[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab],
+a[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab],
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab],
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab],
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab],
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab],
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab],
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab],
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab],
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab],
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab],
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab],
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab],
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab],
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab],
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab],
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab],
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab],
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab],
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab],
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab],
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] {
+  --mat-fab-extended-container-height: 56px;
+  --mat-fab-touch-target-size: 60px;
+  --mat-fab-small-touch-target-size: 60px;
+}
+button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined, button[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, button[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined, button[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, button[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined, button[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, button[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined, button[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, button[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined, button[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, button[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined, button[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, button[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined,
+a[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined,
+a[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined,
+a[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined,
+a[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined,
+a[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined,
+a[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined,
+a[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined,
+a[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined,
+a[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined,
+a[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined,
+a[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined,
+a[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] .material-symbols-outlined,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] .material-symbols-outlined {
+  font-size: 32px;
+}
+button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon, button[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, button[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon, button[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, button[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon, button[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, button[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon, button[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, button[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon, button[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, button[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon, button[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, button[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon,
+a[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon,
+a[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon,
+a[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon,
+a[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon,
+a[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon,
+a[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon,
+a[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon,
+a[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon,
+a[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon,
+a[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon,
+a[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon,
+a[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab] mat-icon,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab] mat-icon {
+  font-size: 32px;
+  width: 32px;
+  height: 32px;
+}
+button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base, button[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, button[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base, button[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, button[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base, button[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, button[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base, button[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, button[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base, button[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, button[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base, button[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, button[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base,
+a[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base,
+a[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base,
+a[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base,
+a[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base,
+a[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base,
+a[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base,
+a[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base,
+a[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base,
+a[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base,
+a[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base,
+a[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base,
+a[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base {
+  height: 56px;
+}
+button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]), button[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), button[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]), button[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), button[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]), button[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), button[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]), button[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), button[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]), button[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), button[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]), button[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), button[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]), button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]), button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]), button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]), button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]), button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]), button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]), button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]), button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]), button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]), button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]), button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]),
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]),
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]),
+a[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]),
+a[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]),
+a[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]),
+a[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]),
+a[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]),
+a[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]),
+a[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]),
+a[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]),
+a[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]),
+a[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]),
+a[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]),
+a[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]),
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]),
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]),
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]),
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]),
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]),
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]),
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]),
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]),
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]),
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]),
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]),
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]),
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]),
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]),
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]),
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]),
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]),
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]),
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matFab].mat-mdc-fab-base:not([extended]),
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-fab].mat-mdc-fab-base:not([extended]) {
+  width: 56px;
+}
+button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base, button[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, button[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base, button[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, button[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base, button[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, button[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base, button[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, button[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base, button[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, button[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base, button[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, button[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base,
+a[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base,
+a[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base,
+a[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base,
+a[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base,
+a[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base,
+a[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base,
+a[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base,
+a[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base,
+a[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base,
+a[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base,
+a[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base,
+a[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab].mat-mdc-fab-base,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab].mat-mdc-fab-base {
+  height: 40px;
+  width: 40px;
+}
+button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab], button[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], button[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab], button[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], button[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab], button[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], button[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab], button[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], button[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab], button[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], button[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab], button[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], button[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab], button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab], button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab], button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab], button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab], button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab], button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab], button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab], button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab], button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab], button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab], button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab],
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab],
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab],
+a[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab],
+a[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab],
+a[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab],
+a[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab],
+a[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab],
+a[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab],
+a[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab],
+a[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab],
+a[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab],
+a[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab],
+a[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab],
+a[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab],
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab],
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab],
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab],
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab],
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab],
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab],
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab],
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab],
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab],
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab],
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab],
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab],
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab],
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab],
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab],
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab],
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab],
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab],
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[matMiniFab],
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge)[mat-mini-fab] {
+  --mat-fab-extended-container-height: 40px;
+  --mat-fab-touch-target-size: 44px;
+  --mat-fab-small-touch-target-size: 44px;
+}
+button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, button[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, button[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, button[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, button[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, button[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, button[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round,
+a[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round,
+a[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round,
+a[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round,
+a[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round,
+a[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round,
+a[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round {
+  --mat-button-filled-container-shape: 9999px;
+  --mat-button-outlined-container-shape: 9999px;
+  --mat-button-protected-container-shape: 9999px;
+  --mat-button-text-container-shape: 9999px;
+  --mat-button-tonal-container-shape: 9999px;
+  --mat-icon-button-container-shape: 9999px;
+  --mat-fab-container-shape: 9999px;
+  --mat-fab-extended-container-shape: 9999px;
+  --mat-fab-small-container-shape: 9999px;
+}
+button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, button[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, button[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, button[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, button[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, button[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, button[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square,
+a[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square,
+a[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square,
+a[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square,
+a[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square,
+a[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square,
+a[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square {
+  --mat-button-filled-container-shape: 0px;
+  --mat-button-outlined-container-shape: 0px;
+  --mat-button-protected-container-shape: 0px;
+  --mat-button-text-container-shape: 0px;
+  --mat-button-tonal-container-shape: 0px;
+  --mat-icon-button-container-shape: 0px;
+  --mat-fab-container-shape: 0px;
+  --mat-fab-extended-container-shape: 0px;
+  --mat-fab-small-container-shape: 0px;
+}
+button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), button[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, button[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), button[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, button[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), button[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, button[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), button[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, button[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), button[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, button[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), button[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, button[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle), button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle),
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle),
+a[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle,
+a[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle),
+a[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle,
+a[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle),
+a[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle,
+a[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle),
+a[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle,
+a[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle),
+a[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle,
+a[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle),
+a[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle,
+a[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle),
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle),
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle),
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle),
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle),
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle),
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle),
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle),
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle),
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle),
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-button-filled-container-shape: 10px;
+  --mat-button-outlined-container-shape: 10px;
+  --mat-button-protected-container-shape: 10px;
+  --mat-button-text-container-shape: 10px;
+  --mat-button-tonal-container-shape: 10px;
+  --mat-icon-button-container-shape: 10px;
+  --mat-fab-container-shape: 14px;
+  --mat-fab-extended-container-shape: 14px;
+  --mat-fab-small-container-shape: 14px;
+}
+button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, button[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, button[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, button[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, button[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, button[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, button[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, button[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, button[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, button[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, button[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive, button[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive,
+a[matIconButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive,
+a[mat-icon-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive,
+a[matFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive,
+a[mat-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive,
+a[matMiniFab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive,
+a[mat-mini-fab]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive,
+a[matButton]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive,
+a[mat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive,
+a[mat-raised-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive,
+a[mat-flat-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive,
+a[mat-stroked-button]:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).destructive {
   --mat-button-filled-container-color: #c0000c;
   --mat-button-filled-state-layer-color: color-mix(in srgb, #ffffff 8%, #c0000c);
   --mat-button-filled-ripple-color: color-mix(in srgb, #ffffff 12%, #c0000c);

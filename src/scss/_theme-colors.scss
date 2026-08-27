@@ -135,8 +135,6 @@ $_rest: (
 
 $primary-palette: map.merge(map.get($_palettes, primary), $_rest);
 $tertiary-palette: map.merge(map.get($_palettes, tertiary), $_rest);
-$error-palette: map.get($primary-palette, error);
-$neutral-palette: map.get($primary-palette, neutral);
 
 @function _high-contrast-value($light, $dark, $theme-type) {
   @if ($theme-type == light) {
