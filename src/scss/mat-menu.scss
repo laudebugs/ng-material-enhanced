@@ -1,0 +1,94 @@
+@use '@angular/material' as mat;
+@use 'sass:map';
+@use 'sass:math';
+@use './palettes' as palettes;
+@use './sizes' as sizes;
+
+@function _get-menu-item-font-size($height) {
+  @if $height <= 24px {
+    @return 0.75rem;
+  } @else if $height <= 32px {
+    @return 0.8125rem;
+  } @else if $height >= 56px {
+    @return 1.05rem;
+  } @else {
+    @return 0.875rem;
+  }
+}
+
+@mixin configure-menu($height) {
+  @include mat.menu-overrides((
+    item-icon-size: math.div($height, 2),
+    divider-top-spacing: math.div($height, 6),
+    divider-bottom-spacing: math.div($height, 6),
+    item-spacing: math.div($height, 4),
+    item-leading-spacing: math.div($height, 3.5),
+    item-trailing-spacing: math.div($height, 3.5),
+    item-with-icon-leading-spacing: math.div($height, 3.5),
+    item-with-icon-trailing-spacing: math.div($height, 3.5),
+    item-label-text-size: min(_get-menu-item-font-size($height), var(--mat-sys-label-large-size)),
+  ));
+
+  .mat-mdc-menu-item {
+    min-height: $height;
+    height: $height;
+    .mat-icon {
+      font-size: math.div($height, 2);
+      width: math.div($height, 2);
+      height: math.div($height, 2);
+    }
+  }
+
+  &.sh-round {
+    @include mat.menu-overrides((
+      container-shape: 16px,
+    ));
+    border-radius: 16px;
+  }
+  &.sh-square {
+    @include mat.menu-overrides((
+      container-shape: 0px,
+    ));
+    border-radius: 0px;
+  }
+  &.sh-squircle,
+  &:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+    @include mat.menu-overrides((
+      container-shape: math.div($height, 4),
+    ));
+    border-radius: math.div($height, 4);
+  }
+}
+
+@mixin menu-overrides($sizes) {
+  @each $size, $height in $sizes {
+    &.sz-#{$size} {
+      @include configure-menu($height);
+    }
+  }
+}
+
+mat-menu,
+.mat-mdc-menu-panel {
+  // use function to apply overrides for all sizes
+  @include menu-overrides(sizes.$menu-sizes);
+
+  // if no size class, use the medium size as default
+  &:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
+    $medium-height: map.get(sizes.$menu-sizes, medium);
+    @include configure-menu($medium-height);
+  }
+
+  .mat-mdc-menu-item.destructive {
+    color: map.get(palettes.$error-palette, 40);
+
+    .mat-icon {
+      color: map.get(palettes.$error-palette, 40);
+    }
+
+    &:hover,
+    &:focus {
+      background-color: color-mix(in srgb, map.get(palettes.$error-palette, 40) 8%, transparent);
+    }
+  }
+}

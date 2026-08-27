@@ -131,6 +131,7 @@ function generate() {
       'mat-checkbox.scss',
       'mat-chip.scss',
       'mat-form-field.scss',
+      'mat-menu.scss',
       'mat-progress-bar.scss',
       'mat-radio-button.scss',
       'mat-slide-toggle.scss',
@@ -158,6 +159,7 @@ function generate() {
       'mat-checkbox.scss',
       'mat-chip.scss',
       'mat-form-field.scss',
+      'mat-menu.scss',
       'mat-progress-bar.scss',
       'mat-radio-button.scss',
       'mat-slide-toggle.scss',
@@ -412,6 +414,31 @@ Supports sizes \`sz-xsmall\` through \`sz-xlarge\` with calibrated track, thumb,
 <mat-slide-toggle class="sz-medium" [checked]="true">Enable notifications</mat-slide-toggle>
 \`\`\`
 
+### 9. Menu (\`mat-menu\`, \`mat-menu-item\`)
+Supports sizes \`sz-xsmall\` through \`sz-xlarge\`, shapes (\`sh-round\`, \`sh-squircle\`, \`sh-square\`), icons, nested submenus, and \`destructive\` action items.
+\`\`\`html
+<button matButton="filled" [matMenuTriggerFor]="menu" class="sz-medium sh-squircle">
+  <mat-icon class="material-symbols-outlined">menu_open</mat-icon>
+  Open Menu
+</button>
+
+<mat-menu #menu="matMenu" class="sz-medium sh-squircle">
+  <button mat-menu-item>
+    <mat-icon class="material-symbols-outlined">edit</mat-icon>
+    <span>Edit item</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon class="material-symbols-outlined">share</mat-icon>
+    <span>Share item</span>
+  </button>
+  <mat-divider></mat-divider>
+  <button mat-menu-item class="destructive">
+    <mat-icon class="material-symbols-outlined">delete</mat-icon>
+    <span>Delete item</span>
+  </button>
+</mat-menu>
+\`\`\`
+
 ---
 
 ## SCSS Architecture
@@ -424,6 +451,7 @@ The overrides leverage Angular Material 3 Sass mixins (\`@use '@angular/material
 - \`mat.checkbox-overrides(...)\`
 - \`mat.chips-overrides(...)\`
 - \`mat.form-field-overrides(...)\`
+- \`mat.menu-overrides(...)\`
 - \`mat.progress-bar-overrides(...)\`
 - \`mat.radio-overrides(...)\`
 - \`mat.slide-toggle-overrides(...)\`
@@ -441,6 +469,7 @@ All overrides are bundled via \`src/scss/_mat-overrides.scss\` and compiled into
 - \`/checkbox\`: Interactive Checkbox configurator.
 - \`/chips\`: Interactive Chips configurator.
 - \`/form-field\`: Interactive Form Field & Radio configurator.
+- \`/menu\`: Interactive Menu configurator with nested submenus and destructive actions.
 - \`/progress-loader\`: Interactive Progress Bar configurator.
 - \`/slider\`: Interactive Slider configurator.
 - \`/toggle\`: Interactive Slide Toggle configurator.

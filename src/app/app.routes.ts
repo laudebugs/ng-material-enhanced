@@ -6,6 +6,7 @@ import { Checkbox } from './components/checkbox/checkbox';
 import { Chips } from './components/chips/chips';
 import { CssOverrides } from './components/css-overrides/css-overrides';
 import { FormField } from './components/form-field/form-field';
+import { Menu } from './components/menu/menu';
 import { ProgressBar } from './components/progress-bar/progress-bar';
 import { Slider } from './components/slider/slider';
 import { Toggle } from './components/toggle/toggle';
@@ -35,6 +36,11 @@ export const routes: Routes = [
     path: 'chips',
     component: Chips,
     title: 'Chips - Angular Material Enhanced',
+  },
+  {
+    path: 'menu',
+    component: Menu,
+    title: 'Menu - Angular Material Enhanced',
   },
   {
     path: 'slider',

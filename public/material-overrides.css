@@ -1,6 +1,6 @@
 /* ============================================================================
  * Angular Material Enhanced - Component Overrides (Compiled CSS)
- * Generated on: 2026-08-27T17:59:16.364Z
+ * Generated on: 2026-08-27T18:47:26.978Z
  * https://github.com/laudebugs/ng-material-enhanced
  * ============================================================================ */
 
@@ -5111,6 +5111,254 @@ mat-form-field:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) but
   --mat-fab-foreground-color: #c0000c;
   --mat-fab-ripple-color: color-mix(in srgb, #c0000c 12%, transparent);
   --mat-fab-state-layer-color: color-mix(in srgb, #c0000c 8%, transparent);
+}
+
+mat-menu.sz-xsmall,
+.mat-mdc-menu-panel.sz-xsmall {
+  --mat-menu-item-icon-size: 12px;
+  --mat-menu-divider-top-spacing: 4px;
+  --mat-menu-divider-bottom-spacing: 4px;
+  --mat-menu-item-spacing: 6px;
+  --mat-menu-item-leading-spacing: 6.8571428571px;
+  --mat-menu-item-trailing-spacing: 6.8571428571px;
+  --mat-menu-item-with-icon-leading-spacing: 6.8571428571px;
+  --mat-menu-item-with-icon-trailing-spacing: 6.8571428571px;
+  --mat-menu-item-label-text-size: 0.75rem;
+}
+mat-menu.sz-xsmall .mat-mdc-menu-item,
+.mat-mdc-menu-panel.sz-xsmall .mat-mdc-menu-item {
+  min-height: 24px;
+  height: 24px;
+}
+mat-menu.sz-xsmall .mat-mdc-menu-item .mat-icon,
+.mat-mdc-menu-panel.sz-xsmall .mat-mdc-menu-item .mat-icon {
+  font-size: 12px;
+  width: 12px;
+  height: 12px;
+}
+mat-menu.sz-xsmall.sh-round,
+.mat-mdc-menu-panel.sz-xsmall.sh-round {
+  --mat-menu-container-shape: 16px;
+  border-radius: 16px;
+}
+mat-menu.sz-xsmall.sh-square,
+.mat-mdc-menu-panel.sz-xsmall.sh-square {
+  --mat-menu-container-shape: 0px;
+  border-radius: 0px;
+}
+mat-menu.sz-xsmall.sh-squircle, mat-menu.sz-xsmall:not(.sh-round):not(.sh-square):not(.sh-squircle),
+.mat-mdc-menu-panel.sz-xsmall.sh-squircle,
+.mat-mdc-menu-panel.sz-xsmall:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-menu-container-shape: 6px;
+  border-radius: 6px;
+}
+mat-menu.sz-small,
+.mat-mdc-menu-panel.sz-small {
+  --mat-menu-item-icon-size: 16px;
+  --mat-menu-divider-top-spacing: 5.3333333333px;
+  --mat-menu-divider-bottom-spacing: 5.3333333333px;
+  --mat-menu-item-spacing: 8px;
+  --mat-menu-item-leading-spacing: 9.1428571429px;
+  --mat-menu-item-trailing-spacing: 9.1428571429px;
+  --mat-menu-item-with-icon-leading-spacing: 9.1428571429px;
+  --mat-menu-item-with-icon-trailing-spacing: 9.1428571429px;
+  --mat-menu-item-label-text-size: 0.8125rem;
+}
+mat-menu.sz-small .mat-mdc-menu-item,
+.mat-mdc-menu-panel.sz-small .mat-mdc-menu-item {
+  min-height: 32px;
+  height: 32px;
+}
+mat-menu.sz-small .mat-mdc-menu-item .mat-icon,
+.mat-mdc-menu-panel.sz-small .mat-mdc-menu-item .mat-icon {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+}
+mat-menu.sz-small.sh-round,
+.mat-mdc-menu-panel.sz-small.sh-round {
+  --mat-menu-container-shape: 16px;
+  border-radius: 16px;
+}
+mat-menu.sz-small.sh-square,
+.mat-mdc-menu-panel.sz-small.sh-square {
+  --mat-menu-container-shape: 0px;
+  border-radius: 0px;
+}
+mat-menu.sz-small.sh-squircle, mat-menu.sz-small:not(.sh-round):not(.sh-square):not(.sh-squircle),
+.mat-mdc-menu-panel.sz-small.sh-squircle,
+.mat-mdc-menu-panel.sz-small:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-menu-container-shape: 8px;
+  border-radius: 8px;
+}
+mat-menu.sz-medium,
+.mat-mdc-menu-panel.sz-medium {
+  --mat-menu-item-icon-size: 20px;
+  --mat-menu-divider-top-spacing: 6.6666666667px;
+  --mat-menu-divider-bottom-spacing: 6.6666666667px;
+  --mat-menu-item-spacing: 10px;
+  --mat-menu-item-leading-spacing: 11.4285714286px;
+  --mat-menu-item-trailing-spacing: 11.4285714286px;
+  --mat-menu-item-with-icon-leading-spacing: 11.4285714286px;
+  --mat-menu-item-with-icon-trailing-spacing: 11.4285714286px;
+  --mat-menu-item-label-text-size: 0.875rem;
+}
+mat-menu.sz-medium .mat-mdc-menu-item,
+.mat-mdc-menu-panel.sz-medium .mat-mdc-menu-item {
+  min-height: 40px;
+  height: 40px;
+}
+mat-menu.sz-medium .mat-mdc-menu-item .mat-icon,
+.mat-mdc-menu-panel.sz-medium .mat-mdc-menu-item .mat-icon {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+mat-menu.sz-medium.sh-round,
+.mat-mdc-menu-panel.sz-medium.sh-round {
+  --mat-menu-container-shape: 16px;
+  border-radius: 16px;
+}
+mat-menu.sz-medium.sh-square,
+.mat-mdc-menu-panel.sz-medium.sh-square {
+  --mat-menu-container-shape: 0px;
+  border-radius: 0px;
+}
+mat-menu.sz-medium.sh-squircle, mat-menu.sz-medium:not(.sh-round):not(.sh-square):not(.sh-squircle),
+.mat-mdc-menu-panel.sz-medium.sh-squircle,
+.mat-mdc-menu-panel.sz-medium:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-menu-container-shape: 10px;
+  border-radius: 10px;
+}
+mat-menu.sz-large,
+.mat-mdc-menu-panel.sz-large {
+  --mat-menu-item-icon-size: 24px;
+  --mat-menu-divider-top-spacing: 8px;
+  --mat-menu-divider-bottom-spacing: 8px;
+  --mat-menu-item-spacing: 12px;
+  --mat-menu-item-leading-spacing: 13.7142857143px;
+  --mat-menu-item-trailing-spacing: 13.7142857143px;
+  --mat-menu-item-with-icon-leading-spacing: 13.7142857143px;
+  --mat-menu-item-with-icon-trailing-spacing: 13.7142857143px;
+  --mat-menu-item-label-text-size: 0.875rem;
+}
+mat-menu.sz-large .mat-mdc-menu-item,
+.mat-mdc-menu-panel.sz-large .mat-mdc-menu-item {
+  min-height: 48px;
+  height: 48px;
+}
+mat-menu.sz-large .mat-mdc-menu-item .mat-icon,
+.mat-mdc-menu-panel.sz-large .mat-mdc-menu-item .mat-icon {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+mat-menu.sz-large.sh-round,
+.mat-mdc-menu-panel.sz-large.sh-round {
+  --mat-menu-container-shape: 16px;
+  border-radius: 16px;
+}
+mat-menu.sz-large.sh-square,
+.mat-mdc-menu-panel.sz-large.sh-square {
+  --mat-menu-container-shape: 0px;
+  border-radius: 0px;
+}
+mat-menu.sz-large.sh-squircle, mat-menu.sz-large:not(.sh-round):not(.sh-square):not(.sh-squircle),
+.mat-mdc-menu-panel.sz-large.sh-squircle,
+.mat-mdc-menu-panel.sz-large:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-menu-container-shape: 12px;
+  border-radius: 12px;
+}
+mat-menu.sz-xlarge,
+.mat-mdc-menu-panel.sz-xlarge {
+  --mat-menu-item-icon-size: 28px;
+  --mat-menu-divider-top-spacing: 9.3333333333px;
+  --mat-menu-divider-bottom-spacing: 9.3333333333px;
+  --mat-menu-item-spacing: 14px;
+  --mat-menu-item-leading-spacing: 16px;
+  --mat-menu-item-trailing-spacing: 16px;
+  --mat-menu-item-with-icon-leading-spacing: 16px;
+  --mat-menu-item-with-icon-trailing-spacing: 16px;
+  --mat-menu-item-label-text-size: 1.05rem;
+}
+mat-menu.sz-xlarge .mat-mdc-menu-item,
+.mat-mdc-menu-panel.sz-xlarge .mat-mdc-menu-item {
+  min-height: 56px;
+  height: 56px;
+}
+mat-menu.sz-xlarge .mat-mdc-menu-item .mat-icon,
+.mat-mdc-menu-panel.sz-xlarge .mat-mdc-menu-item .mat-icon {
+  font-size: 28px;
+  width: 28px;
+  height: 28px;
+}
+mat-menu.sz-xlarge.sh-round,
+.mat-mdc-menu-panel.sz-xlarge.sh-round {
+  --mat-menu-container-shape: 16px;
+  border-radius: 16px;
+}
+mat-menu.sz-xlarge.sh-square,
+.mat-mdc-menu-panel.sz-xlarge.sh-square {
+  --mat-menu-container-shape: 0px;
+  border-radius: 0px;
+}
+mat-menu.sz-xlarge.sh-squircle, mat-menu.sz-xlarge:not(.sh-round):not(.sh-square):not(.sh-squircle),
+.mat-mdc-menu-panel.sz-xlarge.sh-squircle,
+.mat-mdc-menu-panel.sz-xlarge:not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-menu-container-shape: 14px;
+  border-radius: 14px;
+}
+mat-menu:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge),
+.mat-mdc-menu-panel:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
+  --mat-menu-item-icon-size: 20px;
+  --mat-menu-divider-top-spacing: 6.6666666667px;
+  --mat-menu-divider-bottom-spacing: 6.6666666667px;
+  --mat-menu-item-spacing: 10px;
+  --mat-menu-item-leading-spacing: 11.4285714286px;
+  --mat-menu-item-trailing-spacing: 11.4285714286px;
+  --mat-menu-item-with-icon-leading-spacing: 11.4285714286px;
+  --mat-menu-item-with-icon-trailing-spacing: 11.4285714286px;
+  --mat-menu-item-label-text-size: 0.875rem;
+}
+mat-menu:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .mat-mdc-menu-item,
+.mat-mdc-menu-panel:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .mat-mdc-menu-item {
+  min-height: 40px;
+  height: 40px;
+}
+mat-menu:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .mat-mdc-menu-item .mat-icon,
+.mat-mdc-menu-panel:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) .mat-mdc-menu-item .mat-icon {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+mat-menu:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round,
+.mat-mdc-menu-panel:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-round {
+  --mat-menu-container-shape: 16px;
+  border-radius: 16px;
+}
+mat-menu:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square,
+.mat-mdc-menu-panel:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-square {
+  --mat-menu-container-shape: 0px;
+  border-radius: 0px;
+}
+mat-menu:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle, mat-menu:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle),
+.mat-mdc-menu-panel:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge).sh-squircle,
+.mat-mdc-menu-panel:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge):not(.sh-round):not(.sh-square):not(.sh-squircle) {
+  --mat-menu-container-shape: 10px;
+  border-radius: 10px;
+}
+mat-menu .mat-mdc-menu-item.destructive,
+.mat-mdc-menu-panel .mat-mdc-menu-item.destructive {
+  color: #c0000c;
+}
+mat-menu .mat-mdc-menu-item.destructive .mat-icon,
+.mat-mdc-menu-panel .mat-mdc-menu-item.destructive .mat-icon {
+  color: #c0000c;
+}
+mat-menu .mat-mdc-menu-item.destructive:hover, mat-menu .mat-mdc-menu-item.destructive:focus,
+.mat-mdc-menu-panel .mat-mdc-menu-item.destructive:hover,
+.mat-mdc-menu-panel .mat-mdc-menu-item.destructive:focus {
+  background-color: color-mix(in srgb, #c0000c 8%, transparent);
 }
 
 mat-progress-bar.sz-xsmall {

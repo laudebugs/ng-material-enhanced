@@ -231,6 +231,7 @@ export class App implements OnInit {
     { path: '/checkbox', label: 'Checkbox', icon: 'check_box', exact: false },
     { path: '/chips', label: 'Chips', icon: 'category', exact: false },
     { path: '/form-field', label: 'Form Field', icon: 'input', exact: false },
+    { path: '/menu', label: 'Menu', icon: 'menu_open', exact: false },
     { path: '/progress-loader', label: 'Progress Bar', icon: 'download', exact: false },
     { path: '/slider', label: 'Slider', icon: 'linear_scale', exact: false },
     { path: '/toggle', label: 'Slide Toggle', icon: 'toggle_on', exact: false },

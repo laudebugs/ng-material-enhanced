@@ -492,4 +492,109 @@
     </div>
   </div>
 
+  <!-- 9. MENU -->
+  <div class="showcase-section">
+    <div class="section-header">
+      <div class="section-title-wrap">
+        <mat-icon class="material-symbols-outlined section-icon">menu_open</mat-icon>
+        <h3>Menu (<code>mat-menu</code>)</h3>
+      </div>
+      <a matButton="text" class="sh-square sz-small" [routerLink]="['/menu']">Configure Menu &rarr;</a>
+    </div>
+
+    <!-- Sizes -->
+    <div class="variant-group">
+      <div class="variant-label">Sizes (<code>sz-xsmall</code> to <code>sz-xlarge</code>)</div>
+      <div class="variant-items-row">
+        <button matButton="filled" class="sz-xsmall sh-squircle" [matMenuTriggerFor]="menuXSmall">
+          X-Small Menu
+        </button>
+        <mat-menu #menuXSmall="matMenu" class="sz-xsmall sh-squircle">
+          <button mat-menu-item><mat-icon class="material-symbols-outlined">edit</mat-icon>Edit</button>
+          <button mat-menu-item><mat-icon class="material-symbols-outlined">share</mat-icon>Share</button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item class="destructive"><mat-icon class="material-symbols-outlined">delete</mat-icon>Delete</button>
+        </mat-menu>
+
+        <button matButton="filled" class="sz-small sh-squircle" [matMenuTriggerFor]="menuSmall">
+          Small Menu
+        </button>
+        <mat-menu #menuSmall="matMenu" class="sz-small sh-squircle">
+          <button mat-menu-item><mat-icon class="material-symbols-outlined">edit</mat-icon>Edit</button>
+          <button mat-menu-item><mat-icon class="material-symbols-outlined">share</mat-icon>Share</button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item class="destructive"><mat-icon class="material-symbols-outlined">delete</mat-icon>Delete</button>
+        </mat-menu>
+
+        <button matButton="filled" class="sz-medium sh-squircle" [matMenuTriggerFor]="menuMedium">
+          Medium Menu
+        </button>
+        <mat-menu #menuMedium="matMenu" class="sz-medium sh-squircle">
+          <button mat-menu-item><mat-icon class="material-symbols-outlined">edit</mat-icon>Edit</button>
+          <button mat-menu-item><mat-icon class="material-symbols-outlined">share</mat-icon>Share</button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item class="destructive"><mat-icon class="material-symbols-outlined">delete</mat-icon>Delete</button>
+        </mat-menu>
+
+        <button matButton="filled" class="sz-large sh-squircle" [matMenuTriggerFor]="menuLarge">
+          Large Menu
+        </button>
+        <mat-menu #menuLarge="matMenu" class="sz-large sh-squircle">
+          <button mat-menu-item><mat-icon class="material-symbols-outlined">edit</mat-icon>Edit</button>
+          <button mat-menu-item><mat-icon class="material-symbols-outlined">share</mat-icon>Share</button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item class="destructive"><mat-icon class="material-symbols-outlined">delete</mat-icon>Delete</button>
+        </mat-menu>
+
+        <button matButton="filled" class="sz-xlarge sh-squircle" [matMenuTriggerFor]="menuXLarge">
+          X-Large Menu
+        </button>
+        <mat-menu #menuXLarge="matMenu" class="sz-xlarge sh-squircle">
+          <button mat-menu-item><mat-icon class="material-symbols-outlined">edit</mat-icon>Edit</button>
+          <button mat-menu-item><mat-icon class="material-symbols-outlined">share</mat-icon>Share</button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item class="destructive"><mat-icon class="material-symbols-outlined">delete</mat-icon>Delete</button>
+        </mat-menu>
+      </div>
+    </div>
+
+    <!-- Shapes -->
+    <div class="variant-group">
+      <div class="variant-label">Corner Radius Shapes (<code>sh-round</code>, <code>sh-squircle</code>, <code>sh-square</code>)</div>
+      <div class="variant-items-row">
+        <button matButton="tonal" class="sz-medium sh-round" [matMenuTriggerFor]="menuRound">
+          Round Menu
+        </button>
+        <mat-menu #menuRound="matMenu" class="sz-medium sh-round">
+          <button mat-menu-item><mat-icon class="material-symbols-outlined">favorite</mat-icon>Favorites</button>
+          <button mat-menu-item><mat-icon class="material-symbols-outlined">bookmark</mat-icon>Bookmarks</button>
+        </mat-menu>
+
+        <button matButton="tonal" class="sz-medium sh-squircle" [matMenuTriggerFor]="menuSquircle">
+          Squircle Menu
+        </button>
+        <mat-menu #menuSquircle="matMenu" class="sz-medium sh-squircle">
+          <button mat-menu-item><mat-icon class="material-symbols-outlined">folder</mat-icon>Documents</button>
+          <button mat-menu-item><mat-icon class="material-symbols-outlined">image</mat-icon>Photos</button>
+        </mat-menu>
+
+        <button matButton="tonal" class="sz-medium sh-square" [matMenuTriggerFor]="menuSquare">
+          Square Menu
+        </button>
+        <mat-menu #menuSquare="matMenu" class="sz-medium sh-square">
+          <button mat-menu-item><mat-icon class="material-symbols-outlined">terminal</mat-icon>Console</button>
+          <button mat-menu-item><mat-icon class="material-symbols-outlined">bug_report</mat-icon>Debug Logs</button>
+        </mat-menu>
+
+        <button matIconButton class="sz-medium sh-squircle" [matMenuTriggerFor]="menuIconBtn" aria-label="More options">
+          <mat-icon class="material-symbols-outlined">more_vert</mat-icon>
+        </button>
+        <mat-menu #menuIconBtn="matMenu" class="sz-medium sh-squircle">
+          <button mat-menu-item><mat-icon class="material-symbols-outlined">settings</mat-icon>Settings</button>
+          <button mat-menu-item class="destructive"><mat-icon class="material-symbols-outlined">logout</mat-icon>Sign Out</button>
+        </mat-menu>
+      </div>
+    </div>
+  </div>
+
 </div>

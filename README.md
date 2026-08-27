@@ -64,6 +64,7 @@ Angular Material 3 provides powerful official Sass mixins (such as `mat.button-o
 - **Checkbox** (`mat-checkbox`, indeterminate, destructive)
 - **Chips** (`mat-chip`, avatars, removable chips, chip grid inputs)
 - **Form Field & Radios** (`mat-form-field`, `mat-radio-button`, password visibility toggle, select dropdown, textarea)
+- **Menu** (`mat-menu`, `mat-menu-item`, nested submenus, destructive action items)
 - **Progress Bar** (`mat-progress-bar`, determinate, indeterminate, buffer, query)
 - **Slider** (`mat-slider`, continuous, discrete with tick marks, range slider)
 - **Slide Toggle** (`mat-slide-toggle`, with/without icons)

@@ -1,0 +1,229 @@
+<h2>
+  Menu
+</h2>
+
+<!-- Standard Configurable Menu -->
+<div class="element">
+  <h3>Action Menu</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- Menu Size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Menu & Trigger Size</mat-label>
+        <mat-select [(ngModel)]="menuSize">
+          @for (size of menuSizes; track size) {
+            <mat-option [value]="size">{{ size }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Menu Shape -->
+      <mat-form-field class="no-hint">
+        <mat-label>Corner Shape</mat-label>
+        <mat-select [(ngModel)]="menuShape">
+          @for (shape of menuShapes; track shape) {
+            <mat-option [value]="shape">{{ shape }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Trigger Appearance -->
+      <mat-form-field class="no-hint">
+        <mat-label>Button Appearance</mat-label>
+        <mat-select [(ngModel)]="buttonAppearance">
+          @for (appearance of buttonAppearances; track appearance) {
+            <mat-option [value]="appearance">{{ appearance }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <mat-checkbox [(ngModel)]="showIcons">Show Icons</mat-checkbox>
+      <mat-checkbox [(ngModel)]="includeDestructive">Destructive Item</mat-checkbox>
+      <mat-checkbox [(ngModel)]="includeDivider">Divider Line</mat-checkbox>
+      <mat-checkbox [(ngModel)]="disabledAction">Disable 3rd Item</mat-checkbox>
+    </div>
+
+    <div class="demo">
+      <button
+        [matButton]="buttonAppearance()"
+        [class]="'sz-' + menuSize() + ' sh-' + menuShape()"
+        [matMenuTriggerFor]="actionMenu"
+        aria-label="Open action menu">
+        @if (showIcons()) {
+          <mat-icon class="material-symbols-outlined">menu_open</mat-icon>
+        }
+        Actions
+        <mat-icon class="material-symbols-outlined">arrow_drop_down</mat-icon>
+      </button>
+
+      <mat-menu #actionMenu="matMenu" [class]="'sz-' + menuSize() + ' sh-' + menuShape()">
+        <button mat-menu-item>
+          @if (showIcons()) {
+            <mat-icon class="material-symbols-outlined">edit</mat-icon>
+          }
+          <span>Edit document</span>
+        </button>
+        <button mat-menu-item>
+          @if (showIcons()) {
+            <mat-icon class="material-symbols-outlined">content_copy</mat-icon>
+          }
+          <span>Duplicate</span>
+        </button>
+        <button mat-menu-item [disabled]="disabledAction()">
+          @if (showIcons()) {
+            <mat-icon class="material-symbols-outlined">share</mat-icon>
+          }
+          <span>Share link</span>
+        </button>
+        @if (includeDivider()) {
+          <mat-divider></mat-divider>
+        }
+        @if (includeDestructive()) {
+          <button mat-menu-item class="destructive">
+            @if (showIcons()) {
+              <mat-icon class="material-symbols-outlined">delete</mat-icon>
+            }
+            <span>Delete permanently</span>
+          </button>
+        }
+      </mat-menu>
+    </div>
+  </div>
+  <div class="code-preview" [innerHTML]="menuCode()"></div>
+</div>
+
+<!-- Nested Cascading Submenu -->
+<div class="element">
+  <h3>Nested Submenu</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- Submenu Size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Menu Size</mat-label>
+        <mat-select [(ngModel)]="nestedSize">
+          @for (size of menuSizes; track size) {
+            <mat-option [value]="size">{{ size }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Submenu Shape -->
+      <mat-form-field class="no-hint">
+        <mat-label>Corner Shape</mat-label>
+        <mat-select [(ngModel)]="nestedShape">
+          @for (shape of menuShapes; track shape) {
+            <mat-option [value]="shape">{{ shape }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="demo">
+      <button
+        matButton="tonal"
+        [class]="'sz-' + nestedSize() + ' sh-' + nestedShape()"
+        [matMenuTriggerFor]="rootMenu"
+        aria-label="Open file options menu">
+        <mat-icon class="material-symbols-outlined">folder_open</mat-icon>
+        File Options
+        <mat-icon class="material-symbols-outlined">arrow_drop_down</mat-icon>
+      </button>
+
+      <mat-menu #rootMenu="matMenu" [class]="'sz-' + nestedSize() + ' sh-' + nestedShape()">
+        <button mat-menu-item [matMenuTriggerFor]="shareSubmenu">
+          <mat-icon class="material-symbols-outlined">share</mat-icon>
+          <span>Share Options</span>
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="exportSubmenu">
+          <mat-icon class="material-symbols-outlined">download</mat-icon>
+          <span>Export Format</span>
+        </button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item class="destructive">
+          <mat-icon class="material-symbols-outlined">delete_forever</mat-icon>
+          <span>Trash</span>
+        </button>
+      </mat-menu>
+
+      <!-- Submenu: Share -->
+      <mat-menu #shareSubmenu="matMenu" [class]="'sz-' + nestedSize() + ' sh-' + nestedShape()">
+        <button mat-menu-item>
+          <mat-icon class="material-symbols-outlined">mail</mat-icon>
+          <span>Send Email</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon class="material-symbols-outlined">link</mat-icon>
+          <span>Copy Link</span>
+        </button>
+      </mat-menu>
+
+      <!-- Submenu: Export -->
+      <mat-menu #exportSubmenu="matMenu" [class]="'sz-' + nestedSize() + ' sh-' + nestedShape()">
+        <button mat-menu-item>
+          <mat-icon class="material-symbols-outlined">picture_as_pdf</mat-icon>
+          <span>PDF Document</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon class="material-symbols-outlined">csv</mat-icon>
+          <span>CSV Spreadsheet</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+  <div class="code-preview" [innerHTML]="nestedCode()"></div>
+</div>
+
+<!-- Icon Button Trigger Menu -->
+<div class="element">
+  <h3>Icon Button Trigger Menu</h3>
+  <div class="element-container">
+    <div class="controls">
+      <!-- Icon Menu Size -->
+      <mat-form-field class="no-hint">
+        <mat-label>Menu Size</mat-label>
+        <mat-select [(ngModel)]="iconMenuSize">
+          @for (size of menuSizes; track size) {
+            <mat-option [value]="size">{{ size }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Icon Menu Shape -->
+      <mat-form-field class="no-hint">
+        <mat-label>Corner Shape</mat-label>
+        <mat-select [(ngModel)]="iconMenuShape">
+          @for (shape of menuShapes; track shape) {
+            <mat-option [value]="shape">{{ shape }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="demo">
+      <button
+        matIconButton
+        [class]="'sz-' + iconMenuSize() + ' sh-' + iconMenuShape()"
+        [matMenuTriggerFor]="moreMenu"
+        aria-label="More options">
+        <mat-icon class="material-symbols-outlined">more_vert</mat-icon>
+      </button>
+
+      <mat-menu #moreMenu="matMenu" [class]="'sz-' + iconMenuSize() + ' sh-' + iconMenuShape()">
+        <button mat-menu-item>
+          <mat-icon class="material-symbols-outlined">settings</mat-icon>
+          <span>Preferences</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon class="material-symbols-outlined">help</mat-icon>
+          <span>Help & Support</span>
+        </button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item class="destructive">
+          <mat-icon class="material-symbols-outlined">logout</mat-icon>
+          <span>Sign Out</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+  <div class="code-preview" [innerHTML]="iconMenuCode()"></div>
+</div>
