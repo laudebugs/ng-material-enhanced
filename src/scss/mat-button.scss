@@ -37,7 +37,8 @@ $button-variants: filled, outlined, protected, tonal, text;
     width: math.div($height * 3, 5);
     height: math.div($height * 3, 5);
   }
-  &[matIconButton], &[mat-icon-button] {
+  &[matIconButton],
+  &[mat-icon-button] {
     @include mat.icon-button-overrides(
       (
         state-layer-size: $height,
@@ -49,7 +50,8 @@ $button-variants: filled, outlined, protected, tonal, text;
 
   $fab-height: math.div($height * 7, 5);
 
-  &[matFab], &[mat-fab] {
+  &[matFab],
+  &[mat-fab] {
     @include mat.fab-overrides(
       (
         extended-container-height: $fab-height,
@@ -72,7 +74,8 @@ $button-variants: filled, outlined, protected, tonal, text;
       }
     }
   }
-  &[matMiniFab], &[mat-mini-fab] {
+  &[matMiniFab],
+  &[mat-mini-fab] {
     &.mat-mdc-fab-base {
       height: $height;
       width: $height;
@@ -184,8 +187,16 @@ $button-variants: filled, outlined, protected, tonal, text;
             map.get(palettes.$error-palette, 90)
           ),
         outlined-outline-color: map.get(palettes.$error-palette, 40),
-        outlined-ripple-color: color-mix(in srgb, map.get(palettes.$error-palette, 40) 12%, transparent),
-        outlined-state-layer-color: color-mix(in srgb, map.get(palettes.$error-palette, 40) 8%, transparent),
+        outlined-ripple-color: color-mix(
+            in srgb,
+            map.get(palettes.$error-palette, 40) 12%,
+            transparent
+          ),
+        outlined-state-layer-color: color-mix(
+            in srgb,
+            map.get(palettes.$error-palette, 40) 8%,
+            transparent
+          ),
         outlined-label-text-color: map.get(palettes.$error-palette, 40),
         protected-label-text-color: map.get(palettes.$error-palette, 40),
         protected-state-layer-color: color-mix(
@@ -205,16 +216,32 @@ $button-variants: filled, outlined, protected, tonal, text;
       (
         icon-color: map.get(palettes.$error-palette, 40),
         ripple-color: color-mix(in srgb, map.get(palettes.$error-palette, 40) 12%, transparent),
-        state-layer-color: color-mix(in srgb, map.get(palettes.$error-palette, 40) 8%, transparent),
+        state-layer-color: color-mix(
+            in srgb,
+            map.get(palettes.$error-palette, 100) 8%,
+            map.get(palettes.$error-palette, 40)
+          ),
       )
     );
 
     @include mat.fab-overrides(
       (
         container-color: map.get(palettes.$error-palette, 80),
+        small-container-color: map.get(palettes.$error-palette, 80),
         foreground-color: map.get(palettes.$error-palette, 40),
+        small-foreground-color: map.get(palettes.$error-palette, 40),
         ripple-color: color-mix(in srgb, map.get(palettes.$error-palette, 40) 12%, transparent),
-        state-layer-color: color-mix(in srgb, map.get(palettes.$error-palette, 40) 8%, transparent),
+        small-ripple-color: color-mix(in srgb, map.get(palettes.$error-palette, 40) 12%, transparent),
+        state-layer-color: color-mix(
+            in srgb,
+            map.get(palettes.$error-palette, 100) 8%,
+            map.get(palettes.$error-palette, 40)
+          ),
+        small-state-layer-color: color-mix(
+            in srgb,
+            map.get(palettes.$error-palette, 100) 8%,
+            map.get(palettes.$error-palette, 40)
+          ),
       )
     );
   }
