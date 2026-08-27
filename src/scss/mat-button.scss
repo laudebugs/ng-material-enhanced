@@ -42,7 +42,7 @@ $button-variants: filled, outlined, protected, tonal, text;
     @include mat.icon-button-overrides(
       (
         state-layer-size: $height,
-        icon-size: math.div($height * 3, 5),
+        icon-size: calc($height * 3 / 5),
         touch-target-size: $height + 4px,
       )
     );
@@ -279,7 +279,7 @@ a {
     @include button-overrides(sizes.$button-sizes);
 
     // if no size attribute, use the medium size as default
-    &:not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
+    &:not(.sz-xsmall):not(.sz-small):not(.sz-medium):not(.sz-large):not(.sz-xlarge) {
       $medium-height: map.get(sizes.$button-sizes, medium);
       @include configure-button($medium-height);
     }
