@@ -15,7 +15,7 @@
 
       <!-- If Individual Module tab is selected, show file dropdown -->
       @if (viewTab() === 'module') {
-        <mat-form-field appearance="outline" class="sz-medium sh-square module-select-field">
+        <mat-form-field appearance="outline" class="sz-medium sh-square module-select-field no-hint no-error">
           <mat-label>Select SCSS Module</mat-label>
           <mat-select [(ngModel)]="selectedModule">
             @for (file of scssFiles; track file.filename) {
